@@ -1,0 +1,10 @@
+{
+  "name": "TotalShares",
+  "description": "The total number of shares a company has issued",
+  "type": "object",
+  "properties": { "number": { "type": "integer" },
+                  "share_class": { "type": "string", "minLength": 1 }
+  },
+  "required": [ "number" ]
+}
+

@@ -1,0 +1,11 @@
+/.bundle
+/.rvmrc
+/coverage
+/pkg
+/rdoc
+/tags
+/vendor
+/.rbenv-version
+*~
+.#*
+#*#

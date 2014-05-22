@@ -1,0 +1,14 @@
+{
+  "name": "Officer",
+  "description": "An officer (director, senior executive) of a company",
+  "type": "object",
+  "properties": { "name": { "type": "string", "minLength": 1 },
+                  "start_date": { "type": "date" },
+                  "end_date":   { "type": "date" },
+                  "position":   { "type": "string" },
+                  "other_attributes": { "type": "object" },
+                  "uid":   { "type": "string" }
+  },
+  "required": [ "name" ]
+}
+

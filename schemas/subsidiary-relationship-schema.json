@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Subsidiary Relationship Schema",
+  "type": "object",
+  "allOf" : [
+    { "$ref": "includes/base-statement.json" },
+    {
+      "properties": {
+        "data": {
+          "items": {
+            "allOf": [
+              { "$ref": "includes/subsidiary-relationship-data.json" }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

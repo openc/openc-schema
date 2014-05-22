@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Share Parcel Schema",
+  "type": "object",
+  "allOf" : [
+    // The following is a basic statement with sample_date, etc
+    { "$ref": "includes/base-statement.json" },
+    // And this overrides it to provide data-type-specific information
+    {
+      "properties": {
+        "data": {
+          "items": {
+            "allOf": [
+              { "$ref": "includes/share-parcel-data.json" }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

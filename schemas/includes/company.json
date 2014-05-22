@@ -1,0 +1,14 @@
+{
+  "name": "Company",
+  "description": "A company which is the subject of a statement",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "identifier": {
+      "type": "string",
+      "pattern": "^[^/]+/[^/]+$"
+    }
+  },
+  "required": [ "name", "jurisdiction" ]
+}

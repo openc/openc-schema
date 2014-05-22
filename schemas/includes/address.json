@@ -1,0 +1,23 @@
+{ "oneOf":
+  [
+    {
+      "type": ["string","null"],
+      "minLength": 2
+    },
+    {
+      "name": "Address",
+      "description": "An address object",
+      "type": "object",
+      "properties": { "street_address": { "type": "string" },
+                      "locality": { "type": "date" },
+                      "region":   { "type": "string" },
+                      "postal_code":   { "type": "string" },
+                      "country":   { "type": "string" }
+      },
+      "anyOf": [ { "required": ["street_address"] },
+                 { "required": ["postal_code"] }
+               ]
+    }
+  ]
+}
+
