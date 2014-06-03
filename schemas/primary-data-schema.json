@@ -7,7 +7,7 @@
             "description": "Place where this fact can be verified",
             "type": "string"
         },
-        "source_url": {
+        "sample_date": {
             "description": "Date on which this fact was known to be true",
             "type": "string"
         }
