@@ -18,11 +18,13 @@ failures = 0
 
 Dir.glob(File.join('sample-data', 'valid', '*')).each do |path|
   data = File.open(path) {|f| f.read}
-  if JSON::Validator.validate(find_schema(path), data)
+  errors = JSON::Validator.fully_validate(find_schema(path), data, :errors_as_objects => true)
+  if errors.empty?
     successes += 1
   else
     failures += 1
     puts "#{path} was invalid"
+    puts errors
   end
 end
 

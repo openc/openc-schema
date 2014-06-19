@@ -1,0 +1,10 @@
+{
+	"company_name": "Foo Corporation",
+	"company_jurisdiction": "gb",
+	"licence_number": "ABC123",
+	"jurisdiction_classification": "Bank",
+	"licence_jurisdiction": "fr",
+	"source_url": "http://example.com/abc123",
+	"sample_date": "2014-06-01",
+	"confidence": "MEDIUM"
+}
