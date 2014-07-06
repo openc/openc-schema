@@ -1,5 +1,5 @@
 {
-  "name": "License Data",
+  "name": "Licence Data",
   "type": "object",
   "properties": {
     "data_type": { "enum": [ "licence" ] },
