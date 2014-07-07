@@ -40,6 +40,10 @@
       "description": "Jurisdiction for which licence is issued",
       "type": "string"
     },
+    "status": {
+      "description": "Status of the licence",
+      "type": "string"
+    },
     "category": {
       "description": "Category of licence",
       "type": "string",
