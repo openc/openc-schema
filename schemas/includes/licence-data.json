@@ -1,5 +1,5 @@
 {
-  "name": "License Data",
+  "name": "Licence Data",
   "type": "object",
   "properties": {
     "data_type": { "enum": [ "licence" ] },
@@ -16,6 +16,7 @@
           "type": "string"},
         "jurisdiction_classification": {
           "type": "array",
+          "description": "The local classification given by the regulator",
           "minItems": 1},
         "oc_classification": {
           "type": "array"}
