@@ -30,7 +30,7 @@
     },
     "jurisdiction_classification": {
       "description": "Description of how regulator classifies licence",
-      "type": "string"
+      "type": ["string", "array"]
     },
     "regulator": {
       "description": "The regulating body that issued the licence",
