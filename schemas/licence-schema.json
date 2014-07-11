@@ -11,7 +11,7 @@
         "data": {
           "items": {
             "allOf": [
-              { "$ref": "includes/license-data.json" }
+              { "$ref": "includes/licence-data.json" }
             ]
           }
         }

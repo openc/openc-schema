@@ -37,13 +37,17 @@
       "type": "string"
     },
     "licence_jurisdiction": {
-      "description": "Jurisdiction where licence is issued",
+      "description": "Jurisdiction for which licence is issued",
+      "type": "string"
+    },
+    "status": {
+      "description": "Status of the licence",
       "type": "string"
     },
     "category": {
       "description": "Category of licence",
       "type": "string",
-      "enum": ["Financial"]
+      "enum": ["Financial", "Business"]
     }
   },
   "required": ["source_url", "sample_date", "company_name", "company_jurisdiction"]
