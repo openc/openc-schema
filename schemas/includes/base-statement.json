@@ -20,8 +20,11 @@
     },
     "data": {
       "type": "array",
+      "items": {
+        "$ref": "base-data-object.json"
+      },
       "additionalItems": false
     }
   },
-  "required": ["source_url", "data", "sample_date", "company"]
+  "required": ["data", "company"]
 }
