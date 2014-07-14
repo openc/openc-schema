@@ -59,10 +59,22 @@
         "$ref": "includes/filing.json"
       }
     },
+    "industry_codes": {
+      "type": "array",
+      "items": {
+        "$ref": "includes/industry_code.json"
+      }
+    },
     "previous_names": {
       "type": "array",
       "items": {
         "$ref": "includes/previous_name.json"
+      }
+    },
+    "alternative_names": {
+      "type": "array",
+      "items": {
+        "$ref": "includes/alternative_name.json"
       }
     },
     "branch": {
