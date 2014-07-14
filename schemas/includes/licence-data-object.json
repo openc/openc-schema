@@ -3,6 +3,10 @@
   "type": "object",
   "properties": {
     "data_type": { "enum": [ "licence" ] },
+    "source_url": {
+      "type": "string"},
+    "confidence": {
+      "type": "string"},
     "properties": {
       "type": "object",
       "properties": {
@@ -27,5 +31,5 @@
       "required": [ "jurisdiction_code", "jurisdiction_classification" ]
     }
   },
-  "required": [ "data_type", "properties" ]
+  "required": [ "data_type", "properties","source_url","confidence" ]
 }

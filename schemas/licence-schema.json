@@ -2,20 +2,27 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Licence Schema",
   "type": "object",
-  "allOf" : [
-    // The following is a basic statement with sample_date, etc
-    { "$ref": "includes/base-statement.json" },
-    // And this overrides it to provide data-type-specific information
-    {
-      "properties": {
-        "data": {
-          "items": {
-            "allOf": [
-              { "$ref": "includes/licence-data.json" }
-            ]
-          }
-        }
-      }
+
+  "properties": {
+    "source_jurisdiction": {
+      "description": "Jurisdiction of the source of the data",
+      "type": "string"
+    },
+    "sample_date": {
+      "description": "Date on which this fact was known to be true",
+      "type": "string"
+    },
+    "company": {
+      "$ref" : "includes/company.json"
+    },
+    "data": {
+      "type": "array",
+      "description": "This is an array of data objects, that is the objects which actually contain the data about the datum. Generally there will only be one element in this, although in for some types of data_types there may naturally be several releated to the same company, e.g. shareholders",
+      "items": {
+        "$ref": "includes/licence-data-object.json"
+      },
+      "additionalItems": false
     }
-  ]
+  },
+  "required": ["company", "data"]
 }
