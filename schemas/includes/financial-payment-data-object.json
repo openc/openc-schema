@@ -16,6 +16,9 @@
         "payee_name": {
           "description": "The name of the payee (the entity that received the money)",
           "type": "string"},
+        "currency": {
+          "description": "The currency of the payment (three letter symbol, e.g. USD, GBP, EUR)",
+          "type": "string"},
         "date": {
           "description": "The date on which the payment was made",
           "type": "date"},
@@ -31,14 +34,26 @@
         "description": {
           "description": "The description of the transaction as given in the raw data",
           "type": "string"},
+        "expense_type": {
+          "description": "The type of expense -- can be either capital, revenue (i.e. current expenditure) or null",
+          "enum": ["capital","revenue",null]},
+        "expense_area": {
+          "description": "category (in words) of the expenditure",
+          "type": "string"},
         "entity_name": {
           "description": "The name of the government entity that made the payment, e.g. Environment Agency",
           "type": "string"},
-        "entity_name": {
+        "entity_uri": {
+          "description": "A unique URL (ideally a dereferencable URI) for the government entity",
+          "type": "string"},
+        "department_name": {
           "description": "The name of the government department which the entity belongs to (if relevant), e.g. Department of Health",
+          "type": "string"},
+        "csv_line_number": {
+          "description": "If the source for the data is a CSV file, you can optionally include the line number of the CSV from which this data was retrieved",
           "type": "string"}
       },
-      "required": [ "value", "payee_name", "date" ]
+      "required": [ "value", "payee_name", "date","currency" ]
     }
   },
   "required": [ "data_type", "properties","source_url","confidence" ]
