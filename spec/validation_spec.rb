@@ -1,11 +1,13 @@
 require 'json-schema'
+require 'debugger'
 
 describe "open-schemas" do
   it "should validate valid json" do
     Dir.glob(File.join('spec','sample-data', 'valid', '*')).each do |path|
       data = File.open(path) {|f| f.read}
       errors = JSON::Validator.fully_validate(find_schema(path), data, :errors_as_objects => true)
-      expect(errors).to be_empty, "#{path} was invalid: #{errors.join("\n")}"
+      # debugger unless errors.empty?
+      expect(errors).to be_empty, "#{path} was invalid: #{prettify_errors(errors)}"
     end
 
   end
@@ -30,4 +32,8 @@ def find_schema(path)
   raise "Could not find schema for sample data at #{path}" unless File.exists?(schema_path)
 
   schema_path
+end
+
+def prettify_errors(errors)
+  errors.collect{ |e| e[:message] }.join("\n")
 end

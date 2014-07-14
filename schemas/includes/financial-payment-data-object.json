@@ -1,0 +1,45 @@
+{
+  "name": "Financial Payment Datum",
+  "type": "object",
+  "properties": {
+    "data_type": { "enum": [ "financial_payment" ] },
+    "source_url": {
+      "type": "string"},
+    "confidence": {
+      "type": "string"},
+    "properties": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "The regulating body that issued the licence",
+          "type": "string"},
+        "payee_name": {
+          "description": "The name of the payee (the entity that received the money)",
+          "type": "string"},
+        "date": {
+          "description": "The date on which the payment was made",
+          "type": "date"},
+        "transaction_number": {
+          "description": "The unique identifier for the transaction, scoped to this bot",
+          "type": "date"},
+        "jurisdiction": {
+          "description": "The jurisdiction of the body that made the payment, eg. UK, France, Delaware, Manchester",
+          "type": "string"},
+        "more_details_url": {
+          "description": "A url from which more details can be seen (may be the same as the source_url)",
+          "type": "string"},
+        "description": {
+          "description": "The description of the transaction as given in the raw data",
+          "type": "string"},
+        "entity_name": {
+          "description": "The name of the government entity that made the payment, e.g. Environment Agency",
+          "type": "string"},
+        "entity_name": {
+          "description": "The name of the government department which the entity belongs to (if relevant), e.g. Department of Health",
+          "type": "string"}
+      },
+      "required": [ "value", "payee_name", "date" ]
+    }
+  },
+  "required": [ "data_type", "properties","source_url","confidence" ]
+}
