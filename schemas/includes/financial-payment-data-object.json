@@ -24,34 +24,34 @@
           "type": "date"},
         "transaction_number": {
           "description": "The unique identifier for the transaction, scoped to this bot",
-          "type": "date"},
+          "type": "string"},
         "jurisdiction": {
           "description": "The jurisdiction of the body that made the payment, eg. UK, France, Delaware, Manchester",
           "type": "string"},
         "more_details_url": {
           "description": "A url from which more details can be seen (may be the same as the source_url)",
-          "type": "string"},
+          "type": ["string",null]},
         "description": {
           "description": "The description of the transaction as given in the raw data",
-          "type": "string"},
+          "type": ["string",null]},
         "expense_type": {
           "description": "The type of expense -- can be either capital, revenue (i.e. current expenditure) or null",
           "enum": ["capital","revenue",null]},
         "expense_area": {
           "description": "category (in words) of the expenditure",
-          "type": "string"},
+          "type": ["string",null]},
         "entity_name": {
           "description": "The name of the government entity that made the payment, e.g. Environment Agency",
           "type": "string"},
         "entity_uri": {
           "description": "A unique URL (ideally a dereferencable URI) for the government entity",
-          "type": "string"},
+          "type": ["string",null]},
         "department_name": {
           "description": "The name of the government department which the entity belongs to (if relevant), e.g. Department of Health",
-          "type": "string"},
+          "type": ["string",null]},
         "csv_line_number": {
           "description": "If the source for the data is a CSV file, you can optionally include the line number of the CSV from which this data was retrieved",
-          "type": "string"}
+          "type": ["string",null]}
       },
       "required": [ "value", "payee_name", "date","currency" ]
     }
