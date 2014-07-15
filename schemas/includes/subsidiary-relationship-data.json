@@ -13,7 +13,7 @@
           "type": "boolean"},
         "percentage_controlled": {
           "description": "Percentage controlled, either directly or indirectly",
-          "type": "number"},
+          "type": "string"},
         "significant": {
           "description": "Does the source define the control as somehow significant?",
           "type": "boolean"},

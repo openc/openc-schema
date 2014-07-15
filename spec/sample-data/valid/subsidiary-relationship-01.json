@@ -12,7 +12,7 @@
       "source_url": "https://docs.google.com/file/d/0B5ORBm2amqZSY2NvOFQwbTZvemM",
       "properties": {
         "direct": true,
-        "percentage_controlled": 100,
+        "percentage_controlled": "100",
         "subsidiary": {
           "name": "\"TSG Polska\" Spolka z ograniczona odpowiedzialnocia",
           "jurisdiction": "Poland"
