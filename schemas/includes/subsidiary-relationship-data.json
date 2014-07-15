@@ -11,6 +11,9 @@
         "direct": {
           "description": "If the control is direct (if via an intermediary, this value should be false; if unknown, left blank)",
           "type": "boolean"},
+        "percentage_controlled": {
+          "description": "Percentage controlled, either directly or indirectly",
+          "type": "number"},
         "significant": {
           "description": "Does the source define the control as somehow significant?",
           "type": "boolean"},
@@ -33,15 +36,7 @@
               "type": "string"
             },
             "identifier": {
-              "description": "Unique identifier of person",
-              "type": "string"
-            },
-            "address": {
-              "description": "Address given for owner of parcel",
-              "type": "string"
-            },
-            "address_country": {
-              "description": "Country part of owner's address",
+              "description": "Unique identifier of company",
               "type": "string"
             }
           }

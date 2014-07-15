@@ -1,0 +1,23 @@
+{
+  "company": {
+    "name": "BP Europa SE",
+    "jurisdiction": "Spain"
+  },
+  "start_date": "2013/07/06",
+  "start_date_type": "before",
+  "data": [
+    {
+      "data_type": "subsidiary_relationship",
+      "confidence": 80,
+      "source_url": "https://docs.google.com/file/d/0B5ORBm2amqZSY2NvOFQwbTZvemM",
+      "properties": {
+        "direct": true,
+        "percentage_controlled": 100,
+        "subsidiary": {
+          "name": "\"TSG Polska\" Spolka z ograniczona odpowiedzialnocia",
+          "jurisdiction": "Poland"
+        }
+      }
+    }
+  ]
+}

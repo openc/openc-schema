@@ -1,19 +1,27 @@
 {
+  "title": "Subsidiary Relationship",
+  "description": "A relationship of control between two companies",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Subsidiary Relationship Schema",
   "type": "object",
-  "allOf" : [
-    { "$ref": "includes/base-statement.json" },
-    {
-      "properties": {
-        "data": {
-          "items": {
-            "allOf": [
-              { "$ref": "includes/subsidiary-relationship-data.json" }
-            ]
-          }
-        }
-      }
+  "properties": {
+    "source_jurisdiction": {
+      "description": "Jurisdiction of the source of the data",
+      "type": "string"
+    },
+    "company": {
+      "$ref": "includes/company.json"
+    },
+    "data": {
+      "type": "array",
+      "description": "This is an array of data objects, that is the objects which actually contain the data about the datum. Generally there will only be one element in this, although in for some types of data_types there may naturally be several releated to the same company, e.g. shareholders",
+      "items": {
+        "$ref": "includes/subsidiary-relationship-data.json"
+      },
+      "additionalItems": false
     }
+  },
+  "required": [
+    "company",
+    "data"
   ]
 }
