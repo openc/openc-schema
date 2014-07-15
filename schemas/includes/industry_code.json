@@ -1,0 +1,13 @@
+{
+  "name": "IndustryCode",
+  "description": "An industry code from a standard code list (e.g. NAICS 2007 or NACE 2)",
+  "type": "object",
+  "properties": { "name": { "type": "string" },
+                  "code": { "type": "string" },
+                  "code_scheme_id": { "type": "string", "enum": ["eu_nace_2", "uk_sic_2003", "uk_sic_2007", "us_naics_2002", "us_naics_2007", "be_nace_2008"] },
+                  "start_date":  { "type": "date" },
+                  "end_date":  { "type": "date" }
+  },
+  "required": [ "code", "code_scheme_id" ]
+}
+

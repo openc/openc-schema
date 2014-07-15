@@ -1,0 +1,18 @@
+{ "company":
+  {
+  "name": "CENTRAL BANK",
+},
+  "data": [
+    { "data_type": "licence",
+      "properties": {
+      	"licence_number": "ABC123",
+        "category":  "Financial",
+      	"jurisdiction_classification": ["Bank"],
+      	"jurisdiction_code": "France",
+        "reporting_date":  "2014-06-01"
+      },
+    	"source_url": "http://example.com/abc123",
+      "confidence": "67"
+    }
+  ]
+}

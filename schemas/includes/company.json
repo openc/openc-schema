@@ -5,8 +5,10 @@
   "properties": {
     "name": { "type": "string" },
     "jurisdiction": { "type": "string" },
+    "company_number": { "type": "string" },
     "identifier": {
       "type": "string",
+      "description": "An official identifier paired with a code for the issuer of the identifier, e.g sec/12345",
       "pattern": "^[^/]+/[^/]+$"
     }
   },
