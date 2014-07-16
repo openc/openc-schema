@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Simple Subsidiary Schema",
+  "type": "object",
+  "properties": {
+    "source_url": {
+      "description": "Place where this fact can be verified",
+      "type": "string"
+    },
+    "sample_date": {
+      "description": "Date on which this fact was known to be true",
+      "type": "string"
+    },
+    "start_date": {
+      "description": "Earliest known date this was known to be a subsidiary",
+      "type": "string"
+    },
+    "end_date": {
+      "description": "Latest known date this was known to be a subsidiary",
+      "type": "string"
+    },
+    "confidence": {
+      "description": "Confidence in accuracy of data",
+      "type": "string",
+      "enum": ["HIGH", "MEDIUM", "LOW"]
+    },
+    "parent_name": {
+      "description": "Name of the controlling company",
+      "type": "string"
+    },
+    "parent_jurisdiction": {
+      "description": "Jurisdiction where controlling company is based",
+      "type": "string"
+    },
+    "parent_identifier": {
+      "description": "Any unique ID for the controlling company",
+      "type": "string"
+    },
+    "direct": {
+      "description": "Is the control relationship direct or indirect (if unknown, leave blank)?",
+      "type": "boolean"
+    },
+    "percentage_controlled": {
+      "description": "Percentage of the subsidiary that is controlled (if known), either directly or indirectly",
+      "type": "string",
+      "pattern": "^[0-9]{1,2}[.]?[0-9]{0,2}$"
+    },
+    "subsidiary_name": {
+      "description": "The name of the subsidiary",
+      "type": "string"
+    },
+    "subsidiary_jurisdiction": {
+      "description": "Jurisdiction of the subsidiary",
+      "type": "string"
+    },
+    "subsidiary_identifier": {
+      "description": "Any unique id for the subsidiary that might be provided in the source",
+      "type": "string"
+    }
+  },
+  "required": ["source_url", "sample_date", "parent_name", "parent_jurisdiction", "subsidiary_name", "subsidiary_jurisdiction"]
+}
