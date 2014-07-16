@@ -3,7 +3,7 @@ require 'debugger'
 
 describe "open-schemas" do
   it "should validate valid json" do
-    Dir.glob(File.join('spec','sample-data', 'valid', '*')).each do |path|
+    Dir.glob(File.join('spec','sample-data', 'valid', '*json')).each do |path|
       data = File.open(path) {|f| f.read}
       errors = JSON::Validator.fully_validate(find_schema(path), data, :errors_as_objects => true)
       # debugger unless errors.empty?
@@ -13,7 +13,7 @@ describe "open-schemas" do
   end
 
   it "should not validate invalid json" do
-    Dir.glob(File.join('spec','sample-data', 'invalid', '*')).each do |path|
+    Dir.glob(File.join('spec','sample-data', 'invalid', '*json')).each do |path|
       data = File.open(path) {|f| f.read}
       validation_result = JSON::Validator.validate(find_schema(path), data)
       expect(validation_result).to be_falsy, "Invalid schema #{path} was valid"
