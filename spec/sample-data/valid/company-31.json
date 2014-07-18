@@ -1,0 +1,17 @@
+/*valid alternative_names*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "ie",
+  "alternative_names": [
+    {
+      "company_name": "Foobar Inc",
+      "type": "trading"
+    },
+    {
+      "company_name": "Foobar Inc",
+      "type": "legal",
+      "language": "fr"
+    }
+  ]
+}

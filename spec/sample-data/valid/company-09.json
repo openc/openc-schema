@@ -1,0 +1,20 @@
+/*valid previous_names*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "ie",
+  "previous_names": [
+    {
+      "company_name": "FooBar Inc"
+    },
+    {
+      "company_name": "FooBaz",
+      "con_date": "2012-07-22"
+    },
+    {
+      "company_name": "FooBaz",
+      "con_date": "2012-07-22",
+      "start_date": "2008-01-08"
+    }
+  ]
+}

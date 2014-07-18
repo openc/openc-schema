@@ -1,0 +1,28 @@
+/*valid share_parcels*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "ie",
+  "share_parcels": [
+    {
+      "number_of_shares": 1234,
+      "shareholders": [
+        {
+          "name": "Fred Flintstone"
+        }
+      ],
+      "confidence": 42
+    },
+    {
+      "percentage_of_shares": 23.5,
+      "shareholders": [
+        {
+          "name": "Barney Rubble"
+        },
+        {
+          "name": "Wilma Flintstone"
+        }
+      ]
+    }
+  ]
+}

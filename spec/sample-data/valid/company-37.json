@@ -1,0 +1,9 @@
+/*valid home_legal_name*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "ie",
+  "all_attributes": {
+    "home_legal_name": "Some String"
+  }
+}

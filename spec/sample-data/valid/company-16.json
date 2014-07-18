@@ -1,0 +1,9 @@
+/*valid jurisdiction_of_origin*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "ie",
+  "all_attributes": {
+    "jurisdiction_of_origin": "Some Country"
+  }
+}
