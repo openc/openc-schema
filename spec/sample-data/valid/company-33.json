@@ -1,0 +1,24 @@
+/*valid industry_codes*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "ie",
+  "industry_codes": [
+    {
+      "code": "1234",
+      "code_scheme_id": "eu_nace_2",
+      "name": "Some Industry"
+    },
+    {
+      "code": "22.11",
+      "code_scheme_id": "uk_sic_2007"
+    },
+    {
+      "code": "43.21",
+      "code_scheme_id": "us_naics_2007",
+      "name": "Another Industry",
+      "start_date": "2010-12-22",
+      "end_date": "2011-01-03"
+    }
+  ]
+}

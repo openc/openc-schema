@@ -1,0 +1,7 @@
+/*registered_address*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "us_de",
+  "registered_address": "32 Foo St, Footown,"
+}

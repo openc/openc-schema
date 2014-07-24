@@ -1,0 +1,9 @@
+/*valid registered_address object*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "us_de",
+  "registered_address": {
+    "postal_code": "FO1 2BA"
+  }
+}

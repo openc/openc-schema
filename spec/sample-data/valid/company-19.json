@@ -1,0 +1,26 @@
+/*valid officers*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "ie",
+  "officers": [
+    {
+      "name": "Fred Flintstone"
+    },
+    {
+      "name": "Barney Rubble",
+      "position": "Director"
+    },
+    {
+      "name": "Barney Rubble",
+      "other_attributes": {
+        "foo": "bar"
+      }
+    },
+    {
+      "name": "Pebbles",
+      "start_date": "2010-12-22",
+      "end_date": "2011-01-03"
+    }
+  ]
+}

@@ -7,6 +7,7 @@
 /vendor
 /.rbenv-version
 .rspec
+.DS_Store
 *~
 .#*
 #*#

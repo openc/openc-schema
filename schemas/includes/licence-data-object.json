@@ -20,7 +20,8 @@
           "description": "The jurisdiction for which licence was issued",
           "type": "string"},
         "licence_number": {
-          "type": "string"},
+          "description": "Licence number or code (can be null)",
+          "type": ["string",null]},
         "jurisdiction_classification": {
           "type": "array",
           "description": "The local classification given by the regulator",

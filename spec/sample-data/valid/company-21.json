@@ -1,0 +1,26 @@
+/*valid filings*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "ie",
+  "filings": [
+    {
+      "title": "Annual Report",
+      "date": "2010-11-22"
+    },
+    {
+      "description": "Another type of filing",
+      "date": "2010-11-22"
+    },
+    {
+      "title": "Annual Report",
+      "description": "Another type of filing",
+      "uid": "12345A321",
+      "date": "2010-11-22"
+    },
+    {
+      "filing_type_name": "Some type",
+      "date": "2010-11-22"
+    }
+  ]
+}

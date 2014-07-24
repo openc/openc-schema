@@ -8,6 +8,6 @@
                   "language": { "type": "string", "minLength": 2, "maxLength": 2 },
                   "type": { "type": "string", "enum": ["trading", "abbreviation", "legal"] }
   },
-  "required": [ "company_name" ]
+  "required": [ "company_name", "type" ]
 }
 
