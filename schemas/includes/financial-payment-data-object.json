@@ -11,7 +11,7 @@
       "type": "object",
       "properties": {
         "value": {
-          "description": "The regulating body that issued the licence",
+          "description": "The amount transacted (e.g. 19.95)",
           "type": "string"},
         "payee_name": {
           "description": "The name of the payee (the entity that received the money)",
