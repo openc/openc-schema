@@ -35,6 +35,18 @@
     "registry_url": {
       "type": "string"
     },
+    "website": {
+      "type": "string",
+      "minLength": 5
+    },
+    "telephone_number": {
+      "type": "string",
+      "minLength": 4
+    },
+    "fax_number": {
+      "type": "string",
+      "minLength": 4
+    },
     "registered_address": {
       "$ref": "includes/address.json"
     },
