@@ -4,7 +4,7 @@
   "type": "object",
   "properties": { "name": { "type": "string" },
                   "code": { "type": "string" },
-                  "code_scheme_id": { "type": "string", "enum": ["eu_nace_2", "uk_sic_2003", "uk_sic_2007", "us_naics_2002", "us_naics_2007", "be_nace_2008"] },
+                  "code_scheme_id": { "type": "string", "enum": ["eu_nace_2", "uk_sic_2003", "uk_sic_2007", "us_naics_2002", "us_naics_2007", "be_nace_2008", "dk_db_2007"] },
                   "start_date":  { "type": "date" },
                   "end_date":  { "type": "date" }
   },
