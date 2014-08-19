@@ -3,7 +3,10 @@
   "description": "A previous name of a company",
   "type": "object",
   "properties": { "company_name": { "type": "string", "minLength": 1 },
-                  "con_date": { "type": "date" },
+                  "con_date": {
+                    "type": "date",
+                    "description": "The end (conversion) date of the name"
+                   },
                   "start_date": { "type": "date" }
   },
   "required": [ "company_name" ]
