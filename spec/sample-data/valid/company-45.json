@@ -1,0 +1,23 @@
+/*valid share_parcels*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "ie",
+  "share_parcels": [
+    {
+      "number_of_shares": 1234,
+      "start_date": "2008-11-22",
+      "start_date_type": "=",
+      "shareholders": [
+        {
+          "name": "Megacorp Inc",
+          "type": "Company",
+          "jurisdiction": "Bermuda",
+          "company_number": "12345",
+          "address": "1 Global Ave, Bermuda"
+        }
+      ],
+      "confidence": 42
+    }
+  ]
+}
