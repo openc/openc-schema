@@ -50,6 +50,12 @@
     "registered_address": {
       "$ref": "includes/address.json"
     },
+    "headquarters_address": {
+      "$ref": "includes/address.json"
+    },
+    "mailing_address": {
+      "$ref": "includes/address.json"
+    },
     "officers": {
       "type": "array",
       "items": {
@@ -93,6 +99,10 @@
       "type": ["string","null"],
       "description": "A flag to denote whether a company is a branch entity. This should only be set if the company is a type of branch (otherwise should be null). In general the only option here is 'F' for a 'Foreign' branch, i.e. an out-of-jurisdiction entity that has registered as having a presence in the jurisdiction. In the US this is sometimes called a Foreign Corporation",
       "enum": ["F", "L",null]
+    },
+    "merged": {
+      "type": ["object","null"],
+      "description": "Details of whether this entity has been merged into another entity (the surviving entity) and as a result has been dissolved or closed"
     },
     "all_attributes": {
       "type": "object",
