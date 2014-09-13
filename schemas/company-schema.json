@@ -100,10 +100,6 @@
       "description": "A flag to denote whether a company is a branch entity. This should only be set if the company is a type of branch (otherwise should be null). In general the only option here is 'F' for a 'Foreign' branch, i.e. an out-of-jurisdiction entity that has registered as having a presence in the jurisdiction. In the US this is sometimes called a Foreign Corporation",
       "enum": ["F", "L",null]
     },
-    "merged": {
-      "type": ["object","null"],
-      "description": "Details of whether this entity has been merged into another entity (the surviving entity) and as a result has been dissolved or closed"
-    },
     "all_attributes": {
       "type": "object",
       "description": "Other arbitrary attributes for a given company",
@@ -137,6 +133,28 @@
           "type": "number",
           "description": "The number of employees",
           "minimum": 0
+        },
+        "merged_into": {
+          "type": ["object","null"],
+          "description": "Information on the merger of this company into a 'survivor' company",
+          "properties": {
+            "surviving_company": {
+              "type": ["object"],
+              "description": "the surviving_company that this has been merged into",
+              "properties": {
+                "name": {
+                  "type": ["string"],
+                  "description": "The legal name of the surviving company",
+                  "minLength": 1
+                },
+                "jurisdiction": {
+                  "type": ["string",null],
+                  "description": "The jurisdiction of incorporation of the surviving company",
+                  "minLength": 2
+                }
+              }
+            }
+          }
         }
       }
     }
