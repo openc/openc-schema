@@ -135,7 +135,7 @@
           "minimum": 0
         },
         "merged_into": {
-          "type": ["object","null"],
+          "type": "object",
           "description": "Information on the merger of this company into a 'survivor' company",
           "properties": {
             "surviving_company": {
@@ -143,18 +143,32 @@
               "description": "the surviving_company that this has been merged into",
               "properties": {
                 "name": {
-                  "type": ["string"],
+                  "type": "string",
                   "description": "The legal name of the surviving company",
                   "minLength": 1
                 },
+                "company_number": {
+                  "type": "string",
+                  "description": "The company_number of the surviving company, if known",
+                  "minLength": 1
+                },
                 "jurisdiction": {
-                  "type": ["string",null],
+                  "type": "string",
                   "description": "The jurisdiction of incorporation of the surviving company",
                   "minLength": 2
                 }
-              }
+              },
+              "anyOf": [{"required": ["name"]},
+                        {"required": ["company_number"]}]
+            },
+            "effective_date": {
+              "type": "string",
+              "format": "date",
+              "description": "The date of the merger"
             }
-          }
+          },
+          "additionalProperties": false,
+          "required": ["surviving_company"]
         }
       }
     }
