@@ -3,11 +3,43 @@
   "description": "An officer (director, senior executive) of a company",
   "type": "object",
   "properties": { "name": { "type": "string", "minLength": 1 },
-                  "start_date": { "type": "date" },
-                  "end_date":   { "type": "date" },
+                  "start_date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end_date":   {
+                    "type": "string",
+                    "format": "date"
+                  },
                   "position":   { "type": "string" },
-                  "other_attributes": { "type": "object" },
-                  "uid":   { "type": "string" }
+                  "other_attributes": {
+                    "type": "object",
+                    "properties": {
+                      "date_of_birth": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "nationality": {
+                        "type": "string"
+                      },
+                      "person_uid": {
+                        "type": "string",
+                        "description": "a unique identifier given to the individual (as opposed to the officership)"
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string",
+                        "enum": ["Person", "Company"],
+                        "description": "The type of entity that is the officer (either 'Person' or 'Company')"
+                      }
+                    }
+                  },
+                  "uid":   {
+                    "type": "string",
+                    "description": "a unique identifier given to the officership"
+                   }
   },
   "required": [ "name" ]
 }
