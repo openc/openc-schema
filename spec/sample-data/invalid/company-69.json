@@ -1,0 +1,12 @@
+/*invalid officers*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "ie",
+  "officers": [
+    {
+      "name": "Fred Flintstone",
+      "end_date": "invalid_date"
+    }
+  ]
+}

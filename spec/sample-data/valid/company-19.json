@@ -18,9 +18,18 @@
       }
     },
     {
-      "name": "Pebbles",
+      "name": "Wilman Rubble",
       "start_date": "2010-12-22",
-      "end_date": "2011-01-03"
+      "end_date": "2011-01-03",
+      "uid": "ABC1234",
+      "other_attributes": {
+        "address": "32 Rubble St, Bedrock",
+        "nationality": "United States",
+        "date_of_birth": "1970-04-22",
+        "occupation": "Caveman",
+        "type": "Person",
+        "person_uid": "CD444"
+      }
     }
   ]
 }
