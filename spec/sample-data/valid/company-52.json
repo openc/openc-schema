@@ -1,0 +1,12 @@
+/*valid headquarters_address object*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "us_de",
+  "headquarters_address": {
+    "street_address": "32 Foo St",
+    "locality": "Footown",
+    "region": "Fooshire",
+    "postal_code": "FO1 2BA"
+  }
+}
