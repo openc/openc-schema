@@ -5,11 +5,13 @@
   "properties": {
     "source_url": {
       "description": "Place where this fact can be verified",
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "sample_date": {
       "description": "Date on which this fact was known to be true",
-      "type": "string"
+      "type": "date",
+      "minLength": 1
     },
     "confidence": {
       "description": "Confidence in accuracy of data",
@@ -18,11 +20,13 @@
     },
     "company_name": {
       "description": "Name of the company holding the licence",
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "company_jurisdiction": {
       "description": "Jurisdiction where company is based",
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "licence_number": {
       "description": "Licence number or code",
@@ -38,7 +42,8 @@
     },
     "licence_jurisdiction": {
       "description": "Jurisdiction for which licence is issued",
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "status": {
       "description": "Status of the licence",

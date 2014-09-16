@@ -5,11 +5,13 @@
   "properties": {
     "source_url": {
       "description": "Place where this fact can be verified",
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "sample_date": {
       "description": "Date on which this fact was known to be true",
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "start_date": {
       "description": "Earliest known date this was known to be a subsidiary",
@@ -26,11 +28,13 @@
     },
     "parent_name": {
       "description": "Name of the controlling company",
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "parent_jurisdiction": {
       "description": "Jurisdiction where controlling company is based",
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "parent_identifier": {
       "description": "Any unique ID for the controlling company",
@@ -47,11 +51,13 @@
     },
     "subsidiary_name": {
       "description": "The name of the subsidiary",
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "subsidiary_jurisdiction": {
       "description": "Jurisdiction of the subsidiary",
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "subsidiary_identifier": {
       "description": "Any unique id for the subsidiary that might be provided in the source",
