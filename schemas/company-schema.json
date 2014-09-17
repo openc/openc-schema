@@ -130,9 +130,11 @@
           "minLength": 1
         },
         "number_of_employees": {
-          "type": "number",
-          "description": "The number of employees",
-          "minimum": 0
+          "anyOf": [
+            {"type":"string","minLength": 1},
+            {"type":"number","minimum": 0}
+          ],
+          "description": "The number of employees"
         },
         "merged_into": {
           "type": "object",
