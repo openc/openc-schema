@@ -4,12 +4,16 @@
   "type": "object",
   "properties": { "name": { "type": "string", "minLength": 1 },
                   "start_date": {
-                    "type": "string",
-                    "format": "date"
+                    "anyOf": [
+                      {"type":"string","format": "date"},
+                      {"type":"null"}
+                    ]
                   },
                   "end_date":   {
-                    "type": "string",
-                    "format": "date"
+                    "anyOf": [
+                      {"type":"string","format": "date"},
+                      {"type":"null"}
+                    ]
                   },
                   "position":   { "type": "string" },
                   "other_attributes": {

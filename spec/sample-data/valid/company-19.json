@@ -13,6 +13,8 @@
     },
     {
       "name": "Barney Rubble",
+      "start_date": null,
+      "end_date": null,
       "other_attributes": {
         "foo": "bar"
       }
