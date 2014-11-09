@@ -6,14 +6,17 @@
   "properties": {
     "company_number": {
       "type": "string",
+      "description": "unique identifier given by the corporate register with which it is incorporated",
       "minLength": 1
     },
     "name": {
       "type": "string",
+      "description": "Legal name of the company",
       "minLength": 1
     },
     "jurisdiction_code": {
       "type": "string",
+      "description": "Code representing the jurisdiction/company register which is the canonical record of the company’s existence. Uses underscored ISO 3166-2 to represent it, e.g. es for Spain, us_de for Delaware",
       "minLength": 2,
       "maxLength": 5
     },
