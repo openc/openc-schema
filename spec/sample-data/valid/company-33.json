@@ -10,6 +10,11 @@
       "name": "Some Industry"
     },
     {
+      "code": "1234",
+      "code_scheme_id": "unknown_code_scheme",
+      "name": "Some Industry"
+    },
+    {
       "code": "22.11",
       "code_scheme_id": "uk_sic_2007"
     },

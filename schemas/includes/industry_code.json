@@ -4,7 +4,10 @@
   "type": "object",
   "properties": { "name": { "type": "string" },
                   "code": { "type": "string" },
-                  "code_scheme_id": { "type": "string", "enum": ["eu_nace_2", "uk_sic_2003", "uk_sic_2007", "us_naics_2002", "us_naics_2007", "be_nace_2008", "dk_db_2007","nz_bic_2006","no_sic_2007","anz_sic_2006","nz_bic_2006","in_nic_2004_mca","ca_qc_cae","lu_nace_2"] },
+                  "code_scheme_id": {
+                    "type": "string",
+                    "description": "An identifier representing industry code scheme. At the moment these are eu_nace_2, uk_sic_2003, uk_sic_2007, us_naics_2002, us_naics_2007, be_nace_2008, dk_db_2007, nz_bic_2006, no_sic_2007, anz_sic_2006, nz_bic_2006, in_nic_2004_mca, ca_qc_cae, lu_nace_2. For other code schemes, or details of these, contact info@opencorporates.com"
+                   },
                   "start_date":  { "type": "date" },
                   "end_date":  { "type": "date" }
   },
