@@ -9,7 +9,7 @@
       "description": "An address object",
       "type": "object",
       "properties": { "street_address": { "type": "string" },
-                      "locality": { "type": "date" },
+                      "locality": {"type":"string"},
                       "region":   { "type": "string" },
                       "postal_code":   { "type": "string" },
                       "country":   { "type": "string" }

@@ -7,7 +7,7 @@
                     "type": "date",
                     "description": "The end (conversion) date of the name"
                    },
-                  "start_date": { "type": "date" }
+                  "start_date": {"type":"string","format": "date"}
   },
   "required": [ "company_name" ]
 }

@@ -3,7 +3,7 @@
   "description": "A statutory filing",
   "type": "object",
   "properties": { "title": { "type": "string" },
-                  "date": { "type": "date" },
+                  "date": {"type":"string","format": "date"},
                   "description":   { "type": "string" },
                   "uid":   { "type": "string" },
                   "url":   { "type": "string" },

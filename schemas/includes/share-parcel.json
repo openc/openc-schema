@@ -13,6 +13,9 @@
         "maximum": 100,
         "minimum": 0
       },
+      "start_date": {"type":"string","format": "date"},
+      "end_date": {"type":"string","format": "date"},
+      "sample_date": {"type":"string","format": "date"},
       "shareholders": {
         "description": "Legal persons who own this share parcel",
         "type": "array",
