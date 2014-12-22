@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Entity",
+  "type": "object",
+  "description": "An abstract entity - potentially a company, a person, government entity, or some unincorporated organisation",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Legal name of the company",
+      "minLength": 1
+    },
+    "jurisdiction": {
+      "type": "string",
+      "description": "Name of the jurisdiction in which the entity is incorporated/domiciled/"
+    },
+    "entity_type": {
+      "enum": ["company","person","government", null]
+    },
+    "entity_uri": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string",
+      "minLength": 5
+    },
+    "telephone_number": {
+      "type": "string",
+      "minLength": 4
+    },
+    "fax_number": {
+      "type": "string",
+      "minLength": 4
+    },
+    "registered_address": {
+      "$ref": "includes/address.json"
+    },
+    "headquarters_address": {
+      "$ref": "includes/address.json"
+    },
+    "mailing_address": {
+      "$ref": "includes/address.json"
+    },
+    "industry_codes": {
+      "type": "array",
+      "items": {
+        "$ref": "includes/industry_code.json"
+      }
+    },
+    "previous_names": {
+      "type": "array",
+      "items": {
+        "$ref": "includes/previous_name.json"
+      }
+    },
+    "alternative_names": {
+      "type": "array",
+      "items": {
+        "$ref": "includes/alternative_name.json"
+      }
+    },
+  "required": ["name"]
+}
+
