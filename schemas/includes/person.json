@@ -1,23 +1,20 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Entity",
+  "title": "Person",
   "type": "object",
-  "description": "An abstract entity - potentially a company, a person, government entity, or some unincorporated organisation",
+  "description": "A person, for example, referenced in some other context, e.g. director of a company, shareholder, licence-holder, lobbyist",
   "properties": {
     "name": {
-      "type": "string",
-      "description": "Legal name of the company",
-      "minLength": 1
+      "oneOf": [
+        { "type": "string",
+          "minLength": 1
+        },
+        { "$ref": "person_name.json" }
+      ]
     },
     "jurisdiction": {
       "type": "string",
-      "description": "Name of the jurisdiction in which the entity is incorporated/domiciled/"
-    },
-    "entity_type": {
-      "enum": ["company","person","government", null]
-    },
-    "entity_uri": {
-      "type": "string"
+      "description": "Name of the jurisdiction in which the entity is based"
     },
     "website": {
       "type": "string",
@@ -44,12 +41,6 @@
       "type": "array",
       "items": {
         "$ref": "includes/industry_code.json"
-      }
-    },
-    "previous_names": {
-      "type": "array",
-      "items": {
-        "$ref": "includes/previous_name.json"
       }
     },
     "alternative_names": {

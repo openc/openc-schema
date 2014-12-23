@@ -4,7 +4,12 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
 	"properties": {
 		"licence_holder": {
-			"$ref": "entity.json"
+      "oneOf": [
+        {"$ref": "company.json"},
+        {"$ref": "includes/person.json"},
+        {"$ref": "includes/unknown_entity_type.json"}
+      ]
+
 		},
 		"licence_issuer": {
 			"$ref": "entity.json"
