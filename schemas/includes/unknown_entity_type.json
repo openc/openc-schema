@@ -1,5 +1,4 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "UnknownEntityType",
   "type": "object",
   "description": "An entity of unknown type - potentially a company, a person, government entity, or some unincorporated organisation",
@@ -26,32 +25,33 @@
       "minLength": 4
     },
     "registered_address": {
-      "$ref": "includes/address.json"
+      "$ref": "address.json"
     },
     "headquarters_address": {
-      "$ref": "includes/address.json"
+      "$ref": "address.json"
     },
     "mailing_address": {
-      "$ref": "includes/address.json"
+      "$ref": "address.json"
     },
     "industry_codes": {
       "type": "array",
       "items": {
-        "$ref": "includes/industry_code.json"
+        "$ref": "industry_code.json"
       }
     },
     "previous_names": {
       "type": "array",
       "items": {
-        "$ref": "includes/previous_name.json"
+        "$ref": "previous_name.json"
       }
     },
     "alternative_names": {
       "type": "array",
       "items": {
-        "$ref": "includes/alternative_name.json"
+        "$ref": "alternative_name.json"
       }
-    },
+    }
+  },
   "required": ["name"]
 }
 

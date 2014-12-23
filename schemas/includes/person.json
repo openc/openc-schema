@@ -1,5 +1,4 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Person",
   "type": "object",
   "description": "A person, for example, referenced in some other context, e.g. director of a company, shareholder, licence-holder, lobbyist",
@@ -29,26 +28,27 @@
       "minLength": 4
     },
     "registered_address": {
-      "$ref": "includes/address.json"
+      "$ref": "address.json"
     },
     "headquarters_address": {
-      "$ref": "includes/address.json"
+      "$ref": "address.json"
     },
     "mailing_address": {
-      "$ref": "includes/address.json"
+      "$ref": "address.json"
     },
     "industry_codes": {
       "type": "array",
       "items": {
-        "$ref": "includes/industry_code.json"
+        "$ref": "industry_code.json"
       }
     },
     "alternative_names": {
       "type": "array",
       "items": {
-        "$ref": "includes/alternative_name.json"
+        "$ref": "alternative_name.json"
       }
-    },
+    }
+  },
   "required": ["name"]
 }
 

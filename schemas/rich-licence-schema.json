@@ -1,11 +1,11 @@
 {
   "title": "Rich Licence Schema",
-  "description": "A Licence is a permission for an entity to do something that would otherwise not be permitted. Note that such permissions are recorded in multiple different ways and to different granularity. In addition categories cross over, for example a pornborker may be regulated as a retail establishment by a city, but also as a financial institution by a national or regional financial regulator. Sometimes the licence is a simple statement – the government of Rwanda has given a banking licence to a certain bank -- other times it is fine-grained and highly complex (e.g. an extractives licence or the UK FCA licencing scheme). This schema tries to make it easy to submit the former, while not losing granularity of the latter. The object has the name of Rich Licence to distinguish it from Simple Licence, which it is expected to ultimatley replace.",
+  "description": "A Licence is a permission for an entity to do something that would otherwise not be permitted. Note that such permissions are recorded in multiple different ways and to different granularity. In addition categories cross over, for example a pornborker may be regulated as a retail establishment by a city, but also as a financial institution by a national or regional financial regulator. Sometimes the licence is a simple statement – the government of Rwanda has given a banking licence to a certain bank -- other times it is fine-grained and highly complex (e.g. an extractives licence or the UK FCA licencing scheme). This schema tries to make it easy to submit the former, while not losing granularity of the latter. The object has the name of Rich Licence to distinguish it from Simple Licence, which it is expected to ultimately replace.",
   "$schema": "http://json-schema.org/draft-04/schema#",
 	"properties": {
 		"licence_holder": {
       "oneOf": [
-        {"$ref": "company.json"},
+        {"$ref": "company-schema.json"},
         {"$ref": "includes/person.json"},
         {"$ref": "includes/organisation.json"},
         {"$ref": "includes/unknown_entity_type.json"}
@@ -18,11 +18,11 @@
           "type": ["string","null"],
           "minLength": 2
         },
-  			{"$ref": "organisation.json"}
+  			{"$ref": "includes/organisation.json"}
       ]
 		},
 		"licenced_location": {
-			"$ref": "address.json"
+			"$ref": "includes/address.json"
 		},
 		"licence_number": {
 			"type": "string"
@@ -61,7 +61,7 @@
 		"permissions": {
 			"type": "array",
 			"items": {
-				"$ref": "permission.json"
+				"$ref": "includes/permission.json"
 			}
 		},
     "other_attributes": {
