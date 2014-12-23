@@ -1,0 +1,54 @@
+{
+  "title": "Person",
+  "type": "object",
+  "description": "A person, for example, referenced in some other context, e.g. director of a company, shareholder, licence-holder, lobbyist",
+  "properties": {
+    "name": {
+      "oneOf": [
+        { "type": "string",
+          "minLength": 1
+        },
+        { "$ref": "person_name.json" }
+      ]
+    },
+    "jurisdiction": {
+      "type": "string",
+      "description": "Name of the jurisdiction in which the entity is based"
+    },
+    "website": {
+      "type": "string",
+      "minLength": 5
+    },
+    "telephone_number": {
+      "type": "string",
+      "minLength": 4
+    },
+    "fax_number": {
+      "type": "string",
+      "minLength": 4
+    },
+    "registered_address": {
+      "$ref": "address.json"
+    },
+    "headquarters_address": {
+      "$ref": "address.json"
+    },
+    "mailing_address": {
+      "$ref": "address.json"
+    },
+    "industry_codes": {
+      "type": "array",
+      "items": {
+        "$ref": "industry_code.json"
+      }
+    },
+    "alternative_names": {
+      "type": "array",
+      "items": {
+        "$ref": "alternative_name.json"
+      }
+    }
+  },
+  "required": ["name"]
+}
+

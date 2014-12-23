@@ -1,0 +1,57 @@
+{
+  "title": "UnknownEntityType",
+  "type": "object",
+  "description": "An entity of unknown type - potentially a company, a person, government entity, or some unincorporated organisation",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the entity",
+      "minLength": 1
+    },
+    "jurisdiction": {
+      "type": "string",
+      "description": "Name of the jurisdiction in which the entity is incorporated/domiciled"
+    },
+    "website": {
+      "type": "string",
+      "minLength": 5
+    },
+    "telephone_number": {
+      "type": "string",
+      "minLength": 4
+    },
+    "fax_number": {
+      "type": "string",
+      "minLength": 4
+    },
+    "registered_address": {
+      "$ref": "address.json"
+    },
+    "headquarters_address": {
+      "$ref": "address.json"
+    },
+    "mailing_address": {
+      "$ref": "address.json"
+    },
+    "industry_codes": {
+      "type": "array",
+      "items": {
+        "$ref": "industry_code.json"
+      }
+    },
+    "previous_names": {
+      "type": "array",
+      "items": {
+        "$ref": "previous_name.json"
+      }
+    },
+    "alternative_names": {
+      "type": "array",
+      "items": {
+        "$ref": "alternative_name.json"
+      }
+    }
+  },
+  "required": ["name"]
+}
+

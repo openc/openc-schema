@@ -1,0 +1,57 @@
+{
+  "title": "Organisation",
+  "type": "object",
+  "description": "An entity which is a distinct organisation, but is not a company nor an individual. Examples include governments and governmental entities (e.g. Multilateral Devoelpment Banks, Government Departments, municipalities, etc), and also membership organisations",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the entity",
+      "minLength": 1
+    },
+    "jurisdiction": {
+      "type": "string",
+      "description": "Name of the jurisdiction in which the entity is incorporated/domiciled (use global for global entities, e.g. UN)"
+    },
+    "website": {
+      "type": "string",
+      "minLength": 5
+    },
+    "telephone_number": {
+      "type": "string",
+      "minLength": 4
+    },
+    "fax_number": {
+      "type": "string",
+      "minLength": 4
+    },
+    "registered_address": {
+      "$ref": "address.json"
+    },
+    "headquarters_address": {
+      "$ref": "address.json"
+    },
+    "mailing_address": {
+      "$ref": "address.json"
+    },
+    "industry_codes": {
+      "type": "array",
+      "items": {
+        "$ref": "industry_code.json"
+      }
+    },
+    "previous_names": {
+      "type": "array",
+      "items": {
+        "$ref": "previous_name.json"
+      }
+    },
+    "alternative_names": {
+      "type": "array",
+      "items": {
+        "$ref": "alternative_name.json"
+      }
+    }
+  },
+  "required": ["name"]
+}
+
