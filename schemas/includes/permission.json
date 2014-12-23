@@ -10,13 +10,17 @@
       "type": "object",
       "properties": { "activity_name": { "type": "string" },
                       "activity_id": { "type":"string" },
+                      "permission_type": {
+                        "enum": ["operating", "exploration", "exploitation"],
+                        "description":"types of permission, such as 'operating', 'exploration', 'exploitation'"
+                      },
                       "restrictions": { "type":"array",
                                         "description":"conditions or restrictions on the permissions",
                                         "items": { "type":"string" }
                                       },
                       "other_attributes": { }
       },
-      "required": ["street_address"]
+      "required": ["activity_name"]
     }
   ]
 }

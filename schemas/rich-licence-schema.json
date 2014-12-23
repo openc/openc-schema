@@ -4,13 +4,17 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
 	"properties": {
 		"licence_holder": {
-      "oneOf": [
-        {"$ref": "company-schema.json"},
-        {"$ref": "includes/person.json"},
-        {"$ref": "includes/organisation.json"},
-        {"$ref": "includes/unknown_entity_type.json"}
-      ]
-
+      "entity": {
+        "oneOf": [
+          {"$ref": "company-schema.json"},
+          {"$ref": "includes/person.json"},
+          {"$ref": "includes/organisation.json"},
+          {"$ref": "includes/unknown_entity_type.json"}
+        ]
+      },
+      "entity_type": {
+        "enum": ["company", "person", "organisation", "unknown_entity_type", null]
+      }
 		},
 		"licence_issuer": {
       "oneOf": [
@@ -66,7 +70,7 @@
 		},
     "other_attributes": {
       "description": "Use for other licence attributes for which we don't yet have curated schema attributes"
-    },
-    "required": ["source_url", "sample_date", "licence_holder", "permissions", "licence_issuer", "jurisdiction_of_licence"]
-	}
+    }
+	},
+  "required": ["source_url", "sample_date", "licence_holder", "permissions", "licence_issuer", "jurisdiction_of_licence"]
 }

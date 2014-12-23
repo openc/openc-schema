@@ -1,0 +1,42 @@
+{
+    "confidence": "HIGH",
+    "licence_holder": {
+        "entity": {
+            "address": {
+                "address_type": "trading",
+                "locality": "BRONX",
+                "postal_code": "10469",
+                "region": "NY",
+                "street_address": "1816, EAST GUNHILL ROAD"
+            },
+            "alternative_names": [
+                {
+                    "company_name": "CHUCK E. CHEESE'S",
+                    "type": "trading"
+                }
+            ],
+            "jurisdiction": "us_ny",
+            "name": "CEC ENTERTAINMENT, INC.",
+            "telephone": "(972) 258-5807"
+        },
+        "entity_type": "company"
+    },
+    "licence_issuer": {
+        "jurisdiction": "New York City",
+        "name": "New York City Department of Consumer Affairs"
+    },
+    "jurisdiction_of_licence": "New York City",
+    "licence_number": "1141789",
+    "other_attributes": {
+        "address_location": "1 FL",
+        "borough": "Bronx"
+    },
+    "permissions": [
+        {
+            "activity_name": "Amusement Arcade",
+            "permission_type": "operating"
+        }
+    ],
+    "sample_date": "2014-12-09 10:29:29 +0000",
+    "source_url": "https://data.cityofnewyork.us/Business/DCA-Current-Licensees/spgx-ssye"
+}
