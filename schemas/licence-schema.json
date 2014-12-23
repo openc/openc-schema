@@ -28,6 +28,10 @@
 			"type": "string",
       "description": "A public URL for the licence"
 		},
+		"jurisdiction_of_licence": {
+			"type": "string",
+      "description": "The area in which this licence is valid"
+		},
 		"status": {
 			"type": "string",
       "description": "The status of the licence. If the licence is made up of a number of permissions, each of which has a status, store the status in the permissions field instead/as well"
@@ -37,6 +41,9 @@
 			"items": {
 				"$ref": "permission.json"
 			}
-		}
+		},
+    "other_attributes": {
+      "description": "Use for other licence attributes for which we don't yet have curated schema attributes"
+    }
 	}
 }
