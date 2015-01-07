@@ -1,5 +1,5 @@
 require 'json-schema'
-# require 'debugger'
+require 'debugger'
 
 describe "open-schemas" do
   it "should validate valid json" do
