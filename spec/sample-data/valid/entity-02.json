@@ -1,0 +1,8 @@
+/*simple person entity*/
+{
+  "name": {
+    "first_name": "John",
+    "last_name": "Smith"
+  },
+  "entity_type": "person"
+}

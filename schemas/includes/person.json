@@ -16,9 +16,9 @@
       "description": "Name of the jurisdiction in which the entity is based"
     },
     "company": {
-      "description": "Company the person is representing. NB If the licence holder is a company, and the individual is a just a contact, then use the company-schema for the entity. This is where the individual  themselves are the licence holder"
+      "description": "Company the person is representing. NB If the licence holder is a company, and the individual is a just a contact, then use the company-schema for the entity. This is where the individual  themselves are the licence holder",
       "$ref": "../company-schema.json"
-    }
+    },
     "website": {
       "type": "string",
       "minLength": 5

@@ -5,16 +5,35 @@
 	"properties": {
 		"licence_holder": {
       "entity": {
+        "type": "object",
+        "description": "An entity of some sort"
         "oneOf": [
-          {"$ref": "company-schema.json"},
-          {"$ref": "includes/person.json"},
-          {"$ref": "includes/organisation.json"},
-          {"$ref": "includes/unknown_entity_type.json"}
+          {"allOf":
+            [
+              {"$ref": "company-schema.json"},
+              {"type": "string", "enum": ["company"]}
+            ]
+          },
+          {"allOf":
+            [
+              {"$ref": "includes/person.json"},
+              {"type": "string", "enum": ["person"]}
+            ]
+          },
+          {"allOf":
+            [
+              {"$ref": "organisation.json"},
+              {"type": "string", "enum": ["organisation"]}
+            ]
+          },
+          {"allOf":
+            [
+              {"$ref": "company-schema.json"},
+              {"type": "string", "enum": ["unknown_entity_type", "null"]}
+            ]
+          }
         ]
       },
-      "entity_type": {
-        "enum": ["company", "person", "organisation", "unknown_entity_type", null]
-      }
 		},
 		"licence_issuer": {
       "oneOf": [

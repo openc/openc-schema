@@ -1,0 +1,31 @@
+{ "title": "Entity schema",
+  "type": "object",
+  "description": "A type of entity e.g. a Company, Person, Organisation (e.g. govt, local authority, association), or entity of unkown type, e.g. John Lewis could be a Person or a Company",
+  "oneOf": [
+    {"allOf":
+      [
+        {"properties": {"entity_type": {"type": "string", "enum": ["company"]}}},
+        {"$ref": "company-schema.json"}
+      ]
+    },
+    {"allOf":
+      [
+        {"$ref": "includes/person.json"},
+        {"type": "string", "enum": ["person"]}
+      ]
+    },
+    {"allOf":
+      [
+        {"$ref": "includes/organisation.json"},
+        {"type": "string", "enum": ["organisation"]}
+      ]
+    },
+    {"allOf":
+      [
+        {"$ref": "includes/unknown_entity_type.json"},
+        {"type": "string", "enum": ["unknown_entity_type", null]}
+      ]
+    }
+  ]
+
+}
