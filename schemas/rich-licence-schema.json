@@ -4,16 +4,18 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "properties": {
     "licence_holder": {
-      "entity": {
-        "oneOf": [
-          {"$ref": "company-schema.json"},
-          {"$ref": "includes/person.json"},
-          {"$ref": "includes/organisation.json"},
-          {"$ref": "includes/unknown_entity_type.json"}
-        ]
-      },
-      "entity_type": {
-        "enum": ["company", "person", "organisation", "unknown_entity_type", null]
+      "properties": {
+        "entity": {
+          "oneOf": [
+            {"$ref": "company-schema.json"},
+            {"$ref": "includes/person.json"},
+            {"$ref": "includes/organisation.json"},
+            {"$ref": "includes/unknown_entity_type.json"}
+          ]
+        },
+        "entity_type": {
+          "enum": ["company", "person", "organisation", "unknown_entity_type", null]
+        }
       }
     },
     "licence_issuer": {
