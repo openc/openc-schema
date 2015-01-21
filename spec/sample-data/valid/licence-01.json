@@ -1,8 +1,9 @@
 { "company":
   {
-  "name": "CENTRAL BANK",
-  "jurisdiction": "IA"
+    "name": "CENTRAL BANK",
+    "jurisdiction": "IA"
   },
+  "sample_date": "2014-12-31",
   "data": [
     { "data_type": "licence",
       "properties": {

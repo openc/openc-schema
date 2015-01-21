@@ -4,6 +4,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
+    "sample_date": {"type": "string", "format": "date"},
     "source_jurisdiction": {
       "description": "Jurisdiction of the source of the data",
       "type": "string"
@@ -20,8 +21,5 @@
       "additionalItems": false
     }
   },
-  "required": [
-    "company",
-    "data"
-  ]
+  "required": ["company", "data", "sample_date"]
 }

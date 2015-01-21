@@ -9,7 +9,8 @@
         },
         "sample_date": {
             "description": "Date on which this fact was known to be true",
-            "type": "string"
+            "type": "string",
+            "format": "date"
         }
     },
     "required": ["source_url", "sample_date"],
