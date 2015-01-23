@@ -7,10 +7,27 @@
       "properties": {
         "entity": {
           "oneOf": [
-            {"$ref": "company-schema.json"},
-            {"$ref": "includes/person.json"},
-            {"$ref": "includes/organisation.json"},
-            {"$ref": "includes/unknown_entity_type.json"}
+            {
+              "properties": {
+                "entity_type": {"enum": ["company"]},
+                "entity_properties": {"$ref": "includes/company-for-nesting.json"}
+              }
+            }, {
+                "properties": {
+                "entity_type": {"enum": ["person"]},
+                "entity_properties": {"$ref": "includes/person.json"}
+              }
+            }, {
+                "properties": {
+                "entity_type": {"enum": ["organisation"]},
+                "entity_properties": {"$ref": "includes/organisation.json"}
+              }
+            }, {
+                "properties": {
+                "entity_type": {"enum": ["unknown"]},
+                "entity_properties": {"$ref": "includes/unknown_entity_type.json"}
+              }
+            }
           ]
         },
         "entity_type": {
