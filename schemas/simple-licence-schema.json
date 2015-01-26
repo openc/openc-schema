@@ -10,8 +10,8 @@
     },
     "sample_date": {
       "description": "Date on which this fact was known to be true",
-      "type": "date",
-      "minLength": 1
+      "type": "string",
+      "format": "date"
     },
     "confidence": {
       "description": "Confidence in accuracy of data",

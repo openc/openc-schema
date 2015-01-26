@@ -11,15 +11,17 @@
     "sample_date": {
       "description": "Date on which this fact was known to be true",
       "type": "string",
-      "minLength": 1
+      "format": "date"
     },
     "start_date": {
       "description": "Earliest known date this was known to be a subsidiary",
-      "type": "string"
+      "type": "string",
+      "format": "date"
     },
     "end_date": {
       "description": "Latest known date this was known to be a subsidiary",
-      "type": "string"
+      "type": "string",
+      "format": "date"
     },
     "confidence": {
       "description": "Confidence in accuracy of data",

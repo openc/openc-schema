@@ -1,8 +1,9 @@
 { "company":
   {
-  "name": "Some suppplier",
-  "jurisdiction": "France"
+    "name": "Some suppplier",
+    "jurisdiction": "France"
   },
+  "sample_date": "2014-12-31",
   "data": [
     { "data_type": "financial_payment",
       "properties": {

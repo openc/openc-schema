@@ -3,7 +3,8 @@
     "name": "BP Europa SE",
     "jurisdiction": "Spain"
   },
-  "start_date": "2013/07/06",
+  "sample_date": "2014-02-01",
+  "start_date": "2013-07-06",
   "start_date_type": "before",
   "data": [
     {
