@@ -2,11 +2,14 @@
   "name": "Identifier",
   "description": "An identifier for an entity (possibly other things, e.g. securities in the future). Examples are tax IDs, non-profit IDs, SEC CIK numbers, Federal Reserve RSSD id. The main requirements for an identifier is that they should be well-defined, and issued by a government or have statutory standing",
   "type": "object",
-  "properties": { "code": { "type": "string" },
-                  "code_scheme_id": {
-                    "type": "string",
-                    "description": "An identifier representing the identifier scheme. Some examples of this are us_fein (US Federal tax number), us_sec_cik (US Securities and Exchange Commission CIK), gb_ccew (Charity Commission of England & Wales), lei (Global Legal Entity Identifier Schems)"
-                   }
+  "properties": {
+    "uid": {
+      "type": "string"
+    },
+    "identifier_system_code": {
+      "type": "string",
+      "description": "An identifier representing the identifier system. Some examples of this are us_fein (US Federal tax number), us_sec_cik (US Securities and Exchange Commission CIK), gb_ew_cc (Charity Commission of England & Wales), lei (Global Legal Entity Identifier Scheme). For a current list see http://api.opencorporates.com/identifier_systems"
+    }
   },
-  "required": [ "code", "code_scheme_id" ]
+  "required": [ "uid", "identifier_system_code" ]
 }

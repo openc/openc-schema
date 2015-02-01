@@ -87,6 +87,12 @@
         "$ref": "includes/industry_code.json"
       }
     },
+    "identifiers": {
+      "type": "array",
+      "items": {
+        "$ref": "includes/identifier.json"
+      }
+    },
     "previous_names": {
       "type": "array",
       "items": {

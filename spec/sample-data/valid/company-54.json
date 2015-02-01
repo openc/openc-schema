@@ -1,0 +1,16 @@
+/*valid identifiers*/
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "ie",
+  "identifiers": [
+    {
+      "uid": "1234",
+      "identifier_system_code": "us_cage"
+    },
+    {
+      "uid": "9429041591925",
+      "identifier_system_code": "nz_bn"
+    }
+  ]
+}
