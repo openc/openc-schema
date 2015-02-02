@@ -2,7 +2,7 @@
     "confidence": "HIGH",
     "licence_holder": {
         "entity": {
-            "entity_type": "company"
+            "entity_type": "company",
             "entity_properties": {
                 "address": {
                     "locality": "INDIO",

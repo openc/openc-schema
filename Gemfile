@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 group :test do
   gem "rspec"
-  gem 'json-schema', '2.5.0' # this must match the version used by turbot-runner
+  gem 'openc-json_schema', :git => 'https://github.com/openc/openc-json_schema'
   # gem 'debugger'
   gem 'rake'
 end
