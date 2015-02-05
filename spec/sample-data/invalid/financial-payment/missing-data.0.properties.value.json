@@ -1,0 +1,25 @@
+{
+  "company": {
+    "name": "Some suppplier",
+    "jurisdiction": "France"
+  },
+  "data": [
+    {
+      "data_type": "financial_payment",
+      "properties": {
+        "currency": "GBP",
+        "transaction_number": "ABC1224",
+        "reporting_date": "2014-06-01",
+        "jurisdiction": "gb",
+        "more_details_url": "http://spendnetwork.com/trans_id/12345",
+        "description": "some big project",
+        "payee_name": "Govt Jobs R Us Inc",
+        "entity_name": "Efficiency Agency",
+        "department_name": "Department Of Everything",
+        "date": "2012-10-22"
+      },
+      "source_url": "http://example.com/abc123",
+      "confidence": "67"
+    }
+  ]
+}

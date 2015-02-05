@@ -1,0 +1,6 @@
+{
+  "name": "Foo Inc",
+  "jurisdiction_code": "us_de",
+  "company_number": "12345",
+  "foo": "bar"
+}

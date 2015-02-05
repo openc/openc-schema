@@ -1,9 +1,0 @@
-/*invalid number_of_employees*/
-{
-  "name": "Foo Inc",
-  "company_number": "12345",
-  "jurisdiction_code": "ie",
-  "all_attributes": {
-    "number_of_employees": ""
-  }
-}

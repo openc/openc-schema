@@ -1,17 +1,12 @@
-GIT
-  remote: https://github.com/openc/openc-json_schema
-  revision: 16b7f651246744868dfca5366f788e9d6e28b49c
-  specs:
-    openc-json_schema (0.0.1)
-      json-schema (= 2.5.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.6)
+    addressable (2.3.7)
     diff-lcs (1.2.5)
     json-schema (2.5.0)
       addressable (~> 2.3)
+    openc-json_schema (0.0.2)
+      json-schema (= 2.5.0)
     rake (10.3.2)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
@@ -30,6 +25,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  openc-json_schema!
+  openc-json_schema (= 0.0.2)
   rake
   rspec
