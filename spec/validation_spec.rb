@@ -18,12 +18,13 @@ describe "open-schemas" do
       filename = File.basename(path)
       match = filename.match(/(.*)-(.*).json/)
       error_type = match[1]
-      property_path = match[2]
+      error_path = match[2]
 
-      specify "invalid #{data_type} should fail vaildation with #{error_type} at #{property_path}" do
+      specify "invalid #{data_type} should fail vaildation with #{error_type} at #{error_path}" do
         data = JSON.parse(File.read(path))
         error = Openc::JsonSchema.validate("#{data_type}-schema.json", 'schemas', data)
-        expect(error).not_to be(nil)
+        expect(error[:type].to_s).to eq(error_type)
+        expect(error[:path]).to eq(error_path)
       end
     end
   end
