@@ -1,0 +1,9 @@
+{
+	"activity_name": "Fly fishing in the Tiber",
+	"activity_id": "ABC123",
+	"permission_type": "exploitation",
+	"restrictions": ["Not on Thursday"],
+	"other_attributes": {
+		"maximum_maggot_size": "50mm"
+	}
+}

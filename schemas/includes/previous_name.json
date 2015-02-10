@@ -1,10 +1,12 @@
 {
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "name": "PreviousName",
   "description": "A previous name of a company",
   "type": "object",
   "properties": { "company_name": { "type": "string", "minLength": 1 },
                   "con_date": {
-                    "type": "date",
+                    "type": "string",
+                    "format": "date",
                     "description": "The end (conversion) date of the name"
                    },
                   "start_date": {"type":"string","format": "date"}

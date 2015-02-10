@@ -1,5 +1,5 @@
 {
-  "name": "Identifier",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "An identifier for an entity (possibly other things, e.g. securities in the future). Examples are tax IDs, non-profit IDs, SEC CIK numbers, Federal Reserve RSSD id. The main requirements for an identifier is that they should be well-defined, and issued by a government or have statutory standing",
   "type": "object",
   "properties": { "code": { "type": "string" },

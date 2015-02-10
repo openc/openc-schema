@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Simple Licence Schema",
   "type": "object",
   "properties": {
     "source_url": {
@@ -55,5 +54,6 @@
       "enum": ["Financial", "Business"]
     }
   },
+  "additionalProperties": false,
   "required": ["source_url", "sample_date", "company_name", "company_jurisdiction"]
 }

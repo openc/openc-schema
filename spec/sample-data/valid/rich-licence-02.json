@@ -4,16 +4,9 @@
         "entity": {
             "entity_type": "company",
             "entity_properties": {
-                "address": {
-                    "locality": "INDIO",
-                    "postal_code": "92201",
-                    "region": "CA",
-                    "street_address": "82675 INDIO BLVD"
-                },
-                "alternative_names": null,
-                "jurisdiction": "CA",
                 "name": "MEZA  ALFREDO T",
-                "source_jurisdiction": "us_ca"
+		"company_number": "ZZZ95",
+                "jurisdiction_code": "us_ca"
             }
         }
     },

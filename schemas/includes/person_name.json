@@ -1,7 +1,8 @@
-{ "oneOf":
-  [
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "oneOf": [
     {
-      "type": ["string",null],
+      "type": ["string", "null"],
       "minLength": 2
     },
     {
@@ -9,34 +10,34 @@
       "type": "object",
       "properties": {
         "given_name": {
-          "type": ["string",null],
+          "type": ["string", "null"],
           "description": "The given name (often first name) of a person, as opposed to their family name. Following FOAF practice, this is preferred to first_name",
           "minLength": 1
         },
         "family_name": {
-          "type": ["string",null],
+          "type": ["string", "null"],
           "description": "The family name (often last name) of a person, as opposed to their family name. Following FOAF practice, this is preferred to last_name",
           "minLength": 1
         },
         "first_name": {
-          "type": ["string",null],
+          "type": ["string", "null"],
           "minLength": 1
         },
         "middle_name": {
-          "type": ["string",null],
+          "type": ["string", "null"],
           "minLength": 1
         },
         "last_name": {
-          "type": ["string",null],
+          "type": ["string", "null"],
           "minLength": 1
         },
         "title": {
-          "type": ["string",null],
+          "type": ["string", "null"],
           "description": "Title such as Mr, Ms, Dr etc",
           "minLength": 1
         },
         "suffixes": {
-          "type": ["string",null],
+          "type": ["string", "null"],
           "description": "Any suffixes, including degrees, honours (OBE), ordinals (John Smith Jr, Bill Jones II) etc",
           "minLength": 1
         }
@@ -44,4 +45,3 @@
     }
   ]
 }
-

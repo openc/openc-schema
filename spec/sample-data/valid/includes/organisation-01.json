@@ -1,0 +1,10 @@
+{
+	"name": "World Bank",
+	"jurisdiction": "global",
+	"website": "http://www.worldbank.org",
+	"headquarters_address": {
+		"street_address": "1818 H Street, NW",
+		"locality": "Washington, DC",
+		"postal_code": "DC 20433"
+	}
+}

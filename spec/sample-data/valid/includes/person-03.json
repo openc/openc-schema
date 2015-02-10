@@ -1,0 +1,7 @@
+{
+	"name": "John Smith",
+	"company": {
+		"name": "Foo Incorporated",
+		"company_number": "12345"
+	}
+}

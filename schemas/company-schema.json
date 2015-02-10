@@ -1,9 +1,7 @@
-
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Company Schema",
-  "type": "object",
   "description": "A company in OpenCorporates",
+  "type": "object",
   "properties": {
     "company_number": {
       "type": "string",
@@ -22,13 +20,13 @@
       "maxLength": 5
     },
     "incorporation_date": {
-      "type": "date"
+      "format": "date"
     },
     "dissolution_date": {
-      "type": "date"
+      "format": "date"
     },
     "retrieved_at": {
-      "type": "date-time"
+      "format": "date-time"
     },
     "current_status": {
       "type": "string"

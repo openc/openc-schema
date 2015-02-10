@@ -1,5 +1,5 @@
 {
-  "name": "Company",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "A company which is the subject of a statement",
   "type": "object",
   "properties": {

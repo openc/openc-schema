@@ -1,21 +1,21 @@
 {
-  "name": "Officer",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "An officer (director, senior executive) of a company",
   "type": "object",
   "properties": { "name": { "type": "string", "minLength": 1 },
                   "start_date": {
-                    "anyOf": [
-                      {"type":"string","format": "date"},
-                      {"type":"null"}
-                    ]
+                    "type": "string",
+                    "format": "date"
                   },
-                  "end_date":   {
-                    "anyOf": [
-                      {"type":"string","format": "date"},
-                      {"type":"null"}
-                    ]
+                  "end_date": {
+                    "type": "string",
+                    "format": "date"
                   },
                   "position":   { "type": "string" },
+                  "uid":   {
+                    "type": "string",
+                    "description": "a unique identifier given to the officership"
+                  },
                   "other_attributes": {
                     "type": "object",
                     "properties": {
@@ -39,10 +39,6 @@
                         "description": "The type of entity that is the officer (either 'Person' or 'Company')"
                       }
                     }
-                  },
-                  "uid":   {
-                    "type": "string",
-                    "description": "a unique identifier given to the officership"
                    }
   },
   "required": [ "name" ]

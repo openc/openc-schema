@@ -1,5 +1,5 @@
 {
-  "name": "TotalShares",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "The total number of shares a company has issued",
   "type": "object",
   "properties": { "number": { "type": "integer" },

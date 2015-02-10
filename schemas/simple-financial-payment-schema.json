@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Simple Financial Payment",
   "description": "A Financial Payment is a payment from government to a recipient",
   "type": "object",
   "properties": {
@@ -82,5 +81,6 @@
       "description": "If the source for the data is a CSV file, you can optionally include the line number of the CSV from which this data was retrieved",
       "type": ["string",null]}
   },
+  "additionalProperties": false,
   "required": ["source_url", "sample_date", "company_name", "company_jurisdiction", "value", "payee_name", "date", "currency"]
 }

@@ -1,0 +1,35 @@
+{
+    "confidence": "HIGH",
+    "licence_holder": {
+        "entity": {
+            "entity_type": "person",
+            "entity_properties": {
+                "name": "John Smith",
+                "company": {
+                    "company_number": "ABC123",
+                    "jurisdiction_code": "gb"
+                }
+            }
+        }
+    },
+    "licence_issuer": {
+        "jurisdiction": "New York City",
+        "name": "New York City Department of Consumer Affairs"
+    },
+    "jurisdiction_of_licence": "New York City",
+    "licence_number": "1141789",
+    "other_attributes": {
+        "address_location": "1 FL",
+        "borough": "Bronx"
+    },
+    "permissions": [
+        {
+            "activity_name": "Amusement Arcade",
+            "permission_type": "operating"
+        }
+    ],
+    "sample_date": "2014-12-09",
+    "source_url": "https://data.cityofnewyork.us/Business/DCA-Current-Licensees/spgx-ssye"
+}
+
+

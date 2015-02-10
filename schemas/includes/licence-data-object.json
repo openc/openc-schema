@@ -1,5 +1,5 @@
 {
-  "name": "Licence Data",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
     "data_type": { "enum": [ "licence" ] },

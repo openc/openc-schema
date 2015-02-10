@@ -1,5 +1,5 @@
 {
-  "name": "Share Parcel",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "description": "A parcel of shares in a company",
     "required": ["shareholders"],

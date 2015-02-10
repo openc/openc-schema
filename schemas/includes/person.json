@@ -1,15 +1,10 @@
 {
-  "title": "Person",
-  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "A person, for example, referenced in some other context, e.g. director of a company, shareholder, licence-holder, lobbyist. This should be used only if the person is the subject of the datum",
+  "type": "object",
   "properties": {
     "name": {
-      "oneOf": [
-        { "type": "string",
-          "minLength": 1
-        },
-        { "$ref": "person_name.json" }
-      ]
+        "$ref": "person_name.json"
     },
     "jurisdiction": {
       "type": "string",
@@ -17,7 +12,7 @@
     },
     "company": {
       "description": "Company the person is representing. NB If the licence holder is a company, and the individual is a just a contact, then use the company-schema for the entity. This is where the individual  themselves are the licence holder",
-      "$ref": "../company-schema.json"
+      "$ref": "company-for-nesting.json"
     },
     "relationship_with_company": {
         "enum": ["employee", "director", "shareholder", null]

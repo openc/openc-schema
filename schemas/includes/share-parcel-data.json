@@ -1,5 +1,5 @@
 {
-  "name": "Share Parcel Data",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
     "data_type": { "enum": [ "share_parcel" ] },

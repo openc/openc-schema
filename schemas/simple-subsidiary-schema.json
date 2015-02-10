@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Simple Subsidiary Schema",
   "type": "object",
   "properties": {
     "source_url": {
@@ -66,5 +65,6 @@
       "type": "string"
     }
   },
+  "additionalProperties": false,
   "required": ["source_url", "sample_date", "parent_name", "parent_jurisdiction", "subsidiary_name", "subsidiary_jurisdiction"]
 }

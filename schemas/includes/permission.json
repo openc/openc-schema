@@ -1,4 +1,6 @@
-{ "oneOf":
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "oneOf":
   [
     {
       "type": ["string","null"],
@@ -18,7 +20,9 @@
                                         "description":"conditions or restrictions on the permissions",
                                         "items": { "type":"string" }
                                       },
-                      "other_attributes": { }
+                      "other_attributes": {
+			      "type": "object"
+		      }
       },
       "required": ["activity_name"]
     }

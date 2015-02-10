@@ -1,5 +1,5 @@
 {
-  "name": "IndustryCode",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "An industry code from a standard code list (e.g. NAICS 2007 or NACE 2)",
   "type": "object",
   "properties": { "name": { "type": "string" },

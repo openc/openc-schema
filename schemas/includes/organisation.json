@@ -1,7 +1,7 @@
 {
-  "title": "Organisation",
-  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "An entity which is a distinct organisation, but is not a company nor an individual. Examples include governments and governmental entities (e.g. Multilateral Devoelpment Banks, Government Departments, municipalities, etc), and also membership organisations",
+  "type": "object",
   "properties": {
     "name": {
       "type": "string",
