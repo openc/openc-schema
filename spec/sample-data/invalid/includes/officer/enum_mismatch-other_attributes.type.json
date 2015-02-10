@@ -1,6 +1,6 @@
 {
-	"name": "Fred",
-	"other_attributes": {
-		"type": "Alien"
-	}
+  "name": "Fred",
+  "other_attributes": {
+    "type": "Alien"
+  }
 }

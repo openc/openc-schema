@@ -1,30 +1,30 @@
 {
-    "company": {
+  "company": {
+    "jurisdiction": "gb",
+    "name": "LAFARGE AGGREGATES LTD"
+  },
+  "sample_date": "2014-12-31",
+  "data": [
+    {
+      "confidence": "80",
+      "data_type": "financial_payment",
+      "properties": {
+        "csv_line_number": "1921",
+        "currency": "GBP",
+        "date": "2012-09-01",
+        "department_name": null,
+        "description": null,
+        "entity_name": "Norfolk County Council",
+        "entity_uri": null,
+        "expense_area": null,
         "jurisdiction": "gb",
-        "name": "LAFARGE AGGREGATES LTD"
-    },
-    "sample_date": "2014-12-31",
-    "data": [
-        {
-            "confidence": "80",
-            "data_type": "financial_payment",
-            "properties": {
-                "csv_line_number": "1921",
-                "currency": "GBP",
-                "date": "2012-09-01",
-                "department_name": null,
-                "description": null,
-                "entity_name": "Norfolk County Council",
-                "entity_uri": null,
-                "expense_area": null,
-                "jurisdiction": "gb",
-                "more_details_url": "https://spendnetwork.com/transaction_detail/E2620_NCC_gov_2012_09_1921",
-                "payee_name": "LAFARGE AGGREGATES LTD",
-                "transaction_number": "E2620_NCC_gov_2012_09_1921",
-                "uid": "4182095",
-                "value": "491.54"
-            },
-            "source_url": "https://spendnetwork.com/transaction_detail/E2620_NCC_gov_2012_09_1921"
-        }
-    ]
+        "more_details_url": "https://spendnetwork.com/transaction_detail/E2620_NCC_gov_2012_09_1921",
+        "payee_name": "LAFARGE AGGREGATES LTD",
+        "transaction_number": "E2620_NCC_gov_2012_09_1921",
+        "uid": "4182095",
+        "value": "491.54"
+      },
+      "source_url": "https://spendnetwork.com/transaction_detail/E2620_NCC_gov_2012_09_1921"
+    }
+  ]
 }

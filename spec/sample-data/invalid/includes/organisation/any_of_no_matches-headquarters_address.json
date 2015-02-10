@@ -1,9 +1,8 @@
 {
-	"name": "World Bank",
-	"jurisdiction": "global",
-	"website": "http://www.worldbank.org",
-	"headquarters_address": {
-		"locality": "Washington, DC"
-	}
+  "name": "World Bank",
+  "jurisdiction": "global",
+  "website": "http://www.worldbank.org",
+  "headquarters_address": {
+    "locality": "Washington, DC"
+  }
 }
-
