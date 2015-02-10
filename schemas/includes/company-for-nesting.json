@@ -20,13 +20,16 @@
       "maxLength": 5
     },
     "incorporation_date": {
-      "type": "date"
+      "type": "string",
+      "format": "date"
     },
     "dissolution_date": {
-      "type": "date"
+      "type": "string",
+      "format": "date"
     },
     "retrieved_at": {
-      "type": "date-time"
+      "type": "string",
+      "format": "date-time"
     },
     "current_status": {
       "type": "string"
@@ -206,9 +209,9 @@
               ]
             },
             "effective_date": {
+              "description": "The date of the merger",
               "type": "string",
-              "format": "date",
-              "description": "The date of the merger"
+              "format": "date"
             }
           },
           "additionalProperties": false,

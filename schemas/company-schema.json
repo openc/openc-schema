@@ -20,12 +20,15 @@
       "maxLength": 5
     },
     "incorporation_date": {
+      "type": "string",
       "format": "date"
     },
     "dissolution_date": {
+      "type": "string",
       "format": "date"
     },
     "retrieved_at": {
+      "type": "string",
       "format": "date-time"
     },
     "current_status": {
