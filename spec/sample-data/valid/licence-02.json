@@ -1,25 +1,40 @@
 {
-  "company": {
-    "name": "CENTRAL BANK",
-    "jurisdiction": "IA",
-    "identifier": "abc/123",
-    "company_number": "12345"
-  },
-  "sample_date": "2014-12-31",
-  "data": [
-    {
-      "data_type": "licence",
-      "properties": {
-        "category": "Financial",
-        "licence_number": "ABC123",
-        "jurisdiction_classification": [
-          "Bank"
-        ],
-        "jurisdiction_code": "France",
-        "sample_date": "2014-06-01"
-      },
-      "source_url": "http://example.com/abc123",
-      "confidence": "67"
+  "confidence": "HIGH",
+  "licence_holder": {
+    "entity": {
+      "entity_type": "company",
+      "entity_properties": {
+        "name": "MEZA  ALFREDO T",
+        "company_number": "ZZZ95",
+        "jurisdiction_code": "us_ca"
+      }
     }
-  ]
+  },
+  "licence_issuer": {
+    "jurisdiction": "us_ca",
+    "name": "California Alcoholic Beverage Control"
+  },
+  "licence_number": "00100196",
+  "other_attributes": {
+    "district_office_code": "08",
+    "duplicate_counts": "",
+    "fee_codes": "P40",
+    "geo_code": "3309",
+    "master_indicator": "Y",
+    "premise_census_tract": "0455.02",
+    "premise_county": "RIVERSIDE",
+    "term_in_months": "12"
+  },
+  "jurisdiction_of_licence": "us_ca",
+  "permissions": [
+    {
+      "activity_name": "Off-Sale Beer and Wine",
+      "permission_type": "operating"
+    }
+  ],
+  "sample_date": "2015-01-05",
+  "source_url": "http://www.abc.ca.gov/datport/DataExport.html",
+  "start_date": "1981-01-21",
+  "end_date": "2015-06-30",
+  "status": "ACTIVE"
 }
