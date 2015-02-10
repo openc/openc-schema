@@ -52,6 +52,7 @@
       }
     }
   },
-  "required": ["name"]
+  "required": [
+    "name"
+  ]
 }
-

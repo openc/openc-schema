@@ -3,7 +3,10 @@
   "description": "A Financial-Payment is a payment from government to a recipient",
   "type": "object",
   "properties": {
-    "sample_date": {"type": "string", "format": "date"},
+    "sample_date": {
+      "type": "string",
+      "format": "date"
+    },
     "source_jurisdiction": {
       "description": "Jurisdiction of the source of the data",
       "type": "string"
@@ -21,5 +24,9 @@
     }
   },
   "additionalProperties": false,
-  "required": ["company", "data", "sample_date"]
+  "required": [
+    "company",
+    "data",
+    "sample_date"
+  ]
 }

@@ -8,39 +8,77 @@
           "oneOf": [
             {
               "properties": {
-                "entity_type": {"enum": ["company"]},
-                "entity_properties": {"$ref": "includes/company-for-nesting.json"}
+                "entity_type": {
+                  "enum": [
+                    "company"
+                  ]
+                },
+                "entity_properties": {
+                  "$ref": "includes/company-for-nesting.json"
+                }
               }
-            }, {
-                "properties": {
-                "entity_type": {"enum": ["person"]},
-                "entity_properties": {"$ref": "includes/person.json"}
+            },
+            {
+              "properties": {
+                "entity_type": {
+                  "enum": [
+                    "person"
+                  ]
+                },
+                "entity_properties": {
+                  "$ref": "includes/person.json"
+                }
               }
-            }, {
-                "properties": {
-                "entity_type": {"enum": ["organisation"]},
-                "entity_properties": {"$ref": "includes/organisation.json"}
+            },
+            {
+              "properties": {
+                "entity_type": {
+                  "enum": [
+                    "organisation"
+                  ]
+                },
+                "entity_properties": {
+                  "$ref": "includes/organisation.json"
+                }
               }
-            }, {
-                "properties": {
-                "entity_type": {"enum": ["unknown"]},
-                "entity_properties": {"$ref": "includes/unknown_entity_type.json"}
+            },
+            {
+              "properties": {
+                "entity_type": {
+                  "enum": [
+                    "unknown"
+                  ]
+                },
+                "entity_properties": {
+                  "$ref": "includes/unknown_entity_type.json"
+                }
               }
             }
           ]
         },
         "entity_type": {
-          "enum": ["company", "person", "organisation", "unknown_entity_type", null]
+          "enum": [
+            "company",
+            "person",
+            "organisation",
+            "unknown_entity_type",
+            null
+          ]
         }
       }
     },
     "licence_issuer": {
       "oneOf": [
         {
-          "type": ["string","null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "minLength": 2
         },
-        {"$ref": "includes/organisation.json"}
+        {
+          "$ref": "includes/organisation.json"
+        }
       ]
     },
     "licenced_location": {
@@ -51,13 +89,13 @@
     },
     "start_date": {
       "description": "The issue date of the licence",
-              "type": "string",
-              "format": "date"
+      "type": "string",
+      "format": "date"
     },
     "end_date": {
       "description": "The expiry date of the licence",
-              "type": "string",
-              "format": "date"
+      "type": "string",
+      "format": "date"
     },
     "source_url": {
       "description": "Place where this fact can be verified",
@@ -67,11 +105,15 @@
     "confidence": {
       "description": "Confidence in accuracy of data",
       "type": "string",
-      "enum": ["HIGH", "MEDIUM", "LOW"]
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
     },
     "renewal_date": {
-              "type": "string",
-              "format": "date"
+      "type": "string",
+      "format": "date"
     },
     "sample_date": {
       "description": "Date on which we know this to be true (usually date this information was retrieved from the source)",
@@ -95,7 +137,11 @@
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["Financial", "Business", "Extractive"]
+        "enum": [
+          "Financial",
+          "Business",
+          "Extractive"
+        ]
       }
     },
     "permissions": {
@@ -110,5 +156,12 @@
     }
   },
   "additionalProperties": false,
-  "required": ["source_url", "sample_date", "licence_holder", "permissions", "licence_issuer", "jurisdiction_of_licence"]
+  "required": [
+    "source_url",
+    "sample_date",
+    "licence_holder",
+    "permissions",
+    "licence_issuer",
+    "jurisdiction_of_licence"
+  ]
 }

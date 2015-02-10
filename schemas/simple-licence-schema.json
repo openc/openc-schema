@@ -15,7 +15,11 @@
     "confidence": {
       "description": "Confidence in accuracy of data",
       "type": "string",
-      "enum": ["HIGH", "MEDIUM", "LOW"]
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
     },
     "company_name": {
       "description": "Name of the company holding the licence",
@@ -33,7 +37,10 @@
     },
     "jurisdiction_classification": {
       "description": "Description of how regulator classifies licence",
-      "type": ["string", "array"]
+      "type": [
+        "string",
+        "array"
+      ]
     },
     "regulator": {
       "description": "The regulating body that issued the licence",
@@ -51,9 +58,17 @@
     "category": {
       "description": "Category of licence",
       "type": "string",
-      "enum": ["Financial", "Business"]
+      "enum": [
+        "Financial",
+        "Business"
+      ]
     }
   },
   "additionalProperties": false,
-  "required": ["source_url", "sample_date", "company_name", "company_jurisdiction"]
+  "required": [
+    "source_url",
+    "sample_date",
+    "company_name",
+    "company_jurisdiction"
+  ]
 }

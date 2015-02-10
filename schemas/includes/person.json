@@ -4,7 +4,7 @@
   "type": "object",
   "properties": {
     "name": {
-        "$ref": "person_name.json"
+      "$ref": "person_name.json"
     },
     "jurisdiction": {
       "type": "string",
@@ -15,7 +15,12 @@
       "$ref": "company-for-nesting.json"
     },
     "relationship_with_company": {
-        "enum": ["employee", "director", "shareholder", null]
+      "enum": [
+        "employee",
+        "director",
+        "shareholder",
+        null
+      ]
     },
     "website": {
       "type": "string",
@@ -51,6 +56,7 @@
       }
     }
   },
-  "required": ["name"]
+  "required": [
+    "name"
+  ]
 }
-

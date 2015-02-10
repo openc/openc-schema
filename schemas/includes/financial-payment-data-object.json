@@ -2,59 +2,111 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "data_type": { "enum": [ "financial_payment" ] },
+    "data_type": {
+      "enum": [
+        "financial_payment"
+      ]
+    },
     "source_url": {
-      "type": "string"},
+      "type": "string"
+    },
     "confidence": {
-      "type": "string"},
+      "type": "string"
+    },
     "properties": {
       "type": "object",
       "properties": {
         "value": {
           "description": "The amount transacted (e.g. 19.95)",
-          "type": "string"},
+          "type": "string"
+        },
         "payee_name": {
           "description": "The name of the payee (the entity that received the money)",
-          "type": "string"},
+          "type": "string"
+        },
         "currency": {
           "description": "The currency of the payment (three letter symbol, e.g. USD, GBP, EUR)",
-          "type": "string"},
+          "type": "string"
+        },
         "date": {
           "description": "The date on which the payment was made",
-          "type": "date"},
+          "type": "date"
+        },
         "transaction_number": {
           "description": "The unique identifier for the transaction, scoped to this bot",
-          "type": "string"},
+          "type": "string"
+        },
         "jurisdiction": {
           "description": "The jurisdiction of the body that made the payment, eg. UK, France, Delaware, Manchester",
-          "type": "string"},
+          "type": "string"
+        },
         "more_details_url": {
           "description": "A url from which more details can be seen (may be the same as the source_url)",
-          "type": ["string",null]},
+          "type": [
+            "string",
+            null
+          ]
+        },
         "description": {
           "description": "The description of the transaction as given in the raw data",
-          "type": ["string",null]},
+          "type": [
+            "string",
+            null
+          ]
+        },
         "expense_type": {
           "description": "The type of expense -- can be either capital, revenue (i.e. current expenditure) or null",
-          "enum": ["capital","revenue",null]},
+          "enum": [
+            "capital",
+            "revenue",
+            null
+          ]
+        },
         "expense_area": {
           "description": "category (in words) of the expenditure",
-          "type": ["string",null]},
+          "type": [
+            "string",
+            null
+          ]
+        },
         "entity_name": {
           "description": "The name of the government entity that made the payment, e.g. Environment Agency",
-          "type": "string"},
+          "type": "string"
+        },
         "entity_uri": {
           "description": "A unique URL (ideally a dereferencable URI) for the government entity",
-          "type": ["string",null]},
+          "type": [
+            "string",
+            null
+          ]
+        },
         "department_name": {
           "description": "The name of the government department which the entity belongs to (if relevant), e.g. Department of Health",
-          "type": ["string",null]},
+          "type": [
+            "string",
+            null
+          ]
+        },
         "csv_line_number": {
           "description": "If the source for the data is a CSV file, you can optionally include the line number of the CSV from which this data was retrieved",
-          "type": ["string",null]}
+          "type": [
+            "string",
+            null
+          ]
+        }
       },
-      "required": [ "value", "payee_name", "date","currency" ]
+      "required": [
+        "value",
+        "payee_name",
+        "date",
+        "currency"
+      ]
     }
   },
-  "required": [ "data_type", "properties","source_url","confidence" ]
+  "required": [
+    "data_type",
+    "properties",
+    "source_url",
+    "confidence"
+  ]
 }

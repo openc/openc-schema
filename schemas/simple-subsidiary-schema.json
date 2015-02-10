@@ -25,7 +25,11 @@
     "confidence": {
       "description": "Confidence in accuracy of data",
       "type": "string",
-      "enum": ["HIGH", "MEDIUM", "LOW"]
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
     },
     "parent_name": {
       "description": "Name of the controlling company",
@@ -66,5 +70,12 @@
     }
   },
   "additionalProperties": false,
-  "required": ["source_url", "sample_date", "parent_name", "parent_jurisdiction", "subsidiary_name", "subsidiary_jurisdiction"]
+  "required": [
+    "source_url",
+    "sample_date",
+    "parent_name",
+    "parent_jurisdiction",
+    "subsidiary_name",
+    "subsidiary_jurisdiction"
+  ]
 }

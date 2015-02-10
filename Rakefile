@@ -43,4 +43,15 @@ task :run_validation_specs do
   Rake::Task['default'].invoke
 end
 
+desc 'Rewrite schema files with consistent formatting'
+task :format_schemas do
+  def format_schema(path)
+    data = JSON.parse(File.read(path))
+    File.open(path, 'w') do |f|
+      f.write(JSON.pretty_generate(data))
+    end
+  end
 
+  Dir.glob(File.join('schemas', '*.json')).each {|path| format_schema(path)}
+  Dir.glob(File.join('schemas', 'includes', '*.json')).each {|path| format_schema(path)}
+end

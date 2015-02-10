@@ -3,9 +3,18 @@
   "description": "A Licence is a permission for an entity to do something that would otherwise not be permitted. An example is a 'Financial' licence to operate as a bank, or an financial advisor, for example, or a 'Business' Licence to sell alcohol, or operate an amusement arcade. Future licence types (extractives, pollution) will be added later",
   "type": "object",
   "properties": {
-    "sample_date": {"type": "string", "format": "date"},
-    "start_date": {"type": "string", "format": "date"},
-    "end_date": {"type": "string", "format": "date"},
+    "sample_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
     "source_jurisdiction": {
       "description": "Jurisdiction of the source of the data",
       "type": "string"
@@ -23,5 +32,9 @@
     }
   },
   "additionalProperties": false,
-  "required": ["company", "data", "sample_date"]
+  "required": [
+    "company",
+    "data",
+    "sample_date"
+  ]
 }

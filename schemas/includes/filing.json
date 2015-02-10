@@ -2,19 +2,51 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "A statutory filing",
   "type": "object",
-  "properties": { "title": { "type": "string" },
-                  "date": {"type":"string","format": "date"},
-                  "description":   { "type": "string" },
-                  "uid":   { "type": "string" },
-                  "url":   { "type": "string" },
-                  "filing_type_code":   { "type": "string" },
-                  "filing_type_name":   { "type": "string" },
-                  "other_attributes": { "type": "object" }
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "description": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "filing_type_code": {
+      "type": "string"
+    },
+    "filing_type_name": {
+      "type": "string"
+    },
+    "other_attributes": {
+      "type": "object"
+    }
   },
-  "required": [ "date" ],
-  "anyOf": [ { "required": ["title"] },
-             { "required": ["description"] },
-             { "required": ["filing_type_name"] }
-           ]
+  "required": [
+    "date"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "title"
+      ]
+    },
+    {
+      "required": [
+        "description"
+      ]
+    },
+    {
+      "required": [
+        "filing_type_name"
+      ]
+    }
+  ]
 }
-
