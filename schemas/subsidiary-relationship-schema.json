@@ -1,12 +1,26 @@
 {
-  "title": "Subsidiary Relationship",
-  "description": "A relationship of control between two companies",
   "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A relationship of control between two companies",
   "type": "object",
   "properties": {
-    "sample_date": {"type": "string", "format": "date"},
-    "start_date": {"type": "string", "format": "date"},
-    "end_date": {"type": "string", "format": "date"},
+    "sample_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "start_date_type": {
+      "type": "string"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date_type": {
+      "type": "string"
+    },
     "source_jurisdiction": {
       "description": "Jurisdiction of the source of the data",
       "type": "string"
@@ -23,5 +37,10 @@
       "additionalItems": false
     }
   },
-  "required": ["company", "data", "sample_date"]
+  "additionalProperties": false,
+  "required": [
+    "company",
+    "data",
+    "sample_date"
+  ]
 }

@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Simple Subsidiary Schema",
   "type": "object",
   "properties": {
     "source_url": {
@@ -26,7 +25,11 @@
     "confidence": {
       "description": "Confidence in accuracy of data",
       "type": "string",
-      "enum": ["HIGH", "MEDIUM", "LOW"]
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
     },
     "parent_name": {
       "description": "Name of the controlling company",
@@ -66,5 +69,13 @@
       "type": "string"
     }
   },
-  "required": ["source_url", "sample_date", "parent_name", "parent_jurisdiction", "subsidiary_name", "subsidiary_jurisdiction"]
+  "additionalProperties": false,
+  "required": [
+    "source_url",
+    "sample_date",
+    "parent_name",
+    "parent_jurisdiction",
+    "subsidiary_name",
+    "subsidiary_jurisdiction"
+  ]
 }

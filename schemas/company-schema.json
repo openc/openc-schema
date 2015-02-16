@@ -1,9 +1,7 @@
-
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Company Schema",
-  "type": "object",
   "description": "A company in OpenCorporates",
+  "type": "object",
   "properties": {
     "company_number": {
       "type": "string",
@@ -22,13 +20,16 @@
       "maxLength": 5
     },
     "incorporation_date": {
-      "type": "date"
+      "type": "string",
+      "format": "date"
     },
     "dissolution_date": {
-      "type": "date"
+      "type": "string",
+      "format": "date"
     },
     "retrieved_at": {
-      "type": "date-time"
+      "type": "string",
+      "format": "date-time"
     },
     "current_status": {
       "type": "string"
@@ -100,43 +101,71 @@
       }
     },
     "branch": {
-      "type": ["string","null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "A flag to denote whether a company is a branch entity. This should only be set if the company is a type of branch (otherwise should be null). In general the only option here is 'F' for a 'Foreign' branch, i.e. an out-of-jurisdiction entity that has registered as having a presence in the jurisdiction. In the US this is sometimes called a Foreign Corporation",
-      "enum": ["F", "L",null]
+      "enum": [
+        "F",
+        "L",
+        null
+      ]
     },
     "all_attributes": {
       "type": "object",
       "description": "Other arbitrary attributes for a given company",
       "properties": {
         "jurisdiction_of_origin": {
-          "type": ["string","null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "The jurisdiction of the 'home' company if this is a branch",
           "minLength": 1
         },
         "home_company_number": {
-          "type": ["string","null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "If the entity is a 'branch', this is the company_number of the 'home' company in the home company's jurisdiction",
           "minLength": 1
         },
         "home_legal_name": {
-          "type": ["string","null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "The legal name of the 'home' company in its jurisdiction if this is a branch, and the name is different from the legal name of the branch",
           "minLength": 1
         },
         "registered_agent_address": {
-          "type": ["string","null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "The address of the 'Agent', a public address to which legal papers can be served",
           "minLength": 1
         },
         "registered_agent_name": {
-          "type": ["string","null"],
-          "description": "The 'Agent' of the company \u2013 a person or entity that is empowered to accept service for the company",
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The 'Agent' of the company – a person or entity that is empowered to accept service for the company",
           "minLength": 1
         },
         "number_of_employees": {
           "anyOf": [
-            {"type":"string","minLength": 1},
-            {"type":"number","minimum": 0}
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "number",
+              "minimum": 0
+            }
           ],
           "description": "The number of employees"
         },
@@ -145,7 +174,9 @@
           "description": "Information on the merger of this company into a 'survivor' company",
           "properties": {
             "surviving_company": {
-              "type": ["object"],
+              "type": [
+                "object"
+              ],
               "description": "the surviving_company that this has been merged into",
               "properties": {
                 "name": {
@@ -164,8 +195,18 @@
                   "minLength": 2
                 }
               },
-              "anyOf": [{"required": ["name"]},
-                        {"required": ["company_number"]}]
+              "anyOf": [
+                {
+                  "required": [
+                    "name"
+                  ]
+                },
+                {
+                  "required": [
+                    "company_number"
+                  ]
+                }
+              ]
             },
             "effective_date": {
               "type": "string",
@@ -174,11 +215,17 @@
             }
           },
           "additionalProperties": false,
-          "required": ["surviving_company"]
+          "required": [
+            "surviving_company"
+          ]
         }
       }
     }
   },
   "additionalProperties": false,
-  "required": ["company_number", "name", "jurisdiction_code"]
+  "required": [
+    "company_number",
+    "name",
+    "jurisdiction_code"
+  ]
 }

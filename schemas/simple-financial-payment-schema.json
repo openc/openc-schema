@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Simple Financial Payment",
   "description": "A Financial Payment is a payment from government to a recipient",
   "type": "object",
   "properties": {
@@ -16,7 +15,11 @@
     "confidence": {
       "description": "Confidence in accuracy of data",
       "type": "string",
-      "enum": ["HIGH", "MEDIUM", "LOW"]
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
     },
     "company_name": {
       "description": "Name of the company that received the money",
@@ -52,19 +55,32 @@
     },
     "more_details_url": {
       "description": "A url from which more details can be seen (may be the same as the source_url)",
-      "type": ["string",null]
+      "type": [
+        "string",
+        null
+      ]
     },
     "description": {
       "description": "The description of the transaction as given in the raw data",
-      "type": ["string",null]
+      "type": [
+        "string",
+        null
+      ]
     },
     "expense_type": {
       "description": "The type of expense -- can be either capital, revenue (i.e. current expenditure) or null",
-      "enum": ["capital","revenue",null]
+      "enum": [
+        "capital",
+        "revenue",
+        null
+      ]
     },
     "expense_area": {
       "description": "category (in words) of the expenditure",
-      "type": ["string",null]
+      "type": [
+        "string",
+        null
+      ]
     },
     "entity_name": {
       "description": "The name of the government entity that made the payment, e.g. Environment Agency",
@@ -72,15 +88,35 @@
     },
     "entity_uri": {
       "description": "A unique URL (ideally a dereferencable URI) for the government entity",
-      "type": ["string",null]
+      "type": [
+        "string",
+        null
+      ]
     },
     "department_name": {
       "description": "The name of the government department which the entity belongs to (if relevant), e.g. Department of Health",
-      "type": ["string",null]
+      "type": [
+        "string",
+        null
+      ]
     },
     "csv_line_number": {
       "description": "If the source for the data is a CSV file, you can optionally include the line number of the CSV from which this data was retrieved",
-      "type": ["string",null]}
+      "type": [
+        "string",
+        null
+      ]
+    }
   },
-  "required": ["source_url", "sample_date", "company_name", "company_jurisdiction", "value", "payee_name", "date", "currency"]
+  "additionalProperties": false,
+  "required": [
+    "source_url",
+    "sample_date",
+    "company_name",
+    "company_jurisdiction",
+    "value",
+    "payee_name",
+    "date",
+    "currency"
+  ]
 }

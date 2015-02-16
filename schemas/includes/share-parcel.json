@@ -1,63 +1,78 @@
 {
-  "name": "Share Parcel",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "description": "A parcel of shares in a company",
-    "required": ["shareholders"],
-    "properties": {
-      "number_of_shares": {
-        "description": "Number of shares, if known",
-        "type": "integer"},
-      "percentage_of_shares": {
-        "description": "Percentage of shares, if known",
-        "type": "number",
-        "maximum": 100,
-        "minimum": 0
-      },
-      "start_date": {"type":"string","format": "date"},
-      "end_date": {"type":"string","format": "date"},
-      "sample_date": {"type":"string","format": "date"},
-      "shareholders": {
-        "description": "Legal persons who own this share parcel",
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "type": "object",
-          "name": "shareholder",
-          "required": ["name"],
-          "properties": {
-            "name": {
-              "description": "Name of natural person or company",
-              "type": "string",
-              "minLength": 1
-            },
-            "jurisdiction": {
-              "description": "Jurisdiction of registration, if company",
-              "type": "string"
-            },
-            "company_number": {
-              "description": "Company number, if company and known",
-              "type": "string"
-            },
-            "identifier": {
-              "description": "Unique identifier of person",
-              "type": "string"
-            },
-            "type": {
-              "description": "Type of person if known (company or natural person)",
-              "enum" : ["Company", "Person"]
-            },
-            "address": {
-              "description": "Address given for owner of parcel",
-              "type": "string"
-            },
-            "address_country": {
-              "description": "Country part of owner's address",
-              "type": "string"
-            }
+  "required": [
 
+  ],
+  "properties": {
+    "number_of_shares": {
+      "description": "Number of shares, if known",
+      "type": "integer"
+    },
+    "percentage_of_shares": {
+      "description": "Percentage of shares, if known",
+      "type": "number",
+      "maximum": 100,
+      "minimum": 0
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "sample_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "shareholders": {
+      "description": "Legal persons who own this share parcel",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "name": "shareholder",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "description": "Name of natural person or company",
+            "type": "string",
+            "minLength": 1
+          },
+          "jurisdiction": {
+            "description": "Jurisdiction of registration, if company",
+            "type": "string"
+          },
+          "company_number": {
+            "description": "Company number, if company and known",
+            "type": "string"
+          },
+          "identifier": {
+            "description": "Unique identifier of person",
+            "type": "string"
+          },
+          "type": {
+            "description": "Type of person if known (company or natural person)",
+            "enum": [
+              "Company",
+              "Person"
+            ]
+          },
+          "address": {
+            "description": "Address given for owner of parcel",
+            "type": "string"
+          },
+          "address_country": {
+            "description": "Country part of owner's address",
+            "type": "string"
           }
         }
+      }
     }
-  },
-  "required": [ ]
+  }
 }

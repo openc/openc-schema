@@ -1,10 +1,12 @@
 {
-  "title": "Financial-Payment",
-  "description": "A Financial-Payment is a payment from government to a recipient",
   "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A Financial-Payment is a payment from government to a recipient",
   "type": "object",
   "properties": {
-    "sample_date": {"type": "string", "format": "date"},
+    "sample_date": {
+      "type": "string",
+      "format": "date"
+    },
     "source_jurisdiction": {
       "description": "Jurisdiction of the source of the data",
       "type": "string"
@@ -21,5 +23,10 @@
       "additionalItems": false
     }
   },
-  "required": ["company", "data", "sample_date"]
+  "additionalProperties": false,
+  "required": [
+    "company",
+    "data",
+    "sample_date"
+  ]
 }

@@ -1,4 +1,3 @@
-/*valid officers*/
 {
   "name": "Foo Inc",
   "company_number": "12345",
@@ -13,8 +12,6 @@
     },
     {
       "name": "Barney Rubble",
-      "start_date": null,
-      "end_date": null,
       "other_attributes": {
         "foo": "bar"
       }

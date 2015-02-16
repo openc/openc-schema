@@ -1,4 +1,3 @@
-/*valid registered_agent_address*/
 {
   "name": "Foo Inc",
   "company_number": "12345",
@@ -6,5 +5,4 @@
   "all_attributes": {
     "registered_agent_address": null
   }
-
 }
