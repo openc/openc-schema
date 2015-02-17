@@ -4,15 +4,17 @@
   "type": "object",
   "properties": {
     "uid": {
-      "type": "string"
+      "type": "string",
+      "description": "The unique identifier given by the identifier system – it should be unique in the context of the identifier_system",
+      "minLength": 1
     },
     "identifier_system_code": {
       "type": "string",
-      "description": "An identifier representing the identifier scheme. Some examples of this are us_fein (US Federal tax number), us_sec_cik (US Securities and Exchange Commission CIK), gb_ccew (Charity Commission of England & Wales), lei (Global Legal Entity Identifier Schems)"
+      "description": "An identifier representing the identifier scheme. Some examples of this are us_fein (US Federal tax number), us_sec_cik (US Securities and Exchange Commission CIK), uk_ew_cc (Charity Commission of England & Wales), lei (Global Legal Entity Identifier System)"
     }
   },
   "required": [
-    "code",
-    "code_scheme_id"
+    "uid",
+    "identifier_system_code"
   ]
 }
