@@ -82,6 +82,12 @@
         "$ref": "includes/filing.json"
       }
     },
+    "identifiers": {
+      "type": "array",
+      "items": {
+        "$ref": "includes/identifier.json"
+      }
+    },
     "industry_codes": {
       "type": "array",
       "items": {
