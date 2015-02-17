@@ -53,57 +53,57 @@
       "minLength": 4
     },
     "registered_address": {
-      "$ref": "address.json"
+      "$ref": "includes/address.json"
     },
     "headquarters_address": {
-      "$ref": "address.json"
+      "$ref": "includes/address.json"
     },
     "mailing_address": {
-      "$ref": "address.json"
+      "$ref": "includes/address.json"
     },
     "officers": {
       "type": "array",
       "items": {
-        "$ref": "officer.json"
+        "$ref": "includes/officer.json"
       }
     },
     "share_parcels": {
       "type": "array",
       "items": {
-        "$ref": "share-parcel.json"
+        "$ref": "includes/share-parcel.json"
       }
     },
     "total_shares": {
-      "$ref": "total-shares.json"
+      "$ref": "includes/total-shares.json"
     },
     "filings": {
       "type": "array",
       "items": {
-        "$ref": "filing.json"
+        "$ref": "includes/filing.json"
       }
     },
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "identifier.json"
+        "$ref": "includes/identifier.json"
       }
     },
     "industry_codes": {
       "type": "array",
       "items": {
-        "$ref": "industry_code.json"
+        "$ref": "includes/industry_code.json"
       }
     },
     "previous_names": {
       "type": "array",
       "items": {
-        "$ref": "previous_name.json"
+        "$ref": "includes/previous_name.json"
       }
     },
     "alternative_names": {
       "type": "array",
       "items": {
-        "$ref": "alternative_name.json"
+        "$ref": "includes/alternative_name.json"
       }
     },
     "branch": {

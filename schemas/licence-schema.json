@@ -14,7 +14,7 @@
                   ]
                 },
                 "entity_properties": {
-                  "$ref": "includes/company-for-nesting.json"
+                  "$ref": "basic-company-schema.json"
                 }
               }
             },
