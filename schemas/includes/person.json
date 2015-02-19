@@ -12,7 +12,7 @@
     },
     "company": {
       "description": "Company the person is representing. NB If the licence holder is a company, and the individual is a just a contact, then use the company-schema for the entity. This is where the individual  themselves are the licence holder",
-      "$ref": "company-for-nesting.json"
+      "$ref": "../basic-company-schema.json"
     },
     "relationship_with_company": {
       "enum": [
