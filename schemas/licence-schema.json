@@ -3,10 +3,21 @@
   "description": "A Licence is a permission for an entity to do something that would otherwise not be permitted. Note that such permissions are recorded in multiple different ways and to different granularity. In addition categories cross over, for example a pawnborker may be regulated as a retail establishment by a city, but also as a financial institution by a national or regional financial regulator. Sometimes the licence is a simple statement – the government of Rwanda has given a banking licence to a certain bank -- other times it is fine-grained and highly complex (e.g. an extractives licence or the UK FCA licencing scheme). This schema tries to make it easy to submit the former, while not losing granularity of the latter. The object has the name of Rich Licence to distinguish it from Simple Licence, which it is expected to ultimately replace.",
   "properties": {
     "licence_holder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entity"
+      ],
       "properties": {
         "entity": {
           "oneOf": [
             {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "entity_type",
+                "entity_properties"
+              ],
               "properties": {
                 "entity_type": {
                   "enum": [
@@ -19,6 +30,12 @@
               }
             },
             {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "entity_type",
+                "entity_properties"
+              ],
               "properties": {
                 "entity_type": {
                   "enum": [
@@ -31,6 +48,12 @@
               }
             },
             {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "entity_type",
+                "entity_properties"
+              ],
               "properties": {
                 "entity_type": {
                   "enum": [
@@ -43,6 +66,12 @@
               }
             },
             {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "entity_type",
+                "entity_properties"
+              ],
               "properties": {
                 "entity_type": {
                   "enum": [
