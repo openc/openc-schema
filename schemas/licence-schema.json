@@ -4,96 +4,88 @@
   "properties": {
     "licence_holder": {
       "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "entity"
-      ],
-      "properties": {
-        "entity": {
-          "oneOf": [
-            {
-              "type": "object",
-              "additionalProperties": false,
-              "required": [
-                "entity_type",
-                "entity_properties"
-              ],
-              "properties": {
-                "entity_type": {
-                  "enum": [
-                    "company"
-                  ]
-                },
-                "entity_properties": {
-                  "$ref": "includes/company-for-nesting.json"
-                }
-              }
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "entity_type",
+            "entity_properties"
+          ],
+          "properties": {
+            "entity_type": {
+              "enum": [
+                "company"
+              ]
             },
-            {
-              "type": "object",
-              "additionalProperties": false,
-              "required": [
-                "entity_type",
-                "entity_properties"
-              ],
-              "properties": {
-                "entity_type": {
-                  "enum": [
-                    "person"
-                  ]
-                },
-                "entity_properties": {
-                  "$ref": "includes/person.json"
-                }
-              }
-            },
-            {
-              "type": "object",
-              "additionalProperties": false,
-              "required": [
-                "entity_type",
-                "entity_properties"
-              ],
-              "properties": {
-                "entity_type": {
-                  "enum": [
-                    "organisation"
-                  ]
-                },
-                "entity_properties": {
-                  "$ref": "includes/organisation.json"
-                }
-              }
-            },
-            {
-              "type": "object",
-              "additionalProperties": false,
-              "required": [
-                "entity_type",
-                "entity_properties"
-              ],
-              "properties": {
-                "entity_type": {
-                  "enum": [
-                    "unknown"
-                  ]
-                },
-                "entity_properties": {
-                  "$ref": "includes/unknown_entity_type.json"
-                }
-              }
+            "entity_properties": {
+              "$ref": "includes/company-for-nesting.json"
             }
-          ]
+          }
         },
-        "entity_type": {
-          "enum": [
-            "company",
-            "person",
-            "organisation",
-            "unknown_entity_type",
-            null
-          ]
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "entity_type",
+            "entity_properties"
+          ],
+          "properties": {
+            "entity_type": {
+              "enum": [
+                "person"
+              ]
+            },
+            "entity_properties": {
+              "$ref": "includes/person.json"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "entity_type",
+            "entity_properties"
+          ],
+          "properties": {
+            "entity_type": {
+              "enum": [
+                "organisation"
+              ]
+            },
+            "entity_properties": {
+              "$ref": "includes/organisation.json"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "entity_type",
+            "entity_properties"
+          ],
+          "properties": {
+            "entity_type": {
+              "enum": [
+                "unknown"
+              ]
+            },
+            "entity_properties": {
+              "$ref": "includes/unknown_entity_type.json"
+            }
+          }
         }
+      ],
+      "entity_type": {
+        "enum": [
+          "company",
+          "person",
+          "organisation",
+          "unknown_entity_type",
+          null
+        ]
       }
     },
     "licence_issuer": {

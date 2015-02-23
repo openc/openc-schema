@@ -1,18 +1,16 @@
 {
   "confidence": "HIGH",
   "licence_holder": {
-    "entity": {
-      "entity_type": "company",
-      "entity_properties": {
-        "alternative_names": [
-          {
-            "company_name": "CHUCK E. CHEESE'S",
-            "type": "trading"
-          }
-        ],
-        "jurisdiction_code": "us_ny",
-        "telephone_number": "(972) 258-5807"
-      }
+    "entity_type": "company",
+    "entity_properties": {
+      "alternative_names": [
+        {
+          "company_name": "CHUCK E. CHEESE'S",
+          "type": "trading"
+        }
+      ],
+      "jurisdiction_code": "us_ny",
+      "telephone_number": "(972) 258-5807"
     }
   },
   "licence_issuer": {
