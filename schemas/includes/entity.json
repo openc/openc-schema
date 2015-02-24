@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": [
+    "entity_type",
+    "entity_properties"
+  ],
+  "oneOf": [
+    {
+      "properties": {
+        "entity_type": {
+          "enum": [
+            "company"
+          ]
+        },
+        "entity_properties": {
+          "$ref": "company-for-nesting.json"
+        }
+      }
+    },
+    {
+      "properties": {
+        "entity_type": {
+          "enum": [
+            "person"
+          ]
+        },
+        "entity_properties": {
+          "$ref": "person.json"
+        }
+      }
+    },
+    {
+      "properties": {
+        "entity_type": {
+          "enum": [
+            "organisation"
+          ]
+        },
+        "entity_properties": {
+          "$ref": "organisation.json"
+        }
+      }
+    },
+    {
+      "properties": {
+        "entity_type": {
+          "enum": [
+            "unknown"
+          ]
+        },
+        "entity_properties": {
+          "$ref": "unknown_entity_type.json"
+        }
+      }
+    }
+  ],
+  "entity_type": {
+    "enum": [
+      "company",
+      "person",
+      "organisation",
+      "unknown_entity_type",
+      null
+    ]
+  }
+}

@@ -1,13 +1,11 @@
 {
   "confidence": "HIGH",
   "licence_holder": {
-    "entity": {
-      "entity_type": "company",
-      "entity_properties": {
-        "name": "MEZA  ALFREDO T",
-        "company_number": "ZZZ95",
-        "jurisdiction_code": "us_ca"
-      }
+    "entity_type": "company",
+    "entity_properties": {
+      "name": "MEZA  ALFREDO T",
+      "company_number": "ZZZ95",
+      "jurisdiction_code": "us_ca"
     }
   },
   "licence_issuer": {

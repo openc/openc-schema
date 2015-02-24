@@ -1,12 +1,9 @@
 {
   "confidence": "HIGH",
   "licence_holder": {
-    "entity": {
-      "entity_type": "person",
-      "entity_properties": {
-        "name": "John Smith",
-        "fax_number": "123"
-      }
+    "entity_type": "organisation",
+    "entity_properties": {
+      "name": ""
     }
   },
   "licence_issuer": {
