@@ -1,14 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
+  "required": [
+    "entity_type",
+    "entity_properties"
+  ],
   "oneOf": [
     {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "entity_type",
-        "entity_properties"
-      ],
       "properties": {
         "entity_type": {
           "enum": [
@@ -21,12 +19,6 @@
       }
     },
     {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "entity_type",
-        "entity_properties"
-      ],
       "properties": {
         "entity_type": {
           "enum": [
@@ -39,12 +31,6 @@
       }
     },
     {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "entity_type",
-        "entity_properties"
-      ],
       "properties": {
         "entity_type": {
           "enum": [
@@ -57,12 +43,6 @@
       }
     },
     {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "entity_type",
-        "entity_properties"
-      ],
       "properties": {
         "entity_type": {
           "enum": [
