@@ -12,6 +12,14 @@
       "type": "string",
       "format": "date"
     },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
     "confidence": {
       "description": "Confidence in accuracy of data",
       "type": "string",
