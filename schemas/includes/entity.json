@@ -54,14 +54,5 @@
         }
       }
     }
-  ],
-  "entity_type": {
-    "enum": [
-      "company",
-      "person",
-      "organisation",
-      "unknown_entity_type",
-      null
-    ]
-  }
+  ]
 }
