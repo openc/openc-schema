@@ -2,8 +2,10 @@
   "name": "Foo Inc",
   "company_number": "12345",
   "jurisdiction_code": "ie",
-  "identifiers": [{
-    "uid": "549300MWY6KYIGQQH329",
-    "identifier_system_code": "lei"
-  }]
+  "identifiers": [
+    {
+      "uid": "549300MWY6KYIGQQH329",
+      "identifier_system_code": "lei"
+    }
+  ]
 }
