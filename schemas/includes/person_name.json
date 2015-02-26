@@ -6,7 +6,7 @@
         "string",
         "null"
       ],
-      "minLength": 2
+      "format": "non-blank"
     },
     {
       "description": "The name of a person as an object",
@@ -17,53 +17,53 @@
             "string",
             "null"
           ],
-          "description": "The given name (often first name) of a person, as opposed to their family name. Following FOAF practice, this is preferred to first_name",
-          "minLength": 1
+          "format": "non-blank",
+          "description": "The given name (often first name) of a person, as opposed to their family name. Following FOAF practice, this is preferred to first_name"
         },
         "family_name": {
           "type": [
             "string",
             "null"
           ],
-          "description": "The family name (often last name) of a person, as opposed to their family name. Following FOAF practice, this is preferred to last_name",
-          "minLength": 1
+          "format": "non-blank",
+          "description": "The family name (often last name) of a person, as opposed to their family name. Following FOAF practice, this is preferred to last_name"
         },
         "first_name": {
           "type": [
             "string",
             "null"
           ],
-          "minLength": 1
+          "format": "non-blank"
         },
         "middle_name": {
           "type": [
             "string",
             "null"
           ],
-          "minLength": 1
+          "format": "non-blank"
         },
         "last_name": {
           "type": [
             "string",
             "null"
           ],
-          "minLength": 1
+          "format": "non-blank"
         },
         "title": {
           "type": [
             "string",
             "null"
           ],
-          "description": "Title such as Mr, Ms, Dr etc",
-          "minLength": 1
+          "format": "non-blank",
+          "description": "Title such as Mr, Ms, Dr etc"
         },
         "suffixes": {
           "type": [
             "string",
             "null"
           ],
-          "description": "Any suffixes, including degrees, honours (OBE), ordinals (John Smith Jr, Bill Jones II) etc",
-          "minLength": 1
+          "format": "non-blank",
+          "description": "Any suffixes, including degrees, honours (OBE), ordinals (John Smith Jr, Bill Jones II) etc"
         }
       }
     }
