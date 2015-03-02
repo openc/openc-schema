@@ -69,6 +69,10 @@
       "type": "string"
     }
   },
+  "other_attributes": {
+    "description": "Use for other attributes for which we don't yet have curated schema attributes",
+    "type": "object"
+  },
   "additionalProperties": false,
   "required": [
     "source_url",
