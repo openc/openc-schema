@@ -13,6 +13,10 @@
       "description": "Legal name of the company",
       "minLength": 1
     },
+    "jurisdiction": {
+      "type": "string",
+      "description": "A free text field for the jurisdiction where the company is registered – this can be either the ISO 3166-2 code, the underscored version, or the standard name for the jurisdiction, e.g. France"
+    },
     "jurisdiction_code": {
       "type": "string",
       "description": "Code representing the jurisdiction/company register which is the canonical record of the company’s existence. Uses underscored ISO 3166-2 to represent it, e.g. es for Spain, us_de for Delaware",
