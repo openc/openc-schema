@@ -40,6 +40,13 @@
             "postal_code"
           ]
         }
+        ,
+        {
+          "required": [
+            "locality",
+            "country"
+          ]
+        }
       ]
     }
   ]
