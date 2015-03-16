@@ -36,10 +36,16 @@
       "format": "date-time"
     },
     "current_status": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "company_type": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "registry_url": {
       "type": "string"
