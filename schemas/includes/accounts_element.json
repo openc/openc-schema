@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A representation of one particular element of an accounts statement (e.g. profit or assets). This should consist of at least a value and end_date",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "string",
+      "minLength": 1
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "value"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "date"
+      ]
+    },
+    {
+      "required": [
+        "end_date"
+      ]
+    }
+  ]
+}
