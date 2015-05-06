@@ -18,6 +18,12 @@
     "date": {
       "type": "string",
       "format": "date"
+    },
+    "currency": {
+      "description": "ISO 4217 code for the currency",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3
     }
   },
   "required": [

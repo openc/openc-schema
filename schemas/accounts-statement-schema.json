@@ -73,6 +73,12 @@
       "description": "Standard ISO 4217 3-letter code for currency, e.g. USD, GBP, EUR"
     },
     "language": {
+      "description": "Should be represented as two-letter ISO-639 code",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2
+    },
+    "language": {
       "type": "string",
       "description": "The area in which this licence is valid"
     },

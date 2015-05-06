@@ -3,7 +3,7 @@
     "accounts_subject": {
         "entity_properties": {
             "company_number": "01234567",
-            "jurisdiction": "gb",
+            "jurisdiction_code": "gb",
             "name": "GLB DESIGN GROUP LTD"
         },
         "entity_type": "company"
@@ -22,7 +22,8 @@
     "current_liabilities": [
         {
             "date": "2011-06-30",
-            "value": "69241.23"
+            "value": "69241.23",
+            "currency": "GBP"
         },
         {
             "date": "2010-06-30",
