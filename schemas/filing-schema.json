@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A filing is a document or set of documents published or submitted to registers or regulators by end entity. The standard example is an annual report detailing the companies activities. The filing object is for storing the meta data about the filing (e.g. filing date, filing type, title perhaps). There are also commonly associated documents with filings - often just one, but it's not unusual for there to be more than one, either because there are multiple supporting documents for the filing (e.g. SEC filings and FERC filings), or because there are multiple versions of the same file (e.g. PDF and XBRL file)",
+  "properties": {
+    "filing_subject": {
+      "$ref": "includes/entity.json"
+    },
+    "filing_date": {
+      "type": "string",
+      "description": "Date on which the filing was made – note this is not necessarily the same date as the date on which it was published or the reporting/applicable data on the information contained within in",
+      "format": "date"
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "$ref": "includes/filing_document.json"
+      }
+    },
+    "uid": {
+      "description": "Unique id/reference for the filing if it has one",
+      "type": "string"
+    },
+    "filing_type_name": {
+      "description": "The filing type in words, if given (e.g. 'Annual Return')",
+      "type": "string"
+    },
+    "filing_type_code": {
+      "description": "The code for filing type, if given (e.g. 'AR01')",
+      "type": "string"
+    },
+    "title": {
+      "description": "The title of the filing, if given",
+      "type": "string"
+    },
+    "description": {
+      "description": "The description or precis of the filing, if given",
+      "type": "string"
+    },
+    "url": {
+      "description": "Persistent URL for the filing, if there is one",
+      "type": "string"
+    },
+    "source_url": {
+      "description": "Source url of the web page for the filing or if there is not persistent URL the page from which it can be found (e.g. search page). This field is required.",
+      "type": "string",
+      "minLength": 11
+    },
+    "confidence": {
+      "description": "Confidence in accuracy of data",
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "sample_date": {
+      "description": "Date on which we believe the contents of this filing to be true, e.g. the reporting date, applicable date",
+      "type": "string",
+      "format": "date"
+    },
+    "retrieved_at": {
+      "description": "Date-time this was retrieved from the source",
+      "type": "string",
+      "format": "date-time"
+    },
+    "other_attributes": {
+      "description": "Use for other attributes for which we don't yet have curated schema attributes",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "source_url",
+    "sample_date"
+  ]
+}

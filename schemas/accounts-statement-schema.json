@@ -27,6 +27,12 @@
         "$ref": "includes/accounts_element.json"
       }
     },
+    "total_assets": {
+      "type": "array",
+      "items": {
+        "$ref": "includes/accounts_element.json"
+      }
+    },
     "current_liabilities": {
       "type": "array",
       "items": {
@@ -77,10 +83,6 @@
       "type": "string",
       "minLength": 2,
       "maxLength": 2
-    },
-    "language": {
-      "type": "string",
-      "description": "The area in which this licence is valid"
     },
     "source_location": {
       "type": "string",

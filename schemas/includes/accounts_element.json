@@ -7,15 +7,16 @@
       "type": "string",
       "minLength": 1
     },
+    "date": {
+      "description": "If this element is an instant element, i.e. relates to a specific point in time (such as balance sheet item), then give the date this relates to, otherwise use start/end dates for element that occured over a period (e.g. Profit/Loss)",
+      "type": "string",
+      "format": "date"
+    },
     "start_date": {
       "type": "string",
       "format": "date"
     },
     "end_date": {
-      "type": "string",
-      "format": "date"
-    },
-    "date": {
       "type": "string",
       "format": "date"
     },
