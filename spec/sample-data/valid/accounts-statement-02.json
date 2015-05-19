@@ -1,6 +1,6 @@
 {
     "accounts_date": "2011-03-31",
-    "accounts_subject": {
+    "filing_subject": {
         "entity_properties": {
             "company_number": "01234567",
             "jurisdiction_code": "gb",

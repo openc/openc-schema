@@ -2,8 +2,17 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "An accounts statement is a set of financials from a given accounts filing. This may be have been derived from something as extensive as an XBRL filing, or just some headline financials. The actual accounts lines are made up of arrays of accounts elements. Some, like profit or turnover are explicitly declared here, but other arbitrary ones may be added in other_attributes, and should follow the same format",
   "properties": {
-    "accounts_subject": {
+    "filing_subject": {
       "$ref": "includes/entity.json"
+    },
+    "uid": {
+      "description": "Unique id/reference for the filing if it has one",
+      "type": "string"
+    },
+    "filing_date": {
+      "type": "string",
+      "description": "Date on which the filing was made – note this is not necessarily the same date as the date on which it was published or the reporting/applicable data on the information contained within it",
+      "format": "date"
     },
     "accounts_date": {
       "type": "string",
@@ -16,40 +25,66 @@
       }
     },
     "revenue": {
-      "type": "array",
+      "type": ["array","null"],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
     "current_assets": {
-      "type": "array",
+      "type": ["array","null"],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
     "total_assets": {
-      "type": "array",
+      "type": ["array","null"],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
     "current_liabilities": {
-      "type": "array",
+      "type": ["array","null"],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
     "fixed_assets": {
-      "type": "array",
+      "type": ["array","null"],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
     "cash_at_bank": {
-      "type": "array",
+      "type": ["array","null"],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
+    },
+    "documents": {
+      "type": ["array","null"],
+      "items": {
+        "$ref": "includes/filing-document.json"
+      }
+    },
+    "filing_type_name": {
+      "description": "The filing type in words, if given (e.g. 'Annual Return')",
+      "type": "string"
+    },
+    "filing_type_code": {
+      "description": "The code for filing type, if given (e.g. 'AR01')",
+      "type": "string"
+    },
+    "title": {
+      "description": "The title of the filing, if given",
+      "type": "string"
+    },
+    "description": {
+      "description": "The description or precis of the filing, if given",
+      "type": "string"
+    },
+    "url": {
+      "description": "Persistent URL for the filing, if there is one",
+      "type": "string"
     },
     "source_url": {
       "description": "Source of the accounts, e.g. the URL of the XBRL statement, or the download dump",
