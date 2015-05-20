@@ -123,6 +123,15 @@
       "type": "string",
       "description": "If the accounts filing has been put on sources.opencorporates.com the path to the filing"
     },
+    "confidence": {
+      "description": "Confidence in accuracy of data",
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
     "other_attributes": {
       "description": "Use for other attributes for which we don't yet have curated schema attributes",
       "type": "object"
@@ -131,6 +140,7 @@
   "additionalProperties": false,
   "required": [
     "source_url",
-    "sample_date"
+    "sample_date",
+    "confidence"
   ]
 }
