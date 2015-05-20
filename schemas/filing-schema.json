@@ -72,6 +72,8 @@
   "additionalProperties": false,
   "required": [
     "source_url",
-    "sample_date"
+    "sample_date",
+    "confidence",
+    "filing_date"
   ]
 }

@@ -63,7 +63,7 @@
     "documents": {
       "type": ["array","null"],
       "items": {
-        "$ref": "includes/filing-document.json"
+        "$ref": "includes/filing_document.json"
       }
     },
     "filing_type_name": {
@@ -141,6 +141,7 @@
   "required": [
     "source_url",
     "sample_date",
-    "confidence"
+    "confidence",
+    "filing_date"
   ]
 }

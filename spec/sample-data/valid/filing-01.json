@@ -1,0 +1,15 @@
+{
+    "filing_subject": {
+        "entity_properties": {
+            "company_number": "01234567",
+            "jurisdiction": "gb",
+            "name": "GLB DESIGN GROUP LTD"
+        },
+        "entity_type": "company"
+    },
+    "title": "Annual Report",
+    "confidence": "HIGH",
+    "filing_date": "2011-03-31",
+    "sample_date": "2011-03-31",
+    "source_url": "http://www.companieshouse.gov.uk/"
+}
