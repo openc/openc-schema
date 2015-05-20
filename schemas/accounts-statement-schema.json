@@ -139,9 +139,10 @@
   },
   "additionalProperties": false,
   "required": [
+    "filing_subject",
     "source_url",
     "sample_date",
     "confidence",
     "filing_date"
-  ]
+    ]
 }

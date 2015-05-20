@@ -71,9 +71,28 @@
   },
   "additionalProperties": false,
   "required": [
+    "filing_subject",
     "source_url",
     "sample_date",
     "confidence",
     "filing_date"
+    ],
+  "anyOf": [
+    {
+      "required": [
+        "title"
+      ]
+    },
+    {
+      "required": [
+        "description"
+      ]
+    },
+    {
+      "required": [
+        "filing_type_name"
+      ]
+    }
+
   ]
 }
