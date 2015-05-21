@@ -1,0 +1,148 @@
+{
+    "accounts_date": "2014-12-31",
+    "filing_date": "2011-03-31",
+    "accounts_type": "quarterly",
+    "filing_subject": {
+        "entity_properties": {
+            "company_number": "22756214",
+            "jurisdiction_code": "dk",
+            "name": "A.P. M\u00f8ller M\u00e6rsk - A/S"
+        },
+        "entity_type": "company"
+    },
+    "currency": "DKK",
+    "current_assets": [
+        {
+            "currency": "USD",
+            "date": "2012-12-31",
+            "value": "8459000000"
+        },
+        {
+            "currency": "USD",
+            "date": "2012-12-31",
+            "value": "13540000000"
+        },
+        {
+            "currency": "USD",
+            "date": "2013-12-31",
+            "value": "18328000000"
+        },
+        {
+            "currency": "USD",
+            "date": "2013-12-31",
+            "value": "10156000000"
+        },
+        {
+            "currency": "USD",
+            "date": "2014-12-31",
+            "value": "27308000000"
+        },
+        {
+            "currency": "USD",
+            "date": "2014-12-31",
+            "value": "16225000000"
+        }
+    ],
+    "language": "dk",
+    "profit": [
+        {
+            "currency": "USD",
+            "end_date": "2013-12-31",
+            "start_date": "2013-01-01",
+            "value": "163000000"
+        },
+        {
+            "currency": "USD",
+            "end_date": "2013-12-31",
+            "start_date": "2013-01-01",
+            "value": "3777000000"
+        },
+        {
+            "currency": "USD",
+            "end_date": "2013-12-31",
+            "start_date": "2013-01-01",
+            "value": "1300000000"
+        },
+        {
+            "currency": "USD",
+            "end_date": "2014-12-31",
+            "start_date": "2014-01-01",
+            "value": "7984000000"
+        },
+        {
+            "currency": "USD",
+            "end_date": "2014-12-31",
+            "start_date": "2014-01-01",
+            "value": "6907000000"
+        },
+        {
+            "currency": "USD",
+            "end_date": "2014-12-31",
+            "start_date": "2014-01-01",
+            "value": "5195000000"
+        }
+    ],
+    "revenue": [
+        {
+            "currency": "USD",
+            "end_date": "2013-12-31",
+            "start_date": "2013-01-01",
+            "value": "2881000000"
+        },
+        {
+            "currency": "USD",
+            "end_date": "2013-12-31",
+            "start_date": "2013-01-01",
+            "value": "47386000000"
+        },
+        {
+            "currency": "USD",
+            "end_date": "2014-12-31",
+            "start_date": "2014-01-01",
+            "value": "2355000000"
+        },
+        {
+            "currency": "USD",
+            "end_date": "2014-12-31",
+            "start_date": "2014-01-01",
+            "value": "47569000000"
+        }
+    ],
+    "sample_date": "2014-12-31",
+    "source_location": "/22756214_2014-12-31.xml",
+    "source_url": "http://regnskaber.virk.dk/41265722/eGJybHN0b3JlOi8vWC1FMkE0RTU1Qi0yMDE1MDMzMV8xMjIyMDRfMjk0L3hicmw.xml",
+    "total_assets": [
+        {
+            "currency": "USD",
+            "date": "2012-12-31",
+            "value": "49205000000"
+        },
+        {
+            "currency": "USD",
+            "date": "2012-12-31",
+            "value": "72396000000"
+        },
+        {
+            "currency": "USD",
+            "date": "2013-12-31",
+            "value": "74509000000"
+        },
+        {
+            "currency": "USD",
+            "date": "2013-12-31",
+            "value": "51149000000"
+        },
+        {
+            "currency": "USD",
+            "date": "2014-12-31",
+            "value": "54234000000"
+        },
+        {
+            "currency": "USD",
+            "date": "2014-12-31",
+            "value": "68844000000"
+        }
+    ],
+  "confidence": "HIGH"
+
+}

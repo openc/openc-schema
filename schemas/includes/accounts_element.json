@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A representation of one particular element of an accounts statement (e.g. profit or assets). This should consist of at least a value and end_date",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date": {
+      "description": "If this element is an instant element, i.e. relates to a specific point in time (such as balance sheet item), then give the date this relates to, otherwise use start/end dates for element that occured over a period (e.g. Profit/Loss)",
+      "type": "string",
+      "format": "date"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "currency": {
+      "description": "ISO 4217 code for the currency",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3
+    }
+  },
+  "required": [
+    "value"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "date"
+      ]
+    },
+    {
+      "required": [
+        "end_date"
+      ]
+    }
+  ]
+}
