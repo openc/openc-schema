@@ -18,6 +18,10 @@
       "type": "string",
       "format": "date"
     },
+    "accounts_type": {
+      "description": "The type of accounts – either annual, or quarterly, or null if not known",
+      "enum": ["annual", "quarterly", null]
+    },
     "profit": {
       "type": "array",
       "items": {
@@ -143,6 +147,7 @@
     "source_url",
     "sample_date",
     "confidence",
-    "filing_date"
+    "filing_date",
+    "accounts_type"
     ]
 }

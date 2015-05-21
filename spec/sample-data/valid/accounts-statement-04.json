@@ -1,5 +1,6 @@
 {
     "accounts_date": "2013-12-31",
+    "accounts_type": null,
     "confidence": "HIGH",
     "currency": "DKK",
     "current_assets": [

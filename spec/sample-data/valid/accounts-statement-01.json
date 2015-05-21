@@ -1,6 +1,7 @@
 {
     "filing_date": "2011-03-31",
     "accounts_date": "2011-03-31",
+    "accounts_type": "annual",
     "cash_at_bank": [
         {
             "date": "2011-06-30",

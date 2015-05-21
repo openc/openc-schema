@@ -1,6 +1,7 @@
 {
     "filing_date": "2011-03-31",
     "accounts_date": "2011-03-31",
+    "accounts_type": null,
     "filing_subject": {
         "entity_properties": {
             "company_number": "01234567",
