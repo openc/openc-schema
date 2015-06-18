@@ -1,11 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.7)
+    addressable (2.3.8)
     diff-lcs (1.2.5)
     json-schema-openc-fork (0.0.1)
       addressable (~> 2.3)
-    openc-json_schema (0.0.11)
+    openc-json_schema (0.0.13)
       json-schema-openc-fork (= 0.0.1)
     rake (10.3.2)
     rspec (3.0.0)
@@ -25,6 +25,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  openc-json_schema (= 0.0.11)
+  openc-json_schema (= 0.0.13)
   rake
   rspec
