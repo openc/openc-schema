@@ -10,7 +10,7 @@
     "file_format": {
       "description": "Format of the document, if known",
       "type": "string",
-      "enum": ["xml","pdf","html","doc", null]
+      "enum": ["xml","pdf","html", null]
     },
     "original_source_url": {
       "description": "Persistent URL for the document, if there is one",
@@ -35,10 +35,6 @@
       "description": "type of document (at the moment only XBRL is the only option here)",
       "type": "string",
       "enum": ["xbrl", null]
-    },
-    "pages": {
-      "description": "Number of pages, if known",
-      "type": "integer"
     }
   },
   "additionalProperties": false,

@@ -1,40 +1,36 @@
 {
-    "category": ["Business"],
     "confidence": "HIGH",
-    "end_date": "2016-01-31",
+    "end_date": "2017-02-28",
     "licence_holder": {
         "entity_properties": {
-            "industry_codes": [
-                {
-                    "code": "4421",
-                    "code_scheme_id": "us_naics_2007",
-                    "description": "FURNITURE STORES"
-                }
-            ],
-            "name": "$99 FURNITURE OUTLET  LLC"
+            "jurisdiction": "FL",
+            "name": "GLB DESIGN GROUP, LLC"
         },
-        "entity_type": "unknown"
+        "entity_type": "company"
     },
     "licence_issuer": {
-        "jurisdiction": "Salt Lake City",
-        "name": "Salt Lake City Corp"
+        "jurisdiction": "us_fl",
+        "name": "Florida Architecture & Interior Design Board"
     },
-    "licence_number": "LIC2008-00197",
-    "licence_url": "https://aca.slcgov.com/Citizen/Cap/CapDetail.aspx?Module=BusLic&TabName=BusLic&capID1=08BCA&capID2=00000&capID3=18145&agencyCode=SLCREF&IsToShowInspection=yes",
-    "jurisdiction_of_licence": "Salt Lake City",
-    "licenced_location": {
-        "locality": "Salt  Lake City",
-        "postal_code": "84101-2604",
-        "region": "UT",
-        "street_address": "711 S 300 W"
+    "licence_number": "26001644",
+    "other_attributes": {
+        "Alternate Lic#": "IB26001644",
+        "Blank": "",
+        "County Code": "23",
+        "Effective Date": "2014-12-22",
+        "Primary Status": "C",
+        "Renewal Period": "",
+        "Secondary Status": "A"
     },
     "permissions": [
         {
-            "activity_name": "Commercial",
+            "activity_name": "Interior Design Business",
             "permission_type": "operating"
         }
     ],
-    "sample_date": "2015-08-11",
-    "source_url": "https://opendata.utah.gov/api/views/kzrq-v59u/rows.json?accessType=DOWNLOAD",
-    "status": "Active"
+    "sample_date": "2014-12-31 11:46:08 +0000",
+    "source_url": "ftp://dbprftp.state.fl.us/pub/llweb/lic02ai.csv",
+    "jurisdiction_of_licence": "us_fl",
+    "start_date": "2014-12-22",
+    "status": "Active (Current)"
 }
