@@ -28,6 +28,10 @@
       "description": "The code for filing type, if given (e.g. 'AR01')",
       "type": "string"
     },
+    "corporate_register_filing": {
+      "description": "Whether the source of the filing is the corporate register where the company is incorporated/registered with",
+      "type": "boolean"
+    },
     "title": {
       "description": "The title of the filing, if given",
       "type": "string"
