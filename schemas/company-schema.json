@@ -89,7 +89,7 @@
       }
     },
     "identifiers": {
-      "type": "array",
+      "type": ["array", "null"],
       "items": {
         "$ref": "includes/identifier.json"
       }
