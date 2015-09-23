@@ -1,0 +1,42 @@
+{
+  "confidence": "HIGH",
+  "registrant": {
+    "entity_type": "company",
+    "entity_properties": {
+      "alternative_names": [
+        {
+          "company_name": "AIA",
+          "type": "abbreviation"
+        }
+      ],
+      "jurisdiction_code": "gb",
+      "company_number": "1234",
+      "name": "ASSOCIATION FOR INDUSTRIAL ARCHAEOLOGY",
+      "telephone_number": "01224 732558",
+      "website": "http://www.industrial-archaeology.org.uk",
+      "officers": [
+        {"name": "John Smith", "position": "trustee"}
+      ]
+    }
+  },
+  "register": {
+    "jurisdiction": "England & Wales",
+    "name": "Charity Register of England & Wales",
+    "register_type": "nonprofit",
+    "identifier_code_system": "gb_ew_cc",
+    "managing_organisation": {
+      "name": "Charity Commission of England & Wales",
+      "jurisdiction": "gb_ew",
+      "website": "http://www.charitycommission.gov.uk"
+    }
+  },
+  "register_uid": "277511",
+  "other_attributes": {
+    "activities": [
+      "THE AIA IS THE NATIONAL ORGANISATION FOR PEOPLE WHO SHARE AN INTEREST IN BRITAIN'S INDUSTRIAL PAST. IT BRINGS TOGETHER PEOPLE WHO ARE RESEARCHING, RECORDING, PRESERVING AND PRESENTING THE GREAT VARIETY OF THIS COUNTRY'S INDUSTRIAL HERITAGE."
+    ]
+  },
+  "sample_date": "2014-12-09",
+  "source_url": "https://data.cityofnewyork.us/Business/foo_bar"
+}
+

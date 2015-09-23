@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "An official register entry is a record of an entity being on an official register, for example a charity register, register of minority owned businesses, or an official list of government contractors, etc -- Q could there be multiple register entries per registration ... how do we cope with this",
+  "properties": {
+    "registrant": {
+      "$ref": "includes/entity.json"
+    },
+    "register": {
+      "register_name": {
+        "type": "string"
+      },
+      "register_type": {
+        "type": "string",
+        "enum": ["nonprofit","disadvantaged_business","government_contactor"]
+      },
+      "identifier_code_system": {
+        "description": "If the register uses a recognised code system - e.g. tax numbers as unique identifiers – list this identifier code system here, e.g. us_fein (US Federal tax number). See identifier schema for details",
+        "type": ["string", null]
+      },
+      "managing_organisation": {
+        "$ref": "includes/organisation.json"
+      }
+    },
+    "register_uid": {
+      "type": "string",
+      "description": "the unique identifier on the register"
+    },
+    "start_date": {
+      "description": "The date the entity was registered",
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "description": "The date the entity was de-registered",
+      "type": "string",
+      "format": "date"
+    },
+    "source_url": {
+      "description": "Place where this fact can be verified",
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence": {
+      "description": "Confidence in accuracy of data",
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "sample_date": {
+      "description": "Date on which we know this to be true (usually date this information was retrieved from the source)",
+      "type": "string",
+      "format": "date"
+    },
+    "retrieved_at": {
+      "description": "Date-time this was retrieved from the source",
+      "type": "string",
+      "format": "date"
+    },
+    "register_entry_url": {
+      "type": "string",
+      "description": "A public URL for the register entry"
+    },
+    "status": {
+      "type": "string",
+      "description": "The status of the register entry"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "$ref": "includes/permission.json"
+      }
+    },
+    "other_attributes": {
+      "description": "Use for other register entry attributes for which we don't yet have curated schema attributes",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "source_url",
+    "sample_date",
+    "registrant",
+    "register"
+  ]
+}
