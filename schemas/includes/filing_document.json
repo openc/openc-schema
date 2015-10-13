@@ -9,7 +9,6 @@
     },
     "file_format": {
       "description": "Format of the document, if known",
-      "type": "string",
       "enum": ["xml","pdf","html", null]
     },
     "original_source_url": {

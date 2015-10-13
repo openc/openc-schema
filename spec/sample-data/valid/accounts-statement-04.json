@@ -26,6 +26,11 @@
             "file_format": "pdf",
             "source_location": "data/sources/c/1/6/09432201_eGJybHN0b3JlOi8vWC00NjVBM0U5Qy0yMDE0MDUxNF8xNzQ4NTVfMjEzL3BkZg.pdf",
             "source_url": "http://regnskaber.virk.dk/09432201/eGJybHN0b3JlOi8vWC00NjVBM0U5Qy0yMDE0MDUxNF8xNzQ4NTVfMjEzL3BkZg.pdf"
+        },
+        {
+            "file_format": null,
+            "source_location": "/bots/dk_xbrl_parser/2/f/e/61715367_ZG9rdW1lbnRsYWdlcjovLzAzL2U3L2E0LzBmLzc2LzhjNzgtNDhjMS05MjcwLTY4OTgzYmJmY2VkNA.zip",
+            "source_url": "http://regnskaber.virk.dk/61715367/ZG9rdW1lbnRsYWdlcjovLzAzL2U3L2E0LzBmLzc2LzhjNzgtNDhjMS05MjcwLTY4OTgzYmJmY2VkNA.zip"
         }
     ],
     "filing_date": "2015-04-13T06:16:32.827Z",
