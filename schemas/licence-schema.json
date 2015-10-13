@@ -58,6 +58,11 @@
       "type": "string",
       "format": "date"
     },
+    "retrieved_at": {
+      "description": "Date-time this was retrieved from the source",
+      "type": "string",
+      "format": "date-time"
+    },
     "licence_url": {
       "type": "string",
       "description": "A public URL for the licence"

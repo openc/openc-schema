@@ -1,0 +1,40 @@
+{
+    "category": ["Business"],
+    "confidence": "HIGH",
+    "end_date": "2016-01-31",
+    "licence_holder": {
+        "entity_properties": {
+            "industry_codes": [
+                {
+                    "code": "4421",
+                    "code_scheme_id": "us_naics_2007",
+                    "description": "FURNITURE STORES"
+                }
+            ],
+            "name": "$99 FURNITURE OUTLET  LLC"
+        },
+        "entity_type": "unknown"
+    },
+    "licence_issuer": {
+        "jurisdiction": "Salt Lake City",
+        "name": "Salt Lake City Corp"
+    },
+    "licence_number": "LIC2008-00197",
+    "licence_url": "https://aca.slcgov.com/Citizen/Cap/CapDetail.aspx?Module=BusLic&TabName=BusLic&capID1=08BCA&capID2=00000&capID3=18145&agencyCode=SLCREF&IsToShowInspection=yes",
+    "jurisdiction_of_licence": "Salt Lake City",
+    "licenced_location": {
+        "locality": "Salt  Lake City",
+        "postal_code": "84101-2604",
+        "region": "UT",
+        "street_address": "711 S 300 W"
+    },
+    "permissions": [
+        {
+            "activity_name": "Commercial",
+            "permission_type": "operating"
+        }
+    ],
+    "sample_date": "2015-08-11",
+    "source_url": "https://opendata.utah.gov/api/views/kzrq-v59u/rows.json?accessType=DOWNLOAD",
+    "status": "Active"
+}
