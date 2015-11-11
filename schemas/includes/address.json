@@ -27,6 +27,10 @@
         },
         "country": {
           "type": "string"
+        },
+        "country_code": {
+          "description": "ISO 3166-2 code for country",
+          "type": "string"
         }
       },
       "anyOf": [
