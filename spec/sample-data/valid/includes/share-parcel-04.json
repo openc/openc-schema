@@ -1,0 +1,7 @@
+{
+  "percentage_of_shares_min": 50,
+  "percentage_of_shares_max": null,
+  "shareholders": [
+    {"name":"Joe Schmoe"}
+  ]
+}

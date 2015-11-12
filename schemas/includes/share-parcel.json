@@ -16,6 +16,18 @@
       "maximum": 100,
       "minimum": 0
     },
+    "percentage_of_shares_min": {
+      "description": "Minimum percentage of shares (if for example a band of percentage is given)",
+      "type": ["number",null],
+      "maximum": 100,
+      "minimum": 0
+    },
+    "percentage_of_shares_max": {
+      "description": "Maximum percentage of shares (if for example a band of percentage is given)",
+      "type": ["number",null],
+      "maximum": 100,
+      "minimum": 0
+    },
     "start_date": {
       "type": "string",
       "format": "date"
