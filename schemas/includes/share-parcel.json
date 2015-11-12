@@ -76,11 +76,11 @@
             ]
           },
           "address": {
-            "description": "Address given for owner of parcel",
-            "type": "string"
+            "description": "Address given for shareholder",
+            "$ref": "address.json"
           },
           "address_country": {
-            "description": "Country part of owner's address",
+            "description": "Country part of owner's address (for example if address not given)",
             "type": "string"
           }
         }
