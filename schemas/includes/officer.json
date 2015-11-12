@@ -54,7 +54,7 @@
           "description": "a unique identifier given to the individual (as opposed to the officership)"
         },
         "address": {
-          "type": "string"
+          "$ref": "address.json"
         },
         "type": {
           "type": "string",
