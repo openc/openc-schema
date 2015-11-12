@@ -1,0 +1,6 @@
+{
+  "number_of_shares": 42,
+  "shareholders": [
+    {"name":"Joe Schmoe"}
+  ]
+}

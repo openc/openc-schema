@@ -5,6 +5,10 @@
     "type": "Person",
     "date_of_birth": "1960-08-03",
     "nationality": "British",
-    "address": "34 Acacia Ave, Footown, UK"
+    "address": {
+      "street_address": "1 Balloon Street",
+      "locality": "Manchester",
+      "country_code": "GB"
+    }
   }
 }
