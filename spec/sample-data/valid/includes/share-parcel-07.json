@@ -1,0 +1,14 @@
+{
+  "percentage_of_shares": 64,
+  "share_class": "A",
+  "shareholders": [
+    {
+      "name":"Joe Schmoe",
+      "address": {
+        "street_address": "1 Balloon Street",
+        "locality": "Manchester",
+        "country_code": "GB"
+      }
+    }
+  ]
+}

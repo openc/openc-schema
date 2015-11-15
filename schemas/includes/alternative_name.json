@@ -25,7 +25,8 @@
       "enum": [
         "trading",
         "abbreviation",
-        "legal"
+        "legal",
+        "unknown"
       ]
     }
   },
