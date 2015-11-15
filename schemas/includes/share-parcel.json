@@ -28,6 +28,10 @@
       "maximum": 100,
       "minimum": 0
     },
+    "share_class": {
+      "description": "Share class or classes, if known",
+      "type": "string"
+    },
     "start_date": {
       "type": "string",
       "format": "date"
