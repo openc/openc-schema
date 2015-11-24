@@ -78,6 +78,10 @@ task :csv_to_json_schema do
 
   REFERENCED_CLASSES = Set.new
 
+  def class_name_to_title(class_name)
+    class_name.gsub(/(?<=[a-z])(?=[A-Z])/, ' ')
+  end
+
   def class_name_to_definition_key(class_name)
     class_name.gsub(/(?<=[a-z])(?=[A-Z])/, '_').downcase
   end
@@ -108,47 +112,67 @@ task :csv_to_json_schema do
     abort 'usage: url=<url> rake csv_to_json_schema'
   end
 
-  rows = CSV.parse(open(url).read, headers: true)
+  rows = CSV.parse(open(url).read, headers: true).select{|row| row['Class']}
 
   missing_headers = REQUIRED_HEADERS - rows[0].headers
   unless missing_headers.empty?
     abort "CSV is missing #{missing_headers.join(',')} headers"
   end
 
+  required_by_definition = {}
   rows.each do|row|
-    DEFINED_CLASSES << row['Class']
+    klass = row['Class']
+    DEFINED_CLASSES << klass
+
+    required = row['Required?']
+    definition_key = class_name_to_definition_key(klass)
+
+    required_by_definition[definition_key] ||= []
+    case required
+    when 'Y'
+      required_by_definition[definition_key] << row['Property']
+    when nil
+      # do nothing
+    else
+      abort "unrecognized required flag: #{required}"
+    end
   end
 
   definitions = {}
 
   rows.each do |row|
-    # The spreadsheet may have additional rows.
+    property = {
+      'description' => row['Description'].to_s,
+    }.merge(parse_type(row['Type']))
+
+    format = row['Format']
+    case format
+    when 'date-time', 'email', 'hostname', 'ipv4', 'ipv6', 'uri'
+      property['format'] = format
+    when %r{\A/(.+)/\z}
+      property['pattern'] = $1
+    when 'N/A'
+      # do nothing
+    else # e.g. IANA media type
+      $stderr.puts "unrecognized format: #{format}"
+    end
+
     klass = row['Class']
-    if klass
-      property = {
-        'description' => row['Description'].to_s,
-      }.merge(parse_type(row['Type']))
+    definition_key = class_name_to_definition_key(klass)
 
-      format = row['Format']
-      case format
-      when 'date-time', 'email', 'hostname', 'ipv4', 'ipv6', 'uri'
-        property['format'] = format
-      when %r{\A/(.+)/\z}
-        property['pattern'] = $1
-      when 'N/A'
-        # do nothing
-      else # e.g. IANA media type
-        $stderr.puts "unrecognized format: #{format}"
-      end
+    definitions[definition_key] ||= {
+      'title' => class_name_to_title(klass),
+      'description' => '',
+      'type' => 'object',
+      'properties' => {},
+      'additionalProperties' => false,
+    }
+    definitions[definition_key]['properties'][row['Property']] = property
+  end
 
-      definition_key = class_name_to_definition_key(klass)
-      definitions[definition_key] ||= {
-        'description' => '',
-        'type' => 'object',
-        'properties' => {},
-        'additionalProperties' => false,
-      }
-      definitions[definition_key]['properties'][row['Property']] = property
+  definitions.each do |key,definition|
+    unless required_by_definition[key].empty?
+      definitions[key]['required'] = required_by_definition[key]
     end
   end
 
