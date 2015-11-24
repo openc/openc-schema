@@ -25,10 +25,10 @@
         "type": "string"
       }
     },
-    "entities": {
+    "relations": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/entity_group"
+        "$ref": "#/definitions/relation"
       }
     },
     "url": {
@@ -122,18 +122,23 @@
       },
       "additionalProperties": false
     },
-    "entity_group": {
-      "title": "Entity Group",
+    "relation": {
+      "title": "Relation",
       "type": "object",
       "properties": {
         "name": {
           "type": "string"
         },
-        "entities": {
-          "type": "array",
-          "items": {
-            "$ref": "includes/entity.json"
-          }
+        "entity": {
+          "$ref": "includes/entity.json"
+        },
+        "start_date": {
+          "type": "string",
+          "pattern": "^[0-9]{4}(-[0-9]{2}){2}$"
+        },
+        "end_date": {
+          "type": "string",
+          "pattern": "^[0-9]{4}(-[0-9]{2}){2}$"
         }
       },
       "additionalProperties": false
