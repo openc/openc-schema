@@ -119,31 +119,39 @@ task :csv_to_json_schema do
     abort "CSV is missing #{missing_headers.join(',')} headers"
   end
 
-  required_by_definition = {}
-  rows.each do|row|
+  definition_requireds = {}
+  definition_descriptions = {}
+  rows.each do |row|
     klass = row['Class']
     DEFINED_CLASSES << klass
 
     required = row['Required?']
     definition_key = class_name_to_definition_key(klass)
 
-    required_by_definition[definition_key] ||= []
+    definition_requireds[definition_key] ||= []
     case required
     when 'Y'
-      required_by_definition[definition_key] << row['Property']
+      definition_requireds[definition_key] << row['Property']
     when nil
       # do nothing
     else
       abort "unrecognized required flag: #{required}"
     end
+
+    unless row['Property']
+      definition_descriptions[definition_key] = row['Description']
+    end
   end
 
-  definitions = {}
+  rows.select!{|row| row['Property']}
 
+  definitions = {}
   rows.each do |row|
-    property = {
-      'description' => row['Description'].to_s,
-    }.merge(parse_type(row['Type']))
+    property = {}
+    if row['Description']
+      property['description'] = row['Description']
+    end
+    property.merge!(parse_type(row['Type']))
 
     format = row['Format']
     case format
@@ -160,19 +168,25 @@ task :csv_to_json_schema do
     klass = row['Class']
     definition_key = class_name_to_definition_key(klass)
 
-    definitions[definition_key] ||= {
-      'title' => class_name_to_title(klass),
-      'description' => '',
-      'type' => 'object',
-      'properties' => {},
-      'additionalProperties' => false,
-    }
+    unless definitions.key?(definition_key)
+      definition = {
+        'title' => class_name_to_title(klass),
+      }
+      if definition_descriptions.key?(definition_key)
+        definition['description'] = definition_descriptions[definition_key]
+      end
+      definitions[definition_key] = definition.merge({
+        'type' => 'object',
+        'properties' => {},
+        'additionalProperties' => false,
+      })
+    end
     definitions[definition_key]['properties'][row['Property']] = property
   end
 
   definitions.each do |key,definition|
-    unless required_by_definition[key].empty?
-      definitions[key]['required'] = required_by_definition[key]
+    unless definition_requireds[key].empty?
+      definitions[key]['required'] = definition_requireds[key]
     end
   end
 
