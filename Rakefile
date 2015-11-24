@@ -14,7 +14,10 @@ task :default => :spec
 
 ## dist
 
+require "csv"
 require "json"
+require "open-uri"
+require "set"
 
 desc "Regenerate schema files from snippets and reference files"
 task :regenerate_data_object_schemas do
@@ -59,4 +62,106 @@ end
 desc 'Rewrite sample data files with consistent formatting'
 task :format_sample_data do
   Dir.glob(File.join('spec', '**', '*.json')).each {|path| format_json(path)}
+end
+
+desc 'Converts a data model in CSV to JSON Schema'
+task :csv_to_json_schema do
+  REQUIRED_HEADERS = [
+    'Class',
+    'Property',
+    'Description',
+    'Type',
+    'Format',
+  ].freeze
+
+  DEFINED_CLASSES = Set.new
+
+  REFERENCED_CLASSES = Set.new
+
+  def class_name_to_definition_key(class_name)
+    class_name.gsub(/(?<=[a-z])(?=[A-Z])/, '_').downcase
+  end
+
+  def parse_type(type)
+    case type
+    when 'array', 'boolean', 'false', 'null', 'number', 'object', 'string', 'true'
+      {'type' => type}
+    when /\Aarray<(.+)>\z/
+      {'type' => 'array', 'items' => parse_type($1)}
+    when /\A[A-Z][A-Za-z]+\z/
+      definition_key = class_name_to_definition_key(type)
+      if DEFINED_CLASSES.include?(type)
+        REFERENCED_CLASSES << type
+        {'$ref' => "#/definitions/#{definition_key}"}
+      elsif File.exist?(File.join('schemas', 'includes', "#{definition_key}.json"))
+        {'$ref' => "includes/#{definition_key}.json"}
+      else
+        raise "unrecognized schema: #{type}"
+      end
+    else
+      raise "unrecognized type: #{type}"
+    end
+  end
+
+  url = ENV['url']
+  unless url
+    abort 'usage: url=<url> rake csv_to_json_schema'
+  end
+
+  rows = CSV.parse(open(url).read, headers: true)
+
+  missing_headers = REQUIRED_HEADERS - rows[0].headers
+  unless missing_headers.empty?
+    abort "CSV is missing #{missing_headers.join(',')} headers"
+  end
+
+  rows.each do|row|
+    DEFINED_CLASSES << row['Class']
+  end
+
+  definitions = {}
+
+  rows.each do |row|
+    # The spreadsheet may have additional rows.
+    klass = row['Class']
+    if klass
+      property = {
+        'description' => row['Description'].to_s,
+      }.merge(parse_type(row['Type']))
+
+      format = row['Format']
+      case format
+      when 'date-time', 'email', 'hostname', 'ipv4', 'ipv6', 'uri'
+        property['format'] = format
+      when %r{\A/(.+)/\z}
+        property['pattern'] = $1
+      when 'N/A'
+        # do nothing
+      else # e.g. IANA media type
+        $stderr.puts "unrecognized format: #{format}"
+      end
+
+      definition_key = class_name_to_definition_key(klass)
+      definitions[definition_key] ||= {
+        'description' => '',
+        'type' => 'object',
+        'properties' => {},
+        'additionalProperties' => false,
+      }
+      definitions[definition_key]['properties'][row['Property']] = property
+    end
+  end
+
+  primary_classes = DEFINED_CLASSES - REFERENCED_CLASSES
+  if primary_classes.one?
+    primary_definition = definitions.delete(class_name_to_definition_key(primary_classes.to_a[0]))
+  else
+    abort "couldn't determine primary class (one of #{primary_classes.to_a.join(', ')})"
+  end
+
+  puts JSON.pretty_generate({
+    '$schema' => 'http://json-schema.org/draft-04/schema#',
+  }.merge(primary_definition).merge({
+    'definitions' => definitions,
+  }))
 end
