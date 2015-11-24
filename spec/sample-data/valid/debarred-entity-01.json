@@ -22,7 +22,7 @@
       "entity_type": "person"
     },
     "debarment_type": "disqualified_director",
-    "debared_jurisdictions": ["gb"],
+    "debarred_jurisdictions": ["gb"],
     "retrieved_at": "2015-08-11T23:00:08+01:00",
     "sample_date": "2015-08-11",
     "source_url": "https://opendata.utah.gov/api/views/kzrq-v59u/rows.json?accessType=DOWNLOAD"

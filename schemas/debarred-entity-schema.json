@@ -5,35 +5,34 @@
     "subject_entity": {
       "$ref": "includes/entity.json"
     },
-    "filing_date": {
-      "type": "string",
-      "description": "Date on which the filing was made – note this is not necessarily the same date as the date on which it was published or the reporting/applicable data on the information contained within it",
-      "format": "date"
-    },
     "debarment_type": {
       "description": "Type of debarment. This field is required",
       "enum": ["disqualified_director","sanctioned_entity"]
     },
     "uid": {
-      "description": "Unique id/reference for the filing if it has one",
+      "description": "Unique id/reference for the debarment if it has one",
       "type": "string"
     },
     "title": {
-      "description": "The title of the filing, if given",
+      "description": "The title of the debarment, if given",
       "type": "string"
     },
     "description": {
-      "description": "The description or precis of the filing, if given",
+      "description": "The description or precis of the debarment, if given",
       "type": "string"
     },
     "url": {
-      "description": "Persistent URL for the filing, if there is one",
+      "description": "Persistent URL for the debarment, if there is one",
       "type": "string"
     },
     "source_url": {
       "description": "Source url of the web page for the filing or if there is not persistent URL the page from which it can be found (e.g. search page). This field is required.",
       "type": "string",
       "minLength": 11
+    },
+    "debarred_jurisdictions": {
+      "description": "list of jurisdictions that this debarment applies to",
+      "type": "array"
     },
     "confidence": {
       "description": "Confidence in accuracy of data",
