@@ -1,0 +1,162 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "issue": {
+      "description": "",
+      "$ref": "#/definitions/issue"
+    },
+    "id": {
+      "description": "",
+      "type": "string"
+    },
+    "title": {
+      "description": "",
+      "type": "string"
+    },
+    "description": {
+      "description": "",
+      "type": "string"
+    },
+    "body": {
+      "description": "",
+      "type": "string"
+    },
+    "classification": {
+      "description": "",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entities": {
+      "description": "",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/entity_group"
+      }
+    },
+    "url": {
+      "description": "",
+      "type": "string",
+      "format": "uri"
+    },
+    "media_type": {
+      "description": "",
+      "type": "string"
+    },
+    "other_attributes": {
+      "description": "",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "publisher": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "url": {
+          "description": "",
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "publication": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "publisher": {
+          "description": "",
+          "$ref": "#/definitions/publisher"
+        },
+        "jurisdiction_code": {
+          "description": "",
+          "type": "string"
+        },
+        "title": {
+          "description": "",
+          "type": "string"
+        },
+        "url": {
+          "description": "",
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "issue": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "publication": {
+          "description": "",
+          "$ref": "#/definitions/publication"
+        },
+        "id": {
+          "description": "",
+          "type": "string"
+        },
+        "title": {
+          "description": "",
+          "type": "string"
+        },
+        "edition_id": {
+          "description": "",
+          "type": "string"
+        },
+        "page_range": {
+          "description": "",
+          "type": "string",
+          "pattern": "^[0-9]*(-[0-9]*)?$"
+        },
+        "date_published": {
+          "description": "",
+          "type": "string",
+          "pattern": "^[0-9]{4}(-[0-9]{2}){2}$"
+        },
+        "url": {
+          "description": "",
+          "type": "string",
+          "format": "uri"
+        },
+        "media_type": {
+          "description": "",
+          "type": "string"
+        },
+        "retrieved_at": {
+          "description": "",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "entity_group": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "entities": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "includes/entity.json"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
