@@ -18,7 +18,7 @@
             "null"
           ],
           "format": "non-blank",
-          "description": "The given name (often first name) of a person, as opposed to their family name. Following FOAF practice, this is preferred to first_name"
+          "description": "The given name(s) (often first name) of a person, as opposed to their family name. Following FOAF practice, this is preferred to first_name"
         },
         "family_name": {
           "type": [

@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A debarred entity is a record of a person or company that has been debarred or prohibited from some activity, e.g. disqualified from being a director, or on a sanctions list",
+  "properties": {
+    "subject_entity": {
+      "$ref": "includes/entity.json"
+    },
+    "filing_date": {
+      "type": "string",
+      "description": "Date on which the filing was made – note this is not necessarily the same date as the date on which it was published or the reporting/applicable data on the information contained within it",
+      "format": "date"
+    },
+    "debarment_type": {
+      "description": "Type of debarment. This field is required",
+      "enum": ["disqualified_director","sanctioned_entity"]
+    },
+    "uid": {
+      "description": "Unique id/reference for the filing if it has one",
+      "type": "string"
+    },
+    "title": {
+      "description": "The title of the filing, if given",
+      "type": "string"
+    },
+    "description": {
+      "description": "The description or precis of the filing, if given",
+      "type": "string"
+    },
+    "url": {
+      "description": "Persistent URL for the filing, if there is one",
+      "type": "string"
+    },
+    "source_url": {
+      "description": "Source url of the web page for the filing or if there is not persistent URL the page from which it can be found (e.g. search page). This field is required.",
+      "type": "string",
+      "minLength": 11
+    },
+    "confidence": {
+      "description": "Confidence in accuracy of data",
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "start_date": {
+      "description": "Date on which the debarment started",
+      "type": "string",
+      "format": "date"
+    },
+    "start_date": {
+      "description": "Date on which the debarment ended, or is scheduled to end",
+      "type": "string",
+      "format": "date"
+    },
+    "retrieved_at": {
+      "description": "Date-time this was retrieved from the source",
+      "type": "string",
+      "format": "date-time"
+    },
+    "sample_date": {
+      "description": "Date on which we know this to be true (usually date this information was retrieved from the source)",
+      "type": "string",
+      "format": "date"
+    },
+    "other_attributes": {
+      "description": "Use for other attributes for which we don't yet have curated schema attributes",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "debarment_type",
+    "subject_entity",
+    "source_url",
+    "sample_date"
+  ]
+}

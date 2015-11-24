@@ -1,0 +1,29 @@
+{
+    "confidence": "HIGH",
+    "subject_entity": {
+      "entity_properties": {
+        "name": {
+          "given_name": "SANDRA",
+          "family_name": "YOUNG"
+        },
+        "registered_address": {
+          "street_address": "93 FORFAR ROAD",
+          "locality": "DUNDEE",
+          "region": "ANGUS",
+          "postal_code": "DD4 9BS"
+        },
+        "company": {
+          "name": "DOUGLAS STREET TRANSPORT LTD.",
+          "jurisdiction_code": "gb"
+        },
+        "date_of_birth": "1953-07-20",
+        "nationality": "BRITISH"
+      },
+      "entity_type": "person"
+    },
+    "debarment_type": "disqualified_director",
+    "debared_jurisdictions": ["gb"],
+    "retrieved_at": "2015-08-11T23:00:08+01:00",
+    "sample_date": "2015-08-11",
+    "source_url": "https://opendata.utah.gov/api/views/kzrq-v59u/rows.json?accessType=DOWNLOAD"
+}
