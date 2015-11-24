@@ -1,5 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Notice",
   "description": "",
   "type": "object",
   "properties": {
@@ -52,8 +53,12 @@
     }
   },
   "additionalProperties": false,
+  "required": [
+    "id"
+  ],
   "definitions": {
     "publisher": {
+      "title": "Publisher",
       "description": "",
       "type": "object",
       "properties": {
@@ -70,6 +75,7 @@
       "additionalProperties": false
     },
     "publication": {
+      "title": "Publication",
       "description": "",
       "type": "object",
       "properties": {
@@ -94,6 +100,7 @@
       "additionalProperties": false
     },
     "issue": {
+      "title": "Issue",
       "description": "",
       "type": "object",
       "properties": {
@@ -141,6 +148,7 @@
       "additionalProperties": false
     },
     "entity_group": {
+      "title": "Entity Group",
       "description": "",
       "type": "object",
       "properties": {
