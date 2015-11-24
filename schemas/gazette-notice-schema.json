@@ -7,7 +7,7 @@
     "issue": {
       "$ref": "#/definitions/issue"
     },
-    "id": {
+    "identifier": {
       "type": "string"
     },
     "title": {
@@ -44,7 +44,7 @@
   },
   "additionalProperties": false,
   "required": [
-    "id"
+    "identifier"
   ],
   "definitions": {
     "publisher": {
@@ -91,7 +91,7 @@
         "publication": {
           "$ref": "#/definitions/publication"
         },
-        "id": {
+        "identifier": {
           "type": "string"
         },
         "title": {
@@ -126,7 +126,7 @@
       "title": "Relation",
       "type": "object",
       "properties": {
-        "name": {
+        "classification": {
           "type": "string"
         },
         "entity": {

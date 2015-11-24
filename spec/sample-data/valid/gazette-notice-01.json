@@ -9,7 +9,7 @@
       "title": "Iris Oifigiuil",
       "url": "http://www.irisoifigiuil.ie/"
     },
-    "id": "1",
+    "identifier": "1",
     "title": "Number 1",
     "edition_id": "2015",
     "page_range": "1-22",
@@ -18,7 +18,7 @@
     "media_type": "application/pdf",
     "retrieved_at": "2015-11-12T00:00:00Z"
   },
-  "id": "3",
+  "identifier": "3",
   "title": "IN THE MATTER OF THE COMPANIES ACT 1963-2009 AND IN THE MATTER OF SO CHILDISH LIMITED (In Voluntary Liquidation)",
   "description": "The voluntary liquidation of So Childsh Limited",
   "body": "IN THE MATTER OF THE COMPANIES ACT 1963-2009 AND IN THE MATTER OF SO CHILDISH LIMITED (In Voluntary Liquidation)\n\nAt an Extraordinary General Meeting of the above named Company duly convened and held in the Glenroyal Hotel, Glenroyal Centre, Maynooth, Co. Kildare, on the 21st of December, 2011, the following Resolution was duly passed: ...",
@@ -27,11 +27,11 @@
   ],
   "relations": [
     {
-      "name": "Attorney",
+      "classification": "subject",
       "entity": {
-        "entity_type": "person",
+        "entity_type": "company",
         "entity_properties": {
-          "name": "MIGUEL GARCIA TEN"
+          "name": "SO CHILDISH LIMITED"
         }
       },
       "start_date": "2015-01-02",
