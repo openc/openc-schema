@@ -157,6 +157,8 @@ task :csv_to_json_schema do
     case format
     when 'date-time', 'email', 'hostname', 'ipv4', 'ipv6', 'uri'
       property['format'] = format
+    when 'date'
+      property['pattern'] = '^[0-9]{4}(-[0-9]{2}){2}$'
     when %r{\A/(.+)/\z}
       property['pattern'] = $1
     when 'N/A'
