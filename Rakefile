@@ -72,6 +72,8 @@ task :csv_to_json_schema do
     'Description',
     'Type',
     'Format',
+    'Required?',
+    'Example',
   ].freeze
 
   DEFINED_CLASSES = Set.new
@@ -145,7 +147,8 @@ task :csv_to_json_schema do
 
   rows.select!{|row| row['Property']}
 
-  definitions = {}
+  DEFINITIONS = {}
+  EXAMPLES = {}
   rows.each do |row|
     property = {}
     if row['Description']
@@ -170,38 +173,60 @@ task :csv_to_json_schema do
     klass = row['Class']
     definition_key = class_name_to_definition_key(klass)
 
-    unless definitions.key?(definition_key)
+    unless DEFINITIONS.key?(definition_key)
       definition = {
         'title' => class_name_to_title(klass),
       }
       if definition_descriptions.key?(definition_key)
         definition['description'] = definition_descriptions[definition_key]
       end
-      definitions[definition_key] = definition.merge({
+      DEFINITIONS[definition_key] = definition.merge({
         'type' => 'object',
         'properties' => {},
         'additionalProperties' => false,
       })
+      EXAMPLES[definition_key] = {}
     end
-    definitions[definition_key]['properties'][row['Property']] = property
+    DEFINITIONS[definition_key]['properties'][row['Property']] = property
+    EXAMPLES[definition_key][row['Property']] = JSON.load(row['Example'])
   end
 
-  definitions.each do |key,definition|
+  DEFINITIONS.each do |key,definition|
     unless definition_requireds[key].empty?
-      definitions[key]['required'] = definition_requireds[key]
+      DEFINITIONS[key]['required'] = definition_requireds[key]
     end
   end
 
   primary_classes = DEFINED_CLASSES - REFERENCED_CLASSES
   if primary_classes.one?
-    primary_definition = definitions.delete(class_name_to_definition_key(primary_classes.to_a[0]))
+    primary_definition_key = class_name_to_definition_key(primary_classes.to_a[0])
+    primary_definition = DEFINITIONS.delete(primary_definition_key)
+    primary_example = EXAMPLES.delete(primary_definition_key)
   else
     abort "couldn't determine primary class (one of #{primary_classes.to_a.join(', ')})"
   end
 
-  puts JSON.pretty_generate({
+  schema = {
     '$schema' => 'http://json-schema.org/draft-04/schema#',
   }.merge(primary_definition).merge({
-    'definitions' => definitions,
-  }))
+    'definitions' => DEFINITIONS,
+  })
+
+  def build_example(example, schema)
+    example.each do |key,value|
+      property = schema['properties'][key]
+      if property['$ref'] && property['$ref'][%r{#/definitions/(.+)}]
+        example[key] = build_example(EXAMPLES[$1], DEFINITIONS[$1])
+      elsif property['items'] && property['items']['$ref'] && property['items']['$ref'][%r{#/definitions/(.+)}]
+        example[key] = [build_example(EXAMPLES[$1], DEFINITIONS[$1])]
+      end
+    end
+    example
+  end
+
+  if ENV['example']
+    puts JSON.pretty_generate(build_example(primary_example, schema))
+  else
+    puts JSON.pretty_generate(schema)
+  end
 end
