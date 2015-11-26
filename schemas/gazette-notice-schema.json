@@ -5,45 +5,67 @@
   "type": "object",
   "properties": {
     "issue": {
+      "description": "The issue in which the notice is published",
       "$ref": "#/definitions/issue"
     },
     "identifier": {
+      "description": "The identifier of the notice",
       "type": "string"
     },
     "title": {
+      "description": "The title of the notice",
       "type": "string"
     },
     "description": {
+      "description": "A description of the notice",
       "type": "string"
     },
     "body": {
+      "description": "The content of the notice",
       "type": "string"
     },
     "classification": {
+      "description": "The type of the notice",
       "type": "array",
       "items": {
         "type": "string"
       }
     },
+    "subjects": {
+      "description": "The entities that the notice is about",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/relation"
+      }
+    },
     "relations": {
+      "description": "The entities related to the notice",
       "type": "array",
       "items": {
         "$ref": "#/definitions/relation"
       }
     },
     "url": {
+      "description": "The URL of the notice",
       "type": "string",
       "format": "uri"
     },
     "media_type": {
+      "description": "The media type of the URL resource",
       "type": "string"
     },
+    "creator": {
+      "description": "The author of the notice",
+      "$ref": "includes/entity.json"
+    },
     "other_attributes": {
+      "description": "Any other attributes of the notice ",
       "type": "object"
     }
   },
   "additionalProperties": false,
   "required": [
+    "issue",
     "identifier"
   ],
   "definitions": {
@@ -53,14 +75,19 @@
       "type": "object",
       "properties": {
         "name": {
+          "description": "The name of the publisher",
           "type": "string"
         },
         "url": {
+          "description": "The URL of the publisher",
           "type": "string",
           "format": "uri"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ]
     },
     "publication": {
       "title": "Publication",
@@ -68,20 +95,27 @@
       "type": "object",
       "properties": {
         "publisher": {
+          "description": "The publisher of the gazette",
           "$ref": "#/definitions/publisher"
         },
         "jurisdiction_code": {
+          "description": "The jurisdiction covered by the gazette",
           "type": "string"
         },
         "title": {
+          "description": "The title of the gazette",
           "type": "string"
         },
         "url": {
+          "description": "The URL of the gazette",
           "type": "string",
           "format": "uri"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "publisher"
+      ]
     },
     "issue": {
       "title": "Issue",
@@ -89,54 +123,70 @@
       "type": "object",
       "properties": {
         "publication": {
+          "description": "The gazette of which the issue is a part",
           "$ref": "#/definitions/publication"
         },
         "identifier": {
+          "description": "The identifier of the issue",
           "type": "string"
         },
         "title": {
+          "description": "The title of the issue",
           "type": "string"
         },
         "edition_id": {
+          "description": "The identifier of the edition of which the issue is a part",
           "type": "string"
         },
         "page_range": {
+          "description": "The page range of the issue",
           "type": "string",
           "pattern": "^[0-9]*(-[0-9]*)?$"
         },
         "date_published": {
+          "description": "The date of publication of the issue",
           "type": "string",
           "pattern": "^[0-9]{4}(-[0-9]{2}){2}$"
         },
         "url": {
+          "description": "The URL of the issue",
           "type": "string",
           "format": "uri"
         },
         "media_type": {
+          "description": "The media type of the URL resource",
           "type": "string"
         },
         "retrieved_at": {
+          "description": "The time at which the issue was retrieved",
           "type": "string",
           "format": "date-time"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "publication"
+      ]
     },
     "relation": {
       "title": "Relation",
       "type": "object",
       "properties": {
         "classification": {
+          "description": "The way in which the entity is related to the notice. Use \"subject\" for any primary entities.",
           "type": "string"
         },
         "entity": {
+          "description": "The entity related to the notice",
           "$ref": "includes/entity.json"
         },
         "start_date": {
+          "description": "The start date of the relation",
           "type": "string",
           "pattern": "^[0-9]{4}(-[0-9]{2}){2}$"
         },
         "end_date": {
+          "description": "The end date of the relation",
           "type": "string",
           "pattern": "^[0-9]{4}(-[0-9]{2}){2}$"
         }
