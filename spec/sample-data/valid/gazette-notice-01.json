@@ -53,7 +53,12 @@
   ],
   "url": "https://www.thegazette.co.uk/notice/2174114",
   "media_type": "application/pdf",
-  "creator": null,
+  "creator": {
+    "entity_type": "person",
+    "entity_properties": {
+      "name": "John Q. Liquidator"
+    }
+  },
   "other_attributes": {
     "section": "Appointments"
   }
