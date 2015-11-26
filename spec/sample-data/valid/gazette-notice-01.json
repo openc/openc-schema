@@ -27,28 +27,10 @@
   ],
   "subjects": [
     {
-      "classification": "subject",
-      "entity": {
-        "entity_type": "company",
-        "entity_properties": {
-          "name": "SO CHILDISH LIMITED"
-        }
-      },
-      "start_date": "2015-01-02",
-      "end_date": "2016-01-02"
-    }
-  ],
-  "relations": [
-    {
-      "classification": "subject",
-      "entity": {
-        "entity_type": "company",
-        "entity_properties": {
-          "name": "SO CHILDISH LIMITED"
-        }
-      },
-      "start_date": "2015-01-02",
-      "end_date": "2016-01-02"
+      "entity_type": "company",
+      "entity_properties": {
+        "name": "SO CHILDISH LIMITED"
+      }
     }
   ],
   "url": "https://www.thegazette.co.uk/notice/2174114",

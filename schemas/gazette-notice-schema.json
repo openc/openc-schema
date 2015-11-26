@@ -35,14 +35,7 @@
       "description": "The entities that the notice is about",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/relation"
-      }
-    },
-    "relations": {
-      "description": "The entities related to the notice",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/relation"
+        "$ref": "includes/entity.json"
       }
     },
     "url": {
@@ -59,7 +52,7 @@
       "$ref": "includes/entity.json"
     },
     "other_attributes": {
-      "description": "Any other attributes of the notice ",
+      "description": "Any other structured data from the notice ",
       "type": "object"
     }
   },
@@ -167,31 +160,6 @@
       "required": [
         "publication"
       ]
-    },
-    "relation": {
-      "title": "Relation",
-      "type": "object",
-      "properties": {
-        "classification": {
-          "description": "The way in which the entity is related to the notice. Use \"subject\" for any primary entities.",
-          "type": "string"
-        },
-        "entity": {
-          "description": "The entity related to the notice",
-          "$ref": "includes/entity.json"
-        },
-        "start_date": {
-          "description": "The start date of the relation",
-          "type": "string",
-          "pattern": "^[0-9]{4}(-[0-9]{2}){2}$"
-        },
-        "end_date": {
-          "description": "The end date of the relation",
-          "type": "string",
-          "pattern": "^[0-9]{4}(-[0-9]{2}){2}$"
-        }
-      },
-      "additionalProperties": false
     }
   }
 }
