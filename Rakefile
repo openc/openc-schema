@@ -76,6 +76,19 @@ task :csv_to_json_schema do
     'Example',
   ].freeze
 
+  # @see http://json-schema.org/latest/json-schema-core.html#anchor8
+  JSON_SCHEMA_TYPES = [
+    'array',
+    'boolean',
+    'integer',
+    'null',
+    'number',
+    'object',
+    'string',
+  ].freeze
+
+  JSON_SCHEMA_TYPES_RE = Regexp.new(JSON_SCHEMA_TYPES.join('|'))
+
   DEFINED_CLASSES = Set.new
 
   REFERENCED_CLASSES = Set.new
@@ -90,7 +103,7 @@ task :csv_to_json_schema do
 
   def parse_type(type)
     case type
-    when 'array', 'boolean', 'false', 'null', 'number', 'object', 'string', 'true'
+    when *JSON_SCHEMA_TYPES
       {'type' => type}
     when /\Aarray<(.+)>\z/
       {'type' => 'array', 'items' => parse_type($1)}
@@ -105,7 +118,12 @@ task :csv_to_json_schema do
         raise "unrecognized schema: #{type}"
       end
     else
-      raise "unrecognized type: #{type}"
+      types = type.scan(JSON_SCHEMA_TYPES_RE)
+      if types.empty?
+        raise "unrecognized type: #{type}"
+      else
+        {'type' => types}
+      end      
     end
   end
 
