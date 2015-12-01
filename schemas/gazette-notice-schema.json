@@ -121,7 +121,10 @@
         },
         "identifier": {
           "description": "The identifier of the issue",
-          "type": "string"
+          "type": [
+            "string",
+            "integer"
+          ]
         },
         "title": {
           "description": "The title of the issue",
@@ -129,7 +132,10 @@
         },
         "edition_id": {
           "description": "The identifier of the edition of which the issue is a part",
-          "type": "string"
+          "type": [
+            "string",
+            "integer"
+          ]
         },
         "page_range": {
           "description": "The page range of the issue",
