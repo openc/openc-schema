@@ -176,14 +176,16 @@ task :csv_to_json_schema do
 
     format = row['Format']
     case format
+    when 'N/A'
+      # do nothing
     when 'date-time', 'email', 'hostname', 'ipv4', 'ipv6', 'uri'
       property['format'] = format
     when 'date'
       property['pattern'] = '^[0-9]{4}(-[0-9]{2}){2}$'
     when %r{\A/(.+)/\z}
       property['pattern'] = $1
-    when 'N/A'
-      # do nothing
+    when %r{, }
+      property['enum'] = format.split(', ')
     else # e.g. IANA media type
       $stderr.puts "unrecognized format: #{format}"
     end

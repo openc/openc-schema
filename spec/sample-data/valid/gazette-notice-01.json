@@ -13,17 +13,29 @@
     "title": "Number 1",
     "edition_id": "2015",
     "page_range": "1-22",
-    "date_published": "2015-01-02",
     "url": "http://www.irisoifigiuil.ie/archive/2015/january/Ir020115.PDF",
     "media_type": "application/pdf",
     "retrieved_at": "2015-11-12T00:00:00Z"
   },
+  "document": {
+    "page_range": null,
+    "url": null,
+    "media_type": null
+  },
+  "uid": "2015-1-¶1-14",
   "identifier": "3",
   "title": "IN THE MATTER OF THE COMPANIES ACT 1963-2009 AND IN THE MATTER OF SO CHILDISH LIMITED (In Voluntary Liquidation)",
   "description": "The voluntary liquidation of So Childsh Limited",
-  "body": "IN THE MATTER OF THE COMPANIES ACT 1963-2009 AND IN THE MATTER OF SO CHILDISH LIMITED (In Voluntary Liquidation)\n\nAt an Extraordinary General Meeting of the above named Company duly convened and held in the Glenroyal Hotel, Glenroyal Centre, Maynooth, Co. Kildare, on the 21st of December, 2011, the following Resolution was duly passed: ...",
+  "body": {
+    "value": "IN THE MATTER OF THE COMPANIES ACT 1963-2009 AND IN THE MATTER OF SO CHILDISH LIMITED (In Voluntary Liquidation)\n\nAt an Extraordinary General Meeting of the above named Company duly convened and held in the Glenroyal Hotel, Glenroyal Centre, Maynooth, Co. Kildare, on the 21st of December, 2011, the following Resolution was duly passed: ...",
+    "media_type": "text/plain"
+  },
+  "date_published": "2015-01-02",
   "classification": [
-    "dissolution"
+    {
+      "scheme": "Iris Oifigiuil",
+      "value": "dissolution"
+    }
   ],
   "subjects": [
     {
@@ -41,6 +53,8 @@
       "name": "John Q. Liquidator"
     }
   },
+  "source_url": "https://www.thegazette.co.uk/notice/2174114",
+  "sample_date": "2015-12-01",
   "other_attributes": {
     "section": "Appointments"
   }

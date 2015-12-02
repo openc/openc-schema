@@ -8,8 +8,11 @@
       "description": "The issue in which the notice is published",
       "$ref": "#/definitions/issue"
     },
+    "document": {
+      "$ref": "#/definitions/document"
+    },
     "identifier": {
-      "description": "The identifier of the notice",
+      "description": "The publisher's identifier for the notice",
       "type": "string"
     },
     "title": {
@@ -22,13 +25,18 @@
     },
     "body": {
       "description": "The content of the notice",
-      "type": "string"
+      "$ref": "#/definitions/body"
+    },
+    "date_published": {
+      "description": "The date of publication of the notice",
+      "type": "string",
+      "pattern": "^[0-9]{4}(-[0-9]{2}){2}$"
     },
     "classification": {
       "description": "The type of the notice",
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "#/definitions/classification"
       }
     },
     "subjects": {
@@ -48,8 +56,18 @@
       "type": "string"
     },
     "creator": {
-      "description": "The author of the notice",
+      "description": "The entity placing the notice",
       "$ref": "includes/entity.json"
+    },
+    "source_url": {
+      "description": "A URL where this fact may be verified",
+      "type": "string",
+      "format": "uri"
+    },
+    "sample_date": {
+      "description": "A date on which this fact is known to be true",
+      "type": "string",
+      "pattern": "^[0-9]*(-[0-9]*)?$"
     },
     "other_attributes": {
       "description": "Any other structured data from the notice ",
@@ -142,11 +160,6 @@
           "type": "string",
           "pattern": "^[0-9]*(-[0-9]*)?$"
         },
-        "date_published": {
-          "description": "The date of publication of the issue",
-          "type": "string",
-          "pattern": "^[0-9]{4}(-[0-9]{2}){2}$"
-        },
         "url": {
           "description": "The URL of the issue",
           "type": "string",
@@ -166,6 +179,64 @@
       "required": [
         "publication"
       ]
+    },
+    "document": {
+      "title": "Document",
+      "description": "A section of an issue",
+      "type": "object",
+      "properties": {
+        "page_range": {
+          "description": "The page range of the document",
+          "type": "string",
+          "pattern": "^[0-9]*(-[0-9]*)?$"
+        },
+        "url": {
+          "description": "The URL of the document",
+          "type": "string",
+          "format": "uri"
+        },
+        "media_type": {
+          "description": "The media type of the URL resource",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "classification": {
+      "title": "Classification",
+      "description": "A classification",
+      "type": "object",
+      "properties": {
+        "scheme": {
+          "description": "The scheme of the classification",
+          "type": "string"
+        },
+        "value": {
+          "description": "The classification",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "body": {
+      "title": "Body",
+      "description": "Content",
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "The content",
+          "type": "string"
+        },
+        "media_type": {
+          "description": "The media type of the content",
+          "type": "string",
+          "enum": [
+            "text/plain",
+            "text/html"
+          ]
+        }
+      },
+      "additionalProperties": false
     }
   }
 }
