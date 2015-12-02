@@ -101,6 +101,10 @@ task :csv_to_json_schema do
     class_name.gsub(/(?<=[a-z])(?=[A-Z])/, '_').downcase
   end
 
+  def references_definition?(property)
+    property && property['$ref'] && property['$ref'][%r{#/definitions/(.+)}, 1]
+  end
+
   def parse_type(type)
     case type
     when *JSON_SCHEMA_TYPES
@@ -208,7 +212,11 @@ task :csv_to_json_schema do
       EXAMPLES[definition_key] = {}
     end
     DEFINITIONS[definition_key]['properties'][row['Property']] = property
-    EXAMPLES[definition_key][row['Property']] = JSON.load(row['Example'])
+
+    example = JSON.load(row['Example'])
+    if !example.nil? || references_definition?(property) || references_definition?(property['items'])
+      EXAMPLES[definition_key][row['Property']] = example
+    end
   end
 
   DEFINITIONS.each do |key,definition|
@@ -233,12 +241,21 @@ task :csv_to_json_schema do
   })
 
   def build_example(example, schema)
-    example.each do |key,value|
+    example.each_key do |key|
       property = schema['properties'][key]
-      if property['$ref'] && property['$ref'][%r{#/definitions/(.+)}]
-        example[key] = build_example(EXAMPLES[$1], DEFINITIONS[$1])
-      elsif property['items'] && property['items']['$ref'] && property['items']['$ref'][%r{#/definitions/(.+)}]
-        example[key] = [build_example(EXAMPLES[$1], DEFINITIONS[$1])]
+      definition_key = references_definition?(property)
+      if definition_key
+        object = build_example(EXAMPLES[definition_key], DEFINITIONS[definition_key])
+        if object.values.any?
+          example[key] = object
+        else
+          example.delete(key)
+        end
+      else
+        definition_key = references_definition?(property['items'])
+        if definition_key
+          example[key] = [build_example(EXAMPLES[definition_key], DEFINITIONS[definition_key])]
+        end
       end
     end
     example
