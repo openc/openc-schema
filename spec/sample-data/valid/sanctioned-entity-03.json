@@ -1,0 +1,28 @@
+{
+    "confidence": "HIGH",
+    "subject_entity": {
+      "entity_properties": {
+        "name": "LARGO LEASING LTD.",
+        "uid": "8743"
+      },
+      "entity_type": "unknown"
+    },
+    "publisher": "US Office of Foreign Assets Control",
+    "sanctions": [
+      {
+        "sanction_type": "sanctions_listing",
+        "sanction_jurisdictions": ["us"],
+        "legal_basis": [
+          {
+            "name": "Narcotics Trafficking Sanctions Regulations, 31 C.F.R. part 536​",
+            "url": "http://www.ecfr.gov/cgi-bin/text-idx?SID=5eae22affe2e3675b6deaa3fb796eb7a&tpl=/ecfrbrowse/Title31/31cfr536_main_02.tpl"
+          }
+        ]
+      }
+    ],
+    "sanction_type": "listed_sanctioned_entity",
+    "retrieved_at": "2015-08-11T23:00:08+01:00",
+    "sample_date": "2015-08-11",
+    "start_date": "2006-05-26",
+    "source_url": "https://www.treasury.gov/resource-center/sanctions/Pages/default.aspx"
+}

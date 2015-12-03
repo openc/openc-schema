@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "oneOf": [
+    {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 2
+    },
+    {
+      "name": "sanction",
+      "description": "A sanction issued by a government or regulatory body to an entity to prevent it operating (e.g. disqualified director) or ban others from dealing with it (e.g. a OFAC sanctioned entity).",
+      "type": "object",
+      "properties": {
+        "sanction_type": {
+          "enum": [
+            "disqualification",
+            "sanctions_listing"
+          ],
+          "description": "types of sanction - one of 'disqualification', 'sanctions_list'"
+        },
+        "restrictions": {
+          "type": "array",
+          "description": "conditions or restrictions on the sanctions",
+          "items": {
+            "type": "string"
+          }
+        },
+        "legal_basis": {
+          "type": ["array","null"],
+          "items": {
+            "$ref": "legislation.json"
+          }
+        },
+        "sanction_jurisdictions": {
+          "description": "list of jurisdictions that this sanction applies to",
+          "type": "array",
+          "items": "String"
+        },
+        "sanction_issuer": {
+          "oneOf": [
+            {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 2
+            },
+            {
+              "$ref": "organisation.json"
+            }
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "other_attributes": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "sanction_type"
+      ]
+    }
+  ]
+}

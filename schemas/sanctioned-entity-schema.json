@@ -1,38 +1,50 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "A debarred entity is a record of a person or company that has been debarred or prohibited from some activity, e.g. disqualified from being a director, or on a sanctions list",
+  "description": "A sanctioned entity is a record of a person or company that has been barred or prohibited from some activity, e.g. disqualified from being a director, banned from bidding for contracts, or is on a sanctions list",
   "properties": {
     "subject_entity": {
       "$ref": "includes/entity.json"
     },
-    "debarment_type": {
-      "description": "Type of debarment. This field is required",
-      "enum": ["disqualified_director","sanctioned_entity"]
+    "sanction_type": {
+      "description": "Type of sanction. This field is required (other options may be added in the future). A listed_sanctioned_entity is an entity that is on a national or international sanctions list, e.g. OFAC",
+      "enum": ["disqualified_director","listed_sanctioned_entity"]
+    },
+    "publisher": {
+      "oneOf": [
+        {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 2
+        },
+        {
+          "$ref": "includes/organisation.json"
+        }
+      ]
+    },
+    "sanctions": {
+      "type": "array",
+      "items": {
+        "$ref": "includes/sanction.json"
+      }
     },
     "uid": {
-      "description": "Unique id/reference for the debarment if it has one",
+      "description": "Unique id/reference for the sanctioned entity record if the sanctioning body has given it one",
       "type": "string"
     },
     "title": {
-      "description": "The title of the debarment, if given",
-      "type": "string"
-    },
-    "description": {
-      "description": "The description or precis of the debarment, if given",
+      "description": "The title of the sanction, if given",
       "type": "string"
     },
     "url": {
-      "description": "Persistent URL for the debarment, if there is one",
+      "description": "Persistent URL for the sanctioned entity record, if there is one",
       "type": "string"
     },
     "source_url": {
       "description": "Source url of the web page for the filing or if there is not persistent URL the page from which it can be found (e.g. search page). This field is required.",
       "type": "string",
       "minLength": 11
-    },
-    "debarred_jurisdictions": {
-      "description": "list of jurisdictions that this debarment applies to",
-      "type": "array"
     },
     "confidence": {
       "description": "Confidence in accuracy of data",
@@ -44,12 +56,12 @@
       ]
     },
     "start_date": {
-      "description": "Date on which the debarment started",
+      "description": "Date on which the sanction started",
       "type": "string",
       "format": "date"
     },
-    "start_date": {
-      "description": "Date on which the debarment ended, or is scheduled to end",
+    "end_date": {
+      "description": "Date on which the sanction ended, or is scheduled to end",
       "type": "string",
       "format": "date"
     },
@@ -70,7 +82,7 @@
   },
   "additionalProperties": false,
   "required": [
-    "debarment_type",
+    "sanction_type",
     "subject_entity",
     "source_url",
     "sample_date"
