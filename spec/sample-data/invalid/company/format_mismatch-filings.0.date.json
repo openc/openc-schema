@@ -1,0 +1,11 @@
+{
+  "name": "Foo Inc",
+  "company_number": "12345",
+  "jurisdiction_code": "ie",
+  "filings": [
+    {
+      "filing_type_name": "Some type",
+      "date": "Jan 14, 1981 12:00 AM"
+    }
+  ]
+}
