@@ -14,8 +14,7 @@
     "edition_id": "2015",
     "page_range": "1-22",
     "url": "http://www.irisoifigiuil.ie/archive/2015/january/Ir020115.PDF",
-    "media_type": "application/pdf",
-    "retrieved_at": "2015-11-12T00:00:00Z"
+    "media_type": "application/pdf"
   },
   "uid": "2015-1-¶1-14",
   "identifier": "3",
@@ -50,6 +49,7 @@
   },
   "source_url": "https://www.thegazette.co.uk/notice/2174114",
   "sample_date": "2015-12-01",
+  "retrieved_at": "2015-11-12T00:00:00Z",
   "other_attributes": {
     "section": "Appointments"
   }

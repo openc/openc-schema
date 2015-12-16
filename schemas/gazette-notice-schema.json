@@ -34,7 +34,7 @@
     "date_published": {
       "description": "The date of publication of the notice",
       "type": "string",
-      "pattern": "^[0-9]{4}(-[0-9]{2}){2}$"
+      "format": "date"
     },
     "classification": {
       "description": "The type of the notice",
@@ -71,7 +71,21 @@
     "sample_date": {
       "description": "A date on which this fact is known to be true",
       "type": "string",
-      "pattern": "^[0-9]{4}(-[0-9]{2}){2}$"
+      "format": "date"
+    },
+    "retrieved_at": {
+      "description": "The time at which the notice was retrieved",
+      "type": "string",
+      "format": "date-time"
+    },
+    "confidence": {
+      "description": "The aggregator's confidence in the accuracy of the data",
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
     },
     "other_attributes": {
       "description": "Any other structured data from the notice ",
@@ -82,7 +96,10 @@
   "required": [
     "issue",
     "uid",
-    "identifier"
+    "identifier",
+    "source_url",
+    "sample_date",
+    "retrieved_at"
   ],
   "definitions": {
     "publisher": {
@@ -173,11 +190,6 @@
         "media_type": {
           "description": "The media type of the URL resource",
           "type": "string"
-        },
-        "retrieved_at": {
-          "description": "The time at which the issue was retrieved",
-          "type": "string",
-          "format": "date-time"
         }
       },
       "additionalProperties": false,
