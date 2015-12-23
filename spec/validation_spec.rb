@@ -1,11 +1,13 @@
 require 'spec_helper'
 
 describe "open-schemas" do
-  Dir.glob(File.join('schemas', '**', '*.json')).each do |path|
-    it "#{path} should be a valid schema" do
-      data = JSON.parse(File.read(path))
-      error = Openc::JsonSchema.validate(data['$schema'], data)
-      expect(error).to be(nil)
+  %w(schemas build).each do |directory|
+    Dir.glob(File.join(directory, '**', '*.json')).each do |path|
+      it "#{path} should be a valid schema" do
+        data = JSON.parse(File.read(path))
+        error = Openc::JsonSchema.validate(data['$schema'], data)
+        expect(error).to be(nil)
+      end
     end
   end
 

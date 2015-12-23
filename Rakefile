@@ -109,23 +109,12 @@ task :embed_references do
     schema
   end
 
-  metaschema = JSON::Schema::Draft4.new.metaschema
-
   all_definitions = {}
 
   Dir[File.join('schemas', '*.json')].each do |path|
     definitions = {} # passed by reference
     schema = process_schema(path, definitions).merge('definitions' => definitions)
     all_definitions.merge!(definitions) # cache definitions across schema
-
-    begin
-      validator = JSON::Validator.new(metaschema, schema, clear_cache: false)
-      validator.validate
-    rescue JSON::Schema::ValidationError => e
-      e.message = "#{File.basename(path)}: #{e.message}"
-      raise e
-    end
-
     File.open(File.join('build', File.basename(path)), 'w') do |f|
       f.write(JSON.pretty_generate(schema))
     end
