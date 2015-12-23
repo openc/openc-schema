@@ -30,7 +30,8 @@
         },
         "date": {
           "description": "The date on which the payment was made",
-          "type": "date"
+          "type": "string",
+          "format": "date"
         },
         "transaction_number": {
           "description": "The unique identifier for the transaction, scoped to this bot",
@@ -44,14 +45,14 @@
           "description": "A url from which more details can be seen (may be the same as the source_url)",
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "description": {
           "description": "The description of the transaction as given in the raw data",
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "expense_type": {
@@ -66,7 +67,7 @@
           "description": "category (in words) of the expenditure",
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "entity_name": {
@@ -77,21 +78,21 @@
           "description": "A unique URL (ideally a dereferencable URI) for the government entity",
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "department_name": {
           "description": "The name of the government department which the entity belongs to (if relevant), e.g. Department of Health",
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "csv_line_number": {
           "description": "If the source for the data is a CSV file, you can optionally include the line number of the CSV from which this data was retrieved",
           "type": [
             "string",
-            null
+            "null"
           ]
         }
       },
