@@ -16,8 +16,6 @@ task :default => :spec
 
 require "json"
 
-require "json-schema"
-
 desc "Regenerate schema files from snippets and reference files"
 task :regenerate_data_object_schemas do
   spacers = '='*20
@@ -61,20 +59,4 @@ end
 desc 'Rewrite sample data files with consistent formatting'
 task :format_sample_data do
   Dir.glob(File.join('spec', '**', '*.json')).each {|path| format_json(path)}
-end
-
-desc 'Validate schema'
-task :validate_schemas do
-  metaschema = JSON::Schema::Draft4.new.metaschema
-
-  Dir.chdir('schemas') # so that the json-schema gem can find $ref's.
-  Dir['*.json'].each do |path|
-    begin
-      validator = JSON::Validator.new(metaschema, File.read(path), clear_cache: false)
-      validator.validate
-    rescue JSON::Schema::ValidationError => e
-      e.message = "#{File.basename(path)}: #{e.message}"
-      raise e
-    end
-  end
 end
