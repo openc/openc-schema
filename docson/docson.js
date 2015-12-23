@@ -434,7 +434,6 @@ define(["lib/jquery", "lib/handlebars", "lib/highlight", "lib/jsonpointer", "lib
             };
 
             var resolveRefsReentrant = function(schema){
-                console.log(schema)
                 traverse(schema).forEach(function(item) {
                     // Fix Swagger weird generation for array.
                     if(item && item.$ref == "array") {
