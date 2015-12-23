@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "includes/base-statement.json"
+    },
+    {
+      "properties": {
+        "data": {
+          "items": {
+            "allOf": [
+              {
+                "$ref": "includes/share-parcel-data.json"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "definitions": {
+  }
+}
