@@ -78,19 +78,23 @@ task :embed_references do
       name = File.basename(ref).chomp('.json')
       value['$ref'] = "#/definitions/#{name}"
       define(name, File.expand_path(ref, File.dirname(path)), definitions)
-    elsif value.key?('properties')
+    end
+  end
+
+  def process_object(value, path, definitions)
+    if value.key?('properties')
       process_properties(value['properties'], path, definitions)
+    else
+      process_value(value, path, definitions)
     end
   end
 
   def process_properties(properties, path, definitions)
     properties.each do |_,value|
       if value.key?('items')
-        process_value(value['items'], path, definitions)
-      elsif value.key?('properties')
-        process_properties(value['properties'], path, definitions)
+        process_object(value['items'], path, definitions)
       else
-        process_value(value, path, definitions)
+        process_object(value, path, definitions)
       end
     end
   end
