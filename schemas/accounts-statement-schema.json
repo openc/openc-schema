@@ -46,13 +46,13 @@
         "$ref": "includes/accounts_element.json"
       }
     },
-    "current_liabilities": {
+    "fixed_assets": {
       "type": ["array","null"],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
-    "fixed_assets": {
+    "total_liabilities": {
       "type": ["array","null"],
       "items": {
         "$ref": "includes/accounts_element.json"
