@@ -52,6 +52,12 @@
         "$ref": "includes/accounts_element.json"
       }
     },
+    "current_liabilities": {
+      "type": ["array","null"],
+      "items": {
+        "$ref": "includes/accounts_element.json"
+      }
+    },
     "total_liabilities": {
       "type": ["array","null"],
       "items": {
