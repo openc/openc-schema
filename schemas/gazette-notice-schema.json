@@ -63,6 +63,14 @@
       "description": "The entity placing the notice",
       "$ref": "includes/entity.json"
     },
+    "publisher": {
+      "description": "The publisher of the notice",
+      "$ref": "#/definitions/publisher"
+    },
+    "update_action": {
+      "description": "Whether this notice corrects or cancels an earlier notice",
+      "$ref": "#/definitions/update_action"
+    },
     "source_url": {
       "description": "A URL where this fact may be verified",
       "type": "string",
@@ -110,6 +118,13 @@
         "name": {
           "description": "The name of the publisher",
           "type": "string"
+        },
+        "identifier": {
+          "description": "The identifier of the publisher",
+          "type": [
+            "string",
+            "integer"
+          ]
         },
         "url": {
           "description": "The URL of the publisher",
@@ -254,6 +269,25 @@
         }
       },
       "additionalProperties": false
+    },
+    "update_action": {
+      "title": "Update action",
+      "description": "An act of changing an object",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "The type of change",
+          "type": "string",
+          "enum": [
+            "cancellation",
+            "correction"
+          ]
+        },
+        "object": {
+          "description": "The object being changed",
+          "type": "object"
+        }
+      }
     }
   }
 }
