@@ -50,6 +50,31 @@
         "$ref": "includes/entity.json"
       }
     },
+    "about": {
+      "description": "The subject matter of the notice",
+      "type": "object",
+      "properties": {
+        "kind": {
+          "description": "The class of subject matter",
+          "type": "string",
+          "enum": [
+            "filing",
+            "judgment"
+          ]
+        },
+        "type": {
+          "description": "The type of subject matter",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/classification"
+          }
+        },
+        "body": {
+          "description": "A description of the item",
+          "$ref": "#/definitions/body"
+        }
+      }
+    },
     "url": {
       "description": "The URL of the notice",
       "type": "string",
@@ -107,7 +132,8 @@
     "identifier",
     "source_url",
     "sample_date",
-    "retrieved_at"
+    "retrieved_at",
+    "confidence"
   ],
   "definitions": {
     "publisher": {
@@ -232,7 +258,10 @@
           "type": "string"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "url"
+      ]
     },
     "classification": {
       "title": "Classification",
@@ -248,7 +277,10 @@
           "type": "string"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "value"
+      ]
     },
     "body": {
       "title": "Body",
@@ -268,7 +300,10 @@
           ]
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "value"
+      ]
     },
     "update_action": {
       "title": "Update action",
@@ -284,10 +319,14 @@
           ]
         },
         "object": {
-          "description": "The object being changed",
+          "description": "The object that was changed",
           "type": "object"
         }
-      }
+      },
+      "additionalProperties": false,
+      "required": [
+        "object"
+      ]
     }
   }
 }
