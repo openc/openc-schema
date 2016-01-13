@@ -56,11 +56,7 @@
       "properties": {
         "kind": {
           "description": "The class of subject matter",
-          "type": "string",
-          "enum": [
-            "filing",
-            "judgment"
-          ]
+          "type": "string"
         },
         "type": {
           "description": "The type of subject matter",
