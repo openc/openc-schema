@@ -58,7 +58,7 @@
           "description": "The class of subject matter",
           "type": "string"
         },
-        "type": {
+        "classification": {
           "description": "The type of subject matter",
           "type": "array",
           "items": {
