@@ -28,6 +28,24 @@
       "maximum": 100,
       "minimum": 0
     },
+    "voting_percentage": {
+      "description": "Percentage of votes, if known",
+      "type": "number",
+      "maximum": 100,
+      "minimum": 0
+    },
+    "voting_percentage_min": {
+      "description": "Minimum percentage of votes (if for example a band of votes is given)",
+      "type": ["number",null],
+      "maximum": 100,
+      "minimum": 0
+    },
+    "voting_percentage_max": {
+      "description": "Maximum percentage of votes (if for example a band of votes is given)",
+      "type": ["number",null],
+      "maximum": 100,
+      "minimum": 0
+    },
     "share_class": {
       "description": "Share class or classes, if known",
       "type": "string"
