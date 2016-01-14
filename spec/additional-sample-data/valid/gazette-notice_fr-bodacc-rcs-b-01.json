@@ -1,0 +1,53 @@
+{
+    "issue": {
+        "publication": {
+            "publisher": {
+                "name": "Direction de l'information légale et administrative",
+                "url": "http://www.dila.premier-ministre.gouv.fr/"
+            },
+            "jurisdiction_code": "fr",
+            "title": "Bulletin officiel des annonces civiles et commerciales",
+            "url": "http://www.bodacc.fr/"
+        },
+        "identifier": "20150001",
+        "edition_id": "B"
+    },
+    "date_published": "2015-01-02",
+    "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
+    "sample_date": "2016-01-12T21:52:11Z",
+    "retrieved_at": "2016-01-12T21:52:11Z",
+    "confidence": "HIGH",
+    "other_attributes": {
+        "format": "RCS-B"
+    },
+    "publisher": {
+        "name": "GREFFE DU TRIBUNAL DE COMMERCE DE SAINT-QUENTIN",
+        "identifier": "02"
+    },
+    "uid": "BXB14358000902D",
+    "identifier": 1,
+    "url": "http://www.bodacc.fr/annonce/detail/BXB14358000902D",
+    "media_type": "text/html",
+    "subjects": [{
+        "entity_type": "company",
+        "entity_properties": {
+            "company_number": "351 374 905 RCS Saint-Quentin",
+            "name": "S.C.I. LESCOT",
+            "company_type": "Société civile immobilière",
+            "headquarters_address": {
+                "street_address": "13  rue  Jacques Lescot ",
+                "locality": "Saint-Quentin",
+                "postal_code": "02100",
+                "country": "France",
+                "country_code": "FR"
+            }
+        }
+    }],
+    "about": {
+        "kind": "general modifications",
+        "body": {
+            "value": "modification survenue sur l'administration",
+            "media_type": "text/plain"
+        }
+    }
+}
