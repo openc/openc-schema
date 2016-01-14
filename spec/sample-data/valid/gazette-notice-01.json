@@ -50,6 +50,7 @@
   "source_url": "https://www.thegazette.co.uk/notice/2174114",
   "sample_date": "2015-12-01",
   "retrieved_at": "2015-11-12T00:00:00Z",
+  "confidence": "MEDIUM",
   "other_attributes": {
     "section": "Appointments"
   }
