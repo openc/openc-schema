@@ -17,7 +17,10 @@
     },
     "identifier": {
       "description": "The publisher's identifier for the notice",
-      "type": "string"
+      "type": [
+        "integer",
+        "string"
+      ]
     },
     "title": {
       "description": "The title of the notice",
