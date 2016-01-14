@@ -1,0 +1,41 @@
+{
+    "issue": {
+        "publication": {
+            "publisher": {
+                "name": "Direction de l'information légale et administrative",
+                "url": "http://www.dila.premier-ministre.gouv.fr/"
+            },
+            "jurisdiction_code": "fr",
+            "title": "Bulletin officiel des annonces civiles et commerciales",
+            "url": "http://www.bodacc.fr/"
+        },
+        "identifier": "20150001",
+        "edition_id": "A"
+    },
+    "date_published": "2015-01-02",
+    "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
+    "sample_date": "2016-01-12T00:52:36Z",
+    "retrieved_at": "2016-01-12T00:52:36Z",
+    "confidence": "HIGH",
+    "other_attributes": {
+        "client_identifier": "0102224174",
+        "judgment": {
+            "type": "Jugement d'ouverture",
+            "classification": "Jugement d'ouverture d'une procédure de redressement judiciaire",
+            "date": "2014-12-17",
+            "body": {
+                "value": "Jugement prononçant l'ouverture d'une procédure de redressement judiciaire, désignant mandataire judiciaire SELARL MJ SYNERGIE, représentée par Mes Belat et Desprat 22, rue du Cordier - BP 107 - 01003 Bourg-en-Bresse . Les déclarations des créances sont à déposer au mandataire judiciaire dans les deux mois à compter de la présente publication.",
+                "media_type": "text/plain"
+            }
+        }
+    },
+    "publisher": {
+        "name": "TRIBUNAL DE COMMERCE DE BOURG-EN-BRESSE",
+        "identifier": "01"
+    },
+    "uid": "BXA14358000109S",
+    "identifier": 1396,
+    "url": "http://www.bodacc.fr/annonce/detail/BXA14358000109S",
+    "media_type": "text/html",
+    "subjects": []
+}

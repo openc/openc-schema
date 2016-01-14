@@ -1,0 +1,331 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Notice",
+  "description": "A gazette notice",
+  "type": "object",
+  "properties": {
+    "issue": {
+      "description": "The issue in which the notice is published",
+      "$ref": "#/definitions/issue"
+    },
+    "document": {
+      "$ref": "#/definitions/document"
+    },
+    "uid": {
+      "description": "An internal, constructed, unique identifier",
+      "type": "string"
+    },
+    "identifier": {
+      "description": "The publisher's identifier for the notice",
+      "type": [
+        "integer",
+        "string"
+      ]
+    },
+    "title": {
+      "description": "The title of the notice",
+      "type": "string"
+    },
+    "description": {
+      "description": "A description of the notice",
+      "type": "string"
+    },
+    "body": {
+      "description": "The content of the notice",
+      "$ref": "#/definitions/body"
+    },
+    "date_published": {
+      "description": "The date of publication of the notice",
+      "type": "string",
+      "format": "date"
+    },
+    "classification": {
+      "description": "The type of the notice",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/classification"
+      }
+    },
+    "subjects": {
+      "description": "The entities that the notice is about",
+      "type": "array",
+      "items": {
+        "$ref": "includes/entity.json"
+      }
+    },
+    "about": {
+      "description": "The subject matter of the notice",
+      "type": "object",
+      "properties": {
+        "kind": {
+          "description": "The class of subject matter",
+          "type": "string"
+        },
+        "classification": {
+          "description": "The type of subject matter",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/classification"
+          }
+        },
+        "body": {
+          "description": "A description of the item",
+          "$ref": "#/definitions/body"
+        }
+      }
+    },
+    "url": {
+      "description": "The URL of the notice",
+      "type": "string",
+      "format": "uri"
+    },
+    "media_type": {
+      "description": "The media type of the URL resource",
+      "type": "string"
+    },
+    "creator": {
+      "description": "The entity placing the notice",
+      "$ref": "includes/entity.json"
+    },
+    "publisher": {
+      "description": "The publisher of the notice",
+      "$ref": "#/definitions/publisher"
+    },
+    "update_action": {
+      "description": "Whether this notice corrects or cancels an earlier notice",
+      "$ref": "#/definitions/update_action"
+    },
+    "source_url": {
+      "description": "A URL where this fact may be verified",
+      "type": "string",
+      "format": "uri"
+    },
+    "sample_date": {
+      "description": "A date on which this fact is known to be true",
+      "type": "string",
+      "format": "date"
+    },
+    "retrieved_at": {
+      "description": "The time at which the notice was retrieved",
+      "type": "string",
+      "format": "date-time"
+    },
+    "confidence": {
+      "description": "The aggregator's confidence in the accuracy of the data",
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "other_attributes": {
+      "description": "Any other structured data from the notice ",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "issue",
+    "uid",
+    "identifier",
+    "source_url",
+    "sample_date",
+    "retrieved_at",
+    "confidence"
+  ],
+  "definitions": {
+    "publisher": {
+      "title": "Publisher",
+      "description": "A gazette publisher",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The name of the publisher",
+          "type": "string"
+        },
+        "identifier": {
+          "description": "The identifier of the publisher",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "url": {
+          "description": "The URL of the publisher",
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ]
+    },
+    "publication": {
+      "title": "Publication",
+      "description": "A gazette",
+      "type": "object",
+      "properties": {
+        "publisher": {
+          "description": "The publisher of the gazette",
+          "$ref": "#/definitions/publisher"
+        },
+        "jurisdiction_code": {
+          "description": "The jurisdiction covered by the gazette",
+          "type": "string"
+        },
+        "title": {
+          "description": "The title of the gazette",
+          "type": "string"
+        },
+        "url": {
+          "description": "The URL of the gazette",
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "publisher"
+      ]
+    },
+    "issue": {
+      "title": "Issue",
+      "description": "An issue of a gazette",
+      "type": "object",
+      "properties": {
+        "publication": {
+          "description": "The gazette of which the issue is a part",
+          "$ref": "#/definitions/publication"
+        },
+        "identifier": {
+          "description": "The identifier of the issue",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "title": {
+          "description": "The title of the issue",
+          "type": "string"
+        },
+        "edition_id": {
+          "description": "The identifier of the edition of which the issue is a part",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "page_range": {
+          "description": "The page range of the issue",
+          "type": "string",
+          "pattern": "^[0-9]*(-[0-9]*)?$"
+        },
+        "url": {
+          "description": "The URL of the issue",
+          "type": "string",
+          "format": "uri"
+        },
+        "media_type": {
+          "description": "The media type of the URL resource",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "publication"
+      ]
+    },
+    "document": {
+      "title": "Document",
+      "description": "A section of an issue",
+      "type": "object",
+      "properties": {
+        "page_range": {
+          "description": "The page range of the document",
+          "type": "string",
+          "pattern": "^[0-9]*(-[0-9]*)?$"
+        },
+        "url": {
+          "description": "The URL of the document",
+          "type": "string",
+          "format": "uri"
+        },
+        "media_type": {
+          "description": "The media type of the URL resource",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "url"
+      ]
+    },
+    "classification": {
+      "title": "Classification",
+      "description": "A classification",
+      "type": "object",
+      "properties": {
+        "scheme": {
+          "description": "The scheme of the classification",
+          "type": "string"
+        },
+        "value": {
+          "description": "The classification",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "value"
+      ]
+    },
+    "body": {
+      "title": "Body",
+      "description": "Content",
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "The content",
+          "type": "string"
+        },
+        "media_type": {
+          "description": "The media type of the content",
+          "type": "string",
+          "enum": [
+            "text/plain",
+            "text/html"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "value"
+      ]
+    },
+    "update_action": {
+      "title": "Update action",
+      "description": "An act of changing an object",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "The type of change",
+          "type": "string",
+          "enum": [
+            "cancellation",
+            "correction"
+          ]
+        },
+        "object": {
+          "description": "The object that was changed",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "object"
+      ]
+    }
+  }
+}

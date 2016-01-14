@@ -1,0 +1,57 @@
+{
+  "issue": {
+    "publication": {
+      "publisher": {
+        "name": "Commissioners of Public Works in Ireland",
+        "url": "http://www.opw.ie/"
+      },
+      "jurisdiction_code": "ie",
+      "title": "Iris Oifigiuil",
+      "url": "http://www.irisoifigiuil.ie/"
+    },
+    "identifier": "1",
+    "title": "Number 1",
+    "edition_id": "2015",
+    "page_range": "1-22",
+    "url": "http://www.irisoifigiuil.ie/archive/2015/january/Ir020115.PDF",
+    "media_type": "application/pdf"
+  },
+  "uid": "2015-1-¶1-14",
+  "identifier": "3",
+  "title": "IN THE MATTER OF THE COMPANIES ACT 1963-2009 AND IN THE MATTER OF SO CHILDISH LIMITED (In Voluntary Liquidation)",
+  "description": "The voluntary liquidation of So Childsh Limited",
+  "body": {
+    "value": "IN THE MATTER OF THE COMPANIES ACT 1963-2009 AND IN THE MATTER OF SO CHILDISH LIMITED (In Voluntary Liquidation)\n\nAt an Extraordinary General Meeting of the above named Company duly convened and held in the Glenroyal Hotel, Glenroyal Centre, Maynooth, Co. Kildare, on the 21st of December, 2011, the following Resolution was duly passed: ...",
+    "media_type": "text/plain"
+  },
+  "date_published": "2015-01-02",
+  "classification": [
+    {
+      "scheme": "Iris Oifigiuil",
+      "value": "dissolution"
+    }
+  ],
+  "subjects": [
+    {
+      "entity_type": "company",
+      "entity_properties": {
+        "name": "SO CHILDISH LIMITED"
+      }
+    }
+  ],
+  "url": "https://www.thegazette.co.uk/notice/2174114",
+  "media_type": "application/pdf",
+  "creator": {
+    "entity_type": "person",
+    "entity_properties": {
+      "name": "John Q. Liquidator"
+    }
+  },
+  "source_url": "https://www.thegazette.co.uk/notice/2174114",
+  "sample_date": "2015-12-01",
+  "retrieved_at": "2015-11-12T00:00:00Z",
+  "confidence": "MEDIUM",
+  "other_attributes": {
+    "section": "Appointments"
+  }
+}
