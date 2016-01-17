@@ -274,6 +274,10 @@
         "value": {
           "description": "The classification",
           "type": "string"
+        },
+        "description": {
+          "description": "A title or description of the classification, especially the value is a code",
+          "type": "string"
         }
       },
       "additionalProperties": false,
