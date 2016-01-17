@@ -298,6 +298,8 @@
           "description": "The media type of the content",
           "type": "string",
           "enum": [
+            "application/pdf",
+            "application/xml",
             "text/plain",
             "text/html"
           ]
