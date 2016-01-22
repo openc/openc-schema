@@ -39,7 +39,7 @@
           "type": {
             "description": "The class of content",
             "type": "string",
-            "enum": ["creation"]
+            "enum": ["creation of subjects"]
           },
           "classification": {
             "description": "The type of creation",
@@ -77,10 +77,10 @@
             }
           },
           "locations": {
-            "description": "Some locations of the entities",
+            "description": "Some locations of the subjects",
             "type": "array",
             "items": {
-              "$ref": "includes/location.json"
+              "$ref": "#/definitions/location"
             }
           }
         },
@@ -93,7 +93,7 @@
           "type": {
             "description": "The class of content",
             "type": "string",
-            "enum": ["registration"]
+            "enum": ["registration of locations"]
           },
           "classification": {
             "description": "The type of registration",
@@ -136,8 +136,11 @@
             }
           },
           "locations": {
-            "description": "Some locations of the entities",
-            "type": "array"
+            "description": "Some locations of the subjects",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/location"
+            }
           }
         },
         "additionalProperties": false,
@@ -149,7 +152,7 @@
           "type": {
             "description": "The class of content",
             "type": "string",
-            "enum": ["sale"]
+            "enum": ["sale of locations"]
           },
           "classification": {
             "description": "The type of sale",
@@ -218,8 +221,11 @@
             }
           },
           "locations": {
-            "description": "Some locations of the entities",
-            "type": "array"
+            "description": "Some locations of the subjects",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/location"
+            }
           }
         },
         "additionalProperties": false,
@@ -280,10 +286,7 @@
           "type": {
             "description": "The class of content",
             "type": "string",
-            "enum": [
-              "modification",
-              "striking off"
-            ]
+            "enum": ["modification of subjects"]
           },
           "body": {
             "description": "The unstructured prose content",
@@ -291,11 +294,6 @@
           },
           "activity_start_date": {
             "description": "The date on which activity started",
-            "type": "string",
-            "format": "date"
-          },
-          "activity_end_date": {
-            "description": "The date on which activity ended",
             "type": "string",
             "format": "date"
           },
@@ -321,6 +319,27 @@
           "type": {
             "description": "The class of content",
             "type": "string",
+            "enum": ["striking off of subjects"]
+          },
+          "body": {
+            "description": "The unstructured prose content",
+            "$ref": "#/definitions/body"
+          },
+          "activity_end_date": {
+            "description": "The date on which activity ended",
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      }, {
+        "properties": {
+          "type": {
+            "description": "The class of content",
+            "type": "string",
             "enum": ["filing"]
           },
           "classification": {
@@ -330,14 +349,14 @@
               "$ref": "includes/classification.json"
             }
           },
+          "body": {
+            "description": "The unstructured prose content",
+            "$ref": "#/definitions/body"
+          },
           "closing_date": {
             "description": "The closing date of the filing",
             "type": "string",
             "format": "date"
-          },
-          "body": {
-            "description": "The unstructured prose content",
-            "$ref": "#/definitions/body"
           }
         },
         "additionalProperties": false,
@@ -502,6 +521,13 @@
         "name": {
           "description": "The name of the publisher",
           "type": "string"
+        },
+        "identifier": {
+          "description": "The identifier of the publisher",
+          "type": [
+            "integer",
+            "string"
+          ]
         },
         "url": {
           "description": "The URL of the publisher",
