@@ -59,7 +59,6 @@
         },
         "statement_of_accounts": "Greffe du Tribunal de Commerce de Saint-Brieuc",
         "locations": [{
-            "type": "primary",
             "activity": "Travaux de couverture zinguerie",
             "address": {
                 "street_address": "2 rue du Docteur Laurent",
@@ -68,9 +67,9 @@
                 "country": "France",
                 "country_code": "FR"
             },
-            "origin": "Etablissement principal acquis par apport au montant évalué à 100000 Euros."
+            "origin": "Etablissement principal acquis par apport au montant évalué à 100000 Euros.",
+            "type": "primary"
         }, {
-            "type": "primary",
             "activity": "charpente vente et pose de fenêtre travaux étanchéité réparation et nettoyage de toitures venté et pose de conduits de cheminées ramonage et nettoyage de conduits",
             "address": {
                 "street_address": "2 rue du Docteur Laurent",
@@ -79,7 +78,8 @@
                 "country": "France",
                 "country_code": "FR"
             },
-            "origin": "Création"
+            "origin": "Création",
+            "type": "primary"
         }],
         "previous_owners": [{
             "entity_type": "person",

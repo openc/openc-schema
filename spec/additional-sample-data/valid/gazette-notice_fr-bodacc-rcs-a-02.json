@@ -52,7 +52,6 @@
             "code": "\nImmatriculation d'une personne physique, établissement principal reçu en location-gérance"
         }],
         "locations": [{
-            "type": "primary",
             "activity": "Boulangerie, pâtisserie.",
             "address": {
                 "street_address": "7 rue Jules Vercruysse",
@@ -61,7 +60,8 @@
                 "country": "France",
                 "country_code": "FR"
             },
-            "origin": "Location-gérance"
+            "origin": "Location-gérance",
+            "type": "primary"
         }],
         "previous_operators": [{
             "entity_type": "company",

@@ -55,7 +55,6 @@
             "code": "Immatriculation d'une personne morale (B, C, D) suite à création d'un établissement principal"
         }],
         "locations": [{
-            "type": "primary",
             "activity": "Acquisition, administration et exploitation par bail, location, sous-location ou autrement de tous immeubles bâtis ou non bâtis, biens immobiliers ou droits immobiliers dont la société pourrait devenir propriétaire ; l'emprunt de tous fonds nécessaires à la réalisation de cet objet...",
             "address": {
                 "street_address": "24 rue de Paris",
@@ -64,7 +63,8 @@
                 "country": "France",
                 "country_code": "FR"
             },
-            "origin": "Création"
+            "origin": "Création",
+            "type": "primary"
         }]
     }
 }

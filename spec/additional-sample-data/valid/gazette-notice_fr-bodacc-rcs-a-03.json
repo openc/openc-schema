@@ -66,7 +66,6 @@
         },
         "opposition": "Me MÖLLER Stéphane -23, place du Terreau - 04100 Manosque",
         "locations": [{
-            "type": "primary",
             "activity": "Restaurant de type traditionnel, asiatique, plats à emporter",
             "address": {
                 "street_address": "quartier St Christophe rue Gutenberg",
@@ -75,7 +74,8 @@
                 "country": "France",
                 "country_code": "FR"
             },
-            "origin": "Fonds acquis par achat au prix stipulé de 40000 Euros."
+            "origin": "Fonds acquis par achat au prix stipulé de 40000 Euros.",
+            "type": "primary"
         }],
         "previous_owners": [{
             "entity_type": "company",
