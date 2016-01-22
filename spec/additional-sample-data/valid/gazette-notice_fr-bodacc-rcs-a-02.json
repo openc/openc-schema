@@ -1,18 +1,20 @@
 {
+    "date_published": "2015-01-02",
     "issue": {
         "publication": {
             "publisher": {
                 "name": "Direction de l'information légale et administrative",
-                "url": "http://www.dila.premier-ministre.gouv.fr/"
+                "url": "http://www.dila.premier-ministre.gouv.fr/",
+                "media_type": "text/html"
             },
             "jurisdiction_code": "fr",
             "title": "Bulletin officiel des annonces civiles et commerciales",
-            "url": "http://www.bodacc.fr/"
+            "url": "http://www.bodacc.fr/",
+            "media_type": "text/html"
         },
         "identifier": "20150001",
         "edition_id": "A"
     },
-    "date_published": "2015-01-02",
     "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
     "sample_date": "2016-01-13T01:26:23Z",
     "retrieved_at": "2016-01-13T01:26:23Z",
@@ -20,69 +22,53 @@
     "other_attributes": {
         "format": "RCS-A"
     },
-    "update_action": {
-        "type": "correction",
-        "object": {
-            "issue": {
-                "identifier": "20140242",
-                "edition_id": "BODACC A"
-            },
-            "date_published": "2014-12-17",
-            "identifier": 239
-        }
-    },
     "publisher": {
-        "name": "GREFFE DU TRIBUNAL DE COMMERCE DE BORDEAUX",
-        "identifier": "33"
+        "name": "GREFFE DU TRIBUNAL DE COMMERCE DE SAINT-QUENTIN",
+        "identifier": "02"
     },
-    "uid": "BXA14358002111P",
-    "identifier": 350,
-    "url": "http://www.bodacc.fr/annonce/detail/BXA14358002111P",
+    "identifier": 2,
+    "uid": "BXA14358001501X",
+    "url": "http://www.bodacc.fr/annonce/detail/BXA14358001501X",
     "media_type": "text/html",
     "subjects": [{
-        "entity_type": "company",
+        "entity_type": "person",
         "entity_properties": {
-            "company_number": "340066455",
-            "name": "HOTEL DU THEATRE",
-            "company_type": "Société par actions simplifiée",
-            "registered_address": {
-                "street_address": "10 rue de la Maison Daurade",
-                "locality": "Bordeaux",
-                "postal_code": "33000",
-                "country": "France",
-                "country_code": "FR"
+            "jurisdiction_code": "fr",
+            "company_number": "808379796",
+            "name": {
+                "family_name": "BRUGNON",
+                "given_name": "Dimitri Gérard Bernard",
+                "birth_name": "BRUGNON"
             }
         }
     }],
     "about": {
-        "kind": "sale",
-        "activity_start_date": "2014-11-14",
+        "type": "registration of locations",
+        "registration_date": "2014-12-16",
+        "activity_start_date": "2014-12-01",
+        "effective_date": "2014-12-01",
         "classification": [{
-            "scheme": "fr_bodacc_categorie",
-            "value": "Achat d'un fonds par une personne morale (insertion provisoire)"
+            "code_scheme_id": "fr_bodacc_categorie",
+            "code": "\nImmatriculation d'une personne physique, établissement principal reçu en location-gérance"
         }],
-        "publication": {
-            "title": "Les Echos Judiciaires Girondins",
-            "date_published": "2014-12-02"
-        },
-        "opposition": "Au Mandataire Maître Chapert 36 Cours Georges Clémenceau 33000 Bordeaux pour la validité et pour la correspondance",
-        "properties": [{
-            "type": "Etablissement secondaire",
-            "activity": "organisation Évènementielle la gestion de logistique.",
+        "locations": [{
+            "type": "primary",
+            "activity": "Boulangerie, pâtisserie.",
             "address": {
-                "street_address": "9 Cours du Chapeau Rouge",
-                "locality": "Bordeaux",
-                "postal_code": "33000",
+                "street_address": "7 rue Jules Vercruysse",
+                "locality": "Gauchy",
+                "postal_code": "02430",
                 "country": "France",
                 "country_code": "FR"
             },
-            "origin": "Achat d'un fonds de commerce au prix stipulé de 30000 Euros"
+            "origin": "Location-gérance"
         }],
-        "previous_owners": [{
+        "previous_operators": [{
             "entity_type": "company",
             "entity_properties": {
-                "company_number": "335119988",
-                "name": "ONNA"
+                "jurisdiction_code": "fr",
+                "company_number": "539690206",
+                "name": "AROMES & DELICES"
             }
         }]
     }

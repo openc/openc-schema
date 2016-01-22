@@ -598,7 +598,7 @@
         "origin": {
           "description": "The origin of the location as an asset",
           "type": "string"
-        },
+        }
       },
       "additionalProperties": false
     },
@@ -673,7 +673,7 @@
                     "string",
                     "integer"
                   ]
-                },
+                }
               },
               "additionalProperties": false,
               "required": [

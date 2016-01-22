@@ -1,5 +1,5 @@
 {
-    "date_published": "2015-01-02",
+    "date_published": "2015-02-05",
     "issue": {
         "publication": {
             "publisher": {
@@ -12,7 +12,7 @@
             "url": "http://www.bodacc.fr/",
             "media_type": "text/html"
         },
-        "identifier": "20150001",
+        "identifier": "20150025",
         "edition_id": "B"
     },
     "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
@@ -23,43 +23,38 @@
         "format": "RCS-B"
     },
     "publisher": {
-        "name": "GREFFE DU TRIBUNAL DE COMMERCE DE PARIS",
-        "identifier": "75"
+        "name": "GREFFE DU TRIBUNAL D'INSTANCE DE THIONVILLE",
+        "identifier": "57"
     },
-    "identifier": 1924,
-    "uid": "BXB143580021356",
-    "url": "http://www.bodacc.fr/annonce/detail/BXB143580021356",
+    "identifier": 660,
+    "uid": "BXB15033000184A",
+    "url": "http://www.bodacc.fr/annonce/detail/BXB15033000184A",
     "media_type": "text/html",
     "subjects": [{
-        "entity_type": "company",
+        "entity_type": "person",
         "entity_properties": {
             "jurisdiction_code": "fr",
-            "company_number": "528687114",
-            "name": "LE BRAZZA 17EME",
-            "company_type": "Société en nom collectif",
-            "headquarters_address": {
-                "street_address": "53 rue de Tocqueville",
-                "locality": "Paris",
-                "postal_code": "75017",
-                "country": "France",
-                "country_code": "FR"
+            "company_number": "498111814",
+            "name": {
+                "family_name": "BEGEL",
+                "given_name": "David, Jean, Marie, André",
+                "birth_name": "BEGEL"
             },
-            "mailing_address": {
-                "street_address": "53 rue de Tocqueville",
-                "locality": "Paris",
-                "postal_code": "75017",
+            "registered_address": {
+                "street_address": "Zac Bellevue 4",
+                "locality": "Guénange",
+                "postal_code": "57310",
                 "country": "France",
                 "country_code": "FR"
             }
         }
     }],
     "about": {
-        "type": "modification of subjects",
+        "type": "striking off of subjects",
+        "activity_end_date": "2014-10-31",
         "body": {
-            "value": "Cessation d'activité et dissolution de la société",
+            "value": "cessation d'activité - vente du fonds de commerce",
             "media_type": "text/plain"
-        },
-        "activity_start_date": "2011-01-01",
-        "effective_date": "2014-12-01"
+        }
     }
 }
