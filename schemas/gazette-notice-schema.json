@@ -4,78 +4,370 @@
   "description": "A gazette notice",
   "type": "object",
   "properties": {
-    "issue": {
-      "description": "The issue in which the notice is published",
-      "$ref": "#/definitions/issue"
-    },
-    "document": {
-      "$ref": "#/definitions/document"
-    },
-    "uid": {
-      "description": "An internal, constructed, unique identifier",
-      "type": "string"
-    },
     "identifier": {
-      "description": "The publisher's identifier for the notice",
+      "description": "The publisher's identifier for the notice, which may not be unique",
       "type": [
         "integer",
         "string"
       ]
     },
-    "title": {
-      "description": "The title of the notice",
+    "uid": {
+      "description": "An internal, constructed, unique identifier, which may be the same as `identifier`",
       "type": "string"
-    },
-    "description": {
-      "description": "A description of the notice",
-      "type": "string"
-    },
-    "body": {
-      "description": "The content of the notice",
-      "$ref": "#/definitions/body"
     },
     "date_published": {
       "description": "The date of publication of the notice",
       "type": "string",
       "format": "date"
     },
-    "classification": {
-      "description": "The type of the notice",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/classification"
-      }
+    "summary": {
+      "description": "A brief summary of the notice's content",
+      "type": "string"
     },
     "subjects": {
-      "description": "The entities that the notice is about",
+      "description": "The entities that the notice is primarily about",
       "type": "array",
       "items": {
         "$ref": "includes/entity.json"
       }
     },
     "about": {
-      "description": "The subject matter of the notice",
+      "description": "The content of the notice",
       "type": "object",
-      "properties": {
-        "kind": {
-          "description": "The class of subject matter",
-          "type": "string"
-        },
-        "classification": {
-          "description": "The type of subject matter",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/classification"
+      "oneOf": [{
+        "properties": {
+          "type": {
+            "description": "The class of content",
+            "type": "string",
+            "enum": ["creation"]
+          },
+          "classification": {
+            "description": "The type of creation",
+            "type": "array",
+            "items": {
+              "$ref": "includes/classification.json"
+            }
+          },
+          "body": {
+            "description": "The unstructured prose content",
+            "$ref": "#/definitions/body"
+          },
+          "registration_date": {
+            "description": "The date of registration",
+            "type": "string",
+            "format": "date"
+          },
+          "activity_start_date": {
+            "description": "The date on which activity started",
+            "type": "string",
+            "format": "date"
+          },
+          "previous_owners": {
+            "description": "The previous owners of the locations",
+            "type": "array",
+            "items": {
+              "$ref": "includes/entity.json"
+            }
+          },
+          "previous_operators": {
+            "description": "The previous operators of the locations",
+            "type": "array",
+            "items": {
+              "$ref": "includes/entity.json"
+            }
+          },
+          "locations": {
+            "description": "Some locations of the entities",
+            "type": "array",
+            "items": {
+              "$ref": "includes/location.json"
+            }
           }
         },
-        "body": {
-          "description": "A description of the item",
-          "$ref": "#/definitions/body"
-        }
-      }
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      }, {
+        "properties": {
+          "type": {
+            "description": "The class of content",
+            "type": "string",
+            "enum": ["registration"]
+          },
+          "classification": {
+            "description": "The type of registration",
+            "type": "array",
+            "items": {
+              "$ref": "includes/classification.json"
+            }
+          },
+          "body": {
+            "description": "The unstructured prose content",
+            "$ref": "#/definitions/body"
+          },
+          "registration_date": {
+            "description": "The date on which the subjects are registered",
+            "type": "string",
+            "format": "date"
+          },
+          "activity_start_date": {
+            "description": "The date on which activity started",
+            "type": "string",
+            "format": "date"
+          },
+          "effective_date": {
+            "description": "The date from which the change is in effect",
+            "type": "string",
+            "format": "date"
+          },
+          "previous_owners": {
+            "description": "The previous owners of the locations",
+            "type": "array",
+            "items": {
+              "$ref": "includes/entity.json"
+            }
+          },
+          "previous_operators": {
+            "description": "The previous operators of the locations",
+            "type": "array",
+            "items": {
+              "$ref": "includes/entity.json"
+            }
+          },
+          "locations": {
+            "description": "Some locations of the entities",
+            "type": "array"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      }, {
+        "properties": {
+          "type": {
+            "description": "The class of content",
+            "type": "string",
+            "enum": ["sale"]
+          },
+          "classification": {
+            "description": "The type of sale",
+            "type": "array",
+            "items": {
+              "$ref": "includes/classification.json"
+            }
+          },
+          "body": {
+            "description": "The unstructured prose content",
+            "$ref": "#/definitions/body"
+          },
+          "registration_date": {
+            "description": "The date on which the subjects are registered",
+            "type": "string",
+            "format": "date"
+          },
+          "activity_start_date": {
+            "description": "The date on which activity started",
+            "type": "string",
+            "format": "date"
+          },
+          "effective_date": {
+            "description": "The date from which the change is in effect",
+            "type": "string",
+            "format": "date"
+          },
+          "publication": {
+            "description": "Another publication in which the notice is published",
+            "type": "object",
+            "properties": {
+              "title": {
+                "description": "The title of the publication",
+                "type": "string"
+              },
+              "date_published": {
+                "description": "The date of publication of the publication",
+                "type": "string",
+                "format": "date"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "title",
+              "date_published"
+            ]
+          },
+          "opposition": {
+            "type": "string"
+          },
+          "statement_of_accounts": {
+            "type": "string"
+          },
+          "previous_owners": {
+            "description": "The previous owners of the locations",
+            "type": "array",
+            "items": {
+              "$ref": "includes/entity.json"
+            }
+          },
+          "previous_operators": {
+            "description": "The previous operators of the locations",
+            "type": "array",
+            "items": {
+              "$ref": "includes/entity.json"
+            }
+          },
+          "locations": {
+            "description": "Some locations of the entities",
+            "type": "array"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      }, {
+        "properties": {
+          "type": {
+            "description": "The class of content",
+            "type": "string",
+            "enum": ["judgment"]
+          },
+          "classification": {
+            "description": "The type of judgment",
+            "type": "array",
+            "items": {
+              "$ref": "includes/classification.json"
+            }
+          },
+          "body": {
+            "description": "The unstructured prose content",
+            "$ref": "#/definitions/body"
+          },
+          "date": {
+            "description": "The date of the judgment",
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      }, {
+        "properties": {
+          "type": {
+            "description": "The class of content",
+            "type": "string",
+            "enum": ["other"]
+          },
+          "body": {
+            "description": "The unstructured prose content",
+            "$ref": "#/definitions/body"
+          },
+          "title": {
+            "description": "The title of the notice",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "body"
+        ]
+      }, {
+        "properties": {
+          "type": {
+            "description": "The class of content",
+            "type": "string",
+            "enum": [
+              "modification",
+              "striking off"
+            ]
+          },
+          "body": {
+            "description": "The unstructured prose content",
+            "$ref": "#/definitions/body"
+          },
+          "activity_start_date": {
+            "description": "The date on which activity started",
+            "type": "string",
+            "format": "date"
+          },
+          "activity_end_date": {
+            "description": "The date on which activity ended",
+            "type": "string",
+            "format": "date"
+          },
+          "effective_date": {
+            "description": "The date from which the change is in effect",
+            "type": "string",
+            "format": "date"
+          },
+          "previous_operators": {
+            "description": "The previous operators of the location",
+            "type": "array",
+            "items": {
+              "$ref": "includes/entity.json"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      }, {
+        "properties": {
+          "type": {
+            "description": "The class of content",
+            "type": "string",
+            "enum": ["filing"]
+          },
+          "classification": {
+            "description": "The type of filing",
+            "type": "array",
+            "items": {
+              "$ref": "includes/classification.json"
+            }
+          },
+          "closing_date": {
+            "description": "The closing date of the filing",
+            "type": "string",
+            "format": "date"
+          },
+          "body": {
+            "description": "The unstructured prose content",
+            "$ref": "#/definitions/body"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      }]
+    },
+    "update_action": {
+      "description": "If this notice corrects or cancels an earlier notice, a description of the update",
+      "$ref": "#/definitions/update_action"
+    },
+    "issue": {
+      "description": "The issue of the gazette in which the notice is published. An issue contains many notices.",
+      "$ref": "#/definitions/issue"
+    },
+    "document": {
+      "description": "The section of the issue in which the notice is published. An issue may be split into many documents, each containing many notices.",
+      "$ref": "#/definitions/document"
+    },
+    "creator": {
+      "description": "The entity authoring the notice, for example a notary authoring a notice for a dissolution",
+      "$ref": "includes/entity.json"
+    },
+    "publisher": {
+      "description": "The publisher of the notice, for example a clerk entering the notice into the gazette",
+      "$ref": "#/definitions/publisher"
     },
     "url": {
-      "description": "The URL of the notice",
+      "description": "The URL of the notice, at which a human may verify the data",
       "type": "string",
       "format": "uri"
     },
@@ -83,35 +375,23 @@
       "description": "The media type of the URL resource",
       "type": "string"
     },
-    "creator": {
-      "description": "The entity placing the notice",
-      "$ref": "includes/entity.json"
-    },
-    "publisher": {
-      "description": "The publisher of the notice",
-      "$ref": "#/definitions/publisher"
-    },
-    "update_action": {
-      "description": "Whether this notice corrects or cancels an earlier notice",
-      "$ref": "#/definitions/update_action"
-    },
     "source_url": {
-      "description": "A URL where this fact may be verified",
+      "description": "The URL of the file from which the data was extracted by the scraper",
       "type": "string",
       "format": "uri"
     },
     "sample_date": {
-      "description": "A date on which this fact is known to be true",
+      "description": "A date on which the data is known to be true",
       "type": "string",
       "format": "date"
     },
     "retrieved_at": {
-      "description": "The time at which the notice was retrieved",
+      "description": "The time at which the source URL was requested",
       "type": "string",
       "format": "date-time"
     },
     "confidence": {
-      "description": "The aggregator's confidence in the accuracy of the data",
+      "description": "The scraper's author's confidence in the accuracy of the data",
       "type": "string",
       "enum": [
         "HIGH",
@@ -120,7 +400,7 @@
       ]
     },
     "other_attributes": {
-      "description": "Any other structured data from the notice ",
+      "description": "Any other structured data from the notice",
       "type": "object"
     }
   },
@@ -135,61 +415,6 @@
     "confidence"
   ],
   "definitions": {
-    "publisher": {
-      "title": "Publisher",
-      "description": "A gazette publisher",
-      "type": "object",
-      "properties": {
-        "name": {
-          "description": "The name of the publisher",
-          "type": "string"
-        },
-        "identifier": {
-          "description": "The identifier of the publisher",
-          "type": [
-            "string",
-            "integer"
-          ]
-        },
-        "url": {
-          "description": "The URL of the publisher",
-          "type": "string",
-          "format": "uri"
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "name"
-      ]
-    },
-    "publication": {
-      "title": "Publication",
-      "description": "A gazette",
-      "type": "object",
-      "properties": {
-        "publisher": {
-          "description": "The publisher of the gazette",
-          "$ref": "#/definitions/publisher"
-        },
-        "jurisdiction_code": {
-          "description": "The jurisdiction covered by the gazette",
-          "type": "string"
-        },
-        "title": {
-          "description": "The title of the gazette",
-          "type": "string"
-        },
-        "url": {
-          "description": "The URL of the gazette",
-          "type": "string",
-          "format": "uri"
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "publisher"
-      ]
-    },
     "issue": {
       "title": "Issue",
       "description": "An issue of a gazette",
@@ -218,7 +443,7 @@
           ]
         },
         "page_range": {
-          "description": "The page range of the issue",
+          "description": "The page range of the issue within the edition",
           "type": "string",
           "pattern": "^[0-9]*(-[0-9]*)?$"
         },
@@ -237,13 +462,69 @@
         "publication"
       ]
     },
+    "publication": {
+      "title": "Publication",
+      "description": "A gazette",
+      "type": "object",
+      "properties": {
+        "publisher": {
+          "description": "The publisher of the gazette",
+          "$ref": "#/definitions/publisher"
+        },
+        "jurisdiction_code": {
+          "description": "The jurisdiction covered by the gazette",
+          "type": "string"
+        },
+        "title": {
+          "description": "The title of the gazette",
+          "type": "string"
+        },
+        "url": {
+          "description": "The URL of the gazette",
+          "type": "string",
+          "format": "uri"
+        },
+        "media_type": {
+          "description": "The media type of the URL resource",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "publisher"
+      ]
+    },
+    "publisher": {
+      "title": "Publisher",
+      "description": "A gazette publisher",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The name of the publisher",
+          "type": "string"
+        },
+        "url": {
+          "description": "The URL of the publisher",
+          "type": "string",
+          "format": "uri"
+        },
+        "media_type": {
+          "description": "The media type of the URL resource",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ]
+    },
     "document": {
       "title": "Document",
       "description": "A section of an issue",
       "type": "object",
       "properties": {
         "page_range": {
-          "description": "The page range of the document",
+          "description": "The page range of the document within the issue",
           "type": "string",
           "pattern": "^[0-9]*(-[0-9]*)?$"
         },
@@ -262,28 +543,38 @@
         "url"
       ]
     },
-    "classification": {
-      "title": "Classification",
-      "description": "A classification",
+    "location": {
+      "title": "Location",
+      "description": "A business location",
       "type": "object",
       "properties": {
-        "scheme": {
-          "description": "The scheme of the classification",
+        "type": {
+          "description": "The type of location",
+          "type": "string",
+          "enum": [
+            "primary",
+            "secondary",
+            "other"
+          ]
+        },
+        "name": {
+          "description": "The name of the location",
           "type": "string"
         },
-        "value": {
-          "description": "The classification",
+        "activity": {
+          "description": "The business activity at the location",
           "type": "string"
         },
-        "description": {
-          "description": "A title or description of the classification, especially the value is a code",
+        "address": {
+          "description": "The address of the location",
+          "$ref": "includes/address.json"
+        },
+        "origin": {
+          "description": "The origin of the location as an asset",
           "type": "string"
-        }
+        },
       },
-      "additionalProperties": false,
-      "required": [
-        "value"
-      ]
+      "additionalProperties": false
     },
     "body": {
       "title": "Body",
@@ -325,7 +616,50 @@
         },
         "object": {
           "description": "The object that was changed",
-          "type": "object"
+          "type": "object",
+          "properties": {
+            "identifier": {
+              "description": "The publisher's identifier for the notice, which may not be unique",
+              "type": [
+                "integer",
+                "string"
+              ]
+            },
+            "date_published": {
+              "description": "The date of publication of the notice",
+              "type": "string",
+              "format": "date"
+            },
+            "issue": {
+              "description": "The issue of the gazette in which the notice is published. An issue contains many notices.",
+              "type": "object",
+              "properties": {
+                "identifier": {
+                  "description": "The identifier of the issue",
+                  "type": [
+                    "string",
+                    "integer"
+                  ]
+                },
+                "edition_id": {
+                  "description": "The identifier of the edition of which the issue is a part",
+                  "type": [
+                    "string",
+                    "integer"
+                  ]
+                },
+              },
+              "additionalProperties": false,
+              "required": [
+                "identifier"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "issue",
+            "identifier"
+          ]
         }
       },
       "additionalProperties": false,
