@@ -54,6 +54,10 @@
       "items": {
         "$ref": "alternative_name.json"
       }
+    },
+    "nationality": {
+      "description": "The person's nationality",
+      "type": "string"
     }
   },
   "required": [
