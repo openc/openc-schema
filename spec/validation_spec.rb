@@ -9,13 +9,13 @@ def directory
 end
 
 describe "open-schemas" do
-#  Dir.glob(File.join('schemas', '**', '*.json')).each do |path|
-#    it "#{path} should be a valid schema" do
-#      data = JSON.parse(File.read(path))
-#      error = Openc::JsonSchema.validate(data['$schema'], data)
-#      expect(error).to be(nil)
-#    end
-#  end
+  Dir.glob(File.join('schemas', '**', '*.json')).each do |path|
+    it "#{path} should be a valid schema" do
+      data = JSON.parse(File.read(path))
+      error = Openc::JsonSchema.validate(data['$schema'], data)
+      expect(error).to be(nil)
+    end
+  end
 
   Dir.glob(File.join('spec', directory, 'valid', '*.json')).each do |path|
     it "should validate valid json at #{path}" do
