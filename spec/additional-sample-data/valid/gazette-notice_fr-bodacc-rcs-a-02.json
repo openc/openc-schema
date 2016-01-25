@@ -26,45 +26,50 @@
         "name": "GREFFE DU TRIBUNAL DE COMMERCE DE SAINT-QUENTIN",
         "identifier": "02"
     },
-    "identifier": 1,
-    "uid": "BXA14358001500V",
-    "url": "http://www.bodacc.fr/annonce/detail/BXA14358001500V",
+    "identifier": 2,
+    "uid": "BXA14358001501X",
+    "url": "http://www.bodacc.fr/annonce/detail/BXA14358001501X",
     "media_type": "text/html",
     "subjects": [{
-        "entity_type": "company",
+        "entity_type": "person",
         "entity_properties": {
             "jurisdiction_code": "fr",
-            "company_number": "808433569",
-            "name": "DE LA PLACE D'ARDON",
-            "company_type": "Société civile immobilière",
-            "registered_address": {
-                "street_address": "24 rue de Paris",
-                "locality": "Etouvelles",
-                "postal_code": "02000",
-                "country": "France",
-                "country_code": "FR"
+            "company_number": "808379796",
+            "name": {
+                "family_name": "BRUGNON",
+                "given_name": "Dimitri Gérard Bernard",
+                "birth_name": "BRUGNON"
             }
         }
     }],
     "about": {
-        "type": "creation of subjects",
+        "type": "registration of locations",
         "registration_date": "2014-12-16",
         "activity_start_date": "2014-12-01",
+        "effective_date": "2014-12-01",
         "classification": [{
             "code_scheme_id": "fr_bodacc_categorie",
-            "code": "Immatriculation d'une personne morale (B, C, D) suite à création d'un établissement principal"
+            "code": "\nImmatriculation d'une personne physique, établissement principal reçu en location-gérance"
         }],
         "locations": [{
-            "activity": "Acquisition, administration et exploitation par bail, location, sous-location ou autrement de tous immeubles bâtis ou non bâtis, biens immobiliers ou droits immobiliers dont la société pourrait devenir propriétaire ; l'emprunt de tous fonds nécessaires à la réalisation de cet objet...",
+            "activity": "Boulangerie, pâtisserie.",
             "address": {
-                "street_address": "24 rue de Paris",
-                "locality": "Etouvelles",
-                "postal_code": "02000",
+                "street_address": "7 rue Jules Vercruysse",
+                "locality": "Gauchy",
+                "postal_code": "02430",
                 "country": "France",
                 "country_code": "FR"
             },
-            "origin": "Création",
+            "origin": "Location-gérance",
             "type": "primary"
+        }],
+        "previous_operators": [{
+            "entity_type": "company",
+            "entity_properties": {
+                "jurisdiction_code": "fr",
+                "company_number": "539690206",
+                "name": "AROMES & DELICES"
+            }
         }]
     }
 }
