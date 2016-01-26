@@ -84,18 +84,23 @@ task :embed_references do
         define(name, File.expand_path(ref, File.dirname(path)), definitions)
       end
     end
+    value
   end
 
   def process_object(value, path, definitions)
     if value.key?('properties')
       process_properties(value['properties'], path, definitions)
-    elsif keyword = (value.keys & ['allOf', 'anyOf', 'oneOf']).first
-      value[keyword].each do |subschema|
-        process_object(subschema, path, definitions)
-      end
     else
-      process_value(value, path, definitions)
+      keyword = (value.keys & ['allOf', 'anyOf', 'oneOf']).first
+      if keyword
+        value[keyword].each do |subschema|
+          process_object(subschema, path, definitions)
+        end
+      else
+        process_value(value, path, definitions)
+      end
     end
+    value
   end
 
   def process_properties(properties, path, definitions)
@@ -106,6 +111,7 @@ task :embed_references do
         process_object(value, path, definitions)
       end
     end
+    properties
   end
 
   def process_schema(path, definitions)
@@ -116,14 +122,7 @@ task :embed_references do
       end
       definitions.merge!(schema['definitions'])
     end
-    if schema.key?('properties')
-      process_properties(schema['properties'], path, definitions)
-    elsif keyword = (schema.keys & ['allOf', 'anyOf', 'oneOf']).first
-      schema[keyword].each do |subschema|
-        process_object(subschema, path, definitions)
-      end
-    end
-    schema
+    process_object(schema, path, definitions)
   end
 
   all_definitions = {}
