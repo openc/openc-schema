@@ -110,6 +110,9 @@ task :embed_references do
 
   def process_schema(path, definitions)
     schema = JSON.load(File.read(path))
+    if schema.key?('definitions')
+      definitions.merge!(schema['definitions'])
+    end
     if schema.key?('properties')
       process_properties(schema['properties'], path, definitions)
     elsif keyword = (schema.keys & ['allOf', 'anyOf', 'oneOf']).first
