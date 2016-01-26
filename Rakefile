@@ -64,6 +64,70 @@ task :format_sample_data do
   Dir.glob(File.join('spec', '**', '*.json')).each {|path| format_json(path)}
 end
 
+desc 'Write schema files with embedded references'
+task :embed_references do
+  # @see https://github.com/influencemapping/whos_got_dirt-gem/blob/master/Rakefile
+
+  def define(name, path, definitions)
+    unless definitions.key?(name)
+      definitions[name] = {} # to avoid recursion
+      definitions[name] = process_schema(path, definitions)
+    end
+  end
+
+  def process_value(value, path, definitions)
+    if value.key?('$ref')
+      ref = value['$ref']
+      name = File.basename(ref).chomp('.json')
+      value['$ref'] = "#/definitions/#{name}"
+      define(name, File.expand_path(ref, File.dirname(path)), definitions)
+    end
+  end
+
+  def process_object(value, path, definitions)
+    if value.key?('properties')
+      process_properties(value['properties'], path, definitions)
+    else
+      process_value(value, path, definitions)
+    end
+  end
+
+  def process_properties(properties, path, definitions)
+    properties.each do |_,value|
+      if value.key?('items')
+        process_object(value['items'], path, definitions)
+      else
+        process_object(value, path, definitions)
+      end
+    end
+  end
+
+  def process_schema(path, definitions)
+    schema = JSON.load(File.read(path))
+    if schema.key?('properties')
+      process_properties(schema['properties'], path, definitions)
+    elsif schema.key?('oneOf')
+      schema['oneOf'].each do |subschema|
+        if subschema.key?('properties')
+          process_properties(subschema['properties'], path, definitions)
+        end
+      end
+    end
+    schema
+  end
+
+  all_definitions = {}
+
+  Dir[File.join('schemas', '*.json')].each do |path|
+    definitions = {} # passed by reference
+    schema = process_schema(path, definitions).merge('definitions' => definitions)
+    all_definitions.merge!(definitions) # cache definitions across schema
+    File.open(File.join('build', File.basename(path)), 'w') do |f|
+      f.write(JSON.pretty_generate(schema))
+    end
+  end
+end
+
 desc 'Converts a data model in CSV to JSON Schema'
 task :csv_to_json_schema do
   REQUIRED_HEADERS = [
