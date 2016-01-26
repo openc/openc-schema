@@ -1,4 +1,12 @@
 require 'spec_helper'
+require 'json'
+def directory
+  if ENV['TEST_ALL']
+    '**'
+  else
+    'sample-data'
+  end
+end
 
 describe "open-schemas" do
   %w(schemas build).each do |directory|
@@ -11,12 +19,12 @@ describe "open-schemas" do
     end
   end
 
-  Dir.glob(File.join('spec','sample-data', 'valid', '*.json')).each do |path|
+  Dir.glob(File.join('spec', directory, 'valid', '*.json')).each do |path|
     it "should validate valid json at #{path}" do
       data = JSON.parse(File.read(path))
 
       filename = File.basename(path)
-      match = filename.match(/(.*)-\d\d.json/)
+      match = filename.match(/(.*?)(_[a-z-]+)?-\d\d.json/)
       data_type = match[1]
 
       error = Openc::JsonSchema.validate(File.join('schemas', "#{data_type}-schema.json"), data)
@@ -24,7 +32,7 @@ describe "open-schemas" do
     end
   end
 
-  Dir.glob(File.join('spec','sample-data', 'valid', 'includes', '*.json')).each do |path|
+  Dir.glob(File.join('spec', directory, 'valid', 'includes', '*.json')).each do |path|
     it "should validate valid json at #{path}" do
       data = JSON.parse(File.read(path))
 
@@ -37,7 +45,7 @@ describe "open-schemas" do
     end
   end
 
-  Dir.glob(File.join('spec', 'sample-data', 'invalid', '*')).each do |dir|
+  Dir.glob(File.join('spec', directory, 'invalid', '*')).each do |dir|
     data_type = File.basename(dir)
 
     unless data_type == 'includes'
@@ -57,7 +65,7 @@ describe "open-schemas" do
     end
   end
 
-  Dir.glob(File.join('spec', 'sample-data', 'invalid', 'includes', '*')).each do |dir|
+  Dir.glob(File.join('spec', directory, 'invalid', 'includes', '*')).each do |dir|
     data_type = File.basename(dir)
 
     Dir.glob(File.join(dir, '*.json')).each do |path|

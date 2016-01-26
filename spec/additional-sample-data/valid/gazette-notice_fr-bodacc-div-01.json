@@ -1,0 +1,36 @@
+{
+    "date_published": "2015-01-28",
+    "issue": {
+        "publication": {
+            "publisher": {
+                "name": "Direction de l'information légale et administrative",
+                "url": "http://www.dila.premier-ministre.gouv.fr/",
+                "media_type": "text/html"
+            },
+            "jurisdiction_code": "fr",
+            "title": "Bulletin officiel des annonces civiles et commerciales",
+            "url": "http://www.bodacc.fr/",
+            "media_type": "text/html"
+        },
+        "identifier": "201501280019",
+        "edition_id": "A"
+    },
+    "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
+    "sample_date": "2016-01-21T19:48:28Z",
+    "retrieved_at": "2016-01-21T19:48:28Z",
+    "confidence": "HIGH",
+    "other_attributes": {
+        "format": "DIV"
+    },
+    "identifier": 1458,
+    "uid": "BXA156666801008",
+    "url": "http://www.bodacc.fr/annonce/detail/BXA156666801008",
+    "media_type": "text/html",
+    "about": {
+        "type": "other",
+        "body": {
+            "value": "Le 13 novembre 2014, le Haut Conseil du commissariat aux comptes a prononcé à l'encontre de la société KAUFMANN & Associés, dont le siège est 8 avenue Bertie Albrecht à PARIS 75008, la sanction disciplinaire de l'interdiction d'exercer la profession de commissaire aux comptes pour une durée de SIX MOIS. ",
+            "media_type": "text/plain"
+        }
+    }
+}
