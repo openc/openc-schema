@@ -48,7 +48,7 @@
               "description": "The type of creation",
               "type": "array",
               "items": {
-                "$ref": "includes/classification.json"
+                "$ref": "#/definitions/classification"
               }
             },
             "body": {
@@ -69,14 +69,14 @@
               "description": "The previous owners of the locations",
               "type": "array",
               "items": {
-                "$ref": "includes/entity.json"
+                "$ref": "#/definitions/entity"
               }
             },
             "previous_operators": {
               "description": "The previous operators of the locations",
               "type": "array",
               "items": {
-                "$ref": "includes/entity.json"
+                "$ref": "#/definitions/entity"
               }
             },
             "locations": {
@@ -105,7 +105,7 @@
               "description": "The type of registration",
               "type": "array",
               "items": {
-                "$ref": "includes/classification.json"
+                "$ref": "#/definitions/classification"
               }
             },
             "body": {
@@ -131,14 +131,14 @@
               "description": "The previous owners of the locations",
               "type": "array",
               "items": {
-                "$ref": "includes/entity.json"
+                "$ref": "#/definitions/entity"
               }
             },
             "previous_operators": {
               "description": "The previous operators of the locations",
               "type": "array",
               "items": {
-                "$ref": "includes/entity.json"
+                "$ref": "#/definitions/entity"
               }
             },
             "locations": {
@@ -167,7 +167,7 @@
               "description": "The type of sale",
               "type": "array",
               "items": {
-                "$ref": "includes/classification.json"
+                "$ref": "#/definitions/classification"
               }
             },
             "body": {
@@ -219,14 +219,14 @@
               "description": "The previous owners of the locations",
               "type": "array",
               "items": {
-                "$ref": "includes/entity.json"
+                "$ref": "#/definitions/entity"
               }
             },
             "previous_operators": {
               "description": "The previous operators of the locations",
               "type": "array",
               "items": {
-                "$ref": "includes/entity.json"
+                "$ref": "#/definitions/entity"
               }
             },
             "locations": {
@@ -255,7 +255,7 @@
               "description": "The type of judgment",
               "type": "array",
               "items": {
-                "$ref": "includes/classification.json"
+                "$ref": "#/definitions/classification"
               }
             },
             "body": {
@@ -324,7 +324,7 @@
               "description": "The previous operators of the location",
               "type": "array",
               "items": {
-                "$ref": "includes/entity.json"
+                "$ref": "#/definitions/entity"
               }
             }
           },
@@ -370,7 +370,7 @@
               "description": "The type of filing",
               "type": "array",
               "items": {
-                "$ref": "includes/classification.json"
+                "$ref": "#/definitions/classification"
               }
             },
             "body": {
@@ -1442,6 +1442,31 @@
       },
       "required": [
         "name"
+      ]
+    },
+    "classification": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "title": "Classification",
+      "description": "A classification from a code list",
+      "type": "object",
+      "properties": {
+        "code_scheme_id": {
+          "description": "The scheme of the classification",
+          "type": "string"
+        },
+        "code": {
+          "description": "The classification",
+          "type": "string"
+        },
+        "name": {
+          "description": "A title or description of the classification, especially if the value is a code",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "code_scheme_id"
       ]
     }
   }

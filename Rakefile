@@ -89,6 +89,10 @@ task :embed_references do
   def process_object(value, path, definitions)
     if value.key?('properties')
       process_properties(value['properties'], path, definitions)
+    elsif keyword = (value.keys & ['allOf', 'anyOf', 'oneOf']).first
+      value[keyword].each do |subschema|
+        process_object(subschema, path, definitions)
+      end
     else
       process_value(value, path, definitions)
     end
@@ -108,11 +112,9 @@ task :embed_references do
     schema = JSON.load(File.read(path))
     if schema.key?('properties')
       process_properties(schema['properties'], path, definitions)
-    elsif schema.key?('oneOf')
-      schema['oneOf'].each do |subschema|
-        if subschema.key?('properties')
-          process_properties(subschema['properties'], path, definitions)
-        end
+    elsif keyword = (schema.keys & ['allOf', 'anyOf', 'oneOf']).first
+      schema[keyword].each do |subschema|
+        process_object(subschema, path, definitions)
       end
     end
     schema
