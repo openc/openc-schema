@@ -111,6 +111,9 @@ task :embed_references do
   def process_schema(path, definitions)
     schema = JSON.load(File.read(path))
     if schema.key?('definitions')
+      schema['definitions'].each do |_,definition|
+        process_object(definition, path, definitions)
+      end
       definitions.merge!(schema['definitions'])
     end
     if schema.key?('properties')

@@ -459,6 +459,62 @@
     "confidence"
   ],
   "definitions": {
+    "address": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "oneOf": [
+        {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 2
+        },
+        {
+          "name": "Address",
+          "description": "An address object",
+          "type": "object",
+          "properties": {
+            "street_address": {
+              "type": "string"
+            },
+            "locality": {
+              "type": "string"
+            },
+            "region": {
+              "type": "string"
+            },
+            "postal_code": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "country_code": {
+              "description": "ISO 3166-2 code for country",
+              "type": "string"
+            }
+          },
+          "anyOf": [
+            {
+              "required": [
+                "street_address"
+              ]
+            },
+            {
+              "required": [
+                "postal_code"
+              ]
+            },
+            {
+              "required": [
+                "locality",
+                "country"
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "issue": {
       "title": "Issue",
       "description": "An issue of a gazette",
@@ -618,7 +674,7 @@
         },
         "address": {
           "description": "The address of the location",
-          "$ref": "includes/address.json"
+          "$ref": "#/definitions/address"
         },
         "origin": {
           "description": "The origin of the location as an asset",
@@ -1019,62 +1075,6 @@
       "additionalProperties": false,
       "required": [
         "name"
-      ]
-    },
-    "address": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "oneOf": [
-        {
-          "type": [
-            "string",
-            "null"
-          ],
-          "minLength": 2
-        },
-        {
-          "name": "Address",
-          "description": "An address object",
-          "type": "object",
-          "properties": {
-            "street_address": {
-              "type": "string"
-            },
-            "locality": {
-              "type": "string"
-            },
-            "region": {
-              "type": "string"
-            },
-            "postal_code": {
-              "type": "string"
-            },
-            "country": {
-              "type": "string"
-            },
-            "country_code": {
-              "description": "ISO 3166-2 code for country",
-              "type": "string"
-            }
-          },
-          "anyOf": [
-            {
-              "required": [
-                "street_address"
-              ]
-            },
-            {
-              "required": [
-                "postal_code"
-              ]
-            },
-            {
-              "required": [
-                "locality",
-                "country"
-              ]
-            }
-          ]
-        }
       ]
     },
     "officer": {
