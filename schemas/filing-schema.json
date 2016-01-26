@@ -66,7 +66,7 @@
     "retrieved_at": {
       "description": "Date-time this was retrieved from the source",
       "type": "string",
-      "format": "date-time"
+      "format": "date"
     },
     "other_attributes": {
       "description": "Use for other attributes for which we don't yet have curated schema attributes",
