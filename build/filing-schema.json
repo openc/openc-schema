@@ -743,7 +743,7 @@
     },
     "industry_code": {
       "$schema": "http://json-schema.org/draft-04/schema#",
-      "description": "An industry code from a standard code list (e.g. NAICS 2007 or NACE 2)",
+      "description": "An industry code from a standard code list (e.g. NAICS 2007 or NACE 2). This schema is a sub-schema of Classification.",
       "type": "object",
       "properties": {
         "name": {
@@ -887,6 +887,10 @@
           "items": {
             "$ref": "#/definitions/alternative_name"
           }
+        },
+        "nationality": {
+          "description": "The person's nationality",
+          "type": "string"
         }
       },
       "required": [

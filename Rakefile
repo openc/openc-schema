@@ -78,9 +78,11 @@ task :embed_references do
   def process_value(value, path, definitions)
     if value.key?('$ref')
       ref = value['$ref']
-      name = File.basename(ref).chomp('.json')
-      value['$ref'] = "#/definitions/#{name}"
-      define(name, File.expand_path(ref, File.dirname(path)), definitions)
+      unless ref.start_with?('#/definitions/')
+        name = File.basename(ref).chomp('.json')
+        value['$ref'] = "#/definitions/#{name}"
+        define(name, File.expand_path(ref, File.dirname(path)), definitions)
+      end
     end
   end
 
