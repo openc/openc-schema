@@ -430,7 +430,6 @@
     "identifier",
     "source_url",
     "sample_date",
-    "retrieved_at",
     "confidence"
   ],
   "definitions": {
