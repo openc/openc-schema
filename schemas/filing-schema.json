@@ -64,7 +64,7 @@
       "format": "date"
     },
     "retrieved_at": {
-      "description": "Date-time this was retrieved from the source",
+      "description": "The time or date at which the source URL was requested",
       "type": "string",
       "format": "date"
     },

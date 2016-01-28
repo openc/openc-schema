@@ -430,7 +430,7 @@
       "format": "date"
     },
     "retrieved_at": {
-      "description": "The time at which the source URL was requested",
+      "description": "The date or time at which the source URL was requested",
       "type": "string",
       "format": "date"
     },
