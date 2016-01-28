@@ -7,13 +7,13 @@
       "type": "string"
     },
     "company": {
-      "$ref" : "includes/company.json"
+      "$ref" : "company.json"
     },
     "data": {
       "type": "array",
       "description": "This is an array of data objects, that is the objects which actually contain the data about the datum. Generally there will only be one element in this, although in for some types of data_types there may naturally be several releated to the same company, e.g. shareholders",
       "items": {
-        "$ref": "includes/financial-payment-data-object.json"
+        "$ref": "financial-payment-data-object.json"
       },
       "additionalItems": false
     }
