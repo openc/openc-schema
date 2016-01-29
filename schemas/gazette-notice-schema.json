@@ -267,6 +267,13 @@
             "type": "string",
             "enum": ["other"]
           },
+          "classification": {
+            "description": "The type of judgment",
+            "type": "array",
+            "items": {
+              "$ref": "includes/classification.json"
+            }
+          },
           "body": {
             "description": "The unstructured prose content",
             "$ref": "#/definitions/body"
