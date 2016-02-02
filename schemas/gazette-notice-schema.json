@@ -412,9 +412,9 @@
       "format": "date"
     },
     "retrieved_at": {
-      "description": "The time at which the source URL was requested",
+      "description": "The time or date at which the source URL was requested",
       "type": "string",
-      "format": "date-time"
+      "format": "date"
     },
     "confidence": {
       "description": "The scraper's author's confidence in the accuracy of the data",
