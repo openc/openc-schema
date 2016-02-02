@@ -5,7 +5,6 @@
     "entity_properties": {
       "name": "John Smith",
       "company": {
-        "company_number": "ABC123",
         "jurisdiction_code": "gb"
       }
     }
