@@ -55,9 +55,10 @@ describe "open-schemas" do
         error_type = match[1]
         error_path = match[2]
 
-        specify "invalid #{data_type} should fail vaildation with #{error_type} at #{error_path}" do
+        specify "invalid #{data_type} should fail validation with #{error_type} at #{error_path}" do
           data = JSON.parse(File.read(path))
           error = Openc::JsonSchema.validate(File.join('schemas', "#{data_type}-schema.json"), data)
+          expect(error).to_not eq(nil), "expected error for #{path}"
           expect(error[:type].to_s).to eq(error_type)
           expect(error[:path]).to eq(error_path)
         end
@@ -74,9 +75,10 @@ describe "open-schemas" do
       error_type = match[1]
       error_path = match[2]
 
-      specify "invalid #{data_type} should fail vaildation with #{error_type} at #{error_path}" do
+      specify "invalid #{data_type} should fail validation with #{error_type} at #{error_path}" do
         data = JSON.parse(File.read(path))
         error = Openc::JsonSchema.validate(File.join('schemas', 'includes', "#{data_type}.json"), data)
+        expect(error).to_not eq(nil), "expected error for #{path}"
         expect(error[:type].to_s).to eq(error_type)
         expect(error[:path]).to eq(error_path)
       end
