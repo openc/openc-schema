@@ -3,10 +3,12 @@ GEM
   specs:
     addressable (2.3.8)
     diff-lcs (1.2.5)
-    json-schema-openc-fork (0.0.1)
-      addressable (~> 2.3)
-    openc-json_schema (0.0.13)
-      json-schema-openc-fork (= 0.0.1)
+    json-pointer (0.0.1)
+    json-schema (2.6.0)
+      addressable (~> 2.3.8)
+    openc-json_schema (0.0.14)
+      json-pointer
+      json-schema (~> 2.6.0)
     rake (10.3.2)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
@@ -25,6 +27,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  openc-json_schema (= 0.0.13)
+  openc-json_schema
   rake
   rspec
+
+BUNDLED WITH
+   1.11.2
