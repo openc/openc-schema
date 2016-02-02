@@ -1,43 +1,24 @@
-require "rubygems"
-
-PROJECT_ROOT = File.expand_path("..", __FILE__)
-
-require "rspec/core/rake_task"
-
-desc "Run all specs"
-RSpec::Core::RakeTask.new(:spec) do |t|
-  t.verbose = true
-end
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec)
 
 task :default => :spec
 
-## dist
+require 'json'
 
-require "csv"
-require "json"
-require "open-uri"
-require "set"
-
-task :run_validation_specs do
-  Rake::Task['default'].invoke
-end
-
-def format_json(path)
-  data = JSON.parse(File.read(path))
-  File.open(path, 'w') do |f|
-    f.write(JSON.pretty_generate(data))
+desc 'Rewrite JSON files with consistent formatting'
+task :format_json do
+  [
+    ['schemas'],
+    ['schemas', 'includes'],
+    ['spec', '**'],
+  ].each do |parts|
+    Dir.glob(File.join(*parts, '*.json')).each do |path|
+      data = JSON.parse(File.read(path))
+      File.open(path, 'w') do |f|
+        f.write(JSON.pretty_generate(data))
+      end
+    end
   end
-end
-
-desc 'Rewrite schema files with consistent formatting'
-task :format_schemas do
-  Dir.glob(File.join('schemas', '*.json')).each {|path| format_json(path)}
-  Dir.glob(File.join('schemas', 'includes', '*.json')).each {|path| format_json(path)}
-end
-
-desc 'Rewrite sample data files with consistent formatting'
-task :format_sample_data do
-  Dir.glob(File.join('spec', '**', '*.json')).each {|path| format_json(path)}
 end
 
 desc 'Write schema files with embedded references'
@@ -115,6 +96,10 @@ end
 
 desc 'Converts a data model in CSV to JSON Schema'
 task :csv_to_json_schema do
+  require 'csv'
+  require 'open-uri'
+  require 'set'
+
   REQUIRED_HEADERS = [
     'Class',
     'Property',
