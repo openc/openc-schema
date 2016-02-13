@@ -45,7 +45,7 @@
             "description": "The type of creation",
             "type": "array",
             "items": {
-              "$ref": "includes/classification.json"
+              "type": "string"
             }
           },
           "body": {
@@ -99,7 +99,7 @@
             "description": "The type of registration",
             "type": "array",
             "items": {
-              "$ref": "includes/classification.json"
+              "type": "string"
             }
           },
           "body": {
@@ -158,7 +158,7 @@
             "description": "The type of sale",
             "type": "array",
             "items": {
-              "$ref": "includes/classification.json"
+              "type": "string"
             }
           },
           "body": {
@@ -243,7 +243,7 @@
             "description": "The type of judgment",
             "type": "array",
             "items": {
-              "$ref": "includes/classification.json"
+              "type": "string"
             }
           },
           "body": {
@@ -271,7 +271,7 @@
             "description": "The type of judgment",
             "type": "array",
             "items": {
-              "$ref": "includes/classification.json"
+              "type": "string"
             }
           },
           "body": {
@@ -353,7 +353,7 @@
             "description": "The type of filing",
             "type": "array",
             "items": {
-              "$ref": "includes/classification.json"
+              "type": "string"
             }
           },
           "body": {
