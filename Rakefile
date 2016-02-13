@@ -22,7 +22,7 @@ task :format_json do
 end
 
 desc 'Write schema files with embedded references'
-task :embed_references do
+task :build do
   # @see https://github.com/influencemapping/whos_got_dirt-gem/blob/master/Rakefile
 
   def define(name, path, definitions)
