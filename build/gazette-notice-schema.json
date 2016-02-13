@@ -48,7 +48,7 @@
               "description": "The type of creation",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/classification"
+                "type": "string"
               }
             },
             "body": {
@@ -105,7 +105,7 @@
               "description": "The type of registration",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/classification"
+                "type": "string"
               }
             },
             "body": {
@@ -167,7 +167,7 @@
               "description": "The type of sale",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/classification"
+                "type": "string"
               }
             },
             "body": {
@@ -255,7 +255,7 @@
               "description": "The type of judgment",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/classification"
+                "type": "string"
               }
             },
             "body": {
@@ -281,6 +281,13 @@
               "enum": [
                 "other"
               ]
+            },
+            "classification": {
+              "description": "The type of judgment",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "body": {
               "description": "The unstructured prose content",
@@ -370,7 +377,7 @@
               "description": "The type of filing",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/classification"
+                "type": "string"
               }
             },
             "body": {
@@ -430,7 +437,7 @@
       "format": "date"
     },
     "retrieved_at": {
-      "description": "The date or time at which the source URL was requested",
+      "description": "The time or date at which the source URL was requested",
       "type": "string",
       "format": "date"
     },
@@ -455,7 +462,6 @@
     "identifier",
     "source_url",
     "sample_date",
-    "retrieved_at",
     "confidence"
   ],
   "definitions": {
@@ -1073,8 +1079,17 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "name"
+      "anyOf": [
+        {
+          "required": [
+            "name"
+          ]
+        },
+        {
+          "required": [
+            "company_number"
+          ]
+        }
       ]
     },
     "officer": {
@@ -1701,31 +1716,6 @@
       },
       "required": [
         "name"
-      ]
-    },
-    "classification": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "title": "Classification",
-      "description": "A classification from a code list",
-      "type": "object",
-      "properties": {
-        "code_scheme_id": {
-          "description": "The scheme of the classification",
-          "type": "string"
-        },
-        "code": {
-          "description": "The classification",
-          "type": "string"
-        },
-        "name": {
-          "description": "A title or description of the classification, especially if the value is a code",
-          "type": "string"
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "code",
-        "code_scheme_id"
       ]
     }
   }

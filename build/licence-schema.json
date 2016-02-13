@@ -407,8 +407,17 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "name"
+      "anyOf": [
+        {
+          "required": [
+            "name"
+          ]
+        },
+        {
+          "required": [
+            "company_number"
+          ]
+        }
       ]
     },
     "address": {
