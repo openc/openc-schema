@@ -31,6 +31,13 @@
         "$ref": "#/definitions/entity"
       }
     },
+    "related_entities": {
+      "description": "Other entities that the notice is about",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/entity"
+      }
+    },
     "about": {
       "description": "The content of the notice",
       "type": "object",
@@ -48,7 +55,7 @@
               "description": "The type of creation",
               "type": "array",
               "items": {
-                "type": "string"
+                "$ref": "#/definitions/classification"
               }
             },
             "body": {
@@ -105,7 +112,7 @@
               "description": "The type of registration",
               "type": "array",
               "items": {
-                "type": "string"
+                "$ref": "#/definitions/classification"
               }
             },
             "body": {
@@ -167,7 +174,7 @@
               "description": "The type of sale",
               "type": "array",
               "items": {
-                "type": "string"
+                "$ref": "#/definitions/classification"
               }
             },
             "body": {
@@ -255,7 +262,7 @@
               "description": "The type of judgment",
               "type": "array",
               "items": {
-                "type": "string"
+                "$ref": "#/definitions/classification"
               }
             },
             "body": {
@@ -286,7 +293,7 @@
               "description": "The type of judgment",
               "type": "array",
               "items": {
-                "type": "string"
+                "$ref": "#/definitions/classification"
               }
             },
             "body": {
@@ -377,7 +384,7 @@
               "description": "The type of filing",
               "type": "array",
               "items": {
-                "type": "string"
+                "$ref": "#/definitions/classification"
               }
             },
             "body": {
@@ -1716,6 +1723,40 @@
       },
       "required": [
         "name"
+      ]
+    },
+    "classification": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "title": "Classification",
+      "description": "A classification from a code list",
+      "type": "object",
+      "properties": {
+        "code_scheme_id": {
+          "description": "The scheme of the classification",
+          "type": "string"
+        },
+        "code": {
+          "description": "The classification",
+          "type": "string"
+        },
+        "name": {
+          "description": "A title or description of the classification, especially if the value is a code",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "name"
+          ]
+        },
+        {
+          "required": [
+            "code",
+            "code_scheme_id"
+          ]
+        }
       ]
     }
   }
