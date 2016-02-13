@@ -31,6 +31,13 @@
         "$ref": "includes/entity.json"
       }
     },
+    "related_entities": {
+      "description": "Other entities that the notice is about",
+      "type": "array",
+      "items": {
+        "$ref": "includes/entity.json"
+      }
+    },
     "about": {
       "description": "The content of the notice",
       "type": "object",
@@ -45,7 +52,7 @@
             "description": "The type of creation",
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "includes/classification.json"
             }
           },
           "body": {
@@ -99,7 +106,7 @@
             "description": "The type of registration",
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "includes/classification.json"
             }
           },
           "body": {
@@ -158,7 +165,7 @@
             "description": "The type of sale",
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "includes/classification.json"
             }
           },
           "body": {
@@ -243,7 +250,7 @@
             "description": "The type of judgment",
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "includes/classification.json"
             }
           },
           "body": {
@@ -271,7 +278,7 @@
             "description": "The type of judgment",
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "includes/classification.json"
             }
           },
           "body": {
@@ -353,7 +360,7 @@
             "description": "The type of filing",
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "includes/classification.json"
             }
           },
           "body": {

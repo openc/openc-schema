@@ -18,8 +18,17 @@
     }
   },
   "additionalProperties": false,
-  "required": [
-    "code",
-    "code_scheme_id"
+  "anyOf": [
+    {
+      "required": [
+        "name"
+      ]
+    },
+    {
+      "required": [
+        "code",
+        "code_scheme_id"
+      ]
+    }
   ]
 }
