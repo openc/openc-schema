@@ -441,7 +441,6 @@
   "required": [
     "issue",
     "uid",
-    "identifier",
     "source_url",
     "sample_date",
     "confidence"
