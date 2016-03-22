@@ -5,24 +5,30 @@
     "subject_entity": {
       "$ref": "includes/entity.json"
     },
-    "register": {"$ref": "#/definitions/publisher"},
-    "register_uid": {
+    "register": {"$ref": "#/definitions/register"},
+    "identifier": {
+      "description": "A unique identifier given to the register entry by the register. In some cases – e.g. Charity Register for England & Wales, these identifiers (in this case known as the 'charity number') are used outside of the context of the register",
       "type": "string"
     },
     "start_date": {
-      "description": "The date the register entry started, e.g. the date the charity was registered from",
+      "description": "The date the register entry started, e.g. the date the entity was registered from, or appeared on the register the first time",
       "type": "string",
       "format": "date"
     },
     "end_date": {
-      "description": "The date the register entry end, e.g. the date the charity was deregistered from",
+      "description": "The date the register entry ended, e.g. the date the charity was deregistered from",
       "type": "string",
       "format": "date"
     },
     "source_url": {
-      "description": "Source of the data",
+      "description": "Source of the data – this may be the url of the entity on the register, the URL of an open data dump, or if there is no permanent URLs, the main URL for the register",
       "type": "string",
-      "minLength": 1
+      "minLength": 8
+    },
+    "register_url": {
+      "description": "URL of the entity on the register, if there is a permanent URL",
+      "type": "string",
+      "minLength": 8
     },
     "confidence": {
       "description": "Confidence in accuracy of data",
@@ -48,7 +54,7 @@
       "description": "The status of the register entry"
     },
     "category": {
-      "description": "Category of register",
+      "description": "Category of register entry (NB some registers may have more than one type of entry, so we record at the register entry level, rather than the register level)",
       "type": "array",
       "items": {
         "type": "string",
@@ -76,14 +82,14 @@
   "definitions": {
     "register": {
       "title": "Register",
-      "description": "An official register",
+      "description": "The official register of which this entry is a part",
       "type": "object",
       "properties": {
         "registrar": {
           "description": "The publisher/maintainer of the register",
           "$ref": "includes/organisation.json"
         },
-        "jurisdiction_code": {
+        "jurisdiction": {
           "description": "The jurisdiction covered by the register",
           "type": "string"
         },
