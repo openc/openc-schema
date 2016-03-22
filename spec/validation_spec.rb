@@ -13,7 +13,7 @@ describe "open-schemas" do
     Dir.glob(File.join(directory, '**', '*.json')).each do |path|
       it "#{path} should be a valid schema" do
         data = JSON.parse(File.read(path))
-        error = Openc::JsonSchema.validate(data['$schema'], data)
+        error = Openc::JsonSchema.validate(JSON::Validator.validator_for_name(data['$schema']).metaschema, data)
         expect(error).to be(nil)
       end
     end
