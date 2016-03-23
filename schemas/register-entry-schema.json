@@ -55,15 +55,13 @@
     },
     "category": {
       "description": "Category of register entry (NB some registers may have more than one type of entry, so we record at the register entry level, rather than the register level)",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "Charity-NonProfit",
-          "Lobbying",
-          "Other"
-        ]
-      }
+      "type": "string",
+      "enum": [
+        "Charity-NonProfit",
+        "Lobbying",
+        "LegalEntity",
+        "Other"
+      ]
     },
     "other_attributes": {
       "description": "Use for other licence attributes for which we don't yet have curated schema attributes",
