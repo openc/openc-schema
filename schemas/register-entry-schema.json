@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A Register Entry represents an entry in an official register, such as a charity/nonprofit register, or register of lobbyists, for example. Some registers -- such as the Charity Register for England & Wales have a statutory purpose, and act as a record of effectively licensing an entity to operate as a charity (as do, for example, some banking registers). Others, such as the UK's voluntary lobbying register, or the Canadian register of exporters, are more collections of entities and their activities. In general we are using register entries for those registers where there is no good normalised useful model; but where we have something such as the FCA's register of financial advisers etc, which is essentially a record of licences issued to operate in financial markets, we recommend modelling as licences.",
+  "properties": {
+    "subject_entity": {
+      "$ref": "includes/entity.json"
+    },
+    "register": {"$ref": "#/definitions/register"},
+    "identifier": {
+      "description": "A unique identifier given to the register entry by the register. In some cases – e.g. Charity Register for England & Wales, these identifiers (in this case known as the 'charity number') are used outside of the context of the register",
+      "type": "string"
+    },
+    "start_date": {
+      "description": "The date the register entry started, e.g. the date the entity was registered from, or appeared on the register the first time",
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "description": "The date the register entry ended, e.g. the date the charity was deregistered from",
+      "type": "string",
+      "format": "date"
+    },
+    "source_url": {
+      "description": "Source of the data – this may be the url of the entity on the register, the URL of an open data dump, or if there is no permanent URLs, the main URL for the register",
+      "type": "string",
+      "minLength": 8
+    },
+    "register_url": {
+      "description": "URL of the entity on the register, if there is a permanent URL",
+      "type": "string",
+      "minLength": 8
+    },
+    "confidence": {
+      "description": "Confidence in accuracy of data",
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "sample_date": {
+      "description": "Date on which we know this to be true (usually date this information was retrieved from the source)",
+      "type": "string",
+      "format": "date"
+    },
+    "retrieved_at": {
+      "description": "The time or date at which the source URL was requested",
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "description": "The status of the register entry"
+    },
+    "category": {
+      "description": "Category of register entry (NB some registers may have more than one type of entry, so we record at the register entry level, rather than the register level)",
+      "type": "string",
+      "enum": [
+        "Charity-NonProfit",
+        "Lobbying",
+        "LegalEntity",
+        "Other"
+      ]
+    },
+    "other_attributes": {
+      "description": "Use for other licence attributes for which we don't yet have curated schema attributes",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "source_url",
+    "sample_date",
+    "subject_entity",
+    "register",
+    "category",
+    "retrieved_at"
+  ],
+  "definitions": {
+    "register": {
+      "title": "Register",
+      "description": "The official register of which this entry is a part",
+      "type": "object",
+      "properties": {
+        "registrar": {
+          "description": "The publisher/maintainer of the register",
+          "$ref": "includes/organisation.json"
+        },
+        "jurisdiction": {
+          "description": "The jurisdiction covered by the register",
+          "type": "string"
+        },
+        "title": {
+          "description": "The title of the register",
+          "type": "string"
+        },
+        "url": {
+          "description": "The URL of the register",
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "title"
+      ]
+    }
+
+  }
+}
