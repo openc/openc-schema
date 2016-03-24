@@ -31,6 +31,10 @@
         "LOW"
       ]
     },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date"
+    },
     "parent_name": {
       "description": "Name of the controlling company",
       "type": "string",
