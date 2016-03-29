@@ -7,8 +7,12 @@
     },
     "register": {"$ref": "#/definitions/register"},
     "identifier": {
-      "description": "A unique identifier given to the register entry by the register. In some cases – e.g. Charity Register for England & Wales, these identifiers (in this case known as the 'charity number') are used outside of the context of the register",
+      "description": "A unique identifier used by the register to identifier the register entry. In some cases – e.g. Charity Register for England & Wales, these identifiers (in this case known as the 'charity number') are used outside of the context of the register",
       "type": "string"
+    },
+    "identifier_system_code": {
+      "type": "string",
+      "description": "A code representing the identifier scheme. Some examples of this are us_fein (US Federal tax number), us_sec_cik (US Securities and Exchange Commission CIK), uk_ew_cc (Charity Commission of England & Wales), lei (Global Legal Entity Identifier System). Not all registers have identifier_systems, and some registers may use identifiers from other identifiers systems (e.g. the EBA is planning on using LEI in its bank register)"
     },
     "start_date": {
       "description": "The date the register entry started, e.g. the date the entity was registered from, or appeared on the register the first time",
