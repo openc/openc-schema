@@ -21,6 +21,10 @@
         "$ref": "includes/financial-payment-data-object.json"
       },
       "additionalItems": false
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date"
     }
   },
   "additionalProperties": false,
