@@ -26,6 +26,11 @@
       "type": "string",
       "minLength": 5
     },
+    "uid": {
+      "description": "Unique id of the person. Not the unique id is not expected to be globally unique, but only unique with reference to the source from which it is derived. No check is made for uniqueness",
+      "type": "string",
+      "minLength": 1
+    },
     "telephone_number": {
       "type": "string",
       "minLength": 4
