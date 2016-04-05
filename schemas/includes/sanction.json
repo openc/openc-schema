@@ -37,7 +37,9 @@
         "sanction_jurisdictions": {
           "description": "list of jurisdictions that this sanction applies to",
           "type": "array",
-          "items": "String"
+          "items": {
+            "type": "string"
+          }
         },
         "sanction_issuer": {
           "oneOf": [
