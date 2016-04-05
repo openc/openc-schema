@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A relationship of control between two companies",
+  "type": "object",
+  "properties": {
+    "sample_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "start_date_type": {
+      "type": "string"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date_type": {
+      "type": "string"
+    },
+    "source_jurisdiction": {
+      "description": "Jurisdiction of the source of the data",
+      "type": "string"
+    },
+    "company": {
+      "$ref": "#/definitions/company"
+    },
+    "data": {
+      "type": "array",
+      "description": "This is an array of data objects, that is the objects which actually contain the data about the datum. Generally there will only be one element in this, although in for some types of data_types there may naturally be several releated to the same company, e.g. shareholders",
+      "items": {
+        "$ref": "#/definitions/subsidiary-relationship-data"
+      },
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "company",
+    "data",
+    "sample_date"
+  ],
+  "definitions": {
+    "company": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "description": "A company which is the subject of a statement",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "jurisdiction": {
+          "type": "string"
+        },
+        "company_number": {
+          "type": "string"
+        },
+        "identifier": {
+          "type": "string",
+          "description": "An official identifier paired with a code for the issuer of the identifier, e.g sec/12345",
+          "pattern": "^[^/]+/[^/]+$"
+        }
+      },
+      "required": [
+        "name",
+        "jurisdiction"
+      ]
+    },
+    "subsidiary-relationship-data": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "data_type": {
+          "enum": [
+            "subsidiary_relationship"
+          ]
+        },
+        "properties": {
+          "type": "object",
+          "required": [
+            "subsidiary"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "direct": {
+              "description": "If the control is direct (if via an intermediary, this value should be false; if unknown, left blank)",
+              "type": "boolean"
+            },
+            "percentage_controlled": {
+              "description": "Percentage controlled, either directly or indirectly",
+              "type": "string"
+            },
+            "significant": {
+              "description": "Does the source define the control as somehow significant?",
+              "type": "boolean"
+            },
+            "subsidiary": {
+              "description": "Company that is controlled",
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "description": "Name of company",
+                  "type": "string"
+                },
+                "jurisdiction": {
+                  "description": "Jurisdiction of registration",
+                  "type": "string"
+                },
+                "company_number": {
+                  "description": "Company number, if company and known",
+                  "type": "string"
+                },
+                "identifier": {
+                  "description": "Unique identifier of company",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

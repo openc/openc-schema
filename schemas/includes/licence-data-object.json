@@ -35,7 +35,7 @@
           "description": "Licence number or code (can be null)",
           "type": [
             "string",
-            null
+            "null"
           ]
         },
         "jurisdiction_classification": {

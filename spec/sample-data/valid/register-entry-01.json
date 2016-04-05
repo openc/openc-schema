@@ -1,0 +1,45 @@
+{
+  "confidence": "HIGH",
+  "subject_entity": {
+    "entity_type": "company",
+    "entity_properties": {
+      "alternative_names": [
+        {
+          "company_name": "OXFAM GB",
+          "type": "trading"
+        }
+      ],
+      "jurisdiction_code": "gb",
+      "company_number": "612172",
+      "name": "OXFAM",
+      "telephone_number": "0870 333 2444",
+      "registered_address": {
+        "street_address": "OXFAM GB, OXFAM, 2700 JOHN SMITH DRIVE, OXFORD BUSINESS PARK SOUTH",
+        "locality": "OXFORD",
+        "postal_code": "OX4 2JY"
+      }
+    }
+  },
+  "register": {
+    "jurisdiction": "England & Wales",
+    "title": "Charity Register for England & Wales",
+    "url": "http://beta.charitycommission.gov.uk",
+    "registrar": {
+      "name": "The Charity Commission for England and Wales",
+      "jurisdiction": "England & Wales",
+      "website": "https://www.gov.uk/government/organisations/charity-commission"
+    }
+  },
+  "identifier": "202918",
+  "category": "Charity-NonProfit",
+  "other_attributes": {
+    "objectives": "OXFAM'S OBJECTS ARE TO PREVENT AND RELIEVE POVERTY AND PROTECT THE VULNERABLE ANYWHERE IN THE WORLD. OXFAM FURTHERS ITS OBJECTS THROUGH INTERLINKED ACTIVITIES OF HUMANITARIAN RELIEF, DEVELOPMENT WORK AND ADVOCACY AND CAMPAIGNING. OXFAM IS AN AFFILIATE MEMBER OF OXFAM INTERNATIONAL. DETAILS OF OXFAM'S MISSION AND WAYS OF WORKING CAN BE FOUND AT WWW.OXFAM.ORG.UK",
+    "contact_name": "MR JOSS SAUNDERS",
+    "volunteers": 22000
+  },
+  "start_date": "1965-09-07",
+  "sample_date": "2014-12-09",
+  "source_url": "http://data.charitycommission.gov.uk/",
+  "register_url": "http://beta.charitycommission.gov.uk/charity-details/?regid=202918&subid=0",
+  "retrieved_at": "2015-08-11"
+}

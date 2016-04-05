@@ -29,7 +29,7 @@
     },
     "retrieved_at": {
       "type": "string",
-      "format": "date-time"
+      "format": "date"
     },
     "current_status": {
       "type": [
@@ -44,11 +44,28 @@
       ]
     },
     "registry_url": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "website": {
-      "type": "string",
-      "minLength": 5
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 5
+        },
+        {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "minLength": 5
+          }
+        }
+      ]
     },
     "telephone_number": {
       "type": "string",

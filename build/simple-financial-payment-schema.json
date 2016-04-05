@@ -54,10 +54,6 @@
       "description": "The jurisdiction of the body that made the payment, eg. UK, France, Delaware, Manchester",
       "type": "string"
     },
-    "retrieved_at": {
-      "type": "string",
-      "format": "date"
-    },
     "more_details_url": {
       "description": "A url from which more details can be seen (may be the same as the source_url)",
       "type": [
@@ -123,5 +119,7 @@
     "payee_name",
     "date",
     "currency"
-  ]
+  ],
+  "definitions": {
+  }
 }

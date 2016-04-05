@@ -1,0 +1,65 @@
+{
+    "date_published": "2015-01-02",
+    "issue": {
+        "publication": {
+            "publisher": {
+                "name": "Direction de l'information légale et administrative",
+                "url": "http://www.dila.premier-ministre.gouv.fr/",
+                "media_type": "text/html"
+            },
+            "jurisdiction_code": "fr",
+            "title": "Bulletin officiel des annonces civiles et commerciales",
+            "url": "http://www.bodacc.fr/",
+            "media_type": "text/html"
+        },
+        "identifier": "20150001",
+        "edition_id": "B"
+    },
+    "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
+    "sample_date": "2016-01-12T21:52:11Z",
+    "retrieved_at": "2016-01-12T21:52:11Z",
+    "confidence": "HIGH",
+    "other_attributes": {
+        "format": "RCS-B"
+    },
+    "publisher": {
+        "name": "GREFFE DU TRIBUNAL DE COMMERCE DE PARIS",
+        "identifier": "75"
+    },
+    "identifier": 1924,
+    "uid": "BXB143580021356",
+    "url": "http://www.bodacc.fr/annonce/detail/BXB143580021356",
+    "media_type": "text/html",
+    "subjects": [{
+        "entity_type": "company",
+        "entity_properties": {
+            "jurisdiction_code": "fr",
+            "company_number": "528687114",
+            "name": "LE BRAZZA 17EME",
+            "company_type": "Société en nom collectif",
+            "headquarters_address": {
+                "street_address": "53 rue de Tocqueville",
+                "locality": "Paris",
+                "postal_code": "75017",
+                "country": "France",
+                "country_code": "FR"
+            },
+            "mailing_address": {
+                "street_address": "53 rue de Tocqueville",
+                "locality": "Paris",
+                "postal_code": "75017",
+                "country": "France",
+                "country_code": "FR"
+            }
+        }
+    }],
+    "about": {
+        "type": "modification of subjects",
+        "body": {
+            "value": "Cessation d'activité et dissolution de la société",
+            "media_type": "text/plain"
+        },
+        "activity_start_date": "2011-01-01",
+        "effective_date": "2014-12-01"
+    }
+}

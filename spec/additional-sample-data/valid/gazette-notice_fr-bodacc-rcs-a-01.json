@@ -1,0 +1,70 @@
+{
+    "date_published": "2015-01-02",
+    "issue": {
+        "publication": {
+            "publisher": {
+                "name": "Direction de l'information légale et administrative",
+                "url": "http://www.dila.premier-ministre.gouv.fr/",
+                "media_type": "text/html"
+            },
+            "jurisdiction_code": "fr",
+            "title": "Bulletin officiel des annonces civiles et commerciales",
+            "url": "http://www.bodacc.fr/",
+            "media_type": "text/html"
+        },
+        "identifier": "20150001",
+        "edition_id": "A"
+    },
+    "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
+    "sample_date": "2016-01-13T01:26:23Z",
+    "retrieved_at": "2016-01-13T01:26:23Z",
+    "confidence": "HIGH",
+    "other_attributes": {
+        "format": "RCS-A"
+    },
+    "publisher": {
+        "name": "GREFFE DU TRIBUNAL DE COMMERCE DE SAINT-QUENTIN",
+        "identifier": "02"
+    },
+    "identifier": 1,
+    "uid": "BXA14358001500V",
+    "url": "http://www.bodacc.fr/annonce/detail/BXA14358001500V",
+    "media_type": "text/html",
+    "subjects": [{
+        "entity_type": "company",
+        "entity_properties": {
+            "jurisdiction_code": "fr",
+            "company_number": "808433569",
+            "name": "DE LA PLACE D'ARDON",
+            "company_type": "Société civile immobilière",
+            "registered_address": {
+                "street_address": "24 rue de Paris",
+                "locality": "Etouvelles",
+                "postal_code": "02000",
+                "country": "France",
+                "country_code": "FR"
+            }
+        }
+    }],
+    "about": {
+        "type": "creation of subjects",
+        "registration_date": "2014-12-16",
+        "activity_start_date": "2014-12-01",
+        "classification": [{
+            "code_scheme_id": "fr_bodacc_categorie",
+            "code": "Immatriculation d'une personne morale (B, C, D) suite à création d'un établissement principal"
+        }],
+        "locations": [{
+            "activity": "Acquisition, administration et exploitation par bail, location, sous-location ou autrement de tous immeubles bâtis ou non bâtis, biens immobiliers ou droits immobiliers dont la société pourrait devenir propriétaire ; l'emprunt de tous fonds nécessaires à la réalisation de cet objet...",
+            "address": {
+                "street_address": "24 rue de Paris",
+                "locality": "Etouvelles",
+                "postal_code": "02000",
+                "country": "France",
+                "country_code": "FR"
+            },
+            "origin": "Création",
+            "type": "primary"
+        }]
+    }
+}

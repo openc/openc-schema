@@ -33,7 +33,7 @@
     },
     "retrieved_at": {
       "type": "string",
-      "format": "date-time"
+      "format": "date"
     },
     "current_status": {
       "type": [
@@ -51,8 +51,22 @@
       "type": "string"
     },
     "website": {
-      "type": "string",
-      "minLength": 5
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 5
+        },
+        {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "minLength": 5
+          }
+        }
+      ]
     },
     "telephone_number": {
       "type": "string",
@@ -239,7 +253,16 @@
     }
   },
   "additionalProperties": false,
-  "required": [
-    "name"
+  "anyOf": [
+    {
+      "required": [
+        "name"
+      ]
+    },
+    {
+      "required": [
+        "company_number"
+      ]
+    }
   ]
 }

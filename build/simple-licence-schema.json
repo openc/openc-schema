@@ -63,10 +63,6 @@
       "description": "Status of the licence",
       "type": "string"
     },
-    "retrieved_at": {
-      "type": "string",
-      "format": "date"
-    },
     "category": {
       "description": "Category of licence",
       "type": "string",
@@ -82,5 +78,7 @@
     "sample_date",
     "company_name",
     "company_jurisdiction"
-  ]
+  ],
+  "definitions": {
+  }
 }

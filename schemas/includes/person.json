@@ -23,8 +23,22 @@
       ]
     },
     "website": {
-      "type": "string",
-      "minLength": 5
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 5
+        },
+        {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "minLength": 5
+          }
+        }
+      ]
     },
     "uid": {
       "description": "Unique id of the person. Not the unique id is not expected to be globally unique, but only unique with reference to the source from which it is derived. No check is made for uniqueness",
@@ -66,6 +80,7 @@
       "format": "date"
     },
     "nationality": {
+      "description": "The person's nationality",
       "type": "string",
       "minLength": 2
     }

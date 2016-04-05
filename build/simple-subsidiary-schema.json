@@ -31,10 +31,6 @@
         "LOW"
       ]
     },
-    "retrieved_at": {
-      "type": "string",
-      "format": "date"
-    },
     "parent_name": {
       "description": "Name of the controlling company",
       "type": "string",
@@ -85,5 +81,7 @@
     "parent_jurisdiction",
     "subsidiary_name",
     "subsidiary_jurisdiction"
-  ]
+  ],
+  "definitions": {
+  }
 }

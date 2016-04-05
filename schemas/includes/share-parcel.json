@@ -2,9 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "description": "A parcel of shares in a company",
-  "required": [
-
-  ],
   "properties": {
     "number_of_shares": {
       "description": "Number of shares, if known",
@@ -18,13 +15,31 @@
     },
     "percentage_of_shares_min": {
       "description": "Minimum percentage of shares (if for example a band of percentage is given)",
-      "type": ["number",null],
+      "type": ["number","null"],
       "maximum": 100,
       "minimum": 0
     },
     "percentage_of_shares_max": {
       "description": "Maximum percentage of shares (if for example a band of percentage is given)",
-      "type": ["number",null],
+      "type": ["number","null"],
+      "maximum": 100,
+      "minimum": 0
+    },
+    "voting_percentage": {
+      "description": "Percentage of votes, if known",
+      "type": "number",
+      "maximum": 100,
+      "minimum": 0
+    },
+    "voting_percentage_min": {
+      "description": "Minimum percentage of votes (if for example a band of votes is given)",
+      "type": ["number","null"],
+      "maximum": 100,
+      "minimum": 0
+    },
+    "voting_percentage_max": {
+      "description": "Maximum percentage of votes (if for example a band of votes is given)",
+      "type": ["number","null"],
       "maximum": 100,
       "minimum": 0
     },
