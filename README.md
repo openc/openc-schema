@@ -2,6 +2,16 @@
 
 JSON Schema to validate data before sending to OpenCorporates.
 
+## Tasks
+
+Rewrite JSON files with consistent formatting:
+
+    rake format_json
+
+Write schema files with embedded references (for Docson):
+
+    rake build
+
 ## Test
 
 Run tests:
