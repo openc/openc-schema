@@ -12,6 +12,8 @@ Write schema files with embedded references (for Docson):
 
     rake build
 
+The `gh-pages` branch is hard-coded to refer to one of these schema files.
+
 ## Test
 
 Run tests:
