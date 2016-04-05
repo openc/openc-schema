@@ -19,7 +19,7 @@
             "sanctions_listing",
             "debarment"
           ],
-          "description": "types of sanction - one of 'disqualification', 'sanctions_list'"
+          "description": "types of sanction - one of 'disqualification', 'sanctions_list', 'debarment'"
         },
         "restrictions": {
           "type": "array",
