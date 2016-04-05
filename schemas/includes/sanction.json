@@ -17,7 +17,7 @@
           "enum": [
             "disqualification",
             "sanctions_listing",
-            "debarrment"
+            "debarment"
           ],
           "description": "types of sanction - one of 'disqualification', 'sanctions_list'"
         },
