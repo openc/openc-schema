@@ -11,7 +11,15 @@
       },
       "entity_type": "person"
     },
-    "publisher": "UK Treasury",
+    "sanctions_list": {
+      "title": "UK Treasury Consolidated list of sanctions targets",
+      "url": "https://www.gov.uk/government/publications/financial-sanctions-consolidated-list-of-targets/consolidated-list-of-targets",
+      "publisher": {
+        "name": "Office of Financial Sanctions Implementation",
+        "jurisdiction": "gb",
+        "website": "https://www.gov.uk/government/organisations/office-of-financial-sanctions-implementation"
+      }
+    },
     "sanctions": [
       {
         "sanction_type": "sanctions_listing",
@@ -21,7 +29,7 @@
         "cause": "UK Treasury Financial Sanctions Target"
       }
     ],
-    "sanction_type": "listed_sanctioned_entity",
+    "category": "ListedSanctionedEntity",
     "retrieved_at": "2015-08-11T23:00:08+01:00",
     "sample_date": "2015-08-11",
     "start_date": "2006-05-26",

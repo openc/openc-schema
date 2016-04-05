@@ -5,24 +5,16 @@
     "subject_entity": {
       "$ref": "includes/entity.json"
     },
-    "sanction_type": {
-      "description": "Type of sanction. This field is required (other options may be added in the future). A listed_sanctioned_entity is an entity that is on a national or international sanctions list, e.g. OFAC",
-      "enum": ["disqualified_director","listed_sanctioned_entity"]
-    },
-    "publisher": {
-      "oneOf": [
-        {
-          "type": [
-            "string",
-            "null"
-          ],
-          "minLength": 2
-        },
-        {
-          "$ref": "includes/organisation.json"
-        }
+    "category": {
+      "description": "Category of sanction. This field is required (other options may be added in the future). A listed_sanctioned_entity is an entity that is on a national or international sanctions list, e.g. OFAC",
+      "enum": [
+        "DisqualifiedDirector",
+        "ListedSanctionedEntity",
+        "DebarredSupplier"
       ]
     },
+    "sanctions_list": {"$ref": "#/definitions/sanctions_list"},
+
     "sanctions": {
       "type": "array",
       "items": {
@@ -34,7 +26,7 @@
       "type": "string"
     },
     "title": {
-      "description": "The title of the sanction, if given",
+      "description": "The title of the sanction entity record, if given",
       "type": "string"
     },
     "url": {
@@ -71,7 +63,7 @@
       "format": "date-time"
     },
     "sample_date": {
-      "description": "Date on which we know this to be true (usually date this information was retrieved from the source)",
+      "description": "Date on which we know this to be true (for example the date the sanction list was published)",
       "type": "string",
       "format": "date"
     },
@@ -82,9 +74,42 @@
   },
   "additionalProperties": false,
   "required": [
-    "sanction_type",
+    "category",
     "subject_entity",
+    "retrieved_at",
     "source_url",
     "sample_date"
-  ]
+  ],
+  "definitions": {
+    "sanctions_list": {
+      "title": "Sanctions List",
+      "description": "The sanctions list from which this entry is taken",
+      "type": "object",
+      "properties": {
+        "publisher": {
+          "description": "The publisher/maintainer of the sanctions list",
+          "$ref": "includes/organisation.json"
+        },
+        "jurisdiction": {
+          "description": "The jurisdiction covered by the register",
+          "type": "string"
+        },
+        "title": {
+          "description": "The title of the sanctions list",
+          "type": "string"
+        },
+        "url": {
+          "description": "The URL of the sanctions list",
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "title"
+      ]
+    }
+
+  }
+
 }

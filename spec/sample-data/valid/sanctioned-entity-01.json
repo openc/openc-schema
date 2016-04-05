@@ -22,7 +22,15 @@
       },
       "entity_type": "person"
     },
-    "publisher": "Companies House UK",
+    "sanctions_list": {
+      "title": "UK Disqualified Directors Register",
+      "url": "https://www.gov.uk/search-the-register-of-disqualified-company-directors",
+      "publisher": {
+        "name": "Companies House UK",
+        "jurisdiction": "gb",
+        "website": "https://www.gov.uk/government/organisations/companies-house"
+      }
+    },
     "sanctions": [
       {
         "sanction_issuer": "UNDERTAKING",
@@ -31,7 +39,7 @@
         "legal_basis": ["CDDA 1986 S7"]
       }
     ],
-    "sanction_type": "disqualified_director",
+    "category": "DisqualifiedDirector",
     "retrieved_at": "2015-08-11T23:00:08+01:00",
     "sample_date": "2015-08-11",
     "start_date": "2013-05-16",

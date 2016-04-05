@@ -7,7 +7,15 @@
       },
       "entity_type": "unknown"
     },
-    "publisher": "US Office of Foreign Assets Control",
+    "sanctions_list": {
+      "title": "Consolidated Sanctions List",
+      "url": "https://www.treasury.gov/resource-center/sanctions/SDN-List/Pages/consolidated.aspx",
+      "publisher": {
+        "name": "US Office of Foreign Assets Control",
+        "jurisdiction": "United States",
+        "website": "https://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx"
+      }
+    },
     "sanctions": [
       {
         "sanction_type": "sanctions_listing",
@@ -20,7 +28,7 @@
         ]
       }
     ],
-    "sanction_type": "listed_sanctioned_entity",
+    "category": "ListedSanctionedEntity",
     "retrieved_at": "2015-08-11T23:00:08+01:00",
     "sample_date": "2015-08-11",
     "start_date": "2006-05-26",
