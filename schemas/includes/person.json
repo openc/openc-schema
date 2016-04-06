@@ -11,7 +11,7 @@
       "description": "Name of the jurisdiction in which the entity is based"
     },
     "company": {
-      "description": "Company the person is representing. NB If the licence holder is a company, and the individual is a just a contact, then use the company-schema for the entity. This is where the individual  themselves are the licence holder",
+      "description": "Company the person is representing. NB If the licence holder is a company, and the individual is a just a contact, then use the company-schema for the entity. This is where the individual themselves are the subject entity (e.g. licence holder, disqualified director)",
       "$ref": "company-for-nesting.json"
     },
     "relationship_with_company": {
@@ -40,6 +40,11 @@
         }
       ]
     },
+    "uid": {
+      "description": "Unique id of the person. Not the unique id is not expected to be globally unique, but only unique with reference to the source from which it is derived. No check is made for uniqueness",
+      "type": "string",
+      "minLength": 1
+    },
     "telephone_number": {
       "type": "string",
       "minLength": 4
@@ -49,6 +54,7 @@
       "minLength": 4
     },
     "registered_address": {
+      "description":"official address",
       "$ref": "address.json"
     },
     "headquarters_address": {
@@ -69,9 +75,14 @@
         "$ref": "alternative_name.json"
       }
     },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date"
+    },
     "nationality": {
       "description": "The person's nationality",
-      "type": "string"
+      "type": "string",
+      "minLength": 2
     }
   },
   "required": [

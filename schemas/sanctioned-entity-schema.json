@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A sanctioned entity is a record of a person or company that has been barred or prohibited from some activity, e.g. disqualified from being a director, banned from bidding for contracts, or is on a sanctions list",
+  "properties": {
+    "subject_entity": {
+      "$ref": "includes/entity.json"
+    },
+    "category": {
+      "description": "Category of sanction. This field is required (other options may be added in the future). A listed_sanctioned_entity is an entity that is on a national or international sanctions list, e.g. OFAC",
+      "enum": [
+        "DisqualifiedDirector",
+        "ListedSanctionedEntity",
+        "DebarredSupplier"
+      ]
+    },
+    "sanctions_list": {"$ref": "#/definitions/sanctions_list"},
+
+    "sanctions": {
+      "type": "array",
+      "items": {
+        "$ref": "includes/sanction.json"
+      }
+    },
+    "uid": {
+      "description": "Unique id/reference for the sanctioned entity record if the sanctioning body has given it one",
+      "type": "string"
+    },
+    "title": {
+      "description": "The title of the sanction entity record, if given",
+      "type": "string"
+    },
+    "url": {
+      "description": "Persistent URL for the sanctioned entity record, if there is one",
+      "type": "string"
+    },
+    "source_url": {
+      "description": "Source url of the web page for the filing or if there is not persistent URL the page from which it can be found (e.g. search page). This field is required.",
+      "type": "string",
+      "minLength": 11
+    },
+    "confidence": {
+      "description": "Confidence in accuracy of data",
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "start_date": {
+      "description": "Date on which the sanction started",
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "description": "Date on which the sanction ended, or is scheduled to end",
+      "type": "string",
+      "format": "date"
+    },
+    "retrieved_at": {
+      "description": "Date-time this was retrieved from the source",
+      "type": "string",
+      "format": "date-time"
+    },
+    "sample_date": {
+      "description": "Date on which we know this to be true (for example the date the sanction list was published)",
+      "type": "string",
+      "format": "date"
+    },
+    "other_attributes": {
+      "description": "Use for other attributes for which we don't yet have curated schema attributes",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "category",
+    "subject_entity",
+    "retrieved_at",
+    "source_url",
+    "sample_date"
+  ],
+  "definitions": {
+    "sanctions_list": {
+      "title": "Sanctions List",
+      "description": "The sanctions list from which this entry is taken",
+      "type": "object",
+      "properties": {
+        "publisher": {
+          "description": "The publisher/maintainer of the sanctions list",
+          "$ref": "includes/organisation.json"
+        },
+        "jurisdiction": {
+          "description": "The jurisdiction covered by the register",
+          "type": "string"
+        },
+        "title": {
+          "description": "The title of the sanctions list",
+          "type": "string"
+        },
+        "url": {
+          "description": "The URL of the sanctions list",
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "title"
+      ]
+    }
+
+  }
+
+}
