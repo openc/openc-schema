@@ -28,6 +28,13 @@
             "type": "string"
           }
         },
+        "cause": {
+          "type": "array",
+          "description": "reasons for the sanction being applied",
+          "items": {
+            "type": "string"
+          }
+        },
         "legal_basis": {
           "type": ["array","null"],
           "items": {

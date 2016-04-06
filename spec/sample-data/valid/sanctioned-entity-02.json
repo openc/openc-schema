@@ -26,7 +26,9 @@
         "sanction_jurisdictions": ["gb"],
         "description": "Commander of the Western Military Region for the Sudanese Armed Forces, Sudan",
         "notes": "Remains listed as Gaffar Mohamed Elhassan by the EU",
-        "cause": "UK Treasury Financial Sanctions Target"
+        "cause": [
+          "UK Treasury Financial Sanctions Target"
+        ]
       }
     ],
     "category": "ListedSanctionedEntity",
