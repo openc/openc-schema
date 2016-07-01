@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "An entity which is a distinct organisation, but is not a company nor an individual. Examples include governments and governmental entities (e.g. Multilateral Devoelpment Banks, Government Departments, municipalities, etc), and also membership organisations",
+  "description": "An entity which is a distinct organisation, but is not a company nor an individual. Examples include governments and governmental entities (e.g. Multilateral Development Banks, Government Departments, municipalities, etc), and also membership organisations",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "name": {
       "type": "string",
@@ -11,6 +12,10 @@
     "jurisdiction": {
       "type": "string",
       "description": "Name of the jurisdiction in which the entity is incorporated/domiciled (use global for global entities, e.g. UN)"
+    },
+    "legal_form": {
+      "type": "string",
+      "description": "legal form of organisation, e.g. municipality, government department, trust, etc"
     },
     "website": {
       "oneOf": [
@@ -64,6 +69,10 @@
       "items": {
         "$ref": "alternative_name.json"
       }
+    },
+    "other_attributes": {
+      "description": "Use for other attributes for which we don't yet have curated schema attributes",
+      "type": "object"
     }
   },
   "required": [

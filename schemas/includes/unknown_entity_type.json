@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "An entity of unknown type - potentially a company, a person, government entity, or some unincorporated organisation",
+  "additionalProperties": false,
   "type": "object",
   "properties": {
     "name": {
@@ -11,6 +12,10 @@
     "jurisdiction": {
       "type": "string",
       "description": "Name of the jurisdiction in which the entity is incorporated/domiciled"
+    },
+    "uid": {
+      "description": "Unique id for the entity if it has one",
+      "type": "string"
     },
     "website": {
       "oneOf": [
@@ -64,6 +69,10 @@
       "items": {
         "$ref": "alternative_name.json"
       }
+    },
+    "other_attributes": {
+      "description": "Use for other attributes for which we don't yet have curated schema attributes",
+      "type": "object"
     }
   },
   "required": [

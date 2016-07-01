@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "A person, for example, referenced in some other context, e.g. director of a company, shareholder, licence-holder, lobbyist. This should be used only if the person is the subject of the datum",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "name": {
       "$ref": "person_name.json"
@@ -41,7 +42,7 @@
       ]
     },
     "uid": {
-      "description": "Unique id of the person. Not the unique id is not expected to be globally unique, but only unique with reference to the source from which it is derived. No check is made for uniqueness",
+      "description": "Unique id of the person. Note: the unique id is not expected to be globally unique, but only unique with reference to the source from which it is derived. No check is made for uniqueness",
       "type": "string",
       "minLength": 1
     },
@@ -54,7 +55,7 @@
       "minLength": 4
     },
     "registered_address": {
-      "description":"official address",
+      "description":"address for service (or address given in the context of legal requirement)",
       "$ref": "address.json"
     },
     "headquarters_address": {
@@ -76,13 +77,30 @@
       }
     },
     "date_of_birth": {
-      "type": "string",
-      "format": "date"
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "$ref": "date.json"
+        }
+
+      ]
     },
     "nationality": {
       "description": "The person's nationality",
       "type": "string",
       "minLength": 2
+    },
+    "country_of_residence": {
+      "description": "The normal country of residence for the person",
+      "type": "string",
+      "minLength": 2
+    },
+    "other_attributes": {
+      "description": "Use for other attributes for which we don't yet have curated schema attributes",
+      "type": "object"
     }
   },
   "required": [
