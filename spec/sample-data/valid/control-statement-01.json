@@ -1,0 +1,54 @@
+{
+  "subject_entity": {
+    "entity_properties": {
+      "company_number": "09876543",
+      "jurisdiction_code": "gb"
+    },
+    "entity_type": "company"
+  },
+  "sample_date": "2016-01-01",
+  "source_url": "http://download.companieshouse.gov.uk/en_pscdata.html",
+  "retrieved_at": "2015-08-11T23:00:08+01:00",
+  "confidence": "HIGH",
+  "control_level": "unknown",
+  "control_mechanisms": [
+    {
+      "mechanism_type": "share_ownership",
+      "mechanism_properties": {
+        "exercised_via": null,
+        "percentage_of_shares": {
+          "minimum": 25,
+          "maximum": 50,
+          "exclusive_minimum": true,
+          "exclusive_maximum": false
+        }
+      },
+      "source_description": "The person holds, directly or indirectly, more than 25% but not more than 50% of the shares in the company."
+    }
+  ],
+  "controlling_entities": [
+    {
+      "entity_type": "person",
+      "entity_properties": {
+        "date_of_birth": {
+          "year": 1988,
+          "month": 4
+        },
+        "nationality": "British",
+        "country_of_residence": "Wales",
+        "registered_address": {
+          "postal_code": "CF14 3UZ",
+          "locality": "Cardiff",
+          "region": "South Glamorgan",
+          "street_address": "Crown Way"
+        },
+        "name": {
+          "given_name": "James",
+          "family_name": "Brian"
+        }
+      }
+    }
+  ],
+  "control_level": "unknown",
+  "ultimate_beneficial_owner": true
+}
