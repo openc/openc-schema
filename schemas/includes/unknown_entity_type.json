@@ -13,6 +13,10 @@
       "type": "string",
       "description": "Name of the jurisdiction in which the entity is incorporated/domiciled"
     },
+    "uid": {
+      "description": "Unique id for the entity if it has one",
+      "type": "string"
+    },
     "website": {
       "oneOf": [
         {

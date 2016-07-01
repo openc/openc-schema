@@ -13,6 +13,10 @@
       "type": "string",
       "description": "Name of the jurisdiction in which the entity is incorporated/domiciled (use global for global entities, e.g. UN)"
     },
+    "legal_form": {
+      "type": "string",
+      "description": "legal form of organisation, e.g. municipality, government department, trust, etc"
+    },
     "website": {
       "oneOf": [
         {
