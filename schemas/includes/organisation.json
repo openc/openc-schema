@@ -65,6 +65,10 @@
       "items": {
         "$ref": "alternative_name.json"
       }
+    },
+    "other_attributes": {
+      "description": "Use for other attributes for which we don't yet have curated schema attributes",
+      "type": "object"
     }
   },
   "required": [

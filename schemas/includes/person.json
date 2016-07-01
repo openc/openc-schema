@@ -84,6 +84,10 @@
       "description": "The person's nationality",
       "type": "string",
       "minLength": 2
+    },
+    "other_attributes": {
+      "description": "Use for other attributes for which we don't yet have curated schema attributes",
+      "type": "object"
     }
   },
   "required": [
