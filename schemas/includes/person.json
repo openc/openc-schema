@@ -41,7 +41,7 @@
       ]
     },
     "uid": {
-      "description": "Unique id of the person. Not the unique id is not expected to be globally unique, but only unique with reference to the source from which it is derived. No check is made for uniqueness",
+      "description": "Unique id of the person. Note: the unique id is not expected to be globally unique, but only unique with reference to the source from which it is derived. No check is made for uniqueness",
       "type": "string",
       "minLength": 1
     },
@@ -54,7 +54,7 @@
       "minLength": 4
     },
     "registered_address": {
-      "description":"official address",
+      "description":"address for service (or address given in the context of legal requirement)",
       "$ref": "address.json"
     },
     "headquarters_address": {
