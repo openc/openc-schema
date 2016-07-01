@@ -77,8 +77,16 @@
       }
     },
     "date_of_birth": {
-      "type": "string",
-      "format": "date"
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "$ref": "date.json"
+        }
+
+      ]
     },
     "nationality": {
       "description": "The person's nationality",
