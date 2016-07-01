@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "An entity of unknown type - potentially a company, a person, government entity, or some unincorporated organisation",
+  "additionalProperties": false,
   "type": "object",
   "properties": {
     "name": {

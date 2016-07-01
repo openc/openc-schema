@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "A person, for example, referenced in some other context, e.g. director of a company, shareholder, licence-holder, lobbyist. This should be used only if the person is the subject of the datum",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "name": {
       "$ref": "person_name.json"
