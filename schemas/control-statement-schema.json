@@ -154,7 +154,8 @@
               "description": "Description of the control relationship as given by the source",
               "type": "string"
             }
-          }
+          },
+          "additionalProperties": false
         },
         {
           "properties": {
@@ -191,7 +192,8 @@
               "description": "Description of the control relationship as given by the source",
               "type": "string"
             }
-          }
+          },
+          "additionalProperties": false
         },
         {
           "properties": {
@@ -211,7 +213,8 @@
                 }
               }
             }
-          }
+          },
+          "additionalProperties": false
         },
         {
           "properties": {
@@ -231,7 +234,8 @@
                 }
               }
             }
-          }
+          },
+          "additionalProperties": false
         },
         {
           "properties": {
@@ -264,7 +268,8 @@
                 }
               }
             }
-          }
+          },
+          "additionalProperties": false
         },
         {
           "properties": {
@@ -284,7 +289,8 @@
                 }
               }
             }
-          }
+          },
+          "additionalProperties": false
         }
       ]
     }
