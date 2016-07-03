@@ -212,6 +212,10 @@
                   ]
                 }
               }
+            },
+            "source_description": {
+              "description": "Description of the control relationship as given by the source",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -233,6 +237,10 @@
                   ]
                 }
               }
+            },
+            "source_description": {
+              "description": "Description of the control relationship as given by the source",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -267,6 +275,10 @@
                   ]
                 }
               }
+            },
+            "source_description": {
+              "description": "Description of the control relationship as given by the source",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -288,6 +300,10 @@
                   ]
                 }
               }
+            },
+            "source_description": {
+              "description": "Description of the control relationship as given by the source",
+              "type": "string"
             }
           },
           "additionalProperties": false
