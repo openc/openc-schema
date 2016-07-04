@@ -6,11 +6,11 @@
     },
     "entity_type": "company"
   },
-  "control_level": "unknown",
   "sample_date": "2016-01-01",
   "source_url": "http://download.companieshouse.gov.uk/en_pscdata.html",
   "retrieved_at": "2015-08-11T23:00:08+01:00",
   "confidence": "HIGH",
+  "control_level": "unknown",
   "no_controlling_entities_reasons": [
     "PSC Contacted But No Response: The company has given a notice under section 790D of the Act which has not been complied with"
   ]
