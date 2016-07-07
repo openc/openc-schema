@@ -1,17 +1,10 @@
 {
   "confidence": "HIGH",
   "subject_entity": {
-    "entity_type": "company",
+    "entity_type": "unknown",
     "entity_properties": {
-      "alternative_names": [
-        {
-          "company_name": "OXFAM GB",
-          "type": "trading"
-        }
-      ],
-      "jurisdiction_code": "gb",
-      "company_number": "612172",
-      "name": "OXFAM",
+      "jurisdiction": "gb",
+      "name": "SOME CHARITY",
       "telephone_number": "0870 333 2444",
       "identifiers": [
         {
