@@ -52,6 +52,12 @@
     "mailing_address": {
       "$ref": "address.json"
     },
+    "identifiers": {
+      "type": ["array", "null"],
+      "items": {
+        "$ref": "identifier.json"
+      }
+    },
     "industry_codes": {
       "type": "array",
       "items": {
