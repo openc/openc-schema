@@ -98,6 +98,12 @@
       "type": "string",
       "format": "non-blank"
     },
+    "identifiers": {
+      "type": ["array", "null"],
+      "items": {
+        "$ref": "identifier.json"
+      }
+    },
     "other_attributes": {
       "description": "Use for other attributes for which we don't yet have curated schema attributes",
       "type": "object"

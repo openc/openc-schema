@@ -43,6 +43,12 @@
       "type": "string",
       "minLength": 4
     },
+    "identifiers": {
+      "type": ["array", "null"],
+      "items": {
+        "$ref": "identifier.json"
+      }
+    },
     "registered_address": {
       "$ref": "address.json"
     },
