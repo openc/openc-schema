@@ -91,7 +91,7 @@
     "nationality": {
       "description": "The person's nationality",
       "type": "string",
-      "minLength": 2
+      "format": "non-blank"
     },
     "country_of_residence": {
       "description": "The normal country of residence for the person",
