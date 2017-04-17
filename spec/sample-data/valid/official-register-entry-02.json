@@ -1,0 +1,45 @@
+{
+  "confidence": "HIGH",
+  "registrant": {
+    "entity_type": "company",
+    "entity_properties": {
+      "jurisdiction": "Germany",
+      "name": "Kreissparkasse Ostalb",
+      "telephone_number": "(972) 258-5807",
+      "company_type": "Anstalt öffentlichen Rechts",
+      "registered_address": {
+        "street_address": "Bahnhofstraße 4",
+        "locality": "Aalen",
+        "postal_code": "73430",
+        "country_code": "DE"
+      },
+      "headquarters_address": {
+        "street_address": "Bahnhofstraße 4",
+        "locality": "Aalen",
+        "postal_code": "73430",
+        "country_code": "DE"
+      },
+      "website": "https://www.ksk-ostalb.de/",
+      "current_status": "ACTIVE"
+    }
+  },
+  "register": {
+    "jurisdiction": "global",
+    "name": "Global Legal Entity Identifier System",
+    "identifier_code_system": "lei",
+    "managing_organisation": {
+      "name": "Global Legal Entity Identifier Foundation",
+      "jurisdiction": "Switzerland",
+      "website": "http://gleif.org"
+    }
+  },
+  "register_uid": "52990008SP9ETV9I7047",
+  "other_attributes": {
+    "business_registry_identifier": "HRA 500980",
+    "business_registry_name": "Ulm"
+  },
+  "status": "ISSUED",
+  "start_date": "2013-07-25 08:40:28 UTC",
+  "source_url": "http://gleif.org/",
+  "retrieved_at":"2015-04-26 01:30:06 UTC"
+}
