@@ -141,6 +141,13 @@
         null
       ]
     },
+    "previous_company_numbers": {
+      "type": "array",
+      "description": "In case of changes in the company_number and source publishes the old company_number",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
     "all_attributes": {
       "type": "object",
       "description": "Other arbitrary attributes for a given company",
