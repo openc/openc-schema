@@ -1,0 +1,83 @@
+{
+  "holders": [{
+    "entity_type": "unknown",
+    "entity_properties": {
+      "name": "L'ORÉAL, Société anonyme",
+      "addresses": [{
+        "address": {
+          "street_address": "14, rue Royale, F-75008 PARIS",
+          "country_code": "FR"
+        },
+        "type": "unknown"
+      }],
+      "jurisdiction": "FRANCE"
+    }
+  }],
+  "register": "uspto_trademarks",
+  "representative": {
+    "entity_type": "unknown",
+    "entity_properties": {
+      "name": "L'OREAL Département des Marques",
+      "addresses": [
+        {
+          "type": "unknown",
+          "address": {
+            "street_address": "62, rue d'Alsace, F-92583 CLICHY Cedex",
+            "country_code": "FR"
+          }
+        }
+      ]
+    }
+  },
+  "mark_details": {
+    "mark_text": "CRESCENDO",
+    "classification": [{
+      "code_scheme_id": "wipo_nice",
+      "code": "3",
+      "enhanced_descriptions": [{
+        "description": "Perfumery products, beauty and soap products, make-up,\n essential oils, cosmetics, hair lotions, dentifrices.",
+        "language": "EN"
+      }, {
+        "description": "Productos de perfumería y de belleza, productos de\n jabonería, afeites, aceites esenciales, cosméticos, lociones\n para el cabello, dentífricos.",
+        "language": "ES"
+      }, {
+        "description": "Produits de parfumerie, de beauté, savonnerie, fards, huiles\n essentielles, cosmétiques, lotions pour les cheveux,\n dentifrices.",
+        "language": "FR"
+      }]
+    }, {
+      "code_scheme_id": "wipo_nice",
+      "code": "5",
+      "enhanced_descriptions": [{
+        "description": "Sanitary products.",
+        "language": "EN"
+      }, {
+        "description": "Productos higiénicos.",
+        "language": "ES"
+      }, {
+        "description": "Produits hygiéniques.",
+        "language": "FR"
+      }]
+    }, {
+      "code_scheme_id": "wipo_nice",
+      "code": "21",
+      "enhanced_descriptions": [{
+        "description": "Combs, sponges and other toilet utensils.",
+        "language": "EN"
+      }, {
+        "description": "Peines, esponjas y otros utensilios de tocador.",
+        "language": "ES"
+      }, {
+        "description": "Peignes, éponges et autres ustensiles de toilette.",
+        "language": "FR"
+      }]
+    }],
+    "mark_form": "text"
+  },
+  "start_date": "1959-02-04",
+  "start_date_type": "at",
+  "sample_date": "2016-12-09",
+  "source_url": "https://bulkdata.uspto.gov/data3/trademark/dailyxml/applications/apc170101.zip",
+  "retrieved_at": "2017-06-14T15:45:28Z",
+  "uid": "216956",
+  "confidence": "HIGH"
+}
