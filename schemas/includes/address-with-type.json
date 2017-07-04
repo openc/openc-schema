@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "An address with a type",
+  "type": "object",
+  "properties": {
+    "address": {
+      "$ref": "address.json"
+    },
+    "type": {
+      "enum": [
+        "registered",
+        "headquarters",
+        "mailing",
+        "trading",
+        "unknown"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "address",
+    "type"
+  ]
+}
