@@ -1,0 +1,38 @@
+{
+  "holders": [{
+    "entity_type": "person",
+    "entity_properties": {
+      "name": "Oster, Joachim",
+      "registered_address": {
+        "street_address": "PO Box 286",
+        "locality": "Kealakekua",
+        "region": "HI",
+        "country": "US",
+        "postal_code": "96750"
+      },
+      "jurisdiction": "DE"
+    }
+  }],
+  "mark_details": {
+    "mark_text": "ATHENA OF HAWAI'I",
+    "mark_type": "Standard character mark",
+    "mark_form": "text",
+    "mark_image": {
+      "path": "img/78527076/large"
+    },
+    "classification": [{
+      "code_scheme_id": "wipo_nice",
+      "code": "30"
+    }]
+  },
+  "status": "SECTION 8 & 15-ACCEPTED AND ACKNOWLEDGED",
+  "url": "http://tsdr.uspto.gov/#caseNumber=78527076&caseSearchType=US_APPLICATION&caseType=DEFAULT&searchType=statusSearch",
+  "registration_date": "1987-09-27",
+  "register": "wipo_madrid",
+  "expiry_date": "2017-09-27",
+  "sample_date": "2017-01-01",
+  "retrieved_at": "2015-08-11T23:00:08+01:00",
+  "source_url": "https://bulkdata.uspto.gov/data3/trademark/dailyxml/applications/apc170101.zip",
+  "uid": "78527076",
+  "confidence": "HIGH"
+}
