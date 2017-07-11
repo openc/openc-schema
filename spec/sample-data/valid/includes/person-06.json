@@ -1,0 +1,12 @@
+{
+  "name": "Alex Smith",
+  "addresses": [
+    {
+      "type": "unknown",
+      "address": {
+        "street_address": "123 Foo Street",
+        "locality": "London"
+      }
+    }
+  ]
+}
