@@ -58,6 +58,12 @@
     "mailing_address": {
       "$ref": "address.json"
     },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "$ref": "address-with-type.json"
+      }
+    },
     "industry_codes": {
       "type": "array",
       "items": {
