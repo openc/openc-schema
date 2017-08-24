@@ -1,165 +1,134 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "An accounts statement is a set of financials from a given accounts filing. This may be have been derived from something as extensive as an XBRL filing, or just some headline financials. The actual accounts lines are made up of arrays of accounts elements. Some, like profit or turnover are explicitly declared here, but other arbitrary ones may be added in other_attributes, and should follow the same format",
+  "description": "A Trademark is a recognizable sign, design, or expression which identifies products or services of a particular source from those of others. This schema is actually for the trademark registration, i.e. not just the mark details, but the record of when it was registered and who holds the trademark. See also http://www.wipo.int/standards/XMLSchema/HTML/ST96TechnicalSpecification/V0-11/TrademarkComponents.html",
   "properties": {
-    "filing_subject": {
-      "$ref": "#/definitions/entity"
+    "register": {
+      "description": "The register on which the trademark is listed",
+      "type": "string"
+    },
+    "holders": {
+      "type": "array",
+      "description": "Details of the holder(s) of the trademark (sometimes called the owners)",
+      "items": {
+        "$ref": "#/definitions/entity"
+      }
+    },
+    "correspondent": {
+      "$ref": "#/definitions/entity",
+      "description": "Details of the correspondent (i.e. contact person)"
+    },
+    "representative": {
+      "$ref": "#/definitions/entity",
+      "description": "Details of the representative"
+    },
+    "mark_details": {
+      "description": "Details of the trademark itself (rather than the registration)",
+      "type": "object",
+      "properties": {
+        "mark_text": {
+          "description": "Text of the trademark",
+          "type": "string"
+        },
+        "mark_form": {
+          "description": "The form (i.e. category) of the mark. Sensory marks include smells and sounds",
+          "enum": [
+            "text",
+            "image",
+            "sensory_mark",
+            "three_d_mark"
+          ]
+        },
+        "mark_type": {
+          "description": "Free text description of mark type (as provided by register), e.g. 'Illustration', 'Typeset: Word(s)/letter(s)/number(s)'",
+          "type": "string"
+        },
+        "mark_image": {
+          "properties": {
+            "uid": {
+              "description": "A unique identifier",
+              "type": "string"
+            },
+            "format": {
+              "description": "Type of image format",
+              "type": "string"
+            },
+            "path": {
+              "description": "Path of image",
+              "type": "string"
+            },
+            "description": {
+              "description": "Description of image in words",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "classification": {
+          "type": "array",
+          "description": "Classification of the trademark",
+          "items": {
+            "$ref": "#/definitions/nice_classification"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "description": "Status of the trademark registration",
+      "type": "string"
     },
     "uid": {
-      "description": "Unique id/reference for the filing if it has one",
-      "type": "string"
-    },
-    "filing_date": {
-      "type": "string",
-      "description": "Date on which the filing was made – note this is not necessarily the same date as the date on which it was published or the reporting/applicable data on the information contained within it",
-      "format": "date"
-    },
-    "accounts_date": {
-      "type": "string",
-      "format": "date"
-    },
-    "accounts_type": {
-      "description": "The type of accounts – either annual, or quarterly, or null if not known",
-      "enum": [
-        "annual",
-        "quarterly",
-        null
-      ]
-    },
-    "profit": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "revenue": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "current_assets": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "total_assets": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "fixed_assets": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "current_liabilities": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "total_liabilities": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "cash_at_bank": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "documents": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/filing_document"
-      }
-    },
-    "filing_type_name": {
-      "description": "The filing type in words, if given (e.g. 'Annual Return')",
-      "type": "string"
-    },
-    "filing_type_code": {
-      "description": "The code for filing type, if given (e.g. 'AR01')",
-      "type": "string"
-    },
-    "title": {
-      "description": "The title of the filing, if given",
-      "type": "string"
-    },
-    "description": {
-      "description": "The description or precis of the filing, if given",
+      "description": "Unique id/reference for the trademark registration",
       "type": "string"
     },
     "url": {
-      "description": "Persistent URL for the filing, if there is one",
+      "description": "URL of trademark registration",
       "type": "string"
     },
     "source_url": {
-      "description": "Source of the accounts, e.g. the URL of the XBRL statement, or the download dump",
+      "description": "Url of the source of the data (e.g. download URL), or if there is not persistent URL the page from which it can be found (e.g. search page). This field is required.",
       "type": "string",
       "minLength": 11
     },
     "confidence": {
       "description": "Confidence in accuracy of data",
-      "type": "string",
       "enum": [
         "HIGH",
         "MEDIUM",
         "LOW"
       ]
     },
-    "sample_date": {
-      "description": "Date on which we know this to be true (usually date this information was retrieved from the source)",
+    "registration_date": {
+      "description": "Date on which the mark was registered",
       "type": "string",
       "format": "date"
+    },
+    "expiry_date": {
+      "description": "Date on which the registration ended, or is scheduled to expire",
+      "type": "string",
+      "format": "date"
+    },
+    "start_date": {
+      "description": "This should be the same as registration_date",
+      "type": "string",
+      "format": "date"
+    },
+    "start_date_type": {
+      "enum": [
+        "at",
+        "before",
+        "after"
+      ]
     },
     "retrieved_at": {
+      "description": "Date-time this was retrieved from the source",
+      "type": "string",
+      "format": "date-time"
+    },
+    "sample_date": {
+      "description": "Date on which we know this to be true (for example the date the trademark data was retrieved if there's no explicit registration date)",
       "type": "string",
       "format": "date"
-    },
-    "currency": {
-      "type": "string",
-      "description": "Standard ISO 4217 3-letter code for currency, e.g. USD, GBP, EUR"
-    },
-    "language": {
-      "description": "Should be represented as two-letter ISO-639 code",
-      "type": "string",
-      "minLength": 2,
-      "maxLength": 2
-    },
-    "source_location": {
-      "type": "string",
-      "description": "If the accounts filing has been put on sources.opencorporates.com the path to the filing"
     },
     "other_attributes": {
       "description": "Use for other attributes for which we don't yet have curated schema attributes",
@@ -168,14 +137,64 @@
   },
   "additionalProperties": false,
   "required": [
-    "filing_subject",
+    "holders",
+    "mark_details",
+    "register",
+    "retrieved_at",
     "source_url",
     "sample_date",
-    "confidence",
-    "filing_date",
-    "accounts_type"
+    "confidence"
   ],
   "definitions": {
+    "nice_classification": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "title": "NICE Trademark Classification",
+      "description": "A classification from a the WIPO Nice classification system for trademarks. See http://web2.wipo.int/classifications/nice/nicepub/en/fr/edition-20170101/classheadings/ and https://en.wikipedia.org/wiki/International_(Nice)_Classification_of_Goods_and_Services",
+      "type": "object",
+      "properties": {
+        "code_scheme_id": {
+          "description": "The scheme of the classification",
+          "enum": [
+            "wipo_nice"
+          ]
+        },
+        "code": {
+          "description": "The classification code",
+          "type": "string"
+        },
+        "enhanced_descriptions": {
+          "description": "Enhanced descriptions of the classification (may enhance restrict, or otherwise alter standard classification)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/nice_enhanced_description"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "code_scheme_id"
+      ]
+    },
+    "nice_enhanced_description": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "title": "Enhanced description for NICE Trademark Classification",
+      "description": "NICE Trademark classifications are quite broad, and the specific areas being claimed for are often not for a complete classification but for an arbitrary set of areas, specified in freetext by the trademark owner.",
+      "type": "object",
+      "properties": {
+        "language": {
+          "description": "The language code as 2-letter ISO 639 language code",
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2
+        },
+        "description": {
+          "description": "The text of the description",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
     "entity": {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "type": "object",
@@ -1383,116 +1402,6 @@
       },
       "required": [
         "name"
-      ]
-    },
-    "accounts_element": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "description": "A representation of one particular element of an accounts statement (e.g. profit or assets). This should consist of at least a value and end_date",
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "string",
-          "minLength": 1
-        },
-        "date": {
-          "description": "If this element is an instant element, i.e. relates to a specific point in time (such as balance sheet item), then give the date this relates to, otherwise use start/end dates for element that occured over a period (e.g. Profit/Loss)",
-          "type": "string",
-          "format": "date"
-        },
-        "start_date": {
-          "type": "string",
-          "format": "date"
-        },
-        "end_date": {
-          "type": "string",
-          "format": "date"
-        },
-        "currency": {
-          "description": "ISO 4217 code for the currency",
-          "type": "string",
-          "minLength": 3,
-          "maxLength": 3
-        }
-      },
-      "required": [
-        "value"
-      ],
-      "anyOf": [
-        {
-          "required": [
-            "date"
-          ]
-        },
-        {
-          "required": [
-            "end_date"
-          ]
-        }
-      ]
-    },
-    "filing_document": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "description": "A document of some sort (PDF, TIFF, HTML) associated with a filing",
-      "type": "object",
-      "properties": {
-        "uid": {
-          "description": "Unique id/reference for the filing if it has one",
-          "type": "string"
-        },
-        "file_format": {
-          "description": "Format of the document, if known",
-          "enum": [
-            "xml",
-            "pdf",
-            "html",
-            "doc",
-            null
-          ]
-        },
-        "original_source_url": {
-          "description": "Persistent URL for the document, if there is one",
-          "type": "string"
-        },
-        "source_url": {
-          "description": "Source url of the web page for the filing or if there is not persistent URL the page from which it can be found (e.g. search page)",
-          "type": "string",
-          "minLength": 11
-        },
-        "source_location": {
-          "type": "string",
-          "description": "If the accounts filing has been put on sources.opencorporates.com the path to the filing"
-        },
-        "language": {
-          "description": "Should be represented as two-letter ISO-639 code",
-          "type": "string",
-          "minLength": 2,
-          "maxLength": 2
-        },
-        "classification": {
-          "description": "type of document (at the moment only XBRL is the only option here)",
-          "type": "string",
-          "enum": [
-            "xbrl",
-            null
-          ]
-        },
-        "pages": {
-          "description": "Number of pages, if known",
-          "type": "integer"
-        }
-      },
-      "additionalProperties": false,
-      "anyOf": [
-        {
-          "required": [
-            "source_location"
-          ]
-        },
-        {
-          "required": [
-            "source_url"
-          ]
-        }
       ]
     }
   }

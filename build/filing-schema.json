@@ -244,6 +244,12 @@
         "mailing_address": {
           "$ref": "#/definitions/address"
         },
+        "addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/address-with-type"
+          }
+        },
         "officers": {
           "type": "array",
           "items": {
@@ -479,6 +485,30 @@
             }
           ]
         }
+      ]
+    },
+    "address-with-type": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "description": "An address with a type",
+      "type": "object",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/address"
+        },
+        "type": {
+          "enum": [
+            "registered",
+            "headquarters",
+            "mailing",
+            "trading",
+            "unknown"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "address",
+        "type"
       ]
     },
     "officer": {
@@ -845,7 +875,8 @@
             "trading",
             "abbreviation",
             "legal",
-            "unknown"
+            "unknown",
+            "alias"
           ]
         }
       },
@@ -858,6 +889,7 @@
       "$schema": "http://json-schema.org/draft-04/schema#",
       "description": "A person, for example, referenced in some other context, e.g. director of a company, shareholder, licence-holder, lobbyist. This should be used only if the person is the subject of the datum",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "$ref": "#/definitions/person_name"
@@ -867,7 +899,7 @@
           "description": "Name of the jurisdiction in which the entity is based"
         },
         "company": {
-          "description": "Company the person is representing. NB If the licence holder is a company, and the individual is a just a contact, then use the company-schema for the entity. This is where the individual  themselves are the licence holder",
+          "description": "Company the person is representing. NB If the licence holder is a company, and the individual is a just a contact, then use the company-schema for the entity. This is where the individual themselves are the subject entity (e.g. licence holder, disqualified director)",
           "$ref": "#/definitions/company-for-nesting"
         },
         "relationship_with_company": {
@@ -896,6 +928,11 @@
             }
           ]
         },
+        "uid": {
+          "description": "Unique id of the person. Note: the unique id is not expected to be globally unique, but only unique with reference to the source from which it is derived. No check is made for uniqueness",
+          "type": "string",
+          "minLength": 1
+        },
         "telephone_number": {
           "type": "string",
           "minLength": 4
@@ -905,6 +942,7 @@
           "minLength": 4
         },
         "registered_address": {
+          "description": "address for service (or address given in the context of legal requirement)",
           "$ref": "#/definitions/address"
         },
         "headquarters_address": {
@@ -912,6 +950,12 @@
         },
         "mailing_address": {
           "$ref": "#/definitions/address"
+        },
+        "addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/address-with-type"
+          }
         },
         "industry_codes": {
           "type": "array",
@@ -925,9 +969,39 @@
             "$ref": "#/definitions/alternative_name"
           }
         },
+        "date_of_birth": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "$ref": "#/definitions/date"
+            }
+          ]
+        },
         "nationality": {
           "description": "The person's nationality",
-          "type": "string"
+          "type": "string",
+          "format": "non-blank"
+        },
+        "country_of_residence": {
+          "description": "The normal country of residence for the person",
+          "type": "string",
+          "format": "non-blank"
+        },
+        "identifiers": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/identifier"
+          }
+        },
+        "other_attributes": {
+          "description": "Use for other attributes for which we don't yet have curated schema attributes",
+          "type": "object"
         }
       },
       "required": [
@@ -954,7 +1028,7 @@
                 "null"
               ],
               "format": "non-blank",
-              "description": "The given name (often first name) of a person, as opposed to their family name. Following FOAF practice, this is preferred to first_name"
+              "description": "The given name(s) (often first name) of a person, as opposed to their family name. Following FOAF practice, this is preferred to first_name"
             },
             "family_name": {
               "type": [
@@ -1005,10 +1079,48 @@
         }
       ]
     },
+    "date": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "description": "A parsed date object. This allows us to represent not just normal dates, but also partial dates too",
+      "type": "object",
+      "properties": {
+        "year": {
+          "type": "number",
+          "description": "year part as YYYY"
+        },
+        "month": {
+          "type": "number",
+          "description": "month part of date in numbers e.g. 11 for November, 4 for April"
+        },
+        "day": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "day part of date in numbers"
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "year",
+            "month"
+          ]
+        },
+        {
+          "required": [
+            "month",
+            "day"
+          ]
+        }
+      ]
+    },
     "organisation": {
       "$schema": "http://json-schema.org/draft-04/schema#",
-      "description": "An entity which is a distinct organisation, but is not a company nor an individual. Examples include governments and governmental entities (e.g. Multilateral Devoelpment Banks, Government Departments, municipalities, etc), and also membership organisations",
+      "description": "An entity which is a distinct organisation, but is not a company nor an individual. Examples include governments and governmental entities (e.g. Multilateral Development Banks, Government Departments, municipalities, etc), and also membership organisations",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string",
@@ -1018,6 +1130,10 @@
         "jurisdiction": {
           "type": "string",
           "description": "Name of the jurisdiction in which the entity is incorporated/domiciled (use global for global entities, e.g. UN)"
+        },
+        "legal_form": {
+          "type": "string",
+          "description": "legal form of organisation, e.g. municipality, government department, trust, etc"
         },
         "website": {
           "oneOf": [
@@ -1045,6 +1161,15 @@
           "type": "string",
           "minLength": 4
         },
+        "identifiers": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/identifier"
+          }
+        },
         "registered_address": {
           "$ref": "#/definitions/address"
         },
@@ -1053,6 +1178,12 @@
         },
         "mailing_address": {
           "$ref": "#/definitions/address"
+        },
+        "addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/address-with-type"
+          }
         },
         "industry_codes": {
           "type": "array",
@@ -1071,6 +1202,10 @@
           "items": {
             "$ref": "#/definitions/alternative_name"
           }
+        },
+        "other_attributes": {
+          "description": "Use for other attributes for which we don't yet have curated schema attributes",
+          "type": "object"
         }
       },
       "required": [
@@ -1080,6 +1215,7 @@
     "unknown_entity_type": {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "description": "An entity of unknown type - potentially a company, a person, government entity, or some unincorporated organisation",
+      "additionalProperties": false,
       "type": "object",
       "properties": {
         "name": {
@@ -1091,6 +1227,10 @@
           "type": "string",
           "description": "Name of the jurisdiction in which the entity is incorporated/domiciled"
         },
+        "uid": {
+          "description": "Unique id for the entity if it has one",
+          "type": "string"
+        },
         "website": {
           "oneOf": [
             {
@@ -1126,6 +1266,21 @@
         "mailing_address": {
           "$ref": "#/definitions/address"
         },
+        "addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/address-with-type"
+          }
+        },
+        "identifiers": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/identifier"
+          }
+        },
         "industry_codes": {
           "type": "array",
           "items": {
@@ -1143,6 +1298,10 @@
           "items": {
             "$ref": "#/definitions/alternative_name"
           }
+        },
+        "other_attributes": {
+          "description": "Use for other attributes for which we don't yet have curated schema attributes",
+          "type": "object"
         }
       },
       "required": [
