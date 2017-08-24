@@ -1,131 +1,64 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "An accounts statement is a set of financials from a given accounts filing. This may be have been derived from something as extensive as an XBRL filing, or just some headline financials. The actual accounts lines are made up of arrays of accounts elements. Some, like profit or turnover are explicitly declared here, but other arbitrary ones may be added in other_attributes, and should follow the same format",
+  "description": "A Control Statement is a statement by a company or entity about a the control of a company. In its most straightforward, Company A may say that Entity B controls it. Each statement should be about a single control relationship, i.e. if Company A has two controlling entities, B and C, and those   control relationships are distinct (e.g. they started at a different time) then they should each be stored as a indiviudal Control Statements. They should only be stored in the same Control Statement if it is logically part of the same control mechanism, e.g. if company A is controlled by person C and person D, who control the shares *jointly*. Control Statements can be used to describe that an entity has no controlling entity, or that the controlling entity is not disclosed. Beneficial Ownership is a specific example of control relationships, and the ultimate_beneficial_owner flag can be used to signify that a person is the Ultimate Beneficial Owner of a company",
   "properties": {
-    "filing_subject": {
+    "subject_entity": {
       "$ref": "#/definitions/entity"
     },
-    "uid": {
-      "description": "Unique id/reference for the filing if it has one",
-      "type": "string"
-    },
-    "filing_date": {
-      "type": "string",
-      "description": "Date on which the filing was made – note this is not necessarily the same date as the date on which it was published or the reporting/applicable data on the information contained within it",
-      "format": "date"
-    },
-    "accounts_date": {
-      "type": "string",
-      "format": "date"
-    },
-    "accounts_type": {
-      "description": "The type of accounts – either annual, or quarterly, or null if not known",
+    "control_level": {
+      "description": "The level of control, i.e. whether the control is direct (i.e. there are no intermediaries), indirect (there are intermediaries) or unknown. It can be null in the case where a company is saying that there are no controlling entities",
       "enum": [
-        "annual",
-        "quarterly",
+        "direct",
+        "indirect",
+        "unknown",
         null
       ]
     },
-    "profit": {
+    "ultimate_beneficial_owner": {
+      "description": "Whether the controlling entities are the ultimate beneficial owners (i.e. individuals who ultimately control the company)",
+      "type": "boolean"
+    },
+    "controlling_entities": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/accounts_element"
+        "$ref": "#/definitions/entity"
       }
     },
-    "revenue": {
-      "type": [
-        "array",
-        "null"
-      ],
+    "control_mechanisms": {
+      "description": "The mechanism(s) by which the controlling party/parties control the company",
+      "type": "array",
       "items": {
-        "$ref": "#/definitions/accounts_element"
+        "oneOf": [
+          {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 2
+          },
+          {
+            "$ref": "#/definitions/control_mechanism"
+          }
+        ]
       }
     },
-    "current_assets": {
-      "type": [
-        "array",
-        "null"
-      ],
+    "no_controlling_entities_reasons": {
+      "description": "The reason why no controlling entities are declared, for example because the entity has been unable to discover them, or there are no controlling entities (e.g. 100 people owned 1% each), or the companies is exempt from reporting (as some listed companies are in some jurisdictions)",
+      "type": "array",
       "items": {
-        "$ref": "#/definitions/accounts_element"
+        "type": "string"
       }
     },
-    "total_assets": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "fixed_assets": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "current_liabilities": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "total_liabilities": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "cash_at_bank": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/accounts_element"
-      }
-    },
-    "documents": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "$ref": "#/definitions/filing_document"
-      }
-    },
-    "filing_type_name": {
-      "description": "The filing type in words, if given (e.g. 'Annual Return')",
-      "type": "string"
-    },
-    "filing_type_code": {
-      "description": "The code for filing type, if given (e.g. 'AR01')",
-      "type": "string"
-    },
-    "title": {
-      "description": "The title of the filing, if given",
-      "type": "string"
-    },
-    "description": {
-      "description": "The description or precis of the filing, if given",
+    "uid": {
+      "description": "Unique id/reference for the control relationship entity record if the external source has given it one",
       "type": "string"
     },
     "url": {
-      "description": "Persistent URL for the filing, if there is one",
+      "description": "Persistent URL on the external source for the control relationship entity record, if there is one",
       "type": "string"
     },
     "source_url": {
-      "description": "Source of the accounts, e.g. the URL of the XBRL statement, or the download dump",
+      "description": "Source url of the web page for the filing or if there is not persistent URL the page from which it can be found (e.g. search page). This field is required.",
       "type": "string",
       "minLength": 11
     },
@@ -138,28 +71,25 @@
         "LOW"
       ]
     },
-    "sample_date": {
-      "description": "Date on which we know this to be true (usually date this information was retrieved from the source)",
+    "start_date": {
+      "description": "Date on which control started",
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "description": "Date on which control ended",
       "type": "string",
       "format": "date"
     },
     "retrieved_at": {
+      "description": "Date-time this was retrieved from the source",
+      "type": "string",
+      "format": "date-time"
+    },
+    "sample_date": {
+      "description": "Date on which we know this to be true (for example the date the control statement was published)",
       "type": "string",
       "format": "date"
-    },
-    "currency": {
-      "type": "string",
-      "description": "Standard ISO 4217 3-letter code for currency, e.g. USD, GBP, EUR"
-    },
-    "language": {
-      "description": "Should be represented as two-letter ISO-639 code",
-      "type": "string",
-      "minLength": 2,
-      "maxLength": 2
-    },
-    "source_location": {
-      "type": "string",
-      "description": "If the accounts filing has been put on sources.opencorporates.com the path to the filing"
     },
     "other_attributes": {
       "description": "Use for other attributes for which we don't yet have curated schema attributes",
@@ -168,14 +98,241 @@
   },
   "additionalProperties": false,
   "required": [
-    "filing_subject",
+    "control_level",
+    "subject_entity",
+    "retrieved_at",
     "source_url",
     "sample_date",
-    "confidence",
-    "filing_date",
-    "accounts_type"
+    "confidence"
   ],
   "definitions": {
+    "range": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "description": "This represents a range of numeric values, particularly useful for where it is not clear of the exact numeric value, only that it is between two bounds, e.g. a shareholding percentage is greater than 50 but less than or equal to 75",
+      "type": "object",
+      "properties": {
+        "minimum": {
+          "type": "number",
+          "description": "The minimum value"
+        },
+        "maximum": {
+          "type": "number",
+          "description": "The maximum value"
+        },
+        "exclusive_minimum": {
+          "type": "boolean",
+          "description": "True if the the minimum value is not included in the range, i.e. x > minumum (not x >= minumum)"
+        },
+        "exclusive_maximum": {
+          "type": "boolean",
+          "description": "True if the the maximum value is not included in the range, i.e. x < maximum (not x <= maximum)"
+        }
+      },
+      "additionalProperties": false
+    },
+    "control_mechanism": {
+      "title": "Control Mechanism",
+      "description": "A specific mechanism(s) by which controls of a company is exercised",
+      "oneOf": [
+        {
+          "properties": {
+            "mechanism_type": {
+              "enum": [
+                "share_ownership"
+              ]
+            },
+            "mechanism_properties": {
+              "properties": {
+                "number_of_shares": {
+                  "description": "Number of shares",
+                  "type": "integer"
+                },
+                "percentage_of_shares": {
+                  "description": "Percentage of shares",
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "maximum": 100,
+                      "minimum": 0
+                    },
+                    {
+                      "$ref": "#/definitions/range"
+                    }
+                  ]
+                },
+                "share_class": {
+                  "description": "Share class or classes",
+                  "type": "string"
+                },
+                "exercised_via": {
+                  "enum": [
+                    "trust",
+                    "firm",
+                    null
+                  ]
+                }
+              }
+            },
+            "source_description": {
+              "description": "Description of the control relationship as given by the source",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "mechanism_type": {
+              "enum": [
+                "voting_rights"
+              ]
+            },
+            "mechanism_properties": {
+              "properties": {
+                "voting_percentage": {
+                  "description": "Percentage of votes",
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "maximum": 100,
+                      "minimum": 0
+                    },
+                    {
+                      "$ref": "#/definitions/range"
+                    }
+                  ]
+                },
+                "exercised_via": {
+                  "enum": [
+                    "trust",
+                    "firm",
+                    null
+                  ]
+                }
+              }
+            },
+            "source_description": {
+              "description": "Description of the control relationship as given by the source",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "mechanism_type": {
+              "enum": [
+                "right_to_appoint_and_remove_directors"
+              ]
+            },
+            "mechanism_properties": {
+              "properties": {
+                "exercised_via": {
+                  "enum": [
+                    "trust",
+                    "firm",
+                    null
+                  ]
+                }
+              }
+            },
+            "source_description": {
+              "description": "Description of the control relationship as given by the source",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "mechanism_type": {
+              "enum": [
+                "right_to_appoint_and_remove_members"
+              ]
+            },
+            "mechanism_properties": {
+              "properties": {
+                "exercised_via": {
+                  "enum": [
+                    "trust",
+                    "firm",
+                    null
+                  ]
+                }
+              }
+            },
+            "source_description": {
+              "description": "Description of the control relationship as given by the source",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "mechanism_type": {
+              "enum": [
+                "right_to_share_surplus_assets"
+              ]
+            },
+            "mechanism_properties": {
+              "properties": {
+                "exercised_via": {
+                  "enum": [
+                    "trust",
+                    "firm",
+                    null
+                  ]
+                },
+                "percentage_rights": {
+                  "description": "Percentage of rights to assets in the event of a winding up of the entity",
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "maximum": 100,
+                      "minimum": 0
+                    },
+                    {
+                      "$ref": "#/definitions/range"
+                    }
+                  ]
+                }
+              }
+            },
+            "source_description": {
+              "description": "Description of the control relationship as given by the source",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "mechanism_type": {
+              "enum": [
+                "significant_influence_or_control"
+              ]
+            },
+            "mechanism_properties": {
+              "properties": {
+                "exercised_via": {
+                  "enum": [
+                    "trust",
+                    "firm",
+                    null
+                  ]
+                }
+              }
+            },
+            "source_description": {
+              "description": "Description of the control relationship as given by the source",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "entity": {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "type": "object",
@@ -1383,116 +1540,6 @@
       },
       "required": [
         "name"
-      ]
-    },
-    "accounts_element": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "description": "A representation of one particular element of an accounts statement (e.g. profit or assets). This should consist of at least a value and end_date",
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "string",
-          "minLength": 1
-        },
-        "date": {
-          "description": "If this element is an instant element, i.e. relates to a specific point in time (such as balance sheet item), then give the date this relates to, otherwise use start/end dates for element that occured over a period (e.g. Profit/Loss)",
-          "type": "string",
-          "format": "date"
-        },
-        "start_date": {
-          "type": "string",
-          "format": "date"
-        },
-        "end_date": {
-          "type": "string",
-          "format": "date"
-        },
-        "currency": {
-          "description": "ISO 4217 code for the currency",
-          "type": "string",
-          "minLength": 3,
-          "maxLength": 3
-        }
-      },
-      "required": [
-        "value"
-      ],
-      "anyOf": [
-        {
-          "required": [
-            "date"
-          ]
-        },
-        {
-          "required": [
-            "end_date"
-          ]
-        }
-      ]
-    },
-    "filing_document": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
-      "description": "A document of some sort (PDF, TIFF, HTML) associated with a filing",
-      "type": "object",
-      "properties": {
-        "uid": {
-          "description": "Unique id/reference for the filing if it has one",
-          "type": "string"
-        },
-        "file_format": {
-          "description": "Format of the document, if known",
-          "enum": [
-            "xml",
-            "pdf",
-            "html",
-            "doc",
-            null
-          ]
-        },
-        "original_source_url": {
-          "description": "Persistent URL for the document, if there is one",
-          "type": "string"
-        },
-        "source_url": {
-          "description": "Source url of the web page for the filing or if there is not persistent URL the page from which it can be found (e.g. search page)",
-          "type": "string",
-          "minLength": 11
-        },
-        "source_location": {
-          "type": "string",
-          "description": "If the accounts filing has been put on sources.opencorporates.com the path to the filing"
-        },
-        "language": {
-          "description": "Should be represented as two-letter ISO-639 code",
-          "type": "string",
-          "minLength": 2,
-          "maxLength": 2
-        },
-        "classification": {
-          "description": "type of document (at the moment only XBRL is the only option here)",
-          "type": "string",
-          "enum": [
-            "xbrl",
-            null
-          ]
-        },
-        "pages": {
-          "description": "Number of pages, if known",
-          "type": "integer"
-        }
-      },
-      "additionalProperties": false,
-      "anyOf": [
-        {
-          "required": [
-            "source_location"
-          ]
-        },
-        {
-          "required": [
-            "source_url"
-          ]
-        }
       ]
     }
   }
