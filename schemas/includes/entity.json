@@ -50,7 +50,7 @@
           ]
         },
         "entity_properties": {
-          "$ref": "unknown_entity_type.json"
+          "$ref": "unknown-entity-type.json"
         }
       }
     }
