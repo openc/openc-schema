@@ -1,60 +1,62 @@
 {
-    "date_published": "2015-02-05",
-    "issue": {
-        "publication": {
-            "publisher": {
-                "name": "Direction de l'information légale et administrative",
-                "url": "http://www.dila.premier-ministre.gouv.fr/",
-                "media_type": "text/html"
-            },
-            "jurisdiction_code": "fr",
-            "title": "Bulletin officiel des annonces civiles et commerciales",
-            "url": "http://www.bodacc.fr/",
-            "media_type": "text/html"
+  "date_published": "2015-02-05",
+  "issue": {
+    "publication": {
+      "publisher": {
+        "name": "Direction de l'information légale et administrative",
+        "url": "http://www.dila.premier-ministre.gouv.fr/",
+        "media_type": "text/html"
+      },
+      "jurisdiction_code": "fr",
+      "title": "Bulletin officiel des annonces civiles et commerciales",
+      "url": "http://www.bodacc.fr/",
+      "media_type": "text/html"
+    },
+    "identifier": "20150025",
+    "edition_id": "B"
+  },
+  "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
+  "sample_date": "2016-01-12T21:52:11Z",
+  "retrieved_at": "2016-01-12T21:52:11Z",
+  "confidence": "HIGH",
+  "other_attributes": {
+    "format": "RCS-B"
+  },
+  "publisher": {
+    "name": "GREFFE DU TRIBUNAL D'INSTANCE DE THIONVILLE",
+    "identifier": "57"
+  },
+  "identifier": 660,
+  "uid": "BXB15033000184A",
+  "url": "http://www.bodacc.fr/annonce/detail/BXB15033000184A",
+  "media_type": "text/html",
+  "subjects": [
+    {
+      "entity_type": "person",
+      "entity_properties": {
+        "jurisdiction_code": "fr",
+        "company_number": "498111814",
+        "name": {
+          "family_name": "BEGEL",
+          "given_name": "David, Jean, Marie, André",
+          "birth_name": "BEGEL"
         },
-        "identifier": "20150025",
-        "edition_id": "B"
-    },
-    "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
-    "sample_date": "2016-01-12T21:52:11Z",
-    "retrieved_at": "2016-01-12T21:52:11Z",
-    "confidence": "HIGH",
-    "other_attributes": {
-        "format": "RCS-B"
-    },
-    "publisher": {
-        "name": "GREFFE DU TRIBUNAL D'INSTANCE DE THIONVILLE",
-        "identifier": "57"
-    },
-    "identifier": 660,
-    "uid": "BXB15033000184A",
-    "url": "http://www.bodacc.fr/annonce/detail/BXB15033000184A",
-    "media_type": "text/html",
-    "subjects": [{
-        "entity_type": "person",
-        "entity_properties": {
-            "jurisdiction_code": "fr",
-            "company_number": "498111814",
-            "name": {
-                "family_name": "BEGEL",
-                "given_name": "David, Jean, Marie, André",
-                "birth_name": "BEGEL"
-            },
-            "registered_address": {
-                "street_address": "Zac Bellevue 4",
-                "locality": "Guénange",
-                "postal_code": "57310",
-                "country": "France",
-                "country_code": "FR"
-            }
+        "registered_address": {
+          "street_address": "Zac Bellevue 4",
+          "locality": "Guénange",
+          "postal_code": "57310",
+          "country": "France",
+          "country_code": "FR"
         }
-    }],
-    "about": {
-        "type": "striking off of subjects",
-        "activity_end_date": "2014-10-31",
-        "body": {
-            "value": "cessation d'activité - vente du fonds de commerce",
-            "media_type": "text/plain"
-        }
+      }
     }
+  ],
+  "about": {
+    "type": "striking off of subjects",
+    "activity_end_date": "2014-10-31",
+    "body": {
+      "value": "cessation d'activité - vente du fonds de commerce",
+      "media_type": "text/plain"
+    }
+  }
 }

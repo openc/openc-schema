@@ -135,13 +135,12 @@
                       "$ref": "includes/range.json"
                     }
                   ]
-
                 },
                 "share_class": {
                   "description": "Share class or classes",
                   "type": "string"
                 },
-                "exercised_via" : {
+                "exercised_via": {
                   "enum": [
                     "trust",
                     "firm",
@@ -179,7 +178,7 @@
                     }
                   ]
                 },
-                "exercised_via" : {
+                "exercised_via": {
                   "enum": [
                     "trust",
                     "firm",
@@ -204,7 +203,7 @@
             },
             "mechanism_properties": {
               "properties": {
-                "exercised_via" : {
+                "exercised_via": {
                   "enum": [
                     "trust",
                     "firm",
@@ -229,7 +228,7 @@
             },
             "mechanism_properties": {
               "properties": {
-                "exercised_via" : {
+                "exercised_via": {
                   "enum": [
                     "trust",
                     "firm",
@@ -254,7 +253,7 @@
             },
             "mechanism_properties": {
               "properties": {
-                "exercised_via" : {
+                "exercised_via": {
                   "enum": [
                     "trust",
                     "firm",
@@ -292,7 +291,7 @@
             },
             "mechanism_properties": {
               "properties": {
-                "exercised_via" : {
+                "exercised_via": {
                   "enum": [
                     "trust",
                     "firm",

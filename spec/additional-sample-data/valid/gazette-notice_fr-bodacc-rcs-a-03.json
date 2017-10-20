@@ -1,89 +1,100 @@
 {
-    "date_published": "2015-01-02",
-    "issue": {
-        "publication": {
-            "publisher": {
-                "name": "Direction de l'information légale et administrative",
-                "url": "http://www.dila.premier-ministre.gouv.fr/",
-                "media_type": "text/html"
-            },
-            "jurisdiction_code": "fr",
-            "title": "Bulletin officiel des annonces civiles et commerciales",
-            "url": "http://www.bodacc.fr/",
-            "media_type": "text/html"
+  "date_published": "2015-01-02",
+  "issue": {
+    "publication": {
+      "publisher": {
+        "name": "Direction de l'information légale et administrative",
+        "url": "http://www.dila.premier-ministre.gouv.fr/",
+        "media_type": "text/html"
+      },
+      "jurisdiction_code": "fr",
+      "title": "Bulletin officiel des annonces civiles et commerciales",
+      "url": "http://www.bodacc.fr/",
+      "media_type": "text/html"
+    },
+    "identifier": "20150001",
+    "edition_id": "A"
+  },
+  "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
+  "sample_date": "2016-01-13T01:26:23Z",
+  "retrieved_at": "2016-01-13T01:26:23Z",
+  "confidence": "HIGH",
+  "other_attributes": {
+    "format": "RCS-A"
+  },
+  "publisher": {
+    "name": "GREFFE DU TRIBUNAL DE COMMERCE DE MANOSQUE",
+    "identifier": "04"
+  },
+  "identifier": 3,
+  "uid": "BXA143580002620",
+  "url": "http://www.bodacc.fr/annonce/detail/BXA143580002620",
+  "media_type": "text/html",
+  "subjects": [
+    {
+      "entity_type": "person",
+      "entity_properties": {
+        "name": {
+          "family_name": "PHAN",
+          "given_name": "Van, Buu",
+          "birth_name": "PHAN"
         },
-        "identifier": "20150001",
-        "edition_id": "A"
+        "alternative_names": [
+          {
+            "company_name": "DRAGON D'OR WOK",
+            "type": "trading"
+          }
+        ]
+      }
     },
-    "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
-    "sample_date": "2016-01-13T01:26:23Z",
-    "retrieved_at": "2016-01-13T01:26:23Z",
-    "confidence": "HIGH",
-    "other_attributes": {
-        "format": "RCS-A"
-    },
-    "publisher": {
-        "name": "GREFFE DU TRIBUNAL DE COMMERCE DE MANOSQUE",
-        "identifier": "04"
-    },
-    "identifier": 3,
-    "uid": "BXA143580002620",
-    "url": "http://www.bodacc.fr/annonce/detail/BXA143580002620",
-    "media_type": "text/html",
-    "subjects": [{
-        "entity_type": "person",
-        "entity_properties": {
-            "name": {
-                "family_name": "PHAN",
-                "given_name": "Van, Buu",
-                "birth_name": "PHAN"
-            },
-            "alternative_names": [{
-                "company_name": "DRAGON D'OR WOK",
-                "type": "trading"
-            }]
+    {
+      "entity_type": "person",
+      "entity_properties": {
+        "name": {
+          "family_name": "PHAN",
+          "given_name": "Thi, Phuong",
+          "birth_name": "TRAN"
         }
-    }, {
-        "entity_type": "person",
-        "entity_properties": {
-            "name": {
-                "family_name": "PHAN",
-                "given_name": "Thi, Phuong",
-                "birth_name": "TRAN"
-            }
-        }
-    }],
-    "about": {
-        "type": "sale of locations",
-        "activity_start_date": "2014-12-15",
-        "classification": [{
-            "code_scheme_id": "fr_bodacc_categorie",
-            "code": "Achat d'un fonds par une personne physique (insertion provisoire)"
-        }],
-        "publication": {
-            "title": "Haute Provence Info",
-            "date_published": "2014-12-26"
-        },
-        "opposition": "Me MÖLLER Stéphane -23, place du Terreau - 04100 Manosque",
-        "locations": [{
-            "activity": "Restaurant de type traditionnel, asiatique, plats à emporter",
-            "address": {
-                "street_address": "quartier St Christophe rue Gutenberg",
-                "locality": "Digne-les-Bains",
-                "postal_code": "04000",
-                "country": "France",
-                "country_code": "FR"
-            },
-            "origin": "Fonds acquis par achat au prix stipulé de 40000 Euros.",
-            "type": "primary"
-        }],
-        "previous_owners": [{
-            "entity_type": "company",
-            "entity_properties": {
-                "jurisdiction_code": "fr",
-                "company_number": "799282744",
-                "name": "DRAGON D'OR WOK"
-            }
-        }]
+      }
     }
+  ],
+  "about": {
+    "type": "sale of locations",
+    "activity_start_date": "2014-12-15",
+    "classification": [
+      {
+        "code_scheme_id": "fr_bodacc_categorie",
+        "code": "Achat d'un fonds par une personne physique (insertion provisoire)"
+      }
+    ],
+    "publication": {
+      "title": "Haute Provence Info",
+      "date_published": "2014-12-26"
+    },
+    "opposition": "Me MÖLLER Stéphane -23, place du Terreau - 04100 Manosque",
+    "locations": [
+      {
+        "activity": "Restaurant de type traditionnel, asiatique, plats à emporter",
+        "address": {
+          "street_address": "quartier St Christophe rue Gutenberg",
+          "locality": "Digne-les-Bains",
+          "postal_code": "04000",
+          "country": "France",
+          "country_code": "FR"
+        },
+        "origin": "Fonds acquis par achat au prix stipulé de 40000 Euros.",
+        "type": "primary"
+      }
+    ],
+    "previous_owners": [
+      {
+        "entity_type": "company",
+        "entity_properties": {
+          "jurisdiction_code": "fr",
+          "company_number": "799282744",
+          "name": "DRAGON D'OR WOK"
+        }
+      }
+    ]
+  }
 }

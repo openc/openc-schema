@@ -1,18 +1,20 @@
 {
-  "holders": [{
-    "entity_type": "person",
-    "entity_properties": {
-      "name": "Oster, Joachim",
-      "registered_address": {
-        "street_address": "PO Box 286",
-        "locality": "Kealakekua",
-        "region": "HI",
-        "country": "US",
-        "postal_code": "96750"
-      },
-      "jurisdiction": "DE"
+  "holders": [
+    {
+      "entity_type": "person",
+      "entity_properties": {
+        "name": "Oster, Joachim",
+        "registered_address": {
+          "street_address": "PO Box 286",
+          "locality": "Kealakekua",
+          "region": "HI",
+          "country": "US",
+          "postal_code": "96750"
+        },
+        "jurisdiction": "DE"
+      }
     }
-  }],
+  ],
   "mark_details": {
     "mark_text": "ATHENA OF HAWAI'I",
     "mark_type": "Standard character mark",
@@ -20,10 +22,12 @@
     "mark_image": {
       "path": "img/78527076/large"
     },
-    "classification": [{
-      "code_scheme_id": "wipo_nice",
-      "code": "30"
-    }]
+    "classification": [
+      {
+        "code_scheme_id": "wipo_nice",
+        "code": "30"
+      }
+    ]
   },
   "status": "SECTION 8 & 15-ACCEPTED AND ACKNOWLEDGED",
   "url": "http://tsdr.uspto.gov/#caseNumber=78527076&caseSearchType=US_APPLICATION&caseType=DEFAULT&searchType=statusSearch",

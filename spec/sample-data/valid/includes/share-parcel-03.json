@@ -4,6 +4,8 @@
   "voting_percentage_min": 30,
   "voting_percentage_max": 40,
   "shareholders": [
-    {"name":"Joe Schmoe"}
+    {
+      "name": "Joe Schmoe"
+    }
   ]
 }

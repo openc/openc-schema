@@ -3,7 +3,7 @@
   "share_class": "A",
   "shareholders": [
     {
-      "name":"Joe Schmoe",
+      "name": "Joe Schmoe",
       "address": {
         "street_address": "1 Balloon Street",
         "locality": "Manchester",

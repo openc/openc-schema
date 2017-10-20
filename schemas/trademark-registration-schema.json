@@ -154,7 +154,9 @@
       "properties": {
         "code_scheme_id": {
           "description": "The scheme of the classification",
-          "enum": ["wipo_nice"]
+          "enum": [
+            "wipo_nice"
+          ]
         },
         "code": {
           "description": "The classification code",

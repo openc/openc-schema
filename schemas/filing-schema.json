@@ -80,7 +80,7 @@
     "sample_date",
     "confidence",
     "filing_date"
-    ],
+  ],
   "anyOf": [
     {
       "required": [
@@ -97,6 +97,5 @@
         "filing_type_name"
       ]
     }
-
   ]
 }

@@ -7,7 +7,7 @@
       "type": "string"
     },
     "company": {
-      "$ref" : "company.json"
+      "$ref": "company.json"
     },
     "data": {
       "type": "array",
@@ -18,5 +18,8 @@
       "additionalItems": false
     }
   },
-  "required": ["company", "data"]
+  "required": [
+    "company",
+    "data"
+  ]
 }

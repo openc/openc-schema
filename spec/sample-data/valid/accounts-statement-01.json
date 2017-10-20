@@ -1,77 +1,77 @@
 {
-    "filing_date": "2011-03-31",
-    "accounts_date": "2011-03-31",
-    "accounts_type": "annual",
-    "cash_at_bank": [
-        {
-            "date": "2011-06-30",
-            "value": "770217"
-        },
-        {
-            "date": "2010-06-30",
-            "value": "763432"
-        }
-    ],
-    "confidence": "HIGH",
-    "current_assets": [
-        {
-            "date": "2011-06-30",
-            "value": "879765"
-        },
-        {
-            "date": "2010-06-30",
-            "value": "889364"
-        }
-    ],
-    "current_liabilities": [
-        {
-            "date": "2011-06-30",
-            "value": "69241"
-        },
-        {
-            "date": "2010-06-30",
-            "value": "107064"
-        }
-    ],
-    "filing_subject": {
-        "entity_properties": {
-            "company_number": "01234567",
-            "jurisdiction": "gb",
-            "name": "GLB DESIGN GROUP LTD"
-        },
-        "entity_type": "company"
+  "filing_date": "2011-03-31",
+  "accounts_date": "2011-03-31",
+  "accounts_type": "annual",
+  "cash_at_bank": [
+    {
+      "date": "2011-06-30",
+      "value": "770217"
     },
-    "fixed_assets": [
-        {
-            "date": "2011-06-30",
-            "value": "4427"
-        },
-        {
-            "date": "2010-06-30",
-            "value": "5208"
-        }
-    ],
-    "profit": [
-        {
-            "date": "2011-06-30",
-            "value": "32710"
-        },
-        {
-            "date": "2010-06-30",
-            "value": "33689"
-        }
-    ],
-    "revenue": [
-        {
-            "date": "2011-03-31",
-            "value": "596101"
-        },
-        {
-            "date": "2010-03-31",
-            "value": "532936"
-        }
-    ],
-    "sample_date": "2011-03-31",
-    "source_location": "data/ixbrl/accounts_ixbrl/00355927_30-06-11_TOTAL_EXEMPTION_SMALL.html",
-    "source_url": "http://www.companieshouse.gov.uk/"
+    {
+      "date": "2010-06-30",
+      "value": "763432"
+    }
+  ],
+  "confidence": "HIGH",
+  "current_assets": [
+    {
+      "date": "2011-06-30",
+      "value": "879765"
+    },
+    {
+      "date": "2010-06-30",
+      "value": "889364"
+    }
+  ],
+  "current_liabilities": [
+    {
+      "date": "2011-06-30",
+      "value": "69241"
+    },
+    {
+      "date": "2010-06-30",
+      "value": "107064"
+    }
+  ],
+  "filing_subject": {
+    "entity_properties": {
+      "company_number": "01234567",
+      "jurisdiction": "gb",
+      "name": "GLB DESIGN GROUP LTD"
+    },
+    "entity_type": "company"
+  },
+  "fixed_assets": [
+    {
+      "date": "2011-06-30",
+      "value": "4427"
+    },
+    {
+      "date": "2010-06-30",
+      "value": "5208"
+    }
+  ],
+  "profit": [
+    {
+      "date": "2011-06-30",
+      "value": "32710"
+    },
+    {
+      "date": "2010-06-30",
+      "value": "33689"
+    }
+  ],
+  "revenue": [
+    {
+      "date": "2011-03-31",
+      "value": "596101"
+    },
+    {
+      "date": "2010-03-31",
+      "value": "532936"
+    }
+  ],
+  "sample_date": "2011-03-31",
+  "source_location": "data/ixbrl/accounts_ixbrl/00355927_30-06-11_TOTAL_EXEMPTION_SMALL.html",
+  "source_url": "http://www.companieshouse.gov.uk/"
 }

@@ -13,8 +13,9 @@
         "DebarredSupplier"
       ]
     },
-    "sanctions_list": {"$ref": "#/definitions/sanctions_list"},
-
+    "sanctions_list": {
+      "$ref": "#/definitions/sanctions_list"
+    },
     "sanctions": {
       "type": "array",
       "items": {
@@ -109,7 +110,5 @@
         "title"
       ]
     }
-
   }
-
 }

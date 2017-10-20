@@ -1,18 +1,22 @@
 {
-  "holders": [{
-    "entity_type": "unknown",
-    "entity_properties": {
-      "name": "L'ORÉAL, Société anonyme",
-      "addresses": [{
-        "address": {
-          "street_address": "14, rue Royale, F-75008 PARIS",
-          "country_code": "FR"
-        },
-        "type": "unknown"
-      }],
-      "jurisdiction": "FRANCE"
+  "holders": [
+    {
+      "entity_type": "unknown",
+      "entity_properties": {
+        "name": "L'ORÉAL, Société anonyme",
+        "addresses": [
+          {
+            "address": {
+              "street_address": "14, rue Royale, F-75008 PARIS",
+              "country_code": "FR"
+            },
+            "type": "unknown"
+          }
+        ],
+        "jurisdiction": "FRANCE"
+      }
     }
-  }],
+  ],
   "register": "uspto_trademarks",
   "representative": {
     "entity_type": "unknown",
@@ -31,46 +35,62 @@
   },
   "mark_details": {
     "mark_text": "CRESCENDO",
-    "classification": [{
-      "code_scheme_id": "wipo_nice",
-      "code": "3",
-      "enhanced_descriptions": [{
-        "description": "Perfumery products, beauty and soap products, make-up,\n essential oils, cosmetics, hair lotions, dentifrices.",
-        "language": "EN"
-      }, {
-        "description": "Productos de perfumería y de belleza, productos de\n jabonería, afeites, aceites esenciales, cosméticos, lociones\n para el cabello, dentífricos.",
-        "language": "ES"
-      }, {
-        "description": "Produits de parfumerie, de beauté, savonnerie, fards, huiles\n essentielles, cosmétiques, lotions pour les cheveux,\n dentifrices.",
-        "language": "FR"
-      }]
-    }, {
-      "code_scheme_id": "wipo_nice",
-      "code": "5",
-      "enhanced_descriptions": [{
-        "description": "Sanitary products.",
-        "language": "EN"
-      }, {
-        "description": "Productos higiénicos.",
-        "language": "ES"
-      }, {
-        "description": "Produits hygiéniques.",
-        "language": "FR"
-      }]
-    }, {
-      "code_scheme_id": "wipo_nice",
-      "code": "21",
-      "enhanced_descriptions": [{
-        "description": "Combs, sponges and other toilet utensils.",
-        "language": "EN"
-      }, {
-        "description": "Peines, esponjas y otros utensilios de tocador.",
-        "language": "ES"
-      }, {
-        "description": "Peignes, éponges et autres ustensiles de toilette.",
-        "language": "FR"
-      }]
-    }],
+    "classification": [
+      {
+        "code_scheme_id": "wipo_nice",
+        "code": "3",
+        "enhanced_descriptions": [
+          {
+            "description": "Perfumery products, beauty and soap products, make-up,\n essential oils, cosmetics, hair lotions, dentifrices.",
+            "language": "EN"
+          },
+          {
+            "description": "Productos de perfumería y de belleza, productos de\n jabonería, afeites, aceites esenciales, cosméticos, lociones\n para el cabello, dentífricos.",
+            "language": "ES"
+          },
+          {
+            "description": "Produits de parfumerie, de beauté, savonnerie, fards, huiles\n essentielles, cosmétiques, lotions pour les cheveux,\n dentifrices.",
+            "language": "FR"
+          }
+        ]
+      },
+      {
+        "code_scheme_id": "wipo_nice",
+        "code": "5",
+        "enhanced_descriptions": [
+          {
+            "description": "Sanitary products.",
+            "language": "EN"
+          },
+          {
+            "description": "Productos higiénicos.",
+            "language": "ES"
+          },
+          {
+            "description": "Produits hygiéniques.",
+            "language": "FR"
+          }
+        ]
+      },
+      {
+        "code_scheme_id": "wipo_nice",
+        "code": "21",
+        "enhanced_descriptions": [
+          {
+            "description": "Combs, sponges and other toilet utensils.",
+            "language": "EN"
+          },
+          {
+            "description": "Peines, esponjas y otros utensilios de tocador.",
+            "language": "ES"
+          },
+          {
+            "description": "Peignes, éponges et autres ustensiles de toilette.",
+            "language": "FR"
+          }
+        ]
+      }
+    ],
     "mark_form": "text"
   },
   "start_date": "1959-02-04",
