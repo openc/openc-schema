@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'json'
 require 'json_validation'
 require 'openc_json_schema_formats'
 
