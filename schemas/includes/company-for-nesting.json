@@ -121,19 +121,19 @@
     "industry_codes": {
       "type": "array",
       "items": {
-        "$ref": "industry_code.json"
+        "$ref": "industry-code.json"
       }
     },
     "previous_names": {
       "type": "array",
       "items": {
-        "$ref": "previous_name.json"
+        "$ref": "previous-name.json"
       }
     },
     "alternative_names": {
       "type": "array",
       "items": {
-        "$ref": "alternative_name.json"
+        "$ref": "alternative-name.json"
       }
     },
     "branch": {

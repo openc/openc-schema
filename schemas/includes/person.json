@@ -5,7 +5,7 @@
   "additionalProperties": false,
   "properties": {
     "name": {
-      "$ref": "person_name.json"
+      "$ref": "person-name.json"
     },
     "jurisdiction": {
       "type": "string",
@@ -73,13 +73,13 @@
     "industry_codes": {
       "type": "array",
       "items": {
-        "$ref": "industry_code.json"
+        "$ref": "industry-code.json"
       }
     },
     "alternative_names": {
       "type": "array",
       "items": {
-        "$ref": "alternative_name.json"
+        "$ref": "alternative-name.json"
       }
     },
     "date_of_birth": {

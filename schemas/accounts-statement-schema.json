@@ -29,7 +29,7 @@
     "profit": {
       "type": "array",
       "items": {
-        "$ref": "includes/accounts_element.json"
+        "$ref": "includes/accounts-element.json"
       }
     },
     "revenue": {
@@ -38,7 +38,7 @@
         "null"
       ],
       "items": {
-        "$ref": "includes/accounts_element.json"
+        "$ref": "includes/accounts-element.json"
       }
     },
     "current_assets": {
@@ -47,7 +47,7 @@
         "null"
       ],
       "items": {
-        "$ref": "includes/accounts_element.json"
+        "$ref": "includes/accounts-element.json"
       }
     },
     "total_assets": {
@@ -56,7 +56,7 @@
         "null"
       ],
       "items": {
-        "$ref": "includes/accounts_element.json"
+        "$ref": "includes/accounts-element.json"
       }
     },
     "fixed_assets": {
@@ -65,7 +65,7 @@
         "null"
       ],
       "items": {
-        "$ref": "includes/accounts_element.json"
+        "$ref": "includes/accounts-element.json"
       }
     },
     "current_liabilities": {
@@ -74,7 +74,7 @@
         "null"
       ],
       "items": {
-        "$ref": "includes/accounts_element.json"
+        "$ref": "includes/accounts-element.json"
       }
     },
     "total_liabilities": {
@@ -83,7 +83,7 @@
         "null"
       ],
       "items": {
-        "$ref": "includes/accounts_element.json"
+        "$ref": "includes/accounts-element.json"
       }
     },
     "cash_at_bank": {
@@ -92,7 +92,7 @@
         "null"
       ],
       "items": {
-        "$ref": "includes/accounts_element.json"
+        "$ref": "includes/accounts-element.json"
       }
     },
     "documents": {
@@ -101,7 +101,7 @@
         "null"
       ],
       "items": {
-        "$ref": "includes/filing_document.json"
+        "$ref": "includes/filing-document.json"
       }
     },
     "filing_type_name": {
