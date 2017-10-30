@@ -29,7 +29,7 @@
     "profit": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/accounts_element"
+        "$ref": "#/definitions/accounts-element"
       }
     },
     "revenue": {
@@ -38,7 +38,7 @@
         "null"
       ],
       "items": {
-        "$ref": "#/definitions/accounts_element"
+        "$ref": "#/definitions/accounts-element"
       }
     },
     "current_assets": {
@@ -47,7 +47,7 @@
         "null"
       ],
       "items": {
-        "$ref": "#/definitions/accounts_element"
+        "$ref": "#/definitions/accounts-element"
       }
     },
     "total_assets": {
@@ -56,7 +56,7 @@
         "null"
       ],
       "items": {
-        "$ref": "#/definitions/accounts_element"
+        "$ref": "#/definitions/accounts-element"
       }
     },
     "fixed_assets": {
@@ -65,7 +65,7 @@
         "null"
       ],
       "items": {
-        "$ref": "#/definitions/accounts_element"
+        "$ref": "#/definitions/accounts-element"
       }
     },
     "current_liabilities": {
@@ -74,7 +74,7 @@
         "null"
       ],
       "items": {
-        "$ref": "#/definitions/accounts_element"
+        "$ref": "#/definitions/accounts-element"
       }
     },
     "total_liabilities": {
@@ -83,7 +83,7 @@
         "null"
       ],
       "items": {
-        "$ref": "#/definitions/accounts_element"
+        "$ref": "#/definitions/accounts-element"
       }
     },
     "cash_at_bank": {
@@ -92,7 +92,7 @@
         "null"
       ],
       "items": {
-        "$ref": "#/definitions/accounts_element"
+        "$ref": "#/definitions/accounts-element"
       }
     },
     "documents": {
@@ -101,7 +101,7 @@
         "null"
       ],
       "items": {
-        "$ref": "#/definitions/filing_document"
+        "$ref": "#/definitions/filing-document"
       }
     },
     "filing_type_name": {
@@ -228,7 +228,7 @@
               ]
             },
             "entity_properties": {
-              "$ref": "#/definitions/unknown_entity_type"
+              "$ref": "#/definitions/unknown-entity-type"
             }
           }
         }
@@ -357,19 +357,19 @@
         "industry_codes": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/industry_code"
+            "$ref": "#/definitions/industry-code"
           }
         },
         "previous_names": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/previous_name"
+            "$ref": "#/definitions/previous-name"
           }
         },
         "alternative_names": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/alternative_name"
+            "$ref": "#/definitions/alternative-name"
           }
         },
         "branch": {
@@ -871,7 +871,7 @@
         "identifier_system_code"
       ]
     },
-    "industry_code": {
+    "industry-code": {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "description": "An industry code from a standard code list (e.g. NAICS 2007 or NACE 2). This schema is a sub-schema of Classification.",
       "type": "object",
@@ -900,7 +900,7 @@
         "code_scheme_id"
       ]
     },
-    "previous_name": {
+    "previous-name": {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "name": "PreviousName",
       "description": "A previous name of a company",
@@ -924,7 +924,7 @@
         "company_name"
       ]
     },
-    "alternative_name": {
+    "alternative-name": {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "description": "An alternative name of a company, e.g. abbreviation, trading (including dba or doing business as), legal. As well as trading names etc, it can be used for storing alternative language representations of the legal name, in which case the language should be represented as two-letter ISO-639 code",
       "type": "object",
@@ -969,7 +969,7 @@
       "additionalProperties": false,
       "properties": {
         "name": {
-          "$ref": "#/definitions/person_name"
+          "$ref": "#/definitions/person-name"
         },
         "jurisdiction": {
           "type": "string",
@@ -1037,13 +1037,13 @@
         "industry_codes": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/industry_code"
+            "$ref": "#/definitions/industry-code"
           }
         },
         "alternative_names": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/alternative_name"
+            "$ref": "#/definitions/alternative-name"
           }
         },
         "date_of_birth": {
@@ -1085,7 +1085,7 @@
         "name"
       ]
     },
-    "person_name": {
+    "person-name": {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "oneOf": [
         {
@@ -1265,19 +1265,19 @@
         "industry_codes": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/industry_code"
+            "$ref": "#/definitions/industry-code"
           }
         },
         "previous_names": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/previous_name"
+            "$ref": "#/definitions/previous-name"
           }
         },
         "alternative_names": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/alternative_name"
+            "$ref": "#/definitions/alternative-name"
           }
         },
         "other_attributes": {
@@ -1289,7 +1289,7 @@
         "name"
       ]
     },
-    "unknown_entity_type": {
+    "unknown-entity-type": {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "description": "An entity of unknown type - potentially a company, a person, government entity, or some unincorporated organisation",
       "additionalProperties": false,
@@ -1361,19 +1361,19 @@
         "industry_codes": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/industry_code"
+            "$ref": "#/definitions/industry-code"
           }
         },
         "previous_names": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/previous_name"
+            "$ref": "#/definitions/previous-name"
           }
         },
         "alternative_names": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/alternative_name"
+            "$ref": "#/definitions/alternative-name"
           }
         },
         "other_attributes": {
@@ -1385,7 +1385,7 @@
         "name"
       ]
     },
-    "accounts_element": {
+    "accounts-element": {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "description": "A representation of one particular element of an accounts statement (e.g. profit or assets). This should consist of at least a value and end_date",
       "type": "object",
@@ -1430,7 +1430,7 @@
         }
       ]
     },
-    "filing_document": {
+    "filing-document": {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "description": "A document of some sort (PDF, TIFF, HTML) associated with a filing",
       "type": "object",
