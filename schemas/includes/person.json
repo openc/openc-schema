@@ -55,7 +55,7 @@
       "minLength": 4
     },
     "registered_address": {
-      "description":"address for service (or address given in the context of legal requirement)",
+      "description": "address for service (or address given in the context of legal requirement)",
       "$ref": "address.json"
     },
     "headquarters_address": {
@@ -91,7 +91,6 @@
         {
           "$ref": "date.json"
         }
-
       ]
     },
     "nationality": {
@@ -105,7 +104,10 @@
       "format": "non-blank"
     },
     "identifiers": {
-      "type": ["array", "null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "$ref": "identifier.json"
       }

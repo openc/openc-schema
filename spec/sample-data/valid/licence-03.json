@@ -1,36 +1,36 @@
 {
-    "confidence": "HIGH",
-    "end_date": "2017-02-28",
-    "licence_holder": {
-        "entity_properties": {
-            "jurisdiction": "FL",
-            "name": "GLB DESIGN GROUP, LLC"
-        },
-        "entity_type": "company"
+  "confidence": "HIGH",
+  "end_date": "2017-02-28",
+  "licence_holder": {
+    "entity_properties": {
+      "jurisdiction": "FL",
+      "name": "GLB DESIGN GROUP, LLC"
     },
-    "licence_issuer": {
-        "jurisdiction": "us_fl",
-        "name": "Florida Architecture & Interior Design Board"
-    },
-    "licence_number": "26001644",
-    "other_attributes": {
-        "Alternate Lic#": "IB26001644",
-        "Blank": "",
-        "County Code": "23",
-        "Effective Date": "2014-12-22",
-        "Primary Status": "C",
-        "Renewal Period": "",
-        "Secondary Status": "A"
-    },
-    "permissions": [
-        {
-            "activity_name": "Interior Design Business",
-            "permission_type": "operating"
-        }
-    ],
-    "sample_date": "2014-12-31 11:46:08 +0000",
-    "source_url": "ftp://dbprftp.state.fl.us/pub/llweb/lic02ai.csv",
-    "jurisdiction_of_licence": "us_fl",
-    "start_date": "2014-12-22",
-    "status": "Active (Current)"
+    "entity_type": "company"
+  },
+  "licence_issuer": {
+    "jurisdiction": "us_fl",
+    "name": "Florida Architecture & Interior Design Board"
+  },
+  "licence_number": "26001644",
+  "other_attributes": {
+    "Alternate Lic#": "IB26001644",
+    "Blank": "",
+    "County Code": "23",
+    "Effective Date": "2014-12-22",
+    "Primary Status": "C",
+    "Renewal Period": "",
+    "Secondary Status": "A"
+  },
+  "permissions": [
+    {
+      "activity_name": "Interior Design Business",
+      "permission_type": "operating"
+    }
+  ],
+  "sample_date": "2014-12-31 11:46:08 +0000",
+  "source_url": "ftp://dbprftp.state.fl.us/pub/llweb/lic02ai.csv",
+  "jurisdiction_of_licence": "us_fl",
+  "start_date": "2014-12-22",
+  "status": "Active (Current)"
 }

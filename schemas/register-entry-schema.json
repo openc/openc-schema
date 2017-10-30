@@ -5,7 +5,9 @@
     "subject_entity": {
       "$ref": "includes/entity.json"
     },
-    "register": {"$ref": "#/definitions/register"},
+    "register": {
+      "$ref": "#/definitions/register"
+    },
     "identifier": {
       "description": "A unique identifier used by the register to identifier the register entry. In some cases – e.g. Charity Register for England & Wales, these identifiers (in this case known as the 'charity number') are used outside of the context of the register",
       "type": "string"
@@ -110,6 +112,5 @@
         "title"
       ]
     }
-
   }
 }

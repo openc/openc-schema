@@ -36,7 +36,10 @@
           }
         },
         "legal_basis": {
-          "type": ["array","null"],
+          "type": [
+            "array",
+            "null"
+          ],
           "items": {
             "$ref": "legislation.json"
           }

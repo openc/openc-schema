@@ -2,7 +2,7 @@
   "percentage_of_shares": 64,
   "shareholders": [
     {
-      "name":"Joe Schmoe",
+      "name": "Joe Schmoe",
       "address": {
         "street_address": "1 Balloon Street",
         "locality": "Manchester",

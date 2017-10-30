@@ -43,8 +43,7 @@
           "required": [
             "postal_code"
           ]
-        }
-        ,
+        },
         {
           "required": [
             "locality",

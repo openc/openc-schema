@@ -1,39 +1,41 @@
 {
-    "confidence": "HIGH",
-    "subject_entity": {
-      "entity_properties": {
-        "name": {
-          "given_name": "Gaffar Mohammed",
-          "family_name": "ELHASSAN",
-          "title": "Major General"
-        },
-        "uid": "8838"
+  "confidence": "HIGH",
+  "subject_entity": {
+    "entity_properties": {
+      "name": {
+        "given_name": "Gaffar Mohammed",
+        "family_name": "ELHASSAN",
+        "title": "Major General"
       },
-      "entity_type": "person"
+      "uid": "8838"
     },
-    "sanctions_list": {
-      "title": "UK Treasury Consolidated list of sanctions targets",
-      "url": "https://www.gov.uk/government/publications/financial-sanctions-consolidated-list-of-targets/consolidated-list-of-targets",
-      "publisher": {
-        "name": "Office of Financial Sanctions Implementation",
-        "jurisdiction": "gb",
-        "website": "https://www.gov.uk/government/organisations/office-of-financial-sanctions-implementation"
-      }
-    },
-    "sanctions": [
-      {
-        "sanction_type": "sanctions_listing",
-        "sanction_jurisdictions": ["gb"],
-        "description": "Commander of the Western Military Region for the Sudanese Armed Forces, Sudan",
-        "notes": "Remains listed as Gaffar Mohamed Elhassan by the EU",
-        "cause": [
-          "UK Treasury Financial Sanctions Target"
-        ]
-      }
-    ],
-    "category": "ListedSanctionedEntity",
-    "retrieved_at": "2015-08-11T23:00:08+01:00",
-    "sample_date": "2015-08-11",
-    "start_date": "2006-05-26",
-    "source_url": "http://www.hm-treasury.gov.uk/d/sanctionsconlist.csv"
+    "entity_type": "person"
+  },
+  "sanctions_list": {
+    "title": "UK Treasury Consolidated list of sanctions targets",
+    "url": "https://www.gov.uk/government/publications/financial-sanctions-consolidated-list-of-targets/consolidated-list-of-targets",
+    "publisher": {
+      "name": "Office of Financial Sanctions Implementation",
+      "jurisdiction": "gb",
+      "website": "https://www.gov.uk/government/organisations/office-of-financial-sanctions-implementation"
+    }
+  },
+  "sanctions": [
+    {
+      "sanction_type": "sanctions_listing",
+      "sanction_jurisdictions": [
+        "gb"
+      ],
+      "description": "Commander of the Western Military Region for the Sudanese Armed Forces, Sudan",
+      "notes": "Remains listed as Gaffar Mohamed Elhassan by the EU",
+      "cause": [
+        "UK Treasury Financial Sanctions Target"
+      ]
+    }
+  ],
+  "category": "ListedSanctionedEntity",
+  "retrieved_at": "2015-08-11T23:00:08+01:00",
+  "sample_date": "2015-08-11",
+  "start_date": "2006-05-26",
+  "source_url": "http://www.hm-treasury.gov.uk/d/sanctionsconlist.csv"
 }

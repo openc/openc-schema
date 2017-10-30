@@ -12,13 +12,26 @@
       "description": "month part of date in numbers e.g. 11 for November, 4 for April"
     },
     "day": {
-      "type": ["number","null"],
+      "type": [
+        "number",
+        "null"
+      ],
       "description": "day part of date in numbers"
     }
   },
   "additionalProperties": false,
   "anyOf": [
-    {"required": ["year", "month"]},
-    {"required": ["month", "day"]}
+    {
+      "required": [
+        "year",
+        "month"
+      ]
+    },
+    {
+      "required": [
+        "month",
+        "day"
+      ]
+    }
   ]
 }

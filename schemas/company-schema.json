@@ -106,7 +106,10 @@
       }
     },
     "identifiers": {
-      "type": ["array", "null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "$ref": "includes/identifier.json"
       }

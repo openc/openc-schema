@@ -15,7 +15,7 @@ task :format_json do
     Dir.glob(File.join(*parts, '*.json')).each do |path|
       data = JSON.parse(File.read(path))
       File.open(path, 'w') do |f|
-        f.write(JSON.pretty_generate(data))
+        f.puts(JSON.pretty_generate(data))
       end
     end
   end

@@ -20,7 +20,11 @@
     },
     "accounts_type": {
       "description": "The type of accounts – either annual, or quarterly, or null if not known",
-      "enum": ["annual", "quarterly", null]
+      "enum": [
+        "annual",
+        "quarterly",
+        null
+      ]
     },
     "profit": {
       "type": "array",
@@ -29,49 +33,73 @@
       }
     },
     "revenue": {
-      "type": ["array","null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
     "current_assets": {
-      "type": ["array","null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
     "total_assets": {
-      "type": ["array","null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
     "fixed_assets": {
-      "type": ["array","null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
     "current_liabilities": {
-      "type": ["array","null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
     "total_liabilities": {
-      "type": ["array","null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
     "cash_at_bank": {
-      "type": ["array","null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "$ref": "includes/accounts_element.json"
       }
     },
     "documents": {
-      "type": ["array","null"],
+      "type": [
+        "array",
+        "null"
+      ],
       "items": {
         "$ref": "includes/filing_document.json"
       }
@@ -133,15 +161,6 @@
       "type": "string",
       "description": "If the accounts filing has been put on sources.opencorporates.com the path to the filing"
     },
-    "confidence": {
-      "description": "Confidence in accuracy of data",
-      "type": "string",
-      "enum": [
-        "HIGH",
-        "MEDIUM",
-        "LOW"
-      ]
-    },
     "other_attributes": {
       "description": "Use for other attributes for which we don't yet have curated schema attributes",
       "type": "object"
@@ -155,5 +174,5 @@
     "confidence",
     "filing_date",
     "accounts_type"
-    ]
+  ]
 }

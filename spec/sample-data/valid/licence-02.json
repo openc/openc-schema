@@ -6,7 +6,10 @@
       "name": "MEZA  ALFREDO T",
       "company_number": "ZZZ95",
       "jurisdiction_code": "us_ca",
-      "website": ["http://foo.com","http://bar.com"]
+      "website": [
+        "http://foo.com",
+        "http://bar.com"
+      ]
     }
   },
   "licence_issuer": {

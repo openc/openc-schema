@@ -1,6 +1,8 @@
 {
   "percentage_of_shares": 64,
   "shareholders": [
-    {"name":"Joe Schmoe"}
+    {
+      "name": "Joe Schmoe"
+    }
   ]
 }

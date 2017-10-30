@@ -1,61 +1,65 @@
 {
-    "date_published": "2015-01-05",
-    "issue": {
-        "publication": {
-            "publisher": {
-                "name": "Direction de l'information légale et administrative",
-                "url": "http://www.dila.premier-ministre.gouv.fr/",
-                "media_type": "text/html"
-            },
-            "jurisdiction_code": "fr",
-            "title": "Bulletin officiel des annonces civiles et commerciales",
-            "url": "http://www.bodacc.fr/",
-            "media_type": "text/html"
-        },
-        "identifier": "20150001",
-        "edition_id": "C"
+  "date_published": "2015-01-05",
+  "issue": {
+    "publication": {
+      "publisher": {
+        "name": "Direction de l'information légale et administrative",
+        "url": "http://www.dila.premier-ministre.gouv.fr/",
+        "media_type": "text/html"
+      },
+      "jurisdiction_code": "fr",
+      "title": "Bulletin officiel des annonces civiles et commerciales",
+      "url": "http://www.bodacc.fr/",
+      "media_type": "text/html"
     },
-    "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
-    "sample_date": "2016-01-21T19:41:22Z",
-    "retrieved_at": "2016-01-21T19:41:22Z",
-    "confidence": "HIGH",
-    "other_attributes": {
-        "format": "BILAN"
-    },
-    "publisher": {
-        "name": "GREFFE DU TRIBUNAL D'INSTANCE DE SARREGUEMINES",
-        "identifier": "57"
-    },
-    "identifier": 32,
-    "uid": "BDC15000100148X",
-    "url": "http://www.bodacc.fr/annonce/detail/BDC15000100148X",
-    "media_type": "text/html",
-    "subjects": [{
-        "entity_type": "company",
-        "entity_properties": {
-            "jurisdiction_code": "fr",
-            "company_number": "383 031 705",
-            "name": "SAMH 57",
-            "company_type": "S.A.R.L.",
-            "registered_address": {
-                "street_address": "1, rue de la Forêt",
-                "locality": "Forbach",
-                "postal_code": "57600",
-                "country": "France",
-                "country_code": "FR"
-            }
+    "identifier": "20150001",
+    "edition_id": "C"
+  },
+  "source_url": "ftp://echanges.dila.gouv.fr/BODACC/BODACC_2015.tar",
+  "sample_date": "2016-01-21T19:41:22Z",
+  "retrieved_at": "2016-01-21T19:41:22Z",
+  "confidence": "HIGH",
+  "other_attributes": {
+    "format": "BILAN"
+  },
+  "publisher": {
+    "name": "GREFFE DU TRIBUNAL D'INSTANCE DE SARREGUEMINES",
+    "identifier": "57"
+  },
+  "identifier": 32,
+  "uid": "BDC15000100148X",
+  "url": "http://www.bodacc.fr/annonce/detail/BDC15000100148X",
+  "media_type": "text/html",
+  "subjects": [
+    {
+      "entity_type": "company",
+      "entity_properties": {
+        "jurisdiction_code": "fr",
+        "company_number": "383 031 705",
+        "name": "SAMH 57",
+        "company_type": "S.A.R.L.",
+        "registered_address": {
+          "street_address": "1, rue de la Forêt",
+          "locality": "Forbach",
+          "postal_code": "57600",
+          "country": "France",
+          "country_code": "FR"
         }
-    }],
-    "about": {
-        "type": "filing",
-        "classification": [{
-            "code_scheme_id": "fr_bodacc_typeDepot",
-            "code": "Comptes annuels et rapports"
-        }],
-        "closing_date": "2013-12-31",
-        "body": {
-            "value": "Les comptes annuels sont accompagnés d'une déclaration de confidentialité en application du premier alinéa de l'article L. 232-25.",
-            "media_type": "text/plain"
-        }
+      }
     }
+  ],
+  "about": {
+    "type": "filing",
+    "classification": [
+      {
+        "code_scheme_id": "fr_bodacc_typeDepot",
+        "code": "Comptes annuels et rapports"
+      }
+    ],
+    "closing_date": "2013-12-31",
+    "body": {
+      "value": "Les comptes annuels sont accompagnés d'une déclaration de confidentialité en application du premier alinéa de l'article L. 232-25.",
+      "media_type": "text/plain"
+    }
+  }
 }
