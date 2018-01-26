@@ -248,6 +248,31 @@
           "properties": {
             "mechanism_type": {
               "enum": [
+                "right_to_appoint_and_remove_person"
+              ]
+            },
+            "mechanism_properties": {
+              "properties": {
+                "exercised_via": {
+                  "enum": [
+                    "trust",
+                    "firm",
+                    null
+                  ]
+                }
+              }
+            },
+            "source_description": {
+              "description": "Description of the control relationship as given by the source",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "mechanism_type": {
+              "enum": [
                 "right_to_share_surplus_assets"
               ]
             },
