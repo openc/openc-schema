@@ -1,7 +1,4 @@
 require 'spec_helper'
-require 'json'
-require 'json_validation'
-require 'openc_json_schema_formats'
 
 def directory
   if ENV['TEST_ALL']
@@ -16,19 +13,9 @@ describe "open-schemas" do
     Dir.glob(File.join(directory, '**', '*.json')).each do |path|
       data = JSON.parse(File.read(path))
       metaschema = JSON::Validator.validator_for_name(data['$schema']).metaschema
-      context "when using JsonSchema" do
-        it "#{path} should be a valid schema" do
-          error = Openc::JsonSchema.validate(metaschema, data)
-          expect(error).to be(nil)
-        end
-      end
 
-      pending "when using JsonValidator" do
-        # This is pending https://github.com/inglesp/json_validation/issues/1
-        it "#{path} should be a valid schema" do
-          valid = JsonValidation.load_validator(metaschema).validate(data)
-          expect(valid).to be(true)
-        end
+      it "#{path} should be a valid schema" do
+        expect(JSON::Validator.validate(metaschema, data)).to be_truthy
       end
     end
   end
@@ -40,18 +27,9 @@ describe "open-schemas" do
     data_type = match[1]
     schema_path = File.join('schemas', "#{data_type}-schema.json")
 
-    context "when using JsonSchema" do
-      it "should validate valid json at #{path}" do
-        error = Openc::JsonSchema.validate(schema_path, data)
-        expect(error).to be(nil)
-      end
-    end
-
-    context "when using JsonValidation" do
-      it "should validate valid json at #{path}" do
-        passed = JsonValidation.load_validator(schema_path).validate(data)
-        expect(passed).to be(true)
-      end
+    it "should validate valid json at #{path}" do
+      error = Openc::JsonSchema.validate(schema_path, data)
+      expect(error).to be(nil)
     end
   end
 
@@ -62,18 +40,9 @@ describe "open-schemas" do
     data_type = match[1]
     schema_path = File.join('schemas', 'includes', "#{data_type}.json")
 
-    context "when using JsonSchema" do
-      it "should validate valid json at #{path}" do
-        error = Openc::JsonSchema.validate(schema_path, data)
-        expect(error).to be(nil)
-      end
-    end
-
-    context "when using JsonValidation" do
-      it "should validate valid json at #{path}" do
-        passed = JsonValidation.load_validator(schema_path).validate(data)
-        expect(passed).to be(true)
-      end
+    it "should validate valid json at #{path}" do
+      error = Openc::JsonSchema.validate(schema_path, data)
+      expect(error).to be(nil)
     end
   end
 
