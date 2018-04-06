@@ -885,7 +885,8 @@
             "abbreviation",
             "legal",
             "unknown",
-            "alias"
+            "alias",
+            "transliteration"
           ]
         }
       },
