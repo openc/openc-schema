@@ -258,6 +258,7 @@
   "required": [
     "company_number",
     "name",
-    "jurisdiction_code"
+    "jurisdiction_code",
+    "retrieved_at"
   ]
 }

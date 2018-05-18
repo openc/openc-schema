@@ -3,5 +3,6 @@
   "company_number": "12345",
   "jurisdiction_code": "us_de",
   "incorporation_date": "2010-10-20",
-  "dissolution_date": "2012-01-12"
+  "dissolution_date": "2012-01-12",
+  "retrieved_at": "2018-03-09T12:34:56Z"
 }

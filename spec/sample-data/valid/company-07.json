@@ -4,5 +4,6 @@
   "jurisdiction_code": "us_de",
   "registered_address": {
     "street_address": "32 Foo St"
-  }
+  },
+  "retrieved_at": "2018-03-09T12:34:56Z"
 }
