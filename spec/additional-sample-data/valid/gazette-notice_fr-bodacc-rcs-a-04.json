@@ -92,8 +92,6 @@
       {
         "entity_type": "person",
         "entity_properties": {
-          "jurisdiction_code": "fr",
-          "company_number": "491202693",
           "name": {
             "family_name": "RABE",
             "given_name": "Erwan",

@@ -34,8 +34,6 @@
     {
       "entity_type": "person",
       "entity_properties": {
-        "jurisdiction_code": "fr",
-        "company_number": "808379796",
         "name": {
           "family_name": "BRUGNON",
           "given_name": "Dimitri Gérard Bernard",
@@ -73,8 +71,6 @@
       {
         "entity_type": "company",
         "entity_properties": {
-          "jurisdiction_code": "fr",
-          "company_number": "539690206",
           "name": "AROMES & DELICES"
         }
       }
