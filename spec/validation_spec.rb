@@ -23,9 +23,9 @@ describe "open-schemas" do
         end
       end
 
-      pending "when using JsonValidator" do
+      context "when using JsonValidator" do
         # This is pending https://github.com/inglesp/json_validation/issues/1
-        it "#{path} should be a valid schema" do
+        skip "#{path} should be a valid schema" do
           valid = JsonValidation.load_validator(metaschema).validate(data)
           expect(valid).to be(true)
         end

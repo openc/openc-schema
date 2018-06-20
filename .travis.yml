@@ -1,10 +1,18 @@
 sudo: false
 language: ruby
 cache: bundler
+env:
+  - TEST_ALL=true
 rvm:
   - 1.9.3
   - 2.0.0
-  - 2.1.0
-  - 2.2.0
-  - 2.3.0
+  - 2.1
+  - 2.2
+  - 2.3
+  - 2.4
+  - 2.5
+  - 2.6
+before_install:
+  - gem update --system
+  - gem install bundler
 before_script: bundle exec rake build format_json && git status -s && [[ -z $(git status -s) ]]

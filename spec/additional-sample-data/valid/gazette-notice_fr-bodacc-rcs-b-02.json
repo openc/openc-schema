@@ -34,8 +34,6 @@
     {
       "entity_type": "person",
       "entity_properties": {
-        "jurisdiction_code": "fr",
-        "company_number": "498111814",
         "name": {
           "family_name": "BEGEL",
           "given_name": "David, Jean, Marie, André",
