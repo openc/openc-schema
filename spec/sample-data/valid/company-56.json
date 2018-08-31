@@ -3,5 +3,6 @@
   "company_number": "12345",
   "jurisdiction_code": "ie",
   "current_status": null,
-  "company_type": null
+  "company_type": null,
+  "retrieved_at": "2018-03-09T12:34:56Z"
 }

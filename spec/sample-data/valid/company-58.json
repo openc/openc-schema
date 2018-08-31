@@ -5,5 +5,6 @@
   "website": [
     "http://foo.com",
     "http://bar.com"
-  ]
+  ],
+  "retrieved_at": "2018-03-09T12:34:56Z"
 }
