@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A representation of multiple registrations for the same entity",
+  "type": "object",
+  "properties": {
+    "data_type": {
+      "enum": [
+        "alternate_registration"
+      ]
+    },
+    "reporting_entity": {
+      "description": "the entity reporting that it has an alternate registration",
+      "$ref": "entity.json"
+    },
+    "alternate_entity": {
+      "description": "the alternate registration entity",
+      "$ref": "entity.json"
+    },
+    "alternate_registration_start_date": {
+      "description": "date when alternate registration started",
+      "type": "string",
+      "format": "date"
+    },
+    "alternate_registration_end_date": {
+      "description": "date when alternate registration ended",
+      "type": "string",
+      "format": "date"
+    },
+    "start_date": {
+      "description": "date when alternate registration was valid from",
+      "type": "string",
+      "format": "date"
+    },
+    "start_date_type": {
+      "enum": [
+        "at",
+        "before",
+        "after"
+      ]
+    },
+    "end_date": {
+      "description": "date when alternate registration was valid to",
+      "type": "string",
+      "format": "date"
+    },
+    "sample_date": {
+      "description": "date when alternate registration was sampled",
+      "type": "string",
+      "format": "date"
+    },
+    "retrieved_at": {
+      "description": "date when alternate registration was retrieved",
+      "type": "string",
+      "format": "date"
+    },
+    "source_url": {
+      "description": "URL of the source of the data (e.g. download URL), or if there is not persistent URL the page from which it can be found (e.g. search page)",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "data_type",
+    "reporting_entity",
+    "alternate_entity"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "start_date"
+      ]
+    },
+    {
+      "required": [
+        "end_date"
+      ]
+    },
+    {
+      "required": [
+        "sample_date"
+      ]
+    },
+    {
+      "required": [
+        "retrieved_at"
+      ]
+    }
+  ]
+}

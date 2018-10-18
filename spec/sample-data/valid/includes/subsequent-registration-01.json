@@ -1,0 +1,21 @@
+{
+  "data_type": "subsequent_registration",
+  "previous_entity": {
+    "entity_properties": {
+      "name": "Vorsprung",
+      "company_number": "R111_HRB123",
+      "jurisdiction_code": "de"
+    },
+    "entity_type": "company"
+  },
+  "subsequent_entity": {
+    "entity_properties": {
+      "name": "Teknik",
+      "company_number": "R222_HRB999",
+      "jurisdiction_code": "de"
+    },
+    "entity_type": "company"
+  },
+  "source_url": "https://www.foo.com?bar=123",
+  "start_date": "2018-05-01"
+}
