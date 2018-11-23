@@ -132,6 +132,18 @@
         "$ref": "includes/alternative-name.json"
       }
     },
+    "subsequent_registrations": {
+      "type": "array",
+      "items": {
+        "$ref": "subsequent-registration-schema.json"
+      }
+    },
+    "alternate_registrations": {
+      "type": "array",
+      "items": {
+        "$ref": "alternate-registration-schema.json"
+      }
+    },
     "branch": {
       "type": [
         "string",

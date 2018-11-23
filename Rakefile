@@ -4,6 +4,7 @@ RSpec::Core::RakeTask.new(:spec)
 task :default => :spec
 
 require 'json'
+require 'fileutils'
 
 desc 'Rewrite JSON files with consistent formatting'
 task :format_json do
@@ -83,6 +84,7 @@ task :build do
   end
 
   all_definitions = {}
+  generated = []
 
   Dir[File.join('schemas', '*.json')].each do |path|
     definitions = {} # passed by reference
@@ -91,5 +93,10 @@ task :build do
     File.open(File.join('build', File.basename(path)), 'w') do |f|
       f.write(JSON.pretty_generate(schema))
     end
+    generated << File.basename(path)
+  end
+
+  Dir[File.join('build', '*.json')].each do |path|
+    FileUtils.rm(path) unless generated.include?(File.basename(path))
   end
 end

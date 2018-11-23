@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A representation of entity registration changing over time",
+  "type": "object",
+  "properties": {
+    "data_type": {
+      "enum": [
+        "subsequent-registration"
+      ]
+    },
+    "previous_entity": {
+      "description": "the previous entity",
+      "$ref": "includes/entity.json"
+    },
+    "subsequent_entity": {
+      "description": "the subsequent entity",
+      "$ref": "includes/entity.json"
+    },
+    "subsequent_registration_start_date": {
+      "description": "date when subsequent registration started",
+      "type": "string",
+      "format": "date"
+    },
+    "previous_registration_end_date": {
+      "description": "date when previous registration ended",
+      "type": "string",
+      "format": "date"
+    },
+    "publication_date": {
+      "description": "the publication date of the filing/notice that gives details of the alternate registration",
+      "type": "string",
+      "format": "date"
+    },
+    "start_date": {
+      "description": "date when subsequent registration was valid from",
+      "type": "string",
+      "format": "date"
+    },
+    "start_date_type": {
+      "enum": [
+        "at",
+        "before",
+        "after"
+      ]
+    },
+    "sample_date": {
+      "description": "date when subsequent registration was sampled",
+      "type": "string",
+      "format": "date"
+    },
+    "retrieved_at": {
+      "description": "date when subsequent registration was retrieved",
+      "type": "string",
+      "format": "date"
+    },
+    "source_url": {
+      "description": "URL of the source of the data (e.g. download URL), or if there is not persistent URL the page from which it can be found (e.g. search page)",
+      "type": "string"
+    },
+    "confidence": {
+      "description": "Confidence in accuracy of data",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "data_type",
+    "previous_entity",
+    "subsequent_entity",
+    "retrieved_at",
+    "confidence"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "start_date"
+      ]
+    },
+    {
+      "required": [
+        "sample_date"
+      ]
+    }
+  ]
+}
