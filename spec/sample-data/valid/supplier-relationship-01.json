@@ -1,0 +1,22 @@
+{
+  "data_type": "supplier-relationship",
+  "customer": {
+    "entity_type": "company",
+    "entity_properties": {
+      "name": "The Walt Disney Company",
+      "jurisdiction_code": "us_ca",
+      "company_number": "C1770422"
+    }
+  },
+  "supplier": {
+    "entity_type": "company",
+    "entity_properties": {
+      "name": "Valcuvia Alba SHPK",
+      "jurisdiction_code": "al"
+    }
+  },
+  "source_url": "https://example.com",
+  "sample_date": "2016-09-09",
+  "retrieved_at": "2018-11-08T12:34:56Z",
+  "confidence": "HIGH"
+}

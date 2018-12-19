@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data_type": {
+      "enum": [
+        "supplier-relationship"
+      ]
+    },
+    "customer": {
+      "$ref": "includes/entity.json"
+    },
+    "supplier": {
+      "$ref": "includes/entity.json"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "start_date_type": {
+      "enum": [
+        "at",
+        "before",
+        "after"
+      ]
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date_type": {
+      "enum": [
+        "at",
+        "before",
+        "after"
+      ]
+    },
+    "sample_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "data_type",
+    "supplier",
+    "customer",
+    "retrieved_at",
+    "confidence"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "start_date"
+      ]
+    },
+    {
+      "required": [
+        "sample_date"
+      ]
+    },
+    {
+      "required": [
+        "end_date"
+      ]
+    }
+  ]
+}
