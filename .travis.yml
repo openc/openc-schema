@@ -15,4 +15,4 @@ rvm:
 before_install:
   - gem update --system 2.7.8
   - gem install bundler
-before_script: bundle exec rake build format_json && git status -s && [[ -z $(git status -s) ]]
+before_script: bin/rake build format_json && git status -s && [[ -z $(git status -s) ]]
