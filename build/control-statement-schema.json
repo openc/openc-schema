@@ -76,10 +76,24 @@
       "type": "string",
       "format": "date"
     },
+    "start_date_type": {
+      "enum": [
+        "at",
+        "before",
+        "after"
+      ]
+    },
     "end_date": {
       "description": "Date on which control ended",
       "type": "string",
       "format": "date"
+    },
+    "end_date_type": {
+      "enum": [
+        "at",
+        "before",
+        "after"
+      ]
     },
     "retrieved_at": {
       "description": "Date-time this was retrieved from the source",
