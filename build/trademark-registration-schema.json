@@ -814,6 +814,7 @@
           "minLength": 1
         }
       },
+      "additionalProperties": false,
       "required": [
         "number"
       ]
