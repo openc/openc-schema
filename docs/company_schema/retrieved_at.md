@@ -1,0 +1,5 @@
+---
+---
+- Datetime the record was retrieved from the official source
+- Timestamps should be in UTC/GMT timezone
+- date should be updated whenever an attempt is made to search for & retrieve company, even if that attempt is unsuccessful

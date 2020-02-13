@@ -1,0 +1,8 @@
+---
+---
+- present the data as per the source
+- company_type represents a company's formation type, eg “Limited Liability Company” or “Partnership”
+- If multiple types are shown, it may be appropriate to concatenate them with hypens - eg “Australian Proprietary Company - Limited By Shares - Home Unit Proprietary Company” is made up of 3 separate company type elements in source
+- translate non-latin company types - see link below
+- apply minimal normalisation, eg to strip out dates (EG “DISSOLVED ON 14/03/2010”) could be represented as “Dissolved”
+- When deriving the data, eg as part of a mapping table, use the singular version of the type. eg Limited Liability Company not Companies
