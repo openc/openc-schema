@@ -1,0 +1,14 @@
+---
+layout: single
+classes: wide
+---
+
+<div class="field_description">
+   {% assign filename = page.name | split: "." %}
+    <h1 class="page-heading">{{ filename[0] }}</h1>
+    {% assign filter = "field[0] == '"| append: filename[0] | append: "'" %}
+    {% include field_table field_filter=filter %}
+
+  {{ content }}
+
+</div>

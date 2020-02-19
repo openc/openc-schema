@@ -1,0 +1,20 @@
+{% assign dataset_name = page.dir | split: "/" | last %}
+{% assign dataset = site.data[dataset_name] %}
+
+{% assign field_filter = include.field_filter | default: "1" %}
+{{ dataset_name }}
+<table>
+{% assign fields = dataset.properties| where_exp: "field", field_filter %}
+{% for field_def in fields %}
+  <tr>
+    {% for val in field_def %}
+      {% if val[0] == "field name" %}
+       {% assign page_link = "/" | append: dataset_name | append: val[1] %}ß
+        <td><a href="{{val[1]}}">{{val[1]}}</a></td>
+      {% else %}
+        <td>{{val[1]}}</td>
+      {% endif %}
+    {% endfor %}
+  </tr>
+{% endfor %}
+</table>

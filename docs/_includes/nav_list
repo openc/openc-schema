@@ -1,0 +1,36 @@
+{% assign navigation = site.data.navigation[include.nav] %}
+
+<nav class="nav__list">
+  {% if page.sidebar.title %}<h3 class="nav__title" style="padding-left: 0;">{{ page.sidebar.title }}</h3>{% endif %}
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
+  <ul class="nav__items">
+    {% for data in site.data %}
+
+      {%assign url = data[0] | append: '/' | prepend: '/' %}
+
+      <li><details><summary><a href="{{ url }}"><span ">{{ data[0] }}</span></a></summary>
+
+
+        {% if data[1].properties != null %}
+        <ul>
+          {% for child in data[1].properties %}
+            {% comment %} internal/external URL check {% endcomment %}
+            {% assign child_url  = url | append:child[0] %}
+
+            {% comment %} set "active" class on current page {% endcomment %}
+            {% if child_url == page.url %}
+              {% assign active = "active" %}
+            {% else %}
+              {% assign active = "" %}
+            {% endif %}
+
+            <li><a href="{{ child_url }}" class="{{ active }}">{{ child[0] }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        </details>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

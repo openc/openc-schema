@@ -1,5 +1,3 @@
----
----
 Company numbers are normalised [by this code](https://github.com/openc/openc/blob/master/lib/openc/company_fetcher.rb#L332) which does the following:
 - strip all spaces
 - replace . or / with -
