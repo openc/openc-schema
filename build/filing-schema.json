@@ -898,6 +898,12 @@
           "type": "string",
           "description": "Name of the jurisdiction in which the entity is based"
         },
+        "jurisdiction_code": {
+          "type": "string",
+          "description": "Code representing the jurisdiction/company register which is the canonical record of the company’s existence. Uses underscored ISO 3166-2 to represent it, e.g. es for Spain, us_de for Delaware",
+          "minLength": 2,
+          "maxLength": 5
+        },
         "company": {
           "description": "Company the person is representing. NB If the licence holder is a company, and the individual is a just a contact, then use the company-schema for the entity. This is where the individual themselves are the subject entity (e.g. licence holder, disqualified director)",
           "$ref": "#/definitions/company-for-nesting"
