@@ -1,0 +1,13 @@
+{
+  "name": "Foo Inc Alternative",
+  "jurisdiction_code": "us_de",
+  "company_number": "12345",
+  "alternative_names": [
+    {
+      "company_name": "Foobar Inc",
+      "type": "trading",
+      "con_date": "2020-03-04"
+    }
+  ],
+  "retrieved_at": "2018-03-09T12:34:56Z"
+}
