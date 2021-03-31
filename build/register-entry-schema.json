@@ -366,6 +366,7 @@
           ]
         }
       },
+      "additionalProperties": false,
       "required": [
         "company_name",
         "type"
@@ -800,6 +801,7 @@
           }
         }
       },
+      "additionalProperties": false,
       "required": [
         "name"
       ]
