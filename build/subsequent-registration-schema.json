@@ -568,6 +568,7 @@
           }
         }
       },
+      "additionalProperties": false,
       "required": [
         "name"
       ]
@@ -868,6 +869,7 @@
           ]
         }
       },
+      "additionalProperties": false,
       "required": [
         "company_name",
         "type"
