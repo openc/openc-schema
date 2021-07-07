@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
-gem "openc-json_schema"
-gem "rake"
-gem "rspec"
-gem "json_validation"
-gem "openc_json_schema_formats"
+group :development, :test do
+  gem "rake", "~> 10.3"
+  gem "rspec", "~> 3"
+end
+
+gemspec
