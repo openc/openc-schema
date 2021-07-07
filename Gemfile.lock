@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    openc-schema (1.0.0.dev)
+    openc-schema (1.1.0.rc1)
       json_validation (= 0.1.0)
       openc-json_schema (= 0.0.14)
       openc_json_schema_formats (= 0.1.3)
