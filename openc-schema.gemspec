@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "openc-schema"
-  spec.version       = "1.1.0.rc1"
+  spec.version       = "1.1.0"
   spec.authors       = ["OpenCorporates dev team"]
 
   spec.summary       = %q{JSON Schema to validate data before sending to OpenCorporates.}
