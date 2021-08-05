@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Doing Business As, also known as fictitious name or trade name",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name registered",
+      "type": "string"
+    },
+    "type": {
+      "description": "Type of alternative name",
+      "type": "string",
+      "enum": [
+        "Assumed Name",
+        "Trade Name",
+        "DBA / doing business as",
+        "Fictitious name"
+      ]
+    },
+    "registered_address": {
+      "description": "The address filing was registered to",
+      "type": "object"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "source_url": {
+      "description": "Place where this fact can be verified",
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence": {
+      "description": "Confidence in accuracy of data",
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "sample_date": {
+      "description": "Date on which we know this to be true (usually date this information was retrieved from the source)",
+      "type": "string",
+      "format": "date"
+    },
+    "retrieved_at": {
+      "description": "The time or date at which the source URL was requested",
+      "type": "string",
+      "format": "date"
+    },
+   "other_attributes": {
+    "description": "Dump of all other relevant data for which we don't yet have curated schema attributes",
+    "type": "object"
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "other_attributes",
+    "retrieved_at",
+    "sample_date",
+    "source_url"
+  ]
+}
