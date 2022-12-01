@@ -11,10 +11,24 @@
     "identifier_system_code": {
       "type": "string",
       "description": "An identifier representing the identifier scheme. Some examples of this are us_fein (US Federal tax number), us_sec_cik (US Securities and Exchange Commission CIK), uk_ew_cc (Charity Commission of England & Wales), lei (Global Legal Entity Identifier System)"
+    },
+    "subject_entity": {
+      "description": "Company that the identifier identifies",
+      "type": "object"
+    },
+    "sample_date": {
+      "description": "Date on which we know this to be true (usually date this information was retrieved from the source)",
+      "type": "string",
+      "format": "date"
+    },
+    "confidence": {
+      "description": "confidence value for source accuracy",
+      "type": "string"
     }
   },
   "required": [
     "uid",
-    "identifier_system_code"
+    "identifier_system_code",
+    "subject_entity"
   ]
 }
