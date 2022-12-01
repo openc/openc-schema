@@ -31,6 +31,7 @@
       ]
     }
   },
+  "additionalProperties": false,
   "required": [
     "company_name",
     "type"
