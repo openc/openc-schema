@@ -2,6 +2,23 @@
 
 JSON Schema to validate data before sending to OpenCorporates.
 
+## Usage
+
+Include it in your Gemfile:
+
+```
+gem "openc-schema", git: "https://github.com/openc/openc-schema", tag: "vx.y.z"
+```
+
+Then get the path to the schema files:
+
+```
+File.join(Gem.loaded_specs['openc-schema'].full_gem_path, "schemas/company-schema.json")
+```
+
+If you are using a library that uses this gem, you must include this gem along with the library in your Gemfile.
+This will be required until this gem is hosted in a proper gem registry.
+
 ## Tasks
 
 Rewrite JSON files with consistent formatting:
