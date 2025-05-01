@@ -8,7 +8,8 @@
     "filing_date": {
       "type": "string",
       "description": "Date on which the filing was made – note this is not necessarily the same date as the date on which it was published or the reporting/applicable data on the information contained within it",
-      "format": "date"
+      "format": "date",
+      "minLength": 1
     },
     "documents": {
       "type": "array",
