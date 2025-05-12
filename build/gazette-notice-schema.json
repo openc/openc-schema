@@ -1421,7 +1421,10 @@
         },
         "identifier_system_code": {
           "type": "string",
-          "description": "An identifier representing the identifier scheme. Some examples of this are us_fein (US Federal tax number), us_sec_cik (US Securities and Exchange Commission CIK), uk_ew_cc (Charity Commission of England & Wales), lei (Global Legal Entity Identifier System)"
+          "description": "An identifier representing the identifier scheme. Some examples of this are us_fein (US Federal tax number), us_sec_cik (US Securities and Exchange Commission CIK), uk_ew_cc (Charity Commission of England & Wales), lei (Global Legal Entity Identifier System)",
+          "not": {
+            "pattern": "\\A[[:space:]]*\\z"
+          }
         }
       },
       "required": [
