@@ -507,9 +507,7 @@
         "name": {
           "type": "string",
           "minLength": 1,
-          "not": {
-            "pattern": "^[\\.\\,\\*\\\\\\-\\s\\{\\}\\(\\)]+$"
-          }
+          "pattern": "[[:alnum:]]"
         },
         "start_date": {
           "anyOf": [
@@ -722,7 +720,8 @@
         },
         "date": {
           "type": "string",
-          "format": "date"
+          "format": "date",
+          "minLength": 1
         },
         "description": {
           "type": "string"
@@ -772,11 +771,17 @@
         "uid": {
           "type": "string",
           "description": "The unique identifier given by the identifier system – it should be unique in the context of the identifier_system",
-          "minLength": 1
+          "minLength": 1,
+          "not": {
+            "pattern": "\\A[[:space:]]*\\z"
+          }
         },
         "identifier_system_code": {
           "type": "string",
-          "description": "An identifier representing the identifier scheme. Some examples of this are us_fein (US Federal tax number), us_sec_cik (US Securities and Exchange Commission CIK), uk_ew_cc (Charity Commission of England & Wales), lei (Global Legal Entity Identifier System)"
+          "description": "An identifier representing the identifier scheme. Some examples of this are us_fein (US Federal tax number), us_sec_cik (US Securities and Exchange Commission CIK), uk_ew_cc (Charity Commission of England & Wales), lei (Global Legal Entity Identifier System)",
+          "not": {
+            "pattern": "\\A[[:space:]]*\\z"
+          }
         }
       },
       "required": [
