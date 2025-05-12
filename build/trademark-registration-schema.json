@@ -676,6 +676,7 @@
           }
         }
       },
+      "additionalProperties": false,
       "required": [
         "name"
       ]
@@ -814,6 +815,7 @@
           "minLength": 1
         }
       },
+      "additionalProperties": false,
       "required": [
         "number"
       ]
@@ -976,6 +978,7 @@
           ]
         }
       },
+      "additionalProperties": false,
       "required": [
         "company_name",
         "type"
