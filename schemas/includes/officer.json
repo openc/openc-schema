@@ -37,6 +37,10 @@
       "type": "string",
       "description": "a unique identifier given to the officership"
     },
+    "former_at": {
+      "type": "string",
+      "format": "date"
+    },
     "other_attributes": {
       "type": "object",
       "properties": {
