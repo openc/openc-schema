@@ -797,7 +797,9 @@
           "type": "string"
         },
         "code": {
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "[a-zA-Z0-9]"
         },
         "code_scheme_id": {
           "type": "string",
