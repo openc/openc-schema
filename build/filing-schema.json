@@ -480,8 +480,7 @@
             },
             {
               "required": [
-                "locality",
-                "country"
+                "locality"
               ]
             }
           ]
