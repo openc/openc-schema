@@ -46,8 +46,7 @@
         },
         {
           "required": [
-            "locality",
-            "country"
+            "locality"
           ]
         }
       ]

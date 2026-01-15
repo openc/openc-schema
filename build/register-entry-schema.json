@@ -254,8 +254,7 @@
             },
             {
               "required": [
-                "locality",
-                "country"
+                "locality"
               ]
             }
           ]

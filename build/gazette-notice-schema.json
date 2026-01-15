@@ -519,8 +519,7 @@
             },
             {
               "required": [
-                "locality",
-                "country"
+                "locality"
               ]
             }
           ]
