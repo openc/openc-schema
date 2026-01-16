@@ -1,0 +1,25 @@
+name: github repo backup
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+  discussions: read
+  packages: read
+  actions: write
+
+on:
+  schedule:
+    # every sunday
+    - cron:  '0 2 * * SUN'
+  workflow_dispatch:
+
+jobs:
+  call-github-repo-backup:
+    uses: openc/gh-actions/.github/workflows/reusable-github-repo-backup.yaml@master
+    with:
+      repository: ${{ github.event.repository.name }}
+    secrets:
+      private-token: ${{ secrets.BYPASS}}
+      aws-access-key-id: ${{ secrets.AWS_MANAGEMENT_ID }}
+      aws-secret-access-key: ${{ secrets.AWS_MANAGEMENT_KEY }}
